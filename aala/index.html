@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AALA | India's Leading Legacy Fabric Brand</title>
+    <meta name="description" content="Serving the fashion industry for three generations with the widest variety of designer fabrics, dupattas, and stoles.">
+    
+    <!-- Google Fonts: Raleway as requested -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Raleway', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            accent: '#ee3148', // Original Aala Pink/Red
+                            dark: '#1a1a1a',
+                            gray: '#f7f7f7',
+                            border: '#eaeaea',
+                            muted: '#737373'
+                        }
+                    },
+                    aspectRatio: {
+                        '4/5': '4 / 5',
+                        '3/4': '3 / 4',
+                        '9/16': '9 / 16'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for horizontal scrolling areas but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth image zoom on hover */
+        .img-zoom-hover img, .img-zoom-hover video { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .img-zoom-hover:hover img, .img-zoom-hover:hover video { transform: scale(1.05); }
+    </style>
+</head>
+<body class="font-sans text-brand-dark antialiased bg-white selection:bg-brand-accent selection:text-white">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-brand-dark text-white text-[11px] md:text-xs py-2.5 font-medium tracking-widest uppercase flex flex-col sm:flex-row items-center justify-center sm:gap-6">
+        <span>Worldwide Shipping</span>
+        <span class="hidden sm:inline opacity-50">|</span>
+        <span>Same Day Dispatch</span>
+        <span class="hidden sm:inline opacity-50">|</span>
+        <a href="#" class="hover:text-brand-accent transition-colors mt-1 sm:mt-0">Support: +91 9920802080</a>
+    </div>
+
+    <!-- Sticky Header -->
+    <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-brand-border transition-all duration-300">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden">
+                    <button type="button" class="text-brand-dark hover:text-brand-accent transition p-2 -ml-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <!-- Mobile Search -->
+                    <button type="button" class="text-brand-dark hover:text-brand-accent transition p-2 ml-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Logo (Original Asset) -->
+                <div class="flex-shrink-0 flex items-center justify-center lg:justify-start absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 z-10">
+                    <a href="#" class="block">
+                        <img src="https://www.aala.com/skin/frontend/base/default/images/logo.png" 
+                             alt="AALA - India's Leading Legacy Fabric Brand" 
+                             class="h-8 md:h-10 w-auto object-contain"
+                             onerror="this.onerror=null; this.outerHTML='<span class=\'text-2xl md:text-3xl font-bold tracking-widest text-brand-dark uppercase\'>AALA</span>';">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8 xl:space-x-10">
+                    <a href="#" class="text-[13px] font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors duration-200">Plain Fabrics</a>
+                    <a href="#" class="text-[13px] font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors duration-200">Shaded</a>
+                    <a href="#" class="text-[13px] font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors duration-200">Embroidered & Fancy</a>
+                    <a href="#" class="text-[13px] font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors duration-200">Printed</a>
+                    <a href="#" class="text-[13px] font-semibold uppercase tracking-wider text-brand-dark hover:text-brand-accent transition-colors duration-200">Dupattas & Stoles</a>
+                </nav>
+
+                <!-- Icons (Desktop Search, Account, Wishlist, Cart) -->
+                <div class="flex items-center space-x-4 md:space-x-6">
+                    <button class="text-brand-dark hover:text-brand-accent transition-colors hidden lg:block group">
+                        <span class="text-[13px] font-medium mr-2 group-hover:underline underline-offset-4">Search</span>
+                        <svg class="w-4 h-4 inline-block -mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <button class="text-brand-dark hover:text-brand-accent transition-colors hidden sm:block">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    </button>
+                    <button class="text-brand-dark hover:text-brand-accent transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    </button>
+                    <button class="text-brand-dark hover:text-brand-accent transition-colors relative flex items-center">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="absolute -top-1.5 -right-2.5 bg-brand-dark text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section (Using Original Banner) -->
+        <section class="relative w-full h-[60vh] md:h-[80vh] flex items-center overflow-hidden bg-brand-dark">
+            <!-- Background Image (Original Plain Fabrics Banner) -->
+            <img src="https://cdn.aala.com/media/homepage/imagemainbanner/plain_fabric1776245474.png" alt="Premium flowing fabric" class="absolute inset-0 w-full h-full object-cover opacity-70">
+            <!-- Dark gradient overlay for text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+            
+            <div class="relative z-10 px-4 md:px-12 lg:px-24 max-w-screen-2xl mx-auto w-full">
+                <span class="text-white/80 uppercase tracking-[0.2em] text-xs font-semibold mb-4 block">Serving Three Generations</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight max-w-2xl">
+                    Curated Textiles for the <br/><span class="font-bold">Contemporary Wardrobe.</span>
+                </h1>
+                <p class="text-base md:text-lg text-white/90 font-light mb-10 max-w-xl">
+                    Discover India's most comprehensive archive of designer fabrics. Precision, quality, and heritage in every weave.
+                </p>
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <a href="#" class="px-8 py-3.5 bg-white text-brand-dark font-semibold text-[13px] uppercase tracking-wider hover:bg-brand-accent hover:text-white transition-colors duration-300">
+                        Explore Plain Fabrics
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand USPs -->
+        <section class="border-b border-brand-border bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-4 text-center">
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">Free Pickup & Shipping</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">Pay On Delivery</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">Worldwide Shipping</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">Same Day Dispatch</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">100% Satisfaction</span>
+                    </div>
+                    <div class="flex flex-col items-center justify-center space-y-3 opacity-80 hover:opacity-100 transition-opacity">
+                        <svg class="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                        <span class="text-[10px] md:text-xs font-semibold tracking-wider uppercase text-brand-dark">Best Price Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Style (Horizontal Scroll - Videos & Images) -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10 border-b border-brand-border pb-4">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-1">Shop By Style</h2>
+                        <p class="text-sm text-brand-muted font-light">Explore diverse silhouettes, weaves, and embellishments.</p>
+                    </div>
+                    <div class="hidden md:flex gap-2">
+                        <button class="w-10 h-10 border border-brand-border rounded-full flex items-center justify-center hover:border-brand-dark transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>
+                        <button class="w-10 h-10 border border-brand-border rounded-full flex items-center justify-center hover:border-brand-dark transition-colors"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>
+                    </div>
+                </div>
+
+                <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-4 md:gap-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+                    
+                    <!-- Style Item (Video) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://cdn.aala.com/media/model_images/15996.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Frappe</h3>
+                    </a>
+
+                    <!-- Style Item (Image) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <img src="https://cdn.aala.com/media/model_images/16006.png" alt="Armani" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Armani</h3>
+                    </a>
+
+                    <!-- Style Item (Image) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <img src="https://cdn.aala.com/media/catalog/product/4/9/4937.jpeg" alt="Dyeable Fabrics" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Dyeable Fabrics</h3>
+                    </a>
+
+                    <!-- Style Item (Video) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://cdn.aala.com/media/model_images/15987.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Milky</h3>
+                    </a>
+
+                    <!-- Style Item (Image) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <img src="https://cdn.aala.com/media/model_images/7338.png" alt="Crafted Dupattas" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Crafted Dupattas</h3>
+                    </a>
+
+                    <!-- Style Item (Video) -->
+                    <a href="#" class="flex-none w-[200px] md:w-[240px] group snap-start">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-brand-gray mb-4 img-zoom-hover rounded">
+                            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                                <source src="https://cdn.aala.com/media/model_images/15935.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                        <h3 class="text-sm md:text-base font-medium text-brand-dark group-hover:text-brand-accent transition-colors">Bruce</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Market Favorites (Trending Products) -->
+        <section class="py-16 md:py-24 bg-brand-gray">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-3">Trending Textiles</h2>
+                    <p class="text-sm md:text-base text-brand-muted font-light max-w-2xl mx-auto">
+                        As seasonal palettes shift towards earth tones and refined textures, these materials represent the current direction of contemporary fashion.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+                    
+                    <!-- Product 1 -->
+                    <div class="group flex flex-col bg-white overflow-hidden rounded shadow-sm border border-transparent hover:border-brand-border hover:shadow-md transition-all duration-300">
+                        <div class="relative aspect-4/5 overflow-hidden bg-gray-50 img-zoom-hover">
+                            <a href="#">
+                                <img src="https://cdn.aala.com/media/catalog/product/cache/1/small_image/500x/9df78eab33525d08d6e5fb8d27136e95/1/6/16005_1.jpg" alt="Armani Silk Blend Green" class="w-full h-full object-cover">
+                            </a>
+                            <!-- Wishlist Icon -->
+                            <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-muted hover:text-brand-accent shadow-sm transition-colors z-10">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </button>
+                            <!-- Quick Add Overlay (Desktop) -->
+                            <div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden lg:block z-10">
+                                <button class="w-full bg-brand-dark/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase font-semibold py-3 rounded hover:bg-brand-dark transition-colors">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-[13px] leading-tight font-medium text-brand-dark mb-2 line-clamp-2"><a href="#" class="hover:text-brand-accent transition-colors">Armani Silk Blend 58-Inches GREEN Per-Metre</a></h3>
+                            <p class="text-[11px] text-brand-muted mb-3 uppercase tracking-wider">SKU: 16005</p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="text-sm font-semibold text-brand-dark">₹305.00</span>
+                                <!-- Mobile Add Icon -->
+                                <button class="lg:hidden text-brand-dark hover:text-brand-accent p-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group flex flex-col bg-white overflow-hidden rounded shadow-sm border border-transparent hover:border-brand-border hover:shadow-md transition-all duration-300">
+                        <div class="relative aspect-4/5 overflow-hidden bg-gray-50 img-zoom-hover">
+                            <a href="#">
+                                <img src="https://cdn.aala.com/media/catalog/product/cache/1/small_image/500x/9df78eab33525d08d6e5fb8d27136e95/1/6/16000_1.jpg" alt="Handwork Organza Dupatta" class="w-full h-full object-cover">
+                            </a>
+                            <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-muted hover:text-brand-accent shadow-sm transition-colors z-10">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </button>
+                            <div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden lg:block z-10">
+                                <button class="w-full bg-brand-dark/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase font-semibold py-3 rounded hover:bg-brand-dark transition-colors">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-[13px] leading-tight font-medium text-brand-dark mb-2 line-clamp-2"><a href="#" class="hover:text-brand-accent transition-colors">Handwork-Ero Organza Viscose Dupatta 44-Inches DYEABLE</a></h3>
+                            <p class="text-[11px] text-brand-muted mb-3 uppercase tracking-wider">SKU: 16000</p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="text-sm font-semibold text-brand-dark">₹3,295.00</span>
+                                <button class="lg:hidden text-brand-dark hover:text-brand-accent p-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group flex flex-col bg-white overflow-hidden rounded shadow-sm border border-transparent hover:border-brand-border hover:shadow-md transition-all duration-300">
+                        <div class="relative aspect-4/5 overflow-hidden bg-gray-50 img-zoom-hover">
+                            <a href="#">
+                                <img src="https://cdn.aala.com/media/catalog/product/cache/1/small_image/210x/9df78eab33525d08d6e5fb8d27136e95/1/5/15975_1.jpg" alt="Jacquard Silk Blend Black" class="w-full h-full object-cover">
+                            </a>
+                            <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-muted hover:text-brand-accent shadow-sm transition-colors z-10">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </button>
+                            <div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden lg:block z-10">
+                                <button class="w-full bg-brand-dark/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase font-semibold py-3 rounded hover:bg-brand-dark transition-colors">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-[13px] leading-tight font-medium text-brand-dark mb-2 line-clamp-2"><a href="#" class="hover:text-brand-accent transition-colors">Jacquard Silk Blend 58-Inches BLACK Per-Metre</a></h3>
+                            <p class="text-[11px] text-brand-muted mb-3 uppercase tracking-wider">SKU: 15975</p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="text-sm font-semibold text-brand-dark">₹745.00</span>
+                                <button class="lg:hidden text-brand-dark hover:text-brand-accent p-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group flex flex-col bg-white overflow-hidden rounded shadow-sm border border-transparent hover:border-brand-border hover:shadow-md transition-all duration-300">
+                        <div class="relative aspect-4/5 overflow-hidden bg-gray-50 img-zoom-hover">
+                            <a href="#">
+                                <img src="https://cdn.aala.com/media/catalog/product/cache/1/small_image/500x/9df78eab33525d08d6e5fb8d27136e95/1/5/15997_1_3.jpg" alt="Frappe Silk Blend Peach" class="w-full h-full object-cover">
+                            </a>
+                            <button class="absolute top-3 right-3 w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-brand-accent shadow-sm transition-colors z-10">
+                                <svg class="w-4 h-4 fill-current" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </button>
+                            <div class="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 hidden lg:block z-10">
+                                <button class="w-full bg-brand-dark/90 backdrop-blur-sm text-white text-xs tracking-wider uppercase font-semibold py-3 rounded hover:bg-brand-dark transition-colors">Quick Add</button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col flex-grow">
+                            <h3 class="text-[13px] leading-tight font-medium text-brand-dark mb-2 line-clamp-2"><a href="#" class="hover:text-brand-accent transition-colors">Frappe Silk Blend 44-Inches PEACH Per-Metre</a></h3>
+                            <p class="text-[11px] text-brand-muted mb-3 uppercase tracking-wider">SKU: 15997</p>
+                            <div class="mt-auto flex items-center justify-between">
+                                <span class="text-sm font-semibold text-brand-dark">₹355.00</span>
+                                <button class="lg:hidden text-brand-dark hover:text-brand-accent p-1">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Grid (Replacing generic banners) -->
+        <section class="py-16 bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                    
+                    <!-- Banner 1 -->
+                    <a href="#" class="relative aspect-video md:aspect-auto md:h-[450px] overflow-hidden group block rounded-sm">
+                        <img src="https://cdn.aala.com/media/homepage/imagemainbanner/embroidered_fabric1776245474.png" alt="Embroidered & Fancy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 md:p-10">
+                            <h3 class="text-2xl md:text-3xl font-light text-white mb-2">Embroidered & Fancy</h3>
+                            <span class="inline-flex items-center text-[11px] font-semibold text-white uppercase tracking-widest border-b border-transparent group-hover:border-white transition-colors pb-1">
+                                Explore Selection
+                            </span>
+                        </div>
+                    </a>
+                    
+                    <div class="grid grid-rows-2 gap-4 md:gap-6">
+                        <!-- Banner 2 -->
+                        <a href="#" class="relative aspect-[21/9] md:aspect-auto overflow-hidden group block rounded-sm">
+                            <img src="https://cdn.aala.com/media/homepage/imagemainbanner/printed_fabric1776245474.png" alt="Printed Fabrics" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                            <div class="absolute inset-y-0 left-0 flex flex-col justify-center p-8 md:p-10">
+                                <h3 class="text-xl md:text-2xl font-light text-white mb-2">Printed Fabrics</h3>
+                                <span class="inline-flex items-center text-[11px] font-semibold text-white uppercase tracking-widest border-b border-transparent group-hover:border-white transition-colors pb-1 w-max">
+                                    Shop Prints
+                                </span>
+                            </div>
+                        </a>
+                        
+                        <!-- Banner 3 -->
+                        <a href="#" class="relative aspect-[21/9] md:aspect-auto overflow-hidden group block rounded-sm">
+                            <img src="https://cdn.aala.com/media/homepage/imagemainbanner/dupattas_fabric1776245474.png" alt="Dupattas & Stoles" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 object-top">
+                            <div class="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent"></div>
+                            <div class="absolute inset-y-0 left-0 flex flex-col justify-center p-8 md:p-10">
+                                <h3 class="text-xl md:text-2xl font-light text-white mb-2">Dupattas & Stoles</h3>
+                                <span class="inline-flex items-center text-[11px] font-semibold text-white uppercase tracking-widest border-b border-transparent group-hover:border-white transition-colors pb-1 w-max">
+                                    Discover Layering
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop By Color (Original Assets) -->
+        <section class="py-16 bg-brand-gray border-t border-brand-border">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-10 text-center">Curate by Tone</h2>
+                
+                <div class="flex overflow-x-auto hide-scrollbar space-x-6 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x justify-start md:justify-center">
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/MAROON-AALA.png" alt="Maroon" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Maroon</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/BLUE-AALA.png" alt="Blue" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Blue</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/GREY-AALA.png" alt="Grey" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Grey</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/GOLD-AALA_1.png" alt="Gold" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Gold</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/OFFWHITE-AALA_1.png" alt="Off White" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Off-White</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center group flex-none snap-start">
+                        <img src="https://cdn.aala.com/media/homeblock5/BLACK-AALA.png" alt="Black" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-brand-border shadow-sm group-hover:border-brand-dark transition-colors mb-3">
+                        <span class="text-[11px] uppercase tracking-wider font-semibold text-brand-dark">Black</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community & Craft (Inspired By You / Original Videos) -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div class="max-w-2xl">
+                        <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-3">Community & Craft</h2>
+                        <p class="text-sm md:text-base text-brand-muted font-light">See how creators and designers are utilizing our latest textiles to bring their visions to life.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="relative aspect-[9/16] overflow-hidden rounded bg-gray-100 group">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="https://cdn.aala.com/media/homepage/videos/WhatsApp%20Video%202026-03-13%20at%2011.40.45%20PM.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white/90 backdrop-blur-sm p-3 rounded-full text-brand-dark shadow-lg">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[9/16] overflow-hidden rounded bg-gray-100 group">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="https://cdn.aala.com/media/homepage/videos/aala-20260324-0001.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white/90 backdrop-blur-sm p-3 rounded-full text-brand-dark shadow-lg">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[9/16] overflow-hidden rounded bg-gray-100 group hidden md:block">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="https://cdn.aala.com/media/homepage/videos/video2.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white/90 backdrop-blur-sm p-3 rounded-full text-brand-dark shadow-lg">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative aspect-[9/16] overflow-hidden rounded bg-gray-100 group hidden md:block">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <source src="https://cdn.aala.com/media/homepage/videos/video3.mp4" type="video/mp4">
+                        </video>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <button class="bg-white/90 backdrop-blur-sm p-3 rounded-full text-brand-dark shadow-lg">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20"><path d="M4 4l12 6-12 6z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Material Discoverability (Footer custom cards) -->
+        <section class="py-16 bg-brand-gray border-t border-brand-border">
+            <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-xl md:text-2xl font-light text-brand-dark mb-8">Base Materials</h2>
+                <div class="flex overflow-x-auto hide-scrollbar space-x-4 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+                    <!-- Material Cards -->
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-cotton.jpeg" alt="Cotton" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Cotton</span>
+                    </a>
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-silk.jpeg" alt="Silk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Silk</span>
+                    </a>
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-linen.jpeg" alt="Linen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Linen</span>
+                    </a>
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-chanderi.jpeg" alt="Chanderi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Chanderi</span>
+                    </a>
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-modal.jpeg" alt="Modal" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Modal</span>
+                    </a>
+                    <a href="#" class="flex-none w-28 group text-center">
+                        <div class="aspect-square rounded-full overflow-hidden mb-3 border border-brand-border group-hover:border-brand-dark transition-colors bg-white">
+                            <img src="https://cdn.aala.com/media/wysiwyg/material/f-raw-silk.jpeg" alt="Raw Silk" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <span class="text-xs font-medium text-brand-dark">Raw Silk</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section (Original Intent Refined) -->
+        <section class="py-20 border-t border-brand-border bg-white">
+            <div class="max-w-2xl mx-auto px-4 text-center">
+                <h2 class="text-2xl md:text-3xl font-light text-brand-dark mb-4">Join Our Whatsletter</h2>
+                <p class="text-brand-muted font-light mb-8 text-sm md:text-base">
+                    Stay informed. Be the first to know about our latest fabric collections, styling updates, and exclusive releases directly via WhatsApp or Email.
+                </p>
+                
+                <form class="flex flex-col sm:flex-row max-w-lg mx-auto gap-3">
+                    <input type="email" placeholder="Your Email Address" class="flex-grow px-5 py-3.5 bg-brand-gray border border-brand-border text-brand-dark rounded-sm focus:outline-none focus:border-brand-dark placeholder-brand-muted text-sm" required>
+                    <button type="submit" class="px-8 py-3.5 bg-brand-dark text-white font-semibold uppercase tracking-wider text-[11px] rounded-sm hover:bg-brand-accent transition-colors duration-300">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Preserving Original Links & Badges) -->
+    <footer class="bg-brand-gray border-t border-brand-border pt-16 pb-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-2">
+                    <a href="#" class="inline-block mb-6">
+                        <img src="https://www.aala.com/skin/frontend/base/default/images/logo.png" 
+                             alt="AALA" 
+                             class="h-8 w-auto object-contain"
+                             onerror="this.onerror=null; this.outerHTML='<span class=\'text-3xl font-bold tracking-widest text-brand-dark uppercase\'>AALA</span>';">
+                    </a>
+                    <p class="text-brand-muted font-light text-sm mb-6 max-w-sm leading-relaxed">
+                        India's Leading Legacy Fabric Brand. Serving the fashion designer industry for three generations to keep the tradition of offering the widest & up-to-date variety of Designer Fabrics, Dupattas and Stoles.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-5">
+                        <a href="https://www.facebook.com/aala" target="_blank" class="text-brand-dark hover:text-brand-accent transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/aala/" target="_blank" class="text-brand-dark hover:text-brand-accent transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://in.pinterest.com/aala" target="_blank" class="text-brand-dark hover:text-brand-accent transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Footer Links -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-dark mb-5">Shop Categories</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Plain Fabrics</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Shaded Fabrics</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Embroidered & Fancy</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Printed Fabrics</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Dupattas & Stoles</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-dark mb-5">Help & Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">FAQs</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Return Policy</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-dark mb-5">Know More</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Wholesale Enquiry</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">About AALA</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Locate Store</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Our Services</a></li>
+                        <li><a href="#" class="text-brand-muted hover:text-brand-dark text-sm transition-colors">Press Center</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar / Payment Info -->
+            <div class="pt-8 border-t border-brand-border flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex flex-col items-center md:items-start">
+                    <p class="text-[11px] uppercase tracking-wider text-brand-muted mb-2">&copy; 1996-2026 AALA. All Rights Reserved.</p>
+                    <div class="flex space-x-4 text-xs text-brand-muted font-medium">
+                        <a href="#" class="hover:text-brand-dark transition-colors">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-brand-dark transition-colors">Terms of Use</a>
+                    </div>
+                </div>
+                <!-- Trust & Payment (Original Assets) -->
+                <div class="flex flex-col items-center md:items-end">
+                    <span class="text-[10px] font-semibold text-brand-dark uppercase tracking-wider mb-2">100% Secured Payment</span>
+                    <img src="https://cdn.aala.com/media/images/trust-01.png" alt="Secure Payment Methods" class="h-6 w-auto object-contain opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Sticky Header Shadow -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
