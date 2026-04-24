@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOST Eyewear | Premium Eyewear Collections</title>
+    <meta name="description" content="Discover the latest premium eyewear collections from KOST.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fcfcfc',
+                            100: '#f5f5f5',
+                            900: '#1a1a1a',
+                            gold: '#d4af37',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Utilities */
+        .product-blend { mix-blend-mode: multiply; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth Image Loading */
+        img { transition: opacity 0.3s ease-in-out; }
+        img[loading] { opacity: 0; }
+        img.loaded { opacity: 1; }
+    </style>
+</head>
+<body class="bg-brand-50 text-brand-900 font-sans antialiased selection:bg-brand-900 selection:text-white">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-brand-900 text-brand-100 py-2.5 px-4 text-xs font-medium tracking-wide">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 text-gray-400">
+                <a href="/media/wysiwyg/CEDECLARATION.pdf" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    CE Declaration
+                </a>
+                <a href="https://www.kost-online.com/catalogdonwload/index/download/" class="hover:text-white transition-colors">Catalog</a>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4">
+                    <a href="https://www.kost-online.com/customer/account/create/" class="hover:text-white transition-colors">Sign Up</a>
+                    <a href="https://www.kost-online.com/customer/account/" class="hover:text-white transition-colors">Account</a>
+                </div>
+                <div class="h-3 w-px bg-gray-700 hidden sm:block"></div>
+                <div class="flex items-center gap-4">
+                    <button class="flex items-center gap-1.5 hover:text-white transition-colors">
+                        <img src="https://www.kost-online.com/skin/frontend/ultimo/kost/images/flags/english.png" alt="English" class="w-4 h-3 object-cover rounded-sm">
+                        <span>EN / EUR</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="glass-nav sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0">
+                    <img src="https://www.kost-online.com/skin/frontend/ultimo/kost/images/logo.png" alt="KOST Eyewear" class="h-10 w-auto">
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">Trendy</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">Polarized</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">Fit over</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">Clip On</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">Kids</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">H collection</a>
+                    <a href="#" class="text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">OSHI</a>
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">
+                            Reading Glasses
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+                    <div class="relative group">
+                        <button class="flex items-center text-sm font-medium text-brand-900 hover:text-gray-500 transition-colors">
+                            Displays & Accessories
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+                </nav>
+
+                <!-- Action Icons -->
+                <div class="flex items-center space-x-5">
+                    <button class="p-2 text-brand-900 hover:text-gray-500 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <button class="p-2 text-brand-900 hover:text-gray-500 transition-colors relative">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="absolute top-1 right-1 w-2h-2 bg-brand-gold rounded-full"></span>
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button class="lg:hidden p-2 text-brand-900">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- USP Bar -->
+    <div class="bg-gray-50 border-b border-gray-200 py-3 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-center items-center gap-x-12 gap-y-2 text-sm text-gray-600">
+            <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Largest in Europe
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Worldwide Shipping within 12 hours
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                Stock in Netherlands and Spain
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative w-full h-[75vh] min-h-[600px] flex items-center justify-center lg:justify-start">
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://www.kost-online.com/media/wysiwyg/vicus/Vicus_Custom_Beach.webp" alt="KOST 2026 Collection" class="w-full h-full object-cover object-[70%_center] lg:object-center" onload="this.classList.add('loaded')">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-xl text-center lg:text-left">
+                <span class="block text-brand-gold font-semibold tracking-widest uppercase text-sm mb-4">New Arrivals</span>
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl text-brand-900 leading-tight mb-6">
+                    Discover the<br/>2026 Collection
+                </h1>
+                <p class="text-gray-600 text-lg mb-10 max-w-md mx-auto lg:mx-0">
+                    Precision craftsmanship meets contemporary design. Explore our latest styles engineered for both comfort and elegance.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="https://www.kost-online.com/customer/account/create/" class="inline-flex justify-center items-center px-8 py-4 bg-brand-900 text-white text-sm font-medium tracking-wide uppercase hover:bg-gray-800 transition-colors duration-300">
+                        Register Now
+                    </a>
+                    <a href="#new-collection" class="inline-flex justify-center items-center px-8 py-4 bg-transparent border border-brand-900 text-brand-900 text-sm font-medium tracking-wide uppercase hover:bg-gray-50 transition-colors duration-300">
+                        View Lookbook
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Collection Grid -->
+    <section id="new-collection" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="font-serif text-3xl sm:text-4xl text-brand-900 mb-3">The New Collection</h2>
+                <p class="text-gray-500">Curated styles for the upcoming season.</p>
+            </div>
+            <a href="/kost-trendy.html" class="hidden sm:inline-flex items-center text-sm font-medium text-brand-900 hover:text-brand-gold transition-colors pb-1 border-b border-brand-900 hover:border-brand-gold">
+                Shop All <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            <!-- Product 1 -->
+            <a href="https://www.kost-online.com/26-001.html" class="group block">
+                <div class="relative bg-gray-100 aspect-[4/3] sm:aspect-square mb-6 overflow-hidden flex items-center justify-center">
+                    <img src="https://www.kost-online.com/media/catalog/product/cache/6/small_image/650x/9df78eab33525d08d6e5fb8d27136e95/2/6/26-001_1.jpeg" alt="26-001 Kost Sunglasses" class="w-full h-full object-contain p-8 product-blend group-hover:scale-105 transition-transform duration-500" onload="this.classList.add('loaded')">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
+                        <span class="bg-white/90 backdrop-blur text-brand-900 text-xs font-medium tracking-wider uppercase px-6 py-3 w-full text-center shadow-sm">View Details</span>
+                    </div>
+                </div>
+                <h3 class="text-sm font-medium text-brand-900">26-001 Kost Sunglasses</h3>
+                <p class="text-sm text-gray-500 mt-1">Log in to view pricing</p>
+            </a>
+
+            <!-- Product 2 -->
+            <a href="https://www.kost-online.com/26-002.html" class="group block">
+                <div class="relative bg-gray-100 aspect-[4/3] sm:aspect-square mb-6 overflow-hidden flex items-center justify-center">
+                    <img src="https://www.kost-online.com/media/catalog/product/cache/6/small_image/650x/9df78eab33525d08d6e5fb8d27136e95/2/6/26-002.jpeg" alt="26-002 Kost Sunglasses" class="w-full h-full object-contain p-8 product-blend group-hover:scale-105 transition-transform duration-500" onload="this.classList.add('loaded')">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
+                        <span class="bg-white/90 backdrop-blur text-brand-900 text-xs font-medium tracking-wider uppercase px-6 py-3 w-full text-center shadow-sm">View Details</span>
+                    </div>
+                </div>
+                <h3 class="text-sm font-medium text-brand-900">26-002 Kost Sunglasses</h3>
+                <p class="text-sm text-gray-500 mt-1">Log in to view pricing</p>
+            </a>
+
+            <!-- Product 3 -->
+            <a href="https://www.kost-online.com/26-054-kost-sunglasses.html" class="group block">
+                <div class="relative bg-gray-100 aspect-[4/3] sm:aspect-square mb-6 overflow-hidden flex items-center justify-center">
+                    <img src="https://www.kost-online.com/media/catalog/product/cache/6/small_image/650x/9df78eab33525d08d6e5fb8d27136e95/2/6/26-054.jpg" alt="26-054 Kost Sunglasses" class="w-full h-full object-contain p-8 product-blend group-hover:scale-105 transition-transform duration-500" onload="this.classList.add('loaded')">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
+                        <span class="bg-white/90 backdrop-blur text-brand-900 text-xs font-medium tracking-wider uppercase px-6 py-3 w-full text-center shadow-sm">View Details</span>
+                    </div>
+                </div>
+                <h3 class="text-sm font-medium text-brand-900">26-054 Kost Sunglasses</h3>
+                <p class="text-sm text-gray-500 mt-1">Log in to view pricing</p>
+            </a>
+
+            <!-- Product 4 -->
+            <a href="https://www.kost-online.com/26-135-kost-sunglasses.html" class="group block">
+                <div class="relative bg-gray-100 aspect-[4/3] sm:aspect-square mb-6 overflow-hidden flex items-center justify-center">
+                    <img src="https://www.kost-online.com/media/catalog/product/cache/6/small_image/650x/9df78eab33525d08d6e5fb8d27136e95/2/6/26-135.jpg" alt="26-135 Kost Sunglasses" class="w-full h-full object-contain p-8 product-blend group-hover:scale-105 transition-transform duration-500" onload="this.classList.add('loaded')">
+                    <div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-center">
+                        <span class="bg-white/90 backdrop-blur text-brand-900 text-xs font-medium tracking-wider uppercase px-6 py-3 w-full text-center shadow-sm">View Details</span>
+                    </div>
+                </div>
+                <h3 class="text-sm font-medium text-brand-900">26-135 Kost Sunglasses</h3>
+                <p class="text-sm text-gray-500 mt-1">Log in to view pricing</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Curated Collections -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- H Collection -->
+            <a href="/h-collection.html" class="group relative block overflow-hidden aspect-[4/3] md:aspect-[4/5] lg:aspect-video">
+                <img src="https://www.kost-online.com/media/wysiwyg/vicus/Dame.png" alt="H Collection" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onload="this.classList.add('loaded')">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <span class="text-white/80 text-xs font-medium tracking-widest uppercase mb-2">Signature Series</span>
+                    <h3 class="text-white font-serif text-3xl sm:text-4xl mb-4">H Collection</h3>
+                    <div class="inline-flex items-center text-sm font-medium text-white group-hover:text-brand-gold transition-colors">
+                        Explore Collection <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Trendy Collection -->
+            <a href="/kost-trendy.html" class="group relative block overflow-hidden aspect-[4/3] md:aspect-[4/5] lg:aspect-video">
+                <img src="https://www.kost-online.com/media/wysiwyg/vicus/Heer.png" alt="Trendy Collection" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" onload="this.classList.add('loaded')">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <span class="text-white/80 text-xs font-medium tracking-widest uppercase mb-2">Modern Classics</span>
+                    <h3 class="text-white font-serif text-3xl sm:text-4xl mb-4">Trendy Collection</h3>
+                    <div class="inline-flex items-center text-sm font-medium text-white group-hover:text-brand-gold transition-colors">
+                        Explore Collection <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-gray-400 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Brand Info & Contact -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <img src="https://www.kost-online.com/skin/frontend/ultimo/kost/images/logo.png" alt="KOST Eyewear" class="h-8 w-auto mb-8 opacity-90 filter invert brightness-0">
+                    <address class="not-italic text-sm leading-relaxed space-y-4">
+                        <p class="text-gray-300 font-medium">Kost Eyewear BV</p>
+                        <p>Spacelab 13<br>3824 MR Amersfoort</p>
+                        <p>
+                            <a href="mailto:office@kost-international.com" class="hover:text-white transition-colors">office@kost-international.com</a><br>
+                            T: +31 (0) 33 4552100
+                        </p>
+                        <div class="pt-4 space-y-1 text-xs text-gray-500">
+                            <p>KvK nummer: 73788384</p>
+                            <p>BTW Nummer: NL859664594B01</p>
+                        </div>
+                    </address>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="md:col-span-4 lg:col-span-4 flex flex-col space-y-4 text-sm">
+                    <h4 class="text-white font-medium mb-2 tracking-wide">Information</h4>
+                    <a href="https://www.kost-online.com/over-ons" class="hover:text-white transition-colors w-fit">About Us</a>
+                    <a href="https://www.kost-online.com/kb" class="hover:text-white transition-colors w-fit">FAQ</a>
+                    <a href="https://www.kost-online.com/media/wysiwyg/CEDECLARATION.pdf" target="_blank" class="hover:text-white transition-colors w-fit">CE Declaration</a>
+                    <a href="https://www.kost-online.com/privacy-policy-cookie-restriction-mode" class="hover:text-white transition-colors w-fit">Privacy Policy</a>
+                    <a href="https://www.kost-online.com/algemene_voorwaarden" class="hover:text-white transition-colors w-fit">Algemene Voorwaarden</a>
+                    <a href="https://www.kost-online.com/contacts" class="hover:text-white transition-colors w-fit">Contact</a>
+                </div>
+
+                <!-- Catalog CTA -->
+                <div class="md:col-span-4 lg:col-span-4">
+                    <h4 class="text-white font-medium mb-4 tracking-wide">2026 Collection Catalog</h4>
+                    <p class="text-sm mb-6 leading-relaxed">Discover our complete range of eyewear styles for the upcoming season in our comprehensive digital catalog.</p>
+                    <a href="https://www.kost-online.com/media/wysiwyg/E_Catalog_2026.pdf" target="_blank" class="inline-flex justify-center items-center px-6 py-3 border border-gray-600 hover:border-white text-white text-sm font-medium transition-colors w-full sm:w-auto">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download PDF Catalog
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Kost International BV. All Rights Reserved.</p>
+                <div class="flex space-x-6">
+                    <!-- Social or other bottom links could go here -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
