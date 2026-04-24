@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Being Chef | Premium Vegetarian Dining & Catering</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons (Lightweight & Premium Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#3AAA35',
+                            greenDark: '#2c8627',
+                            red: '#E53935',
+                            dark: '#364153',
+                            light: '#F8F9FA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Abril Fatface', 'serif'],
+                    },
+                    animation: {
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Hide scrollbar for clean horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-brand-light antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Sticky Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="block">
+                        <img class="h-10 w-auto object-contain" src="https://beingchef.com/wp-content/uploads/2026/02/logo-450x179.png" alt="Being Chef Logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#purpose" class="text-sm font-medium text-gray-700 hover:text-brand-green transition-colors">Purpose</a>
+                    <a href="#solutions" class="text-sm font-medium text-gray-700 hover:text-brand-green transition-colors">Solutions</a>
+                    <a href="#difference" class="text-sm font-medium text-gray-700 hover:text-brand-green transition-colors">Difference</a>
+                    <a href="#stories" class="text-sm font-medium text-gray-700 hover:text-brand-green transition-colors">Stories</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:+919560500345" class="flex items-center text-sm font-medium text-gray-700 hover:text-brand-green transition-colors">
+                        <i class="ph ph-phone mr-2 text-lg"></i>
+                        +91 9560500345
+                    </a>
+                    <a href="#contact" class="bg-brand-green hover:bg-brand-greenDark text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm shadow-brand-green/20">
+                        Reserve a Table
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="text-gray-600 hover:text-brand-green p-2" aria-label="Toggle menu">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-gray-900">
+        <div class="absolute inset-0">
+            <img src="https://beingchef.com/wp-content/uploads/2026/03/Desktop.png" alt="Being Chef Plating" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-transparent"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6 border border-white/20">
+                    <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+                    <span class="text-xs font-medium text-white tracking-wide uppercase">Forbes 30 Under 30 Asia</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white leading-tight mb-6">
+                    Chef-crafted <span class="text-brand-green">Excellence.</span><br>
+                    Endless <span class="text-brand-red">Choices.</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed font-light max-w-xl">
+                    Whether it’s experiential dining, nutritionally managed corporate meals, or seamless catering services — Being Chef delivers pure vegetarian experiences built on trust, flavor, and exceptional quality.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#solutions" class="bg-brand-green hover:bg-brand-greenDark text-white text-center px-8 py-3.5 rounded-full font-medium transition-all shadow-lg shadow-brand-green/20 flex items-center justify-center">
+                        Explore Our Solutions
+                        <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                    <a href="https://wa.me/+919560500345" target="_blank" class="bg-white hover:bg-gray-50 text-brand-dark text-center px-8 py-3.5 rounded-full font-medium transition-all flex items-center justify-center">
+                        <i class="ph ph-whatsapp-logo mr-2 text-xl text-green-600"></i>
+                        Chat with us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats Bar (Overlapping) -->
+    <div class="relative -mt-12 z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl shadow-gray-200/50 p-8 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
+            <div class="text-center px-4">
+                <p class="text-3xl font-serif text-brand-dark mb-1">1M<span class="text-brand-green text-2xl">+</span></p>
+                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Meals Served</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="text-3xl font-serif text-brand-dark mb-1">12<span class="text-brand-green text-2xl">+</span></p>
+                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Years Experience</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="text-3xl font-serif text-brand-dark mb-1">20<span class="text-brand-green text-2xl">+</span></p>
+                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Awards Won</p>
+            </div>
+            <div class="text-center px-4">
+                <p class="text-3xl font-serif text-brand-dark mb-1">100<span class="text-brand-green text-2xl">%</span></p>
+                <p class="text-xs font-medium text-gray-500 uppercase tracking-wider">Pure Veg</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purpose Section -->
+    <section id="purpose" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <h4 class="text-sm font-semibold text-brand-green uppercase tracking-widest mb-3">Our Purpose</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand-dark mb-6 leading-tight">
+                        Built on <span class="text-brand-green">Passion.</span><br>
+                        Served with <span class="text-brand-red">Love.</span>
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Curated around the philosophy of <strong class="text-gray-900 font-medium">Vasudhaiva Kutumbakam</strong> — “The World is One Family” — Being Chef brings cultures together through food and thoughtfully designed experiences.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-8">
+                        From the authentic flavors of all 28 states and 8 union territories of India to globally inspired cuisines across continents, every dish is crafted in its pure vegetarian form.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-sm font-medium text-gray-700">
+                            <i class="ph-fill ph-check-circle text-brand-green mr-3 text-lg"></i>
+                            Recognized by the Government of India
+                        </li>
+                        <li class="flex items-center text-sm font-medium text-gray-700">
+                            <i class="ph-fill ph-check-circle text-brand-green mr-3 text-lg"></i>
+                            Forbes 30 Under 30 Asia featured founder
+                        </li>
+                        <li class="flex items-center text-sm font-medium text-gray-700">
+                            <i class="ph-fill ph-check-circle text-brand-green mr-3 text-lg"></i>
+                            100% Pure Vegetarian Excellence
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute inset-0 bg-brand-green/5 rounded-3xl transform translate-x-4 translate-y-4"></div>
+                    <img src="https://beingchef.com/wp-content/uploads/2026/03/Why-Choose-Us-595x664.png" alt="Being Chef Quality" class="relative rounded-3xl shadow-xl w-full object-cover h-[500px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section id="solutions" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h4 class="text-sm font-semibold text-brand-green uppercase tracking-widest mb-3">Our Solutions</h4>
+                <h2 class="text-3xl md:text-4xl font-serif text-brand-dark mb-6">
+                    Tailored Solutions for <span class="text-brand-red">Every Occasion</span>
+                </h2>
+                <p class="text-gray-600 text-lg">
+                    Reimagining the future of food and nutrition in India. Discover our thoughtfully curated offerings designed for modern lifestyles.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/Experiential-Dine-In.png" alt="Dine In" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/1.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">Experiential Dine-In</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            A one-of-a-kind global vegetarian dining experience where cultures, flavors, and heartfelt hospitality come together beautifully.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Reserve a Table <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/Host-Unforgettable-Events.png" alt="Events" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/2.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">Host Unforgettable Events</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Celebrate special moments at our themed dining destination, comfortably hosting up to 150 guests for intimate or corporate gatherings.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Plan Your Event <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/Corporate-Meals-Solutions.png" alt="Corporate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/3.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">Corporate Meals</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Power your workforce with fresh, nutritious vegetarian meals featuring expert-curated daily changing menus. Trusted by 100+ global enterprises.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Order Team Meals <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/Event-Catering-Solutions.png" alt="Catering" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/4.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">Event Catering</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Expert catering perfect for house parties, corporate events, and large gatherings at your venue. Loved by 1000+ clients.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Book Catering <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/Nutritional-Meal-Subscription.png" alt="Subscriptions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/5.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">Meal Subscriptions</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            Nutritious, personalized, homely meals crafted to match your taste and body goals. Skip the groceries and enjoy fresh daily comfort food.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Start Eating Better <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group bg-brand-light rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-brand-green/20 transition-all duration-300 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/5-min-Cooking-Kits.png" alt="Kits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white p-2 rounded-lg shadow-sm">
+                            <img src="https://beingchef.com/wp-content/uploads/2026/03/6.png" class="w-8 h-8" alt="Icon">
+                        </div>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-serif text-brand-dark mb-3">5-min Cooking Kits</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            The world’s first 5-minute Recipe Kit with pre-chopped ingredients, crafted recipes, and perfect portions. Fresh home cooking made smarter.
+                        </p>
+                        <a href="#contact" class="text-brand-green font-medium text-sm inline-flex items-center group-hover:text-brand-greenDark">
+                            Start Cooking Now <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (USPs) -->
+    <section id="difference" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h4 class="text-sm font-semibold text-brand-green uppercase tracking-widest mb-3">The Difference</h4>
+                <h2 class="text-3xl md:text-4xl font-serif mb-6">Why Customers <span class="text-brand-red">Love Us</span></h2>
+                <p class="text-gray-400 text-lg">
+                    With gratitude to 4,00,000+ supporters, we deliver premium vegetarian meals inspired by global flavors, combining hygiene, quality, and innovation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors duration-300">
+                        <i class="ph ph-user-focus text-3xl text-brand-green group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Made For You</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Every meal is thoughtfully personalized around your taste preferences, lifestyle, and nutrition goals.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors duration-300">
+                        <i class="ph ph-shield-check text-3xl text-brand-green group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Trusted Quality</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">We never compromise on hygiene or ingredients—delivering meals you can rely on with complete peace of mind.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors duration-300">
+                        <i class="ph ph-cooking-pot text-3xl text-brand-green group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Comforting Taste</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Inspired by homely flavors and global cuisines, every bite brings warmth, familiarity, and the joy of food.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-16 h-16 mx-auto bg-gray-800 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-green transition-colors duration-300">
+                        <i class="ph ph-leaf text-3xl text-brand-green group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h3 class="text-xl font-medium mb-3">Always Fresh</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Freshly prepared meals and curated recipe kits eliminate preservatives and menu fatigue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos Marquee -->
+    <section class="py-12 border-b border-gray-100 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-widest">Trusted by innovative companies & brands</h4>
+        </div>
+        <div class="relative flex overflow-x-hidden">
+            <div class="animate-marquee whitespace-nowrap flex items-center space-x-16 px-8">
+                <!-- Using provided logo indices -->
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/1-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/2-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/3-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/4-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/04/5.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/6-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/7.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+            </div>
+            <!-- Duplicate for seamless loop -->
+            <div class="animate-marquee whitespace-nowrap flex items-center space-x-16 px-8 absolute top-0">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/1-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/2-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/3-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/4-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/04/5.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/6-1.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+                <img src="https://beingchef.com/wp-content/uploads/2026/03/7.png" class="h-16 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" alt="Client Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories / Testimonials -->
+    <section id="stories" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h4 class="text-sm font-semibold text-brand-green uppercase tracking-widest mb-3">Real Stories</h4>
+                <h2 class="text-3xl md:text-4xl font-serif text-brand-dark mb-6">Where Customers Become Family</h2>
+                <p class="text-gray-600 text-lg">
+                    Don’t just take our word for it — hear directly from the people who trust us every day. Genuine experiences shared by our community.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <div class="flex items-center space-x-1 text-yellow-400 mb-4">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-grow">
+                        "Finding hygienic, healthy vegetarian food isn’t easy, but Being Chef made it effortless. Our kitty party was a hit, and now it’s our entire group’s favorite celebration spot."
+                    </p>
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-50">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/1-scaled-e1773402077299.jpg" alt="Vibha Taparia" class="w-10 h-10 rounded-full object-cover mr-3">
+                        <div>
+                            <h5 class="text-sm font-bold text-brand-dark">Vibha Taparia</h5>
+                            <p class="text-xs text-gray-500">Homemaker</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <div class="flex items-center space-x-1 text-yellow-400 mb-4">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-grow">
+                        "As a Jain, finding pure-veg multi-cuisine options felt impossible. They truly made celebrations stress-free for me since 2015."
+                    </p>
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-50">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/2-scaled-e1773402041573.jpg" alt="Jimmy Chordia" class="w-10 h-10 rounded-full object-cover mr-3">
+                        <div>
+                            <h5 class="text-sm font-bold text-brand-dark">Jimmy Chordia</h5>
+                            <p class="text-xs text-gray-500">Sr. Manager, Ameriprise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <div class="flex items-center space-x-1 text-yellow-400 mb-4">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-grow">
+                        "We’ve trusted them for years. Large-scale execution, menu flexibility and punctual service make a big difference. Once you work with them, you don't look for another."
+                    </p>
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-50">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/3-scaled-e1773401907301.jpg" alt="Shuchi Sharma" class="w-10 h-10 rounded-full object-cover mr-3">
+                        <div>
+                            <h5 class="text-sm font-bold text-brand-dark">Shuchi Sharma</h5>
+                            <p class="text-xs text-gray-500">Sourcing Head, Genpact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col">
+                    <div class="flex items-center space-x-1 text-yellow-400 mb-4">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 italic flex-grow">
+                        "Booked them for one house party and now half our community uses them. Easy coordination, good portions, and food that works for everyone."
+                    </p>
+                    <div class="flex items-center mt-auto pt-4 border-t border-gray-50">
+                        <img src="https://beingchef.com/wp-content/uploads/2026/03/4-e1773401860207.avif" alt="Rahul Thakur" class="w-10 h-10 rounded-full object-cover mr-3">
+                        <div>
+                            <h5 class="text-sm font-bold text-brand-dark">Rahul Thakur</h5>
+                            <p class="text-xs text-gray-500">Founder, VogicAI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Capture / Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-green rounded-3xl p-8 md:p-12 text-center text-white shadow-2xl shadow-brand-green/30 relative overflow-hidden">
+                <!-- Abstract decorative shapes -->
+                <div class="absolute top-0 right-0 -mt-16 -mr-16 w-64 h-64 bg-white opacity-5 rounded-full blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 -mb-16 -ml-16 w-48 h-48 bg-white opacity-10 rounded-full blur-xl"></div>
+                
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-serif mb-4">Tell Us What You Need</h2>
+                    <p class="text-green-50 mb-8 max-w-2xl mx-auto">
+                        Don’t let great plans wait. Share your requirements today or connect directly via call or WhatsApp. Quick responses and personalized guidance within 24 hours.
+                    </p>
+                    
+                    <form class="bg-white/10 backdrop-blur-md p-2 rounded-full flex flex-col sm:flex-row max-w-xl mx-auto mb-8 border border-white/20">
+                        <input type="email" placeholder="Enter your email address" class="bg-transparent text-white placeholder-green-100 flex-grow px-6 py-3 outline-none focus:ring-0 appearance-none w-full mb-2 sm:mb-0 sm:rounded-l-full rounded-full">
+                        <button type="button" class="bg-white text-brand-green hover:bg-gray-50 px-8 py-3 rounded-full font-bold transition-colors whitespace-nowrap">
+                            Get Started
+                        </button>
+                    </form>
+                    
+                    <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                        <a href="tel:+919560500345" class="flex items-center hover:text-green-100 transition-colors">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3 backdrop-blur-sm">
+                                <i class="ph ph-phone text-xl"></i>
+                            </div>
+                            +91 9560500345
+                        </a>
+                        <a href="mailto:sales@beingchef.com" class="flex items-center hover:text-green-100 transition-colors">
+                            <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-3 backdrop-blur-sm">
+                                <i class="ph ph-envelope text-xl"></i>
+                            </div>
+                            sales@beingchef.com
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <img src="https://beingchef.com/wp-content/uploads/2026/02/logo-450x179.png" alt="Being Chef" class="h-12 mb-6 object-contain filter brightness-0 invert">
+                    <p class="text-sm leading-relaxed mb-6 text-gray-400">
+                        Delivering experiences built on trust, flavor, and exceptional quality. From experiential dining to corporate meal solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-green hover:text-white transition-colors"><i class="ph-fill ph-linkedin-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#purpose" class="hover:text-brand-green transition-colors">Our Purpose</a></li>
+                        <li><a href="#solutions" class="hover:text-brand-green transition-colors">Services & Solutions</a></li>
+                        <li><a href="#difference" class="hover:text-brand-green transition-colors">Why Choose Us</a></li>
+                        <li><a href="#stories" class="hover:text-brand-green transition-colors">Customer Stories</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Our Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-green transition-colors">Experiential Dine-In</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition-colors">Corporate Meals</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition-colors">Event Catering</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition-colors">5-Min Cooking Kits</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start">
+                            <i class="ph ph-map-pin mt-1 mr-3 text-brand-green text-lg"></i>
+                            <span>Find us in Gurgaon, Delhi NCR</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ph ph-phone mr-3 text-brand-green text-lg"></i>
+                            <a href="tel:+919560500345" class="hover:text-white">+91 9560500345</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="ph ph-envelope mr-3 text-brand-green text-lg"></i>
+                            <a href="mailto:sales@beingchef.com" class="hover:text-white">sales@beingchef.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2026 Being Chef. All rights reserved. Made with <span class="text-brand-red">♥</span> in India.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
