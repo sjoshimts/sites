@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathotileo | Premium Bathroom Furniture & Fittings</title>
+    <meta name="description" content="Discover thoughtfully designed bathroom spaces. Explore our complete collection of high-quality furniture, showers, basins, and taps.">
+    
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            navy: '#000F55',
+                            light: '#f8fafc',
+                            accent: '#e2e8f0',
+                            taupe: '#a8a29e'
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 4px 40px -10px rgba(0,0,0,0.06)',
+                        'premium-hover': '0 10px 50px -10px rgba(0,0,0,0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .blend-darken { mix-blend-mode: darken; }
+        
+        /* Smooth Accordion Details */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        
+        /* Custom Megamenu Transitions */
+        .megamenu-panel {
+            visibility: hidden; opacity: 0; transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .megamenu-trigger:hover .megamenu-panel {
+            visibility: visible; opacity: 1; transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased selection:bg-brand-navy selection:text-white flex flex-col min-h-screen">
+
+    <!-- 1. Top Utility Bar -->
+    <div class="bg-brand-navy text-white text-[11px] md:text-xs font-medium tracking-wide border-b border-white/10">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col sm:flex-row justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="tel:01615115520" class="flex items-center hover:text-slate-300 transition-colors">
+                    <i class="ph ph-phone mr-1.5 text-sm"></i> 0161 511 5520
+                </a>
+                <a href="mailto:sales@bathotileo.com" class="hidden md:flex items-center hover:text-slate-300 transition-colors">
+                    <i class="ph ph-envelope-simple mr-1.5 text-sm"></i> sales@bathotileo.com
+                </a>
+            </div>
+            <div class="mt-1.5 sm:mt-0 flex items-center space-x-4 sm:space-x-6">
+                <span class="flex items-center text-slate-200">
+                    <i class="ph ph-truck mr-1.5 text-sm"></i> Complimentary delivery over £500
+                </span>
+                <div class="hidden lg:flex items-center space-x-3 pl-4 border-l border-white/20">
+                    <img src="https://www.bathotileo.com/media/wysiwyg/payments_2_.png" alt="Payment Methods" class="h-4 object-contain opacity-80">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Main Header (Sticky) -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-200/60">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="lg:hidden p-2 -ml-2 text-slate-600 hover:text-brand-navy">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0">
+                    <img src="https://www.bathotileo.com/media/wysiwyg/logo-png.png" alt="Bathotileo Logo" class="h-9 md:h-11 w-auto">
+                </a>
+
+                <!-- Search -->
+                <div class="hidden lg:flex flex-1 max-w-3xl mx-12">
+                    <div class="relative w-full">
+                        <input type="text" placeholder="Search for collections, specifications, or product codes..." 
+                               class="w-full bg-slate-100 text-slate-800 rounded-lg pl-12 pr-4 py-2.5 focus:outline-none focus:ring-1 focus:ring-brand-navy/30 focus:bg-white border border-transparent transition-all text-sm">
+                        <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    </div>
+                </div>
+
+                <!-- Icons -->
+                <div class="flex items-center space-x-2 sm:space-x-5">
+                    <a href="#" class="text-slate-600 hover:text-brand-navy transition-colors flex items-center group hidden sm:flex">
+                        <i class="ph ph-user text-xl"></i>
+                        <span class="text-xs font-medium ml-2">Account</span>
+                    </a>
+                    <a href="#" class="text-slate-600 hover:text-brand-navy transition-colors flex items-center group hidden lg:flex">
+                        <i class="ph ph-heart text-xl"></i>
+                        <span class="text-xs font-medium ml-2">Wishlist <span class="text-slate-400">(0)</span></span>
+                    </a>
+                    <a href="#" class="text-slate-600 hover:text-brand-navy transition-colors flex items-center group bg-slate-50 px-3 py-2 rounded-lg border border-slate-200">
+                        <i class="ph ph-shopping-bag text-xl"></i>
+                        <span class="text-xs font-semibold ml-2">Basket</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Megamenu Navigation -->
+        <nav class="hidden lg:block border-t border-slate-100 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex justify-center space-x-8">
+                    <!-- Brands -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Brands <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-8">
+                            <div class="max-w-[1400px] mx-auto text-center">
+                                <h3 class="text-lg font-semibold text-brand-navy mb-4">Our Brand Partners</h3>
+                                <a href="#" class="text-sm text-slate-500 hover:text-brand-navy underline">View All Brands</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Furniture -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Furniture <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-cabinet mr-2 text-brand-navy text-lg"></i> Vanity Units</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Free Standing Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Wall Hung Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Cloakroom Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Traditional Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Double Sink Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Combination Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Countertop Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Corner Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Base Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Internal Draws and Dividers</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Vanity Worktops</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Vanity LED Lights</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Legs & Handles</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-archive-box mr-2 text-brand-navy text-lg"></i> Cabinets & Storage</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Furniture Cabinets</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">WC Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Bathroom Furniture Packs</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Side Cupboards</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">WC Units Worktops</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Cabinet Legs & Handles</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-squares-four mr-2 text-brand-navy text-lg"></i> Fitted Furniture</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Vanity Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Semi Recessed & Sit on Basins</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Base, Wall & Tall Units</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">WC Units & BTW Pans</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Worktops & Concealed Cisterns</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-50 p-6 rounded-xl border border-slate-100 flex flex-col items-center justify-center text-center">
+                                    <img src="https://www.bathotileo.com/media/wysiwyg/Menus/Furniture/main_fitted_furniture.jpg" alt="Featured Furniture" class="w-full h-32 object-cover rounded-lg mb-4">
+                                    <h5 class="font-semibold text-brand-navy mb-2">The 2026 Fitted Collection</h5>
+                                    <p class="text-xs text-slate-500 mb-4">Seamless integration for modern spaces.</p>
+                                    <a href="#" class="text-xs font-bold uppercase tracking-wide border-b border-brand-navy pb-1">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Showers -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Showers <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-shower mr-2 text-brand-navy text-lg"></i> Showers</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Electric Showers</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Digital Showers</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Shower Towers & Columns</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Modern Showers</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Traditional Showers</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Commercial Shower Kits</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Shower Pumps</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-knobs mr-2 text-brand-navy text-lg"></i> Shower Valves</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Exposed Shower Valves</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Concealed Shower Valves</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Modern & Traditional Valves</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">1, 2, & 3 Outlet Valves</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Push Button Valves</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Exposed Shower Sets</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider flex items-center"><i class="ph ph-drop mr-2 text-brand-navy text-lg"></i> Shower Accessories</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Shower Arms & Heads</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Shower Handsets</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Slide Rail & Rigid Riser Kits</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Body Jets & Shower Hoses</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Plugs and Wastes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Suites -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Suites <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Suites Overview</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Bathroom Suite Packages</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Modern Bathroom Packages</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Traditional Bathroom Packages</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Toilet & Basin Combinations</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Modern Toilet & Basin Suites</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Traditional Toilet & Basin Suites</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">By Room Size</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Standard Bathroom Suites</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Small Bathroom Suites</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Vanity Unit Suites</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">Cloakroom Suites</a></li>
+                                        <li><a href="#" class="hover:text-brand-navy transition-colors">En-suite Bathrooms</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Basins & Toilets (Combined Dropdown for brevity in code, but all links preserved) -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Basins & Toilets <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Basin Styles</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Pedestal & Semi-Pedestal</a></li>
+                                        <li><a href="#">Wall Hung & Cloakroom</a></li>
+                                        <li><a href="#">Counter Top & Corner</a></li>
+                                        <li><a href="#">Washstands & Inset</a></li>
+                                        <li><a href="#">Semi Recessed & Under Counter</a></li>
+                                        <li><a href="#">Sit on Basins</a></li>
+                                    </ul>
+                                    <h4 class="font-bold text-slate-900 mt-6 mb-4 uppercase text-xs tracking-wider">Basin Accessories</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Basin Wastes & Frames</a></li>
+                                        <li><a href="#">Towel Rails, Rings & Soap Dishes</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Toilet Styles</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Close Coupled Toilets</a></li>
+                                        <li><a href="#">Back To Wall Toilets</a></li>
+                                        <li><a href="#">Wall Hung Toilets</a></li>
+                                        <li><a href="#">Rimless & Corner Toilets</a></li>
+                                        <li><a href="#">WC Units & Cloakroom Toilets</a></li>
+                                        <li><a href="#">Automatic Bidet Toilets</a></li>
+                                        <li><a href="#">Comfort Height & Low Level</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Toilet Accessories</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Toilet Seats & Hinges</a></li>
+                                        <li><a href="#">Cisterns, Levers & Flush Plates</a></li>
+                                        <li><a href="#">Frames (WC, Basin, Bidet, Urinal)</a></li>
+                                        <li><a href="#">Push Buttons</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Additional Items</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Modern & Traditional Toilets</a></li>
+                                        <li><a href="#">Commercial Toilets</a></li>
+                                        <li><a href="#">Bidets & Urinals</a></li>
+                                        <li><a href="#">Toilet and Sink Combos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Taps & Baths -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">Taps & Baths <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Taps Collection</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Bath Taps (Wall, Filler, Mixer)</a></li>
+                                        <li><a href="#">Bath Shower Mixers</a></li>
+                                        <li><a href="#">Freestanding Taps</a></li>
+                                        <li><a href="#">Basin Taps (Mono, Tall, Pairs)</a></li>
+                                        <li><a href="#">Bridge & Sensor Taps</a></li>
+                                        <li><a href="#">1, 3, 4 & 5 Tap Hole Variations</a></li>
+                                        <li><a href="#">Bidet & Waterfall Taps</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Standard Baths</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Standard & Steel Baths</a></li>
+                                        <li><a href="#">Corner Baths</a></li>
+                                        <li><a href="#">Whirlpool & Spa Baths</a></li>
+                                        <li><a href="#">Walk-in Baths</a></li>
+                                        <li><a href="#">Single & Double Ended Baths</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Freestanding & Shower Baths</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">L-Shaped & P-Shaped Shower Baths</a></li>
+                                        <li><a href="#">Traditional & Modern Freestanding</a></li>
+                                        <li><a href="#">Cast Iron & Natural Stone</a></li>
+                                        <li><a href="#">Copper & Nickel Roll Top Baths</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Bath Accessories</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Bath Panels</a></li>
+                                        <li><a href="#">Bath Screens (Square, Curved, Sail)</a></li>
+                                        <li><a href="#">Folding & Sliding Screens</a></li>
+                                        <li><a href="#">Bath Wastes & Bottle Traps</a></li>
+                                        <li><a href="#">Overflow Bath Fillers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Enclosures, Tiles, Heating & More -->
+                    <li class="megamenu-trigger py-4">
+                        <a href="#" class="text-[13px] font-semibold text-slate-700 hover:text-brand-navy flex items-center tracking-wide uppercase">More <i class="ph ph-caret-down ml-1 text-[10px]"></i></a>
+                        <div class="megamenu-panel absolute left-0 top-full w-full bg-white shadow-premium border-t border-slate-100 p-10">
+                            <div class="max-w-[1400px] mx-auto grid grid-cols-4 gap-10">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Tiles & Heating</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Natural Stone & Porcelain Tiles</a></li>
+                                        <li><a href="#">Wall & Floor Tiles</a></li>
+                                        <li><a href="#">Outdoor Tiles</a></li>
+                                        <li class="pt-2"><a href="#">Radiators (Vertical, Column, Designer)</a></li>
+                                        <li><a href="#">Towel Warmers</a></li>
+                                        <li><a href="#">Underfloor Heating (Warmup, Packs)</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Enclosures & Wet Rooms</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Quadrant & Offset Enclosures</a></li>
+                                        <li><a href="#">Shower Cabins & Frameless</a></li>
+                                        <li><a href="#">Shower Doors (Sliding, Bi-Fold, Pivot)</a></li>
+                                        <li><a href="#">Shower Trays (Slate, Walk-In)</a></li>
+                                        <li><a href="#">Wet Room Screens & Installation</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Mirrors & Accessories</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Illuminated & Bluetooth Mirrors</a></li>
+                                        <li><a href="#">Mirrored Cabinets & Fog Free</a></li>
+                                        <li><a href="#">Extractor Fans & Lights</a></li>
+                                        <li><a href="#">Towel Rails & Soap Dispensers</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-wider">Assisted Living</h4>
+                                    <ul class="space-y-2 text-sm text-slate-600">
+                                        <li><a href="#">Walkin Baths & Showers</a></li>
+                                        <li><a href="#">Adjustable Toilets & Basins</a></li>
+                                        <li><a href="#">Doc M Packs</a></li>
+                                        <li><a href="#">Grab Bars & Rails</a></li>
+                                        <li><a href="#">Shower Seats</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <!-- 4. Hero Section -->
+        <section class="relative w-full h-[600px] lg:h-[700px] flex items-center bg-slate-900 overflow-hidden">
+            <img src="https://www.bathotileo.com/media/wysiwyg/3_2.png" alt="Luxury Bathroom Setting" class="absolute inset-0 w-full h-full object-cover opacity-65">
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-900/80 to-transparent"></div>
+            
+            <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="max-w-2xl text-white">
+                    <span class="inline-block py-1.5 px-4 rounded-full bg-white/10 backdrop-blur-md text-xs font-semibold tracking-widest mb-6 border border-white/20 uppercase">
+                        The 2026 Collection
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6 tracking-tight">
+                        Curating exceptional bathroom spaces.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-200 mb-10 font-light leading-relaxed max-w-xl">
+                        Explore our comprehensive range of premium fixtures, blending contemporary architectural trends with uncompromising durability.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="bg-white text-brand-navy px-8 py-3.5 rounded-lg font-semibold hover:bg-slate-100 transition-all shadow-premium hover:-translate-y-0.5">
+                            Shop New Arrivals
+                        </a>
+                        <a href="#" class="bg-transparent text-white border border-white/40 hover:bg-white/10 px-8 py-3.5 rounded-lg font-medium transition-all backdrop-blur-sm">
+                            View Trade Benefits
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Curated Categories (3x3 Grid from prompt) -->
+        <section class="py-20 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Shop By Category</h2>
+                    <div class="h-1 w-16 bg-brand-navy mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/bathroom-furniture.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/Cat_bathroom_furniture.jpg" alt="Bathroom Furniture" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Bathroom Furniture</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/showers.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_showers.jpg" alt="Showers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Showers</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/basins.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_basins.jpg" alt="Basins" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Basins</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/toilets.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_toilets.jpg" alt="Toilets" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Toilets</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/taps.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_bathroom_taps.jpg" alt="Taps" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Bathroom Taps</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/baths.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_baths.jpg" alt="Baths" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Baths</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/shower-enclosures.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_shower_encloser.jpg" alt="Shower Enclosures" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Shower Enclosures</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/heating.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_heating.jpg" alt="Heating" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Heating</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                    <!-- Category Card -->
+                    <a href="https://www.bathotileo.com/mirrors.html" class="group relative rounded-xl overflow-hidden aspect-[4/3] bg-slate-100">
+                        <img src="https://www.bathotileo.com/media/wysiwyg/Categories/cat_mirrors.jpg" alt="Mirrors" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <h3 class="text-white text-xl font-semibold mb-1">Mirrors & Accessories</h3>
+                            <span class="text-slate-200 text-sm font-medium flex items-center group-hover:text-white transition-colors">Explore range <i class="ph ph-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Promotional Banners -->
+        <section class="py-12 bg-brand-light/50">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-shadow">
+                        <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/1/b1.png" alt="Promo" class="w-full h-auto object-cover">
+                    </a>
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-shadow">
+                        <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/2/b2.png" alt="Promo" class="w-full h-auto object-cover">
+                    </a>
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-shadow">
+                        <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/4/b4.png" alt="Promo" class="w-full h-auto object-cover">
+                    </a>
+                    <a href="#" class="block rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-shadow">
+                        <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/3/b3.png" alt="Promo" class="w-full h-auto object-cover">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Product Tabs (Interactive JS Component) -->
+        <section class="py-20 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Tabs Navigation -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12 border-b border-slate-200">
+                    <button onclick="switchTab('tab-furniture')" class="tab-btn px-6 py-3 font-semibold text-sm uppercase tracking-wide border-b-2 border-brand-navy text-brand-navy transition-colors">Bathroom Furniture</button>
+                    <button onclick="switchTab('tab-basins')" class="tab-btn px-6 py-3 font-semibold text-sm uppercase tracking-wide border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-colors">Basins</button>
+                    <button onclick="switchTab('tab-taps')" class="tab-btn px-6 py-3 font-semibold text-sm uppercase tracking-wide border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-colors">Taps</button>
+                    <button onclick="switchTab('tab-tiles')" class="tab-btn px-6 py-3 font-semibold text-sm uppercase tracking-wide border-b-2 border-transparent text-slate-500 hover:text-slate-800 transition-colors">Tiles</button>
+                </div>
+
+                <!-- Tab Content: Furniture -->
+                <div id="tab-furniture" class="tab-content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product Card -->
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4 relative">
+                        <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider z-10">Sale</span>
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.bathotileo.com/media/catalog/product/g/e/geberit-acanto-washbasin-500622012-75-x-48.2-cm_-with-shelf_-with-tap-hole_-with-overflow_-white_1_.jpeg?width=400&height=533&store=default&image-type=small_image" class="w-full h-full object-contain blend-darken transition-transform duration-500 group-hover:scale-105" alt="Geberit Acanto washbasin">
+                            <div class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                <button class="bg-brand-navy text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-lg hover:bg-brand-navy/90 flex items-center"><i class="ph ph-shopping-bag mr-2"></i> Add to basket</button>
+                            </div>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 leading-snug line-clamp-2">Geberit Acanto washbasin 500622012 75 x 48.2 cm</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2">
+                            <span class="text-lg font-bold text-slate-900">£348.91</span>
+                            <span class="text-sm text-slate-400 line-through">£498.44</span>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4 relative">
+                        <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider z-10">Sale</span>
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.bathotileo.com/media/catalog/product/a/1/a16_1_1.jpg?width=400&height=533&store=default&image-type=small_image" class="w-full h-full object-contain blend-darken transition-transform duration-500 group-hover:scale-105" alt="Geberit Acanto basin cabinet">
+                            <div class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                <button class="bg-brand-navy text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-lg hover:bg-brand-navy/90 flex items-center"><i class="ph ph-shopping-bag mr-2"></i> Add to basket</button>
+                            </div>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 leading-snug line-clamp-2">Geberit Acanto basin cabinet - Matt lava</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2">
+                            <span class="text-lg font-bold text-slate-900">£732.55</span>
+                            <span class="text-sm text-slate-400 line-through">£1,046.50</span>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4 relative">
+                        <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider z-10">Sale</span>
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.bathotileo.com/media/catalog/product/b/3/b37.jpg?width=400&height=533&store=default&image-type=small_image" class="w-full h-full object-contain blend-darken transition-transform duration-500 group-hover:scale-105" alt="Geberit One 900mm">
+                            <div class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                <button class="bg-brand-navy text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-lg hover:bg-brand-navy/90 flex items-center"><i class="ph ph-shopping-bag mr-2"></i> Add to basket</button>
+                            </div>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 leading-snug line-clamp-2">Geberit One 900mm 2 Drawer Washbasin Unit - Oak</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2">
+                            <span class="text-lg font-bold text-slate-900">£953.89</span>
+                            <span class="text-sm text-slate-400 line-through">£1,362.70</span>
+                        </div>
+                    </div>
+                    <!-- Product Card -->
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4 relative">
+                        <span class="absolute top-4 left-4 bg-brand-navy text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider z-10">Sale</span>
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.bathotileo.com/media/catalog/product/b/3/b34.jpg?width=400&height=533&store=default&image-type=small_image" class="w-full h-full object-contain blend-darken transition-transform duration-500 group-hover:scale-105" alt="Geberit iCon">
+                            <div class="absolute inset-0 bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                                <button class="bg-brand-navy text-white px-6 py-2.5 rounded-lg text-sm font-semibold shadow-lg hover:bg-brand-navy/90 flex items-center"><i class="ph ph-shopping-bag mr-2"></i> Add to basket</button>
+                            </div>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 leading-snug line-clamp-2">Geberit iCon Washbasin Cabinet 2 Drawer 750mm</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2">
+                            <span class="text-lg font-bold text-slate-900">£723.12</span>
+                            <span class="text-sm text-slate-400 line-through">£1,033.03</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Basins (Hidden by default) -->
+                <div id="tab-basins" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4">
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center"><p class="text-slate-400 text-sm">Explore Basins</p></div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 line-clamp-2">Slim Depth Semi-Countertop Basin</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2"><span class="text-lg font-bold text-slate-900">£174.20</span></div>
+                    </div>
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4">
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center"><p class="text-slate-400 text-sm">Explore Basins</p></div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 line-clamp-2">Fluted Countertop Basin</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2"><span class="text-lg font-bold text-slate-900">£107.87</span></div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Taps (Hidden by default) -->
+                <div id="tab-taps" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4">
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center"><p class="text-slate-400 text-sm">Explore Taps</p></div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 line-clamp-2">3 hole wall mounted basin mixer - JTP</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2"><span class="text-lg font-bold text-slate-900">£254.60</span></div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Tiles (Hidden by default) -->
+                <div id="tab-tiles" class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group flex flex-col bg-white rounded-xl border border-slate-100 hover:shadow-premium transition-all duration-300 p-4">
+                        <div class="relative bg-slate-50 aspect-square rounded-lg p-6 mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.bathotileo.com/media/catalog/product/s/c/screenshot_2026-01-12_165528.png?width=400&height=533&store=default&image-type=small_image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Tile">
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2 line-clamp-2">Roma Blue Marble Effect Porcelain</h3>
+                        <div class="mt-auto pt-4 flex items-center gap-2"><span class="text-lg font-bold text-slate-900">£28.49 <span class="text-xs font-normal text-slate-500">/ m²</span></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Simple logic for the Tabs
+            function switchTab(tabId) {
+                document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+                document.getElementById(tabId).classList.remove('hidden');
+                
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('border-brand-navy', 'text-brand-navy');
+                    btn.classList.add('border-transparent', 'text-slate-500');
+                });
+                event.currentTarget.classList.remove('border-transparent', 'text-slate-500');
+                event.currentTarget.classList.add('border-brand-navy', 'text-brand-navy');
+            }
+        </script>
+
+        <!-- 8. Our Top Categories (12 small visual chips) -->
+        <section class="py-16 bg-slate-50 border-y border-slate-200/60">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Our Top Categories</h2>
+                    <p class="text-slate-500 mt-2 text-sm max-w-2xl mx-auto">We collaborate with over 40 premium manufacturers. Find a selection of popular categories below.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Data populated from original 12 items -->
+                    <a href="https://www.bathotileo.com/bathroom-furniture.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/vanitybathroomsuit.jpg" alt="Furniture" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Bathroom Furniture</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/showers.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/showers_3.png" alt="Showers" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Showers</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/bathroom-suites.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/ensuitebathroom_suit.jpg" alt="Suites" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Bathroom Suites</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/basins.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/bathroom_basins.jpg.png" alt="Basins" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Basins</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/toilets.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/moderntoilet_basin_suit_unit.jpg" alt="Toilets" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Toilets</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/taps.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/taps_1_2.png" alt="Taps" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Taps</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/baths.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/baths_1.png" alt="Baths" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Baths</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/shower-enclosures.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/rectangular_encloues.jpg" alt="Enclosures" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Enclosures</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/tiles.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/tiles.jpg" alt="Tiles" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Tiles</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/heating.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/aletta-chrome1-1-571x800.jpg" alt="Heating" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Heating</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/underfloor-heating.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/underfloor.jpg" alt="Underfloor" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Underfloor Heating</span>
+                    </a>
+                    <a href="https://www.bathotileo.com/assisted-living.html" class="group flex flex-col items-center text-center p-4 rounded-xl bg-white border border-slate-100 hover:shadow-md transition-all">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mb-3 border border-slate-100 p-1 bg-slate-50">
+                            <img src="https://www.bathotileo.com/media/catalog/category/living.jpg" alt="Assisted Living" class="w-full h-full object-cover rounded-full group-hover:scale-110 transition-transform">
+                        </div>
+                        <span class="text-xs font-semibold text-slate-700 group-hover:text-brand-navy">Assisted Living</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Summer Updates (Slider replacement) -->
+        <section class="py-16 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="text-brand-navy text-xs font-bold uppercase tracking-widest bg-brand-light px-3 py-1 rounded-full">Seasonal Updates</span>
+                    <h2 class="text-3xl font-bold text-slate-900 mt-4 mb-2">Summer Specifications</h2>
+                    <p class="text-slate-500 text-sm max-w-xl mx-auto">Thoughtfully priced fixtures for your upcoming renovations.</p>
+                </div>
+                
+                <!-- Zero-JS CSS Snap Slider -->
+                <div class="relative group">
+                    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 no-scrollbar" id="summer-slider">
+                        <!-- Items -->
+                        <div class="snap-center shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                            <a href="#" class="block rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all">
+                                <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/1/b1.png" class="w-full h-auto object-cover" alt="Update 1">
+                            </a>
+                        </div>
+                        <div class="snap-center shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                            <a href="#" class="block rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all">
+                                <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/2/b2.png" class="w-full h-auto object-cover" alt="Update 2">
+                            </a>
+                        </div>
+                        <div class="snap-center shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                            <a href="#" class="block rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all">
+                                <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/4/b4.png" class="w-full h-auto object-cover" alt="Update 3">
+                            </a>
+                        </div>
+                        <div class="snap-center shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
+                            <a href="#" class="block rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all">
+                                <img src="https://www.bathotileo.com/media/mgs/fbuilder/promobanners/b/3/b3.png" class="w-full h-auto object-cover" alt="Update 4">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Frequently Specified (Best Sellers) -->
+        <section class="py-20 bg-slate-50 border-t border-slate-200/60">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Frequently Specified</h2>
+                        <p class="text-slate-500 mt-2 text-sm">The fixtures interior designers and homeowners are choosing right now.</p>
+                    </div>
+                    <a href="#" class="hidden sm:inline-flex items-center text-sm font-semibold text-brand-navy hover:text-brand-navy/70 transition-colors">
+                        View All <i class="ph ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <a href="#" class="group flex flex-col bg-white rounded-2xl border border-slate-100 hover:shadow-premium-hover transition-all duration-400 p-5 relative overflow-hidden">
+                        <div class="relative bg-slate-50 aspect-square rounded-xl p-6 mb-5 flex items-center justify-center mix-blend-multiply">
+                            <img src="https://www.bathotileo.com/media/catalog/product/g/r/grosvenor-black-pinch-bath-taps1951.jpeg?width=600&height=600&store=default&image-type=image" alt="JTP Taps" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col flex-grow">
+                            <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mb-1">JTP</span>
+                            <h3 class="text-sm font-semibold text-slate-800 mb-2 leading-snug">Grosvenor Black, Pinch Bath Taps</h3>
+                            <p class="text-xs text-slate-400 mb-3 font-mono">SKU: GB98015</p>
+                            <div class="mt-auto flex items-end justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block mb-0.5">From</span>
+                                    <span class="text-lg font-bold text-slate-900">£152.76</span>
+                                    <span class="text-xs text-slate-400 line-through ml-1">£228.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Product 2 -->
+                    <a href="#" class="group flex flex-col bg-white rounded-2xl border border-slate-100 hover:shadow-premium-hover transition-all duration-400 p-5 relative overflow-hidden">
+                        <div class="relative bg-slate-50 aspect-square rounded-xl p-6 mb-5 flex items-center justify-center mix-blend-multiply">
+                            <img src="https://www.bathotileo.com/media/catalog/product/u/g/ugyuyrt6t.jpg?width=600&height=600&store=default&image-type=image" alt="Grohe Tap" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col flex-grow">
+                            <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mb-1">Grohe</span>
+                            <h3 class="text-sm font-semibold text-slate-800 mb-2 leading-snug">Euroeco Cosmopolitan E Infra-Red Electronic Basin Tap</h3>
+                            <p class="text-xs text-slate-400 mb-3 font-mono">SKU: 36271000</p>
+                            <div class="mt-auto flex items-end justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block mb-0.5">From</span>
+                                    <span class="text-lg font-bold text-slate-900">£273.20</span>
+                                    <span class="text-xs text-slate-400 line-through ml-1">£420.30</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Product 3 -->
+                    <a href="#" class="group flex flex-col bg-white rounded-2xl border border-slate-100 hover:shadow-premium-hover transition-all duration-400 p-5 relative overflow-hidden">
+                        <div class="relative bg-slate-50 aspect-square rounded-xl p-6 mb-5 flex items-center justify-center mix-blend-multiply">
+                            <img src="https://www.bathotileo.com/media/catalog/product/c/x/cx3_2.jpg?width=600&height=600&store=default&image-type=image" alt="Shower Valve" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col flex-grow">
+                            <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mb-1">JTP</span>
+                            <h3 class="text-sm font-semibold text-slate-800 mb-2 leading-snug">Thermostatic Concealed 2 Outlet Shower Valve</h3>
+                            <p class="text-xs text-slate-400 mb-3 font-mono">SKU: KO4671CH</p>
+                            <div class="mt-auto flex items-end justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block mb-0.5">From</span>
+                                    <span class="text-lg font-bold text-slate-900">£448.90</span>
+                                    <span class="text-xs text-slate-400 line-through ml-1">£670.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Product 4 -->
+                    <a href="#" class="group flex flex-col bg-white rounded-2xl border border-slate-100 hover:shadow-premium-hover transition-all duration-400 p-5 relative overflow-hidden">
+                        <div class="relative bg-slate-50 aspect-square rounded-xl p-6 mb-5 flex items-center justify-center mix-blend-multiply">
+                            <img src="https://www.bathotileo.com/media/catalog/product/c/v/cv5_1.jpg?width=600&height=600&store=default&image-type=image" alt="Roca Toilet" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                        <div class="flex flex-col flex-grow">
+                            <span class="text-[10px] text-slate-400 font-bold tracking-widest uppercase mb-1">Roca</span>
+                            <h3 class="text-sm font-semibold text-slate-800 mb-2 leading-snug">Loft Standard Close Coupled Fully Enclosed Pan</h3>
+                            <p class="text-xs text-slate-400 mb-3 font-mono">SKU: DC14052</p>
+                            <div class="mt-auto flex items-end justify-between">
+                                <div>
+                                    <span class="text-xs text-slate-500 block mb-0.5">From</span>
+                                    <span class="text-lg font-bold text-slate-900">£103.18</span>
+                                    <span class="text-xs text-slate-400 line-through ml-1">£154.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Tiles Collection (Masonry-style Gallery) -->
+        <section class="py-20 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">The Tiles Collection</h2>
+                    <p class="text-slate-500 mt-2 text-sm max-w-2xl mx-auto">Explore textures, patterns, and formats designed to define your space.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- Render a subset visually to keep it clean, all links can point to full gallery -->
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/1.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/2.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/3.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/4.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/A1.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform"></div>
+                    <div class="aspect-square rounded-lg overflow-hidden bg-slate-100 group"><img src="https://www.bathotileo.com/media/wysiwyg/tiles/B1.jpg" alt="Tile" class="w-full h-full object-cover group-hover:scale-110 transition-transform flex items-center justify-center bg-brand-navy/5 text-brand-navy font-semibold text-sm cursor-pointer"><span class="absolute inset-0 flex items-center justify-center bg-brand-navy/80 text-white opacity-0 group-hover:opacity-100 transition-opacity">View All 32+</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Top Brand Ranges (Roca specific section) -->
+        <section class="py-20 bg-slate-900 text-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Featured Partner</span>
+                <h2 class="text-3xl font-bold mt-2 mb-4">Explore Roca Collections</h2>
+                <p class="text-slate-400 text-sm max-w-2xl mx-auto mb-12">Discover premium bathroom solutions from Roca. Explore our latest collections of basins, faucets, toilets, and complete ranges designed with innovation and style.</p>
+                
+                <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 no-scrollbar">
+                    <a href="https://www.bathotileo.com/bathroom-furniture/vanity-units/wall-hung-vanity-units.html" class="snap-center shrink-0 w-[280px] group">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-white mb-4">
+                            <img src="https://www.uk.roca.com/o/adaptive-media/image/14553652/14553653/desktop/Romea_carrusel.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Roca Bathroom">
+                        </div>
+                        <h4 class="font-semibold text-sm">Roca Bathroom</h4>
+                    </a>
+                    <a href="https://www.bathotileo.com/basins/basins/pedestal-basins.html" class="snap-center shrink-0 w-[280px] group">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-white mb-4">
+                            <img src="https://www.uk.roca.com/documents/portlet_file_entry/20126/Ona_basin_faucet.JPG.jpg/a3cb5a5b-eeda-ae99-0cf2-bde8d115e557" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Roca Basins">
+                        </div>
+                        <h4 class="font-semibold text-sm">Roca Basins</h4>
+                    </a>
+                    <a href="https://www.bathotileo.com/shower-enclosures/shower-trays.html" class="snap-center shrink-0 w-[280px] group">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-white mb-4">
+                            <img src="https://www.uk.roca.com/documents/portlet_file_entry/20126/004_04175_00_t_Ambient_Pictures_TF_Mob_solu_xxl_v2.jpg/91f9611d-ab18-9e51-0d42-f985fe68d6b9" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Roca Trays">
+                        </div>
+                        <h4 class="font-semibold text-sm">Roca Shower Trays</h4>
+                    </a>
+                    <a href="https://www.bathotileo.com/baths/baths/standard-baths.html" class="snap-center shrink-0 w-[280px] group">
+                        <div class="aspect-[4/3] rounded-xl overflow-hidden bg-white mb-4">
+                            <img src="https://www.uk.roca.com/o/adaptive-media/image/210867078/210867079/desktop/raina.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform" alt="Roca Baths">
+                        </div>
+                        <h4 class="font-semibold text-sm">Roca Baths</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13. Why Shop With Us (Features) -->
+        <section class="py-20 bg-slate-50 border-b border-slate-200">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Our Commitment to Your Project</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12">
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-tag text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Competitive Pricing</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Best value on top bathroom brands, guaranteed.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-truck text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Free Delivery</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Complimentary shipping on orders over £500.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-shield-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Premium Quality</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">We supply only manufacturer-approved, high-quality products.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Trade Accounts</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Exclusive deals and management for professionals.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-squares-four text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Variety & Brands</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">A comprehensive selection from trusted names.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-headset text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Product Support</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Expert guidance and helpful technical advice.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-percent text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Project Discounts</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Special pricing tiers available for bulk orders.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-white rounded-full shadow-sm flex items-center justify-center text-brand-navy mb-4 border border-slate-100">
+                            <i class="ph ph-warehouse text-2xl"></i>
+                        </div>
+                        <h3 class="text-sm font-semibold text-slate-900 mb-2">Huge Stock</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed">Products readily available for immediate dispatch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 14. Trade Account & Newsletter -->
+        <section class="py-16 bg-white">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Trade -->
+                    <div class="bg-brand-light rounded-2xl p-10 flex flex-col items-start justify-center border border-brand-navy/10 relative overflow-hidden">
+                        <i class="ph ph-hard-hat absolute -right-6 -bottom-6 text-[150px] text-brand-navy/5"></i>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3 relative z-10">Open a Trade Account</h3>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed max-w-md relative z-10">Partner with AmoreBath and benefit from exclusive trade pricing, priority support, and dedicated project management.</p>
+                        <a href="https://bathotileo.com/tradeform/" class="bg-brand-navy text-white px-6 py-3 rounded-lg text-sm font-semibold shadow-md hover:bg-brand-navy/90 transition-colors relative z-10">Find Out More</a>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="bg-slate-900 text-white rounded-2xl p-10 flex flex-col items-start justify-center relative overflow-hidden">
+                        <i class="ph ph-envelope-open absolute -right-6 -bottom-6 text-[150px] text-white/5"></i>
+                        <h3 class="text-2xl font-bold mb-3 relative z-10">Connect with us</h3>
+                        <p class="text-slate-300 mb-6 text-sm leading-relaxed max-w-md relative z-10">Join our mailing list to receive architectural inspiration, special offers, and news directly to your inbox.</p>
+                        <form class="w-full max-w-md relative z-10" action="https://bathotileo.com/newsletter/subscriber/new/" method="post">
+                            <div class="flex gap-2">
+                                <input type="email" name="email" placeholder="Enter your email address" required class="flex-1 bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-white text-white placeholder-slate-400">
+                                <button type="submit" class="bg-white text-slate-900 px-6 py-3 rounded-lg text-sm font-semibold shadow-md hover:bg-slate-100 transition-colors">Subscribe</button>
+                            </div>
+                            <p class="text-[10px] text-slate-400 mt-3">Your info is safe with us. See our Privacy Policy.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. FAQ Section -->
+        <section class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- FAQ Item (Using Semantic details/summary) -->
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>Why does my power shower make a buzzing sound?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            If your power shower emits a buzzing or clicking sound, it might be due to debris blocking the pump or filters. Cleaning the internal components can often resolve this.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>What does a shower cartridge do?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            A shower cartridge controls both water flow and temperature, ensuring smooth operation when turning the handle or lever.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>Is plumber's putty safe for installing shower heads?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            No, plumber's putty can damage plastic components in shower systems. Use thread seal tape (Teflon tape) instead for a secure and safe seal.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>Should my mirror be the same width as my vanity unit?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            It's best to choose a mirror slightly narrower than your vanity to maintain balance and avoid overwhelming the space.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>What exactly is a bathroom vanity unit?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            A vanity unit combines a sink and storage, helping conceal plumbing and reduce clutter in your bathroom.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>What types of vanity units are available?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            Options include freestanding, wall-mounted, corner, and combined basin-storage vanity units, each suited to different bathroom layouts.
+                        </div>
+                    </details>
+                    <details class="group bg-white rounded-xl border border-slate-200 [&_summary::-webkit-details-marker]:hidden">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-slate-800 text-sm">
+                            <span>When is the best time to bathe toddlers?</span>
+                            <span class="transition group-open:rotate-180"><i class="ph ph-caret-down text-slate-400"></i></span>
+                        </summary>
+                        <div class="text-slate-500 text-sm p-5 pt-0 border-t border-slate-100 mt-2">
+                            Bathing toddlers after teatime helps them unwind before bed. It also creates a comforting routine that can aid sleep.
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 16. Footer -->
+    <footer class="bg-brand-navy text-slate-300">
+        <!-- Main Footer -->
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
+                <!-- Branding & Contact -->
+                <div class="lg:col-span-2 pr-8">
+                    <img src="https://www.bathotileo.com/media/wysiwyg/3_3.png" alt="Bathotileo" class="h-8 object-contain mb-6 opacity-90 brightness-0 invert">
+                    <p class="text-sm text-slate-400 mb-6 leading-relaxed max-w-sm">We provide high-quality bathroom furniture and fittings, combining beauty and functionality to transform your spaces.</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center"><i class="ph ph-envelope-simple mr-3 text-lg"></i> <a href="mailto:sales@bathotileo.com" class="hover:text-white transition-colors">sales@bathotileo.com</a></li>
+                        <li class="flex items-center"><i class="ph ph-phone mr-3 text-lg"></i> <a href="tel:01615115520" class="hover:text-white transition-colors">0161 511 5520</a></li>
+                    </ul>
+                    <div class="flex space-x-4 mt-8">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all"><i class="ph-fill ph-twitter-logo"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-brand-navy transition-all"><i class="ph-fill ph-pinterest-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Categories -->
+                <div>
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Categories</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="/brand/" class="hover:text-white transition-colors">Brands</a></li>
+                        <li><a href="/bathroom-furniture.html" class="hover:text-white transition-colors">Furniture</a></li>
+                        <li><a href="/showers.html" class="hover:text-white transition-colors">Showers</a></li>
+                        <li><a href="/bathroom-suites.html" class="hover:text-white transition-colors">Suites</a></li>
+                        <li><a href="/basins.html" class="hover:text-white transition-colors">Basins</a></li>
+                        <li><a href="/toilets.html" class="hover:text-white transition-colors">Toilets</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div>
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Information</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="/aboutus" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="/termsandcondition" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="/returns" class="hover:text-white transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="/shipping-policy" class="hover:text-white transition-colors">Shipping & Delivery</a></li>
+                        <li><a href="/privacypolicy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li><a href="/customer/account/" class="hover:text-white transition-colors">My Account</a></li>
+                        <li><a href="/trade-details" class="hover:text-white transition-colors">Trade Account</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Orders Tracking</a></li>
+                        <li><a href="/faq" class="hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="/blogs" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Bottom -->
+        <div class="border-t border-white/10 bg-[#07133f]">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+                <p>&copy; 2026 Bathotileo Ltd. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://www.bathotileo.com/" class="hover:text-slate-300">Shop</a>
+                    <a href="https://www.bathotileo.com/aboutus" class="hover:text-slate-300">About Us</a>
+                    <a href="https://www.bathotileo.com/contact" class="hover:text-slate-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top JS (Smooth minimal implementation) -->
+    <button id="scrollToTopBtn" class="fixed bottom-6 right-6 w-10 h-10 bg-brand-navy text-white rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-slate-800 z-50">
+        <i class="ph ph-arrow-up"></i>
+    </button>
+
+    <script>
+        // Sticky Header scroll effect
+        const header = document.querySelector('header');
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                scrollBtn.classList.remove('opacity-0', 'invisible');
+            } else {
+                header.classList.remove('shadow-md');
+                scrollBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
