@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ihre professionelle Online Druckerei | flyerpara.de</title>
+    
+    <!-- Google Fonts: Inter for a premium, modern sans-serif look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f7fb',
+                            100: '#e1eff8',
+                            500: '#0085d5',
+                            600: '#007cc4', // Original brand blue
+                            700: '#0065a3',
+                            900: '#003a61',
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'premium-hover': '0 10px 30px -5px rgba(0, 124, 196, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons for clean UI elements -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Top Bar -->
+    <div class="bg-slate-900 text-gray-300 py-2 text-xs font-medium tracking-wide">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-6">
+                <a href="tel:+4987329210800" class="flex items-center hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-3.5 h-3.5 mr-2"></i>
+                    +49 87 32 / 92 10-800
+                </a>
+                <span class="hidden md:inline-block text-gray-500">|</span>
+                <span class="hidden md:inline-block">Herzlich willkommen auf flyerpara.de</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-white transition-colors">Anmelden</a>
+                <span class="text-gray-600">•</span>
+                <a href="#" class="hover:text-white transition-colors">Registrieren</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img src="https://www.flyerpara.de/skin/frontend/ultimo/flyerparade/images/logo.png" alt="flyerpara.de" class="h-10 sm:h-12 object-contain">
+            </a>
+
+            <!-- Search Bar -->
+            <div class="hidden md:flex flex-1 max-w-2xl mx-12 relative group">
+                <input type="text" placeholder="Produkt suchen..." class="w-full bg-gray-50 border border-gray-200 text-gray-800 rounded-full py-2.5 pl-5 pr-12 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-500 focus:bg-white transition-all text-sm">
+                <button class="absolute right-1.5 top-1.5 bottom-1.5 bg-brand-600 text-white p-1.5 rounded-full hover:bg-brand-700 transition-colors">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="flex flex-col items-center text-gray-500 hover:text-brand-600 transition-colors group">
+                    <i data-lucide="user" class="w-5 h-5 mb-1 group-hover:-translate-y-0.5 transition-transform"></i>
+                    <span class="text-[10px] font-semibold uppercase tracking-wider">Konto</span>
+                </a>
+                <a href="#" class="flex flex-col items-center text-gray-500 hover:text-brand-600 transition-colors relative group">
+                    <div class="relative">
+                        <i data-lucide="shopping-cart" class="w-5 h-5 mb-1 group-hover:-translate-y-0.5 transition-transform"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-rose-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-sm">0</span>
+                    </div>
+                    <span class="text-[10px] font-semibold uppercase tracking-wider">Warenkorb</span>
+                </a>
+                <button class="md:hidden text-gray-500 hover:text-brand-600">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden md:block bg-white border-t border-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex space-x-8 text-sm font-medium text-gray-600">
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 text-brand-600 border-b-2 border-brand-600">
+                            Produkte <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </li>
+                    <li><a href="#" class="block py-4 hover:text-brand-600 transition-colors">Service</a></li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-brand-600 transition-colors">
+                            Kontakt <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-brand-600 transition-colors">
+                            Über uns <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="flex items-center py-4 hover:text-brand-600 transition-colors">
+                            FAQ <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </li>
+                    <li><a href="#" class="block py-4 hover:text-brand-600 transition-colors">Tipps & Downloads</a></li>
+                    <li><a href="#" class="block py-4 hover:text-brand-600 transition-colors">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 sm:mt-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Main Banner -->
+                <div class="lg:col-span-3 rounded-2xl overflow-hidden shadow-premium group relative">
+                    <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/home_slider/fp_banner_Raketenpreise_RGB.jpg" alt="Raketenpreise" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+
+                <!-- Quick Actions / Right Banners -->
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="relative h-20 rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-all group flex items-center justify-center bg-brand-600">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/home_slider_links/bt_dark_blue.png" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply" alt="">
+                        <span class="relative z-10 text-white font-medium text-lg flex items-center">
+                            Angebotsanfrage <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="relative h-20 rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-all group flex items-center justify-center bg-slate-800">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/home_slider_links/bt_dark_blue.png" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-multiply" alt="">
+                        <span class="relative z-10 text-white font-medium text-lg flex items-center">
+                            Druckmuster anfordern <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="relative h-20 rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-all group flex items-center justify-center bg-brand-700">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/home_slider_links/bt_dark_blue.png" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-multiply" alt="">
+                        <span class="relative z-10 text-white font-medium text-lg flex items-center">
+                            Tipps & Downloads <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </span>
+                    </a>
+                    <a href="#" class="flex-1 rounded-xl overflow-hidden shadow-sm hover:shadow-premium transition-all group relative">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/kalender_230x133px_2025.png" alt="Kalender 2025" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Features Strip -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-12">
+            <div class="bg-white rounded-2xl shadow-premium p-6 border border-gray-100 flex flex-wrap justify-center sm:justify-between items-center gap-6">
+                <div class="flex items-center text-gray-700">
+                    <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 mr-4">
+                        <i data-lucide="truck" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-medium text-sm">Kostenloser Standardversand*</span>
+                </div>
+                <div class="flex items-center text-gray-700">
+                    <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-600 mr-4">
+                        <i data-lucide="leaf" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-medium text-sm">Klimaneutraler Druck</span>
+                </div>
+                <div class="flex items-center text-gray-700">
+                    <div class="w-10 h-10 rounded-full bg-amber-50 flex items-center justify-center text-amber-600 mr-4">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-medium text-sm">PSO Zertifizierte Qualität</span>
+                </div>
+                <div class="flex items-center text-gray-700">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mr-4">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-medium text-sm">Sichere Bestellung</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Grid -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Unsere Produktkategorien</h2>
+                    <p class="text-gray-500 mt-2 text-sm sm:text-base">Wählen Sie aus unserem umfangreichen Print-Sortiment</p>
+                </div>
+                <a href="#" class="hidden sm:flex text-brand-600 hover:text-brand-700 font-medium text-sm items-center transition-colors">
+                    Alle Produkte ansehen <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6">
+                <!-- Using the raw array of categories from original -->
+                <!-- Card Template -->
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/wahlen_2026.png" alt="Wahlen" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Wahlen</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/jubilaeum_bestpreis_3.png" alt="Bestseller" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Bestseller</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/kalender_4_2_1_1_1.png" alt="Kalender" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Kalender</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/broschueren_uebersicht_1_2.png" alt="Broschüren" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Broschüren</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/flyer_folder_1_4.png" alt="Flyer / Folder" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Flyer / Folder</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/plakate_1_3.png" alt="Plakate" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Plakate</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-rose-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-bl-lg uppercase tracking-wider">Neu</div>
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/krone_1_2_3.png" alt="Specials" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Specials</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/_buerobedarf_2_2.png" alt="Geschäftsdrucksachen" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Geschäftsbedarf</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/visitenkarten_2_2.png" alt="Visitenkarten" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Visitenkarten</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/briefbogen_1_2_2.png" alt="Briefbogen" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Briefbogen</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/briefhuelle_kuvert_1_1.png" alt="Briefhüllen" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Briefhüllen</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/mappen_1_1.png" alt="Mappen" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Mappen</h3>
+                </a>
+
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/postkarte_1_1_1.png" alt="Postkarten" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Postkarten</h3>
+                </a>
+                
+                <a href="#" class="group bg-white rounded-xl p-5 border border-gray-100 shadow-sm hover:shadow-premium-hover transition-all duration-300 flex flex-col items-center text-center">
+                    <div class="h-20 w-20 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        <img src="https://www.flyerpara.de/media/catalog/category/aufkleber_2_5.png" alt="Aufkleber" class="max-h-full object-contain drop-shadow-sm">
+                    </div>
+                    <h3 class="text-sm font-semibold text-gray-800 group-hover:text-brand-600 transition-colors">Aufkleber</h3>
+                </a>
+            </div>
+            
+            <div class="mt-8 text-center sm:hidden">
+                <a href="#" class="inline-flex items-center justify-center bg-white border border-gray-200 text-gray-700 font-medium text-sm py-3 px-6 rounded-lg shadow-sm hover:bg-gray-50 transition-colors w-full">
+                    Alle Produkte ansehen
+                </a>
+            </div>
+        </section>
+
+        <!-- Top Sellers Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-8">TopSeller zum Bestpreis</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-48 bg-gray-50 p-6 flex items-center justify-center relative">
+                        <img src="https://www.flyerpara.de/media/catalog/product/cache/1/small_image/112x/040ec09b1e35df139433887a97daa66f/f/l/flyer_3_1.jpg" alt="Flyer ungefalzt" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-1 leading-tight"><a href="#" class="hover:text-brand-600 transition-colors">Flyer ungefalzt</a></h3>
+                        <p class="text-xs text-gray-500 mb-4">Zzgl. 7% MwSt. & Versand</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="font-bold text-xl text-brand-600">ab 0,00 €</span>
+                            <button class="bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white p-2.5 rounded-lg transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-48 bg-gray-50 p-6 flex items-center justify-center relative">
+                        <img src="https://www.flyerpara.de/media/catalog/product/cache/1/small_image/112x/040ec09b1e35df139433887a97daa66f/p/l/plakate_1_7.png" alt="Plakate" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-1 leading-tight"><a href="#" class="hover:text-brand-600 transition-colors">Plakate</a></h3>
+                        <p class="text-xs text-gray-500 mb-4">Zzgl. 19% MwSt. & Versand</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="font-bold text-xl text-brand-600">ab 0,00 €</span>
+                            <button class="bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white p-2.5 rounded-lg transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-48 bg-gray-50 p-6 flex items-center justify-center relative">
+                        <img src="https://www.flyerpara.de/media/catalog/product/cache/1/small_image/112x/040ec09b1e35df139433887a97daa66f/s/c/schneemann_1.png" alt="Gestanzte Flyer" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-1 leading-tight"><a href="#" class="hover:text-brand-600 transition-colors">Gestanzte Flyer</a></h3>
+                        <p class="text-xs text-gray-500 mb-4">Zzgl. 19% MwSt. & Versand</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="font-bold text-xl text-brand-600">ab 0,00 €</span>
+                            <button class="bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white p-2.5 rounded-lg transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-48 bg-gray-50 p-6 flex items-center justify-center relative">
+                        <img src="https://www.flyerpara.de/media/catalog/product/cache/1/small_image/112x/040ec09b1e35df139433887a97daa66f/b/r/broschueren_klebebindung_2.png" alt="Broschüren" class="max-h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-semibold text-lg text-gray-900 mb-1 leading-tight"><a href="#" class="hover:text-brand-600 transition-colors">Broschüren (Klebebdg.)</a></h3>
+                        <p class="text-xs text-gray-500 mb-4">Zzgl. 19% MwSt. & Versand</p>
+                        
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <span class="font-bold text-xl text-brand-600">ab 0,00 €</span>
+                            <button class="bg-brand-50 text-brand-700 hover:bg-brand-600 hover:text-white p-2.5 rounded-lg transition-colors">
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO / About Us Section (Premium Text Blocks) -->
+        <section class="bg-white py-16 mt-8 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div>
+                        <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+                            <i data-lucide="printer" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Ihre professionelle Online Druckerei</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Wir bieten Ihnen einen herausragenden Service mit echtem Mehrwert: Als eine der wenigen Druckereien ermöglichen wir freie Formate und individuelle Auflagen nach Maß. Egal ob 24h-Overnight-Produktion, Schmuckfarben oder eine persönliche Fachberatung – wir setzen Ihr Printprojekt professionell um. Zertifiziert nach Prozess-Standard Offset (PSO).
+                        </p>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Vielfältige Veredelungen</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Neben unseren bewährten Klassikern produzieren wir anspruchsvolle Druckprojekte wie veredelte Broschüren, Stanzflyer und Sonderanfertigungen. Nutzen Sie Dispersionslack, Cellophanierungen oder Folienlaminat, um Ihren Druckerzeugnissen eine luxuriöse Haptik und Langlebigkeit zu verleihen.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center text-brand-600 mb-5">
+                            <i data-lucide="calculator" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Einfach & transparent kalkulieren</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Gestalten und kalkulieren Sie Ihre Printprodukte direkt online mit unserem smarten Konfigurator. Von der Papierauswahl über den Datencheck bis hin zur neutralen Verpackung oder dem Logoeindruck – Sie behalten die volle Kostenkontrolle in Echtzeit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / News Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight">Aktuelles & Print-Wissen</h2>
+                    <p class="text-gray-500 mt-2 text-sm sm:text-base">Branchen-News, Ratgeber und Inspirationen</p>
+                </div>
+                <a href="#" class="hidden sm:flex text-brand-600 hover:text-brand-700 font-medium text-sm items-center transition-colors">
+                    Zum Blog <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Card 1 -->
+                <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-56 overflow-hidden bg-gray-50 relative">
+                        <img src="https://www.flyerpara.de/media/magpleasure/mpblog/upload/2/8/2826e42677866e6e99260441b146597e.jpg" alt="V.i.S.d.P." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-bold text-xl text-gray-900 mb-3 leading-snug group-hover:text-brand-600 transition-colors">Wahldrucksachen: Was bedeutet V.i.S.d.P.?</h3>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-6">
+                            V.i.S.d.P. heißt ausgeschrieben „Verantwortlich im Sinne des Presserechts“ und ist im bayerischen Pressegesetz (BayPrG) geregelt. Erfahren Sie, warum ein Impressum zwingend notwendig ist.
+                        </p>
+                        <a href="#" class="mt-auto inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+                            Mehr lesen <i data-lucide="arrow-right" class="w-4 h-4 ml-1.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-56 overflow-hidden bg-gray-50 relative">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/Wahlplakate_Offset.png" alt="Steuersatz" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 object-top">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-bold text-xl text-gray-900 mb-3 leading-snug group-hover:text-brand-600 transition-colors">Wann gilt der ermäßigte Steuersatz von 7%?</h3>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-6">
+                            Vor Wahlen steigt der Bedarf an Flyern und Plakaten. Doch viele Auftraggeber sind unsicher, welcher Umsatzsteuersatz für ihre Wahldrucksachen anzuwenden ist. Wir klären auf.
+                        </p>
+                        <a href="#" class="mt-auto inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+                            Mehr lesen <i data-lucide="arrow-right" class="w-4 h-4 ml-1.5"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article class="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col group">
+                    <div class="h-56 overflow-hidden bg-gray-50 relative">
+                        <img src="https://www.flyerpara.de/media/magpleasure/mpblog/upload/f/0/f00cdb3a8aa0f361e66ab37997d6626c.jpg" alt="Broschüren Arten" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 flex flex-col flex-1">
+                        <h3 class="font-bold text-xl text-gray-900 mb-3 leading-snug group-hover:text-brand-600 transition-colors">Broschüren Arten: 6 Typen & Unterschiede</h3>
+                        <p class="text-gray-600 text-sm line-clamp-3 mb-6">
+                            Broschüren eignen sich hervorragend für verschiedenste Einsatzbereiche. Entdecken Sie die Unterschiede zwischen Klammerheftung, Klebebindung und Ringösen und finden Sie das perfekte Format.
+                        </p>
+                        <a href="#" class="mt-auto inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-700">
+                            Mehr lesen <i data-lucide="arrow-right" class="w-4 h-4 ml-1.5"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Trust Badges Bar -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 border-t border-gray-200">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 hover:opacity-100 transition-opacity">
+                <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/PSO2022_2024.png.jpg" alt="PSO Zertifikat" class="h-16 md:h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/print-co2-greprueft_NEWS.png" alt="Klimaneutral drucken" class="h-14 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/iop.png" alt="IOP" class="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/comodo_secure.png" alt="SSL Secure" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Column 1: Katalog -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Jetzt NEU! ORTMAIERs Druckwelt</h4>
+                    <div class="flex items-start">
+                        <img src="https://www.flyerpara.de/media/wysiwyg/Flyerparade/produktkatalog_2017.png" alt="Katalog" class="w-24 mr-4 rounded drop-shadow-md">
+                        <div class="text-sm space-y-2">
+                            <p>Entdecken Sie auf über 128 Seiten unser Portfolio:</p>
+                            <ul class="list-disc pl-4 text-gray-400 space-y-1">
+                                <li>Mit Preisangaben</li>
+                                <li>Mit anschaulichen Bildern</li>
+                                <li>Mit Druckfibel</li>
+                            </ul>
+                            <a href="#" class="inline-block mt-3 text-brand-400 font-medium hover:text-white transition-colors">
+                                Kostenlos bestellen →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Column 2: Promise -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Unser Versprechen an Sie!</h4>
+                    <p class="text-sm mb-4">Profitieren Sie von einem großartigen Service mit echtem Mehrwert:</p>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center text-gray-400"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Eigene Formate</li>
+                        <li class="flex items-center text-gray-400"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Eigene Auflagen</li>
+                        <li class="flex items-center text-gray-400"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Schmuckfarben</li>
+                        <li class="flex items-center text-gray-400"><i data-lucide="check-circle" class="w-4 h-4 text-green-500 mr-2"></i> Persönliche Ansprechpartner</li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Address -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Kontakt & Adresse</h4>
+                    <address class="not-italic text-sm space-y-4">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-500 mr-3 mt-0.5"></i>
+                            <p>Ortmaier-Druck GmbH<br>Birnbachstraße 2<br>84160 Frontenhausen</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-500 mr-3 mt-0.5"></i>
+                            <p>T +49 87 32 92 10-800<br>F +49 87 32 92 10-809</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-500 mr-3 mt-0.5"></i>
+                            <p>
+                                <a href="mailto:info@flyerpara.de" class="hover:text-white transition-colors">info@flyerpara.de</a><br>
+                            </p>
+                        </div>
+                    </address>
+                </div>
+
+                <!-- Column 4: Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Informationen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Kontaktformular</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Druckmuster anfordern</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Über uns</a></li>
+                    </ul>
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="bg-slate-800 p-2.5 rounded-full hover:bg-brand-600 transition-colors text-white">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:info@flyerpara.de" class="bg-slate-800 p-2.5 rounded-full hover:bg-brand-600 transition-colors text-white">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 space-y-4 md:space-y-0">
+                <p>&copy; 2011 - 2026 Ortmaier-Druck GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex flex-wrap justify-center gap-x-4 gap-y-2">
+                    <a href="#" class="hover:text-gray-300 transition-colors">AGB</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Datenschutz</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Widerrufsbelehrung</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Impressum</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Anfahrt</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
