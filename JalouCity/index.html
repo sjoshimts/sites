@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JalouCity – Ihr Experte für Sicht- & Sonnenschutz nach Maß</title>
+    <meta name="description" content="Maßgefertigter Sicht- und Sonnenschutz für Ihr Zuhause. Entdecken Sie Premium-Qualität und individuelles Design.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#0a3d34',
+                            magenta: '#e6007e',
+                            light: '#f7f6f4',
+                            dark: '#1a1a1a'
+                        }
+                    },
+                    aspectRatio: {
+                        '4/5': '4 / 5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom Styles for smooth behaviors */
+        .mega-menu {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-brand-light antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Top Bar (USPs) -->
+    <div class="bg-brand-green text-white/90 text-xs font-medium tracking-wide py-2.5">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 flex justify-center lg:justify-between items-center">
+            <div class="hidden lg:flex space-x-8">
+                <span class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4"></i> 5 Jahre Garantie</span>
+                <span class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i> 37 Filialen deutschlandweit</span>
+            </div>
+            <div class="flex space-x-8 text-center justify-center">
+                <span class="flex items-center gap-2"><i data-lucide="award" class="w-4 h-4"></i> Premium Auswahl & Beratung</span>
+                <span class="hidden md:flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i> > 2 Mio. zufriedene Kunden</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="glass-header sticky top-0 z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobileMenuBtn" class="lg:hidden p-2 -ml-2 text-gray-600 hover:text-brand-green transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0 flex items-center group">
+                <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logo.svg" alt="JalouCity" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center h-full space-x-8">
+                <div class="group h-full flex items-center">
+                    <a href="#" class="text-sm font-semibold tracking-wide hover:text-brand-green transition-colors py-8 flex items-center gap-1">
+                        Produkte <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-hover:-rotate-180"></i>
+                    </a>
+                    
+                    <!-- Premium Mega Menu -->
+                    <div class="mega-menu absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-2xl shadow-gray-900/5">
+                        <div class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-4 gap-x-12 gap-y-10">
+                            <!-- Column 1 -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Jalousien</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Jalousien nach Maß</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Holz-Jalousien</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Außenjalousien</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Premium Luxaflex®</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Plissees</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Plissees nach Maß</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Wabenplissees</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Sicht- & Sonnenschutz</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Column 2 -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Rollos</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Rollos nach Maß</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Doppelrollos</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Verdunkelungsrollos</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Smart Home Rollos</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Gardinen</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Gardinen nach Maß</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Blickdicht & Transparent</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Vorhangstangen</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Column 3 -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Markisen</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Kassettenmarkisen</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Gelenkarmmarkisen</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Wintergartenbeschattung</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">VELUX®</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Dachfenster konfigurieren</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Dachfenster-Rollos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Column 4 -->
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-serif text-lg font-semibold text-brand-dark mb-3 border-b pb-2">Weitere Lösungen</h4>
+                                    <ul class="space-y-2 text-sm text-gray-600">
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Lamellenvorhänge</a></li>
+                                        <li><a href="#" class="hover:text-brand-green transition-colors">Insektenschutz</a></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-brand-light p-6 rounded-xl mt-4">
+                                    <p class="text-sm font-medium mb-3">Unsicher, was am besten passt?</p>
+                                    <a href="#" class="text-sm text-brand-green font-semibold flex items-center gap-1 hover:underline">
+                                        Nutzen Sie unseren Ratgeber <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="text-sm font-semibold tracking-wide hover:text-brand-green transition-colors">Filial-Suche</a>
+                <a href="#" class="text-sm font-semibold tracking-wide hover:text-brand-green transition-colors">Außendienst</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-5 lg:space-x-8">
+                <a href="#" class="text-gray-600 hover:text-brand-green transition-colors flex flex-col items-center gap-1">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                    <span class="text-[10px] hidden lg:block uppercase font-semibold">Konto</span>
+                </a>
+                <a href="#" class="text-gray-600 hover:text-brand-green transition-colors flex flex-col items-center gap-1 relative">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span class="absolute -top-1.5 -right-1.5 bg-brand-green text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    <span class="text-[10px] hidden lg:block uppercase font-semibold">Warenkorb</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-white h-screen w-full lg:hidden flex flex-col">
+        <div class="p-4 flex justify-between items-center border-b border-gray-100">
+            <span class="font-serif text-xl">Menü</span>
+            <button id="closeMobileMenu" class="p-2 text-gray-500 hover:text-brand-dark">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="p-6 overflow-y-auto hide-scroll flex-1 space-y-6">
+            <a href="#" class="block text-xl font-medium border-b border-gray-100 pb-4">Produkte</a>
+            <a href="#" class="block text-xl font-medium border-b border-gray-100 pb-4">Filial-Suche</a>
+            <a href="#" class="block text-xl font-medium border-b border-gray-100 pb-4">Außendienst</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 px-4">
+            <div class="max-w-7xl mx-auto text-center mb-12">
+                <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-brand-dark mb-6 tracking-tight leading-tight">
+                    Maßgefertigtes Lichtdesign <br><span class="text-gray-400 italic">für Ihr Zuhause</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Entdecken Sie die perfekte Balance zwischen Ästhetik und Funktionalität. Fachmännische Beratung, erstklassige Materialien und maßgeschneiderte Lösungen seit 1990.
+                </p>
+            </div>
+
+            <!-- Enhanced Banner Display -->
+            <div class="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl shadow-brand-green/5 relative group cursor-pointer">
+                <picture>
+                    <source srcset="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/banner-header.webp" media="(min-width: 768px)">
+                    <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/banner-header-mobile.webp" alt="JalouCity Rabatt Aktion" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105">
+                </picture>
+                <div class="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-3xl"></div>
+            </div>
+        </section>
+
+        <!-- Product Categories -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="flex items-end justify-between mb-12">
+                    <div>
+                        <span class="text-sm uppercase tracking-widest text-brand-green font-semibold mb-2 block">Unsere Kollektion</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-dark">Finden Sie Ihren Stil</h2>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/plissees-startseite-812.jpg" alt="Plissees" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Plissees</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/jalousien-startseite-812.jpg" alt="Jalousien" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Jalousien</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/rollos-startseite-812.jpg" alt="Rollos" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Rollos</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/gardinen-startseite-812.jpg" alt="Gardinen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Gardinen</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/insektenschutz-startseite-812.jpg" alt="Insektenschutz" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Insektenschutz</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Category Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[4/5] block bg-gray-100">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/markisen-startseite-812.jpg" alt="Markisen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-80 transition-opacity group-hover:opacity-100"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full transform translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                            <h3 class="text-white font-serif text-2xl mb-1">Markisen</h3>
+                            <span class="text-white/80 text-sm font-medium flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity delay-100">Entdecken <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services (3 Ways to Shop) -->
+        <section class="py-24 bg-brand-light">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-sm uppercase tracking-widest text-brand-green font-semibold mb-2 block">Servicekonzept</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Ihre Vision, unser Service</h2>
+                    <p class="text-gray-600 text-lg">Wählen Sie den Weg, der am besten zu Ihnen passt – von der Online-Bestellung bis zur persönlichen Beratung direkt bei Ihnen zu Hause.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <a href="#" class="group bg-white rounded-3xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
+                        <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-6">
+                            <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/filial-besuch-f0b-407.jpg" alt="Filial-Besuch" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <h3 class="font-serif text-2xl text-brand-dark mb-4">Filial-Besuch</h3>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> 37 Filialen deutschlandweit</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Persönliche Beratung durch Fachexperten</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Materialien hautnah erleben</li>
+                            </ul>
+                            <span class="inline-flex items-center text-sm font-semibold text-brand-dark group-hover:text-brand-green transition-colors pb-1 border-b-2 border-transparent group-hover:border-brand-green">
+                                Filiale finden <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 2 -->
+                    <a href="#" class="group bg-white rounded-3xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
+                        <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-6">
+                            <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/beratung-verkauf-vor-ort-c0d-407.jpg" alt="Home Service" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <h3 class="font-serif text-2xl text-brand-dark mb-4">Home Service</h3>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Bequeme Beratung bei Ihnen zu Hause</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Kostenloser Aufmaßservice inklusive</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Fachgerechte Montage auf Wunsch</li>
+                            </ul>
+                            <span class="inline-flex items-center text-sm font-semibold text-brand-dark group-hover:text-brand-green transition-colors pb-1 border-b-2 border-transparent group-hover:border-brand-green">
+                                Termin vereinbaren <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Service 3 -->
+                    <a href="#" class="group bg-white rounded-3xl p-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 block">
+                        <div class="rounded-2xl overflow-hidden aspect-[4/3] mb-6">
+                            <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/online-einkaufen-825-407.jpg" alt="Online einkaufen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="px-4 pb-4">
+                            <h3 class="font-serif text-2xl text-brand-dark mb-4">Online Shop</h3>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> 24/7 flexibel von überall aus bestellen</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Intuitive Konfiguratoren nutzen</li>
+                                <li class="flex items-start text-gray-600 text-sm"><i data-lucide="check" class="w-4 h-4 text-brand-green mt-0.5 mr-3 flex-shrink-0"></i> Kostenlose Stoffmuster vorab sichern</li>
+                            </ul>
+                            <span class="inline-flex items-center text-sm font-semibold text-brand-dark group-hover:text-brand-green transition-colors pb-1 border-b-2 border-transparent group-hover:border-brand-green">
+                                Sortiment entdecken <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Products (Luxaflex) -->
+        <section class="py-24 bg-brand-dark text-white">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
+                    <div class="text-center md:text-left">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/luxaflex-logo.svg" alt="Luxaflex" class="h-8 md:h-10 mx-auto md:mx-0 mb-6 brightness-0 invert">
+                        <h2 class="font-serif text-3xl md:text-4xl text-white mb-4">Exzellenz im Detail</h2>
+                        <p class="text-gray-400 text-lg max-w-xl">Entdecken Sie unsere kuratierte Auswahl an Luxaflex® Premium-Produkten. Maßgefertigte Handwerkskunst für höchste architektonische Ansprüche.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-white/30 rounded-full hover:bg-white hover:text-brand-dark transition-colors duration-300">
+                        Luxaflex Welt erkunden
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Luxaflex Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[3/4] block">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/plissees-6db-812.jpg" alt="Luxaflex Plissees" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <span class="text-xs uppercase tracking-widest text-gray-300 mb-1 block">Luxaflex®</span>
+                            <h3 class="text-white font-serif text-xl">Plissees</h3>
+                        </div>
+                    </a>
+                    
+                    <!-- Luxaflex Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[3/4] block">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/wabenplissees-50a-812.jpg" alt="Luxaflex Duette Wabenplissees" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <span class="text-xs uppercase tracking-widest text-gray-300 mb-1 block">Luxaflex® Duette®</span>
+                            <h3 class="text-white font-serif text-xl">Wabenplissees</h3>
+                        </div>
+                    </a>
+
+                    <!-- Luxaflex Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[3/4] block">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/rollos-02b-812.jpg" alt="Luxaflex Rollos" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <span class="text-xs uppercase tracking-widest text-gray-300 mb-1 block">Luxaflex®</span>
+                            <h3 class="text-white font-serif text-xl">Rollos</h3>
+                        </div>
+                    </a>
+
+                    <!-- Luxaflex Card -->
+                    <a href="#" class="group relative overflow-hidden rounded-2xl aspect-[3/4] block">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/startseite-redesign/jalousien-44f-812.jpg" alt="Luxaflex Jalousien" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <span class="text-xs uppercase tracking-widest text-gray-300 mb-1 block">Luxaflex®</span>
+                            <h3 class="text-white font-serif text-xl">Jalousien</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="py-24 bg-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-light -z-10 rounded-l-[100px] hidden lg:block"></div>
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-4">Beratung, die inspiriert</h2>
+                    <p class="text-gray-600 text-lg">Werfen Sie einen Blick hinter die Kulissen und erleben Sie, wie unser Service funktioniert.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video relative group bg-gray-900">
+                        <iframe class="absolute top-0 left-0 w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" src="https://www.youtube-nocookie.com/embed/P5WlAbXjmx4?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="rounded-3xl overflow-hidden shadow-2xl aspect-video relative group bg-gray-900 lg:mt-12">
+                        <iframe class="absolute top-0 left-0 w-full h-full opacity-80 group-hover:opacity-100 transition-opacity" src="https://www.youtube-nocookie.com/embed/kL8bC6d5uF0?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content / About -->
+        <section class="py-20 bg-brand-light border-t border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 md:px-8 text-center">
+                <h2 class="font-serif text-2xl md:text-3xl text-brand-dark mb-6">JalouCity – Ihre Adresse für hochwertigen Sicht- und Sonnenschutz</h2>
+                <p class="text-gray-600 leading-relaxed md:text-lg">
+                    JalouCity, Deutschlands Marktführer im Facheinzelhandel für Sicht- und Sonnenschutz, steht bereits seit 1990 für handwerkliche Qualität und zeitloses Stilbewusstsein. Ob als clevere Standardlösung oder als maßgefertigtes Unikat – wir bieten Ihnen eine breite Kollektion an <a href="#" class="text-brand-green hover:underline decoration-1 underline-offset-4">Jalousien</a>, <a href="#" class="text-brand-green hover:underline decoration-1 underline-offset-4">Plissees</a> und <a href="#" class="text-brand-green hover:underline decoration-1 underline-offset-4">Rollos</a>, die Ihre Räume aufwerten. Besuchen Sie uns und erleben Sie ein unvergleichliches Sortiment an funktionalen Stoffen und innovativen Systemen. Unsere Experten vor Ort und im Außendienst begleiten Sie bei jedem Schritt – vom Aufmaß bis zur präzisen Montage. Vertrauen Sie auf unseren umfassenden Service und fünf Jahre Garantie.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-300 py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16 border-b border-gray-800 pb-16">
+                
+                <!-- Col 1 -->
+                <div>
+                    <h4 class="font-serif text-white text-xl mb-6">JalouCity</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Über Uns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Karriere</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">5 Jahre Garantie</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">JalouCity Qualität</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Partner werden</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif text-white text-xl mb-6">Beratung</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Filialen finden</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Außendienst anfragen</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kontakt & Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Magazin</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Ratgeber</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif text-white text-xl mb-6">Hilfe</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Versandinformationen</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gutscheinbedingungen</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kindersicherheit</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Produktsicherheitsverordnung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Trust & Socials -->
+                <div>
+                    <h4 class="font-serif text-white text-xl mb-6">Sicher Einkaufen</h4>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_trusted-shops.svg" alt="Trusted Shops" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity-ekomi-gold.svg" alt="eKomi" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_ssl.svg" alt="SSL" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+                    </div>
+
+                    <h4 class="font-serif text-white text-xl mb-4">Zahlung & Versand</h4>
+                    <div class="flex flex-wrap gap-3 opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_visa.svg" alt="Visa" class="h-5">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_mastercard.svg" alt="Mastercard" class="h-5">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_paypal.svg" alt="PayPal" class="h-5">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_dpd.svg" alt="DPD" class="h-5">
+                        <img src="https://www.jaloucity.de/skin/frontend/default/jaloucity_rwd/images/logos/footer/jaloucity_ups.svg" alt="UPS" class="h-5">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <div class="flex flex-wrap justify-center gap-4 mb-6 md:mb-0">
+                    <a href="#" class="hover:text-white transition-colors">Impressum</a>
+                    <a href="#" class="hover:text-white transition-colors">AGB</a>
+                    <a href="#" class="hover:text-white transition-colors">Widerrufsrecht</a>
+                    <a href="#" class="hover:text-white transition-colors">Datenschutz</a>
+                    <a href="#" class="hover:text-white transition-colors">Cookie-Nutzung</a>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex space-x-4 text-gray-400">
+                        <a href="#" class="hover:text-white"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-white"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="#" class="hover:text-white"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                    </div>
+                    <p>&copy; 2026 JalouCity. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Simple Interactions -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const closeMenuBtn = document.getElementById('closeMobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+    </script>
+</body>
+</html>
