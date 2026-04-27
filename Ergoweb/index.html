@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergoweb - Ergonomische Stühle, Bürostühle, Tische online kaufen</title>
+    <meta name="description" content="Ergonomisch Leben, Sitzen und Arbeiten. Ergonomische Stühle, höhenverstellbare Tische und ergonomische Hilfsmittel rund um Ihren Arbeitsplatz von ERGO aus Hamburg seit 1986.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config for Premium Look -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a', // Deep elegant blue
+                            light: '#eff6ff',
+                            orange: '#ea580c', // Refined action color
+                            dark: '#0f172a'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 40px -4px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities for Hide/Show */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-brand-blue selection:text-white">
+
+    <!-- TOP BAR (Contact & Socials) -->
+    <div class="bg-brand-dark text-slate-300 py-2 text-xs md:text-sm font-medium z-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <a href="tel:+49403096920" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +49 (0)40 309692-0
+                </a>
+                <a href="mailto:ergo@ergoobject.com" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> ergo@ergoobject.com
+                </a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden md:inline-block">Sicher: Zertifiziert von Trusted Shops</span>
+                <div class="w-px h-4 bg-slate-600 hidden md:block"></div>
+                <div class="flex items-center gap-3">
+                    <a href="https://www.facebook.com/ergoobject" target="_blank" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                    <a href="https://www.instagram.com/ergoobject" target="_blank" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="https://mx.linkedin.com/company/ergoobject" target="_blank" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER (Sticky) -->
+    <header class="bg-white/90 backdrop-blur-lg sticky top-0 z-40 border-b border-slate-200 shadow-sm transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0 flex items-center">
+                    <img class="h-12 md:h-16 w-auto object-contain" src="https://www.ergoweb.de/skin/frontend/default/theme449/images/logo.png" alt="Ergoweb Logo">
+                </a>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden lg:flex flex-1 max-w-md mx-8 relative">
+                    <input type="text" placeholder="Produkt suchen..." class="w-full bg-slate-100 border-transparent focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 rounded-full py-2.5 pl-5 pr-12 text-sm transition-all outline-none">
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand-orange text-white rounded-full hover:bg-orange-600 transition-colors">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <!-- Icons (Account & Cart) -->
+                <div class="flex items-center gap-4 md:gap-6">
+                    <a href="https://www.ergoweb.de/customer/account/login/" class="hidden md:flex flex-col items-center text-slate-600 hover:text-brand-blue transition-colors group">
+                        <i data-lucide="user" class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs font-medium">Anmelden</span>
+                    </a>
+                    
+                    <a href="/checkout/cart/" class="flex flex-col items-center text-slate-600 hover:text-brand-blue transition-colors relative group">
+                        <div class="relative">
+                            <i data-lucide="shopping-cart" class="w-6 h-6 mb-1 group-hover:scale-110 transition-transform"></i>
+                            <span class="absolute -top-1 -right-2 bg-brand-orange text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">0</span>
+                        </div>
+                        <span class="text-xs font-medium hidden md:block">Warenkorb</span>
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-600 hover:text-brand-blue">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:block border-t border-slate-100 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex justify-center space-x-8 py-3 text-sm font-semibold text-slate-700">
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Produkte</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Marken</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Sitzkonzepte</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Gesunde Beratung</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Service</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Über uns</a></li>
+                    <li><a href="#" class="hover:text-brand-blue transition-colors py-2">Kontakt</a></li>
+                    <li><a href="#" class="text-brand-orange hover:text-orange-600 transition-colors py-2">Sales</a></li>
+                    <li><a href="#" class="text-red-600 hover:text-red-700 transition-colors py-2">Abverkauf</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden flex-col pt-20 px-6 pb-6 overflow-y-auto">
+        <button id="close-menu-btn" class="absolute top-6 right-6 p-2 text-slate-600">
+            <i data-lucide="x" class="w-8 h-8"></i>
+        </button>
+        <!-- Mobile Search -->
+        <div class="relative w-full mb-8 mt-4">
+            <input type="text" placeholder="Suche..." class="w-full bg-slate-100 rounded-lg py-3 pl-4 pr-12 text-sm outline-none">
+            <button class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400">
+                <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+        </div>
+        <ul class="flex flex-col space-y-6 text-lg font-semibold text-slate-800">
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Produkte</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Marken</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Sitzkonzepte</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Gesunde Beratung</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Service</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Über uns</a></li>
+            <li><a href="#" class="block border-b border-slate-100 pb-2">Kontakt</a></li>
+            <li><a href="#" class="block text-brand-orange">Sales</a></li>
+            <li><a href="#" class="block text-red-600">Abverkauf</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="flex flex-col lg:flex-row gap-8 items-start">
+                
+                <!-- Main Banner (Left/Top) -->
+                <div class="w-full lg:w-3/4 rounded-2xl overflow-hidden shadow-hover group relative bg-white">
+                    <a href="/produkte" class="block">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/slider/2025/full/Rollermouse.png" alt="Rollermouse Red Plus Angebot" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.02]">
+                    </a>
+                </div>
+
+                <!-- Sidebar Features (Right/Bottom) -->
+                <div class="w-full lg:w-1/4 flex flex-col gap-6">
+                    <!-- Service Checklist -->
+                    <div class="bg-white rounded-2xl p-6 shadow-soft border border-slate-100">
+                        <h3 class="text-sm uppercase tracking-wider text-slate-400 font-bold mb-4">Ihre Vorteile</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                                <div class="bg-green-100 text-green-600 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                5% Vorkassenrabatt
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                                <div class="bg-green-100 text-green-600 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                Rechnungskauf möglich
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                                <div class="bg-green-100 text-green-600 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                Kurze Lieferzeiten
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                                <div class="bg-green-100 text-green-600 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                1a-Markenartikel
+                            </li>
+                            <li class="flex items-center gap-3 text-slate-700 font-medium text-sm">
+                                <div class="bg-green-100 text-green-600 p-1 rounded-full"><i data-lucide="check" class="w-3 h-3"></i></div>
+                                Garantie/Gewährleistung
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Showroom CTA -->
+                    <div class="bg-brand-blue rounded-2xl p-6 text-white shadow-soft relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-[url('https://www.ergoweb.de/skin/frontend/default/theme449/images/showroom.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay group-hover:opacity-30 transition-opacity duration-500"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-2 mb-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-orange"></i>
+                                <h3 class="font-bold text-lg">Showroom Hamburg</h3>
+                            </div>
+                            <p class="text-sm text-blue-100 mb-2"><strong>Mo – Fr:</strong> 10:00 – 17:00 Uhr</p>
+                            <p class="text-xs text-blue-200 mb-4 line-clamp-2">Nutzen Sie gerne unsere Onlineterminvergabe für eine gesunde Beratung.</p>
+                            <a href="/kontakt" class="inline-block bg-brand-orange hover:bg-orange-600 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-colors w-full text-center">
+                                Zum Buchungstool
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMO BOXES -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Promo 1 -->
+                <a href="/marken/bioswing" class="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 bg-white block">
+                    <div class="aspect-w-16 aspect-h-9 md:aspect-auto md:h-48 overflow-hidden">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/box_01.jpg" alt="Sitzen in Bewegung" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-xl mb-1 drop-shadow-md">Sitzen in Bewegung</h3>
+                        <p class="text-white/90 text-sm flex items-center gap-1 font-medium group-hover:text-brand-orange transition-colors">
+                            mehr Informationen <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </p>
+                    </div>
+                </a>
+                <!-- Promo 2 -->
+                <a href="/rollermouse-red" class="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 bg-white block">
+                    <div class="aspect-w-16 aspect-h-9 md:aspect-auto md:h-48 overflow-hidden">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/box_02.jpg" alt="Haltung bewahren" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-xl mb-1 drop-shadow-md">Haltung bewahren</h3>
+                        <p class="text-white/90 text-sm flex items-center gap-1 font-medium group-hover:text-brand-orange transition-colors">
+                            zum Produkt <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </p>
+                    </div>
+                </a>
+                <!-- Promo 3 -->
+                <a href="/produkte/sitzmoebel/entspannungssessel" class="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-all duration-300 bg-white block">
+                    <div class="aspect-w-16 aspect-h-9 md:aspect-auto md:h-48 overflow-hidden bg-slate-100">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/box_03.jpg" alt="Schwerelos Schwingen" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 mix-blend-multiply">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6">
+                        <h3 class="text-white font-bold text-xl mb-1 drop-shadow-md">Schwerelos Schwingen</h3>
+                        <p class="text-white/90 text-sm flex items-center gap-1 font-medium group-hover:text-brand-orange transition-colors">
+                            zum Produkt <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- PRODUCT CATEGORIES -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200 mt-8">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-slate-800 relative inline-block">
+                    Produktkategorien
+                    <span class="absolute -bottom-2 left-0 w-12 h-1 bg-brand-orange rounded-full"></span>
+                </h2>
+                <div class="hidden md:flex gap-2">
+                    <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-brand-blue hover:border-brand-blue transition-colors"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                    <button class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-brand-blue hover:border-brand-blue transition-colors"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+            </div>
+
+            <!-- Scrollable Grid / Flex row for categories -->
+            <div class="flex overflow-x-auto hide-scrollbar gap-6 pb-6 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
+                
+                <a href="/produkte/sitzmoebel" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_01.jpg" alt="Sitzmöbel" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Sitzmöbel</h4>
+                </a>
+
+                <a href="/produkte/tische-und-stehpulte" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_03.jpg" alt="Tische & Stehpulte" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Tische & Stehpulte</h4>
+                </a>
+
+                <a href="/produkte/tastatur-und-maus" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_02.jpg" alt="Tastatur & Maus" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Tastatur & Maus</h4>
+                </a>
+
+                <a href="/produkte/ergonomie-zubehoer" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_04.jpg" alt="Ergonomie Zubehör" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Ergonomie Zubehör</h4>
+                </a>
+
+                <a href="/produkte/software-und-buecher" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_05.jpg" alt="Software & Bücher" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Software & Bücher</h4>
+                </a>
+
+                <a href="/produkte/aktivitaet-und-wellness" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_06.jpg" alt="Aktivität & Wellness" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Aktivität & Wellness</h4>
+                </a>
+
+                 <a href="/produkte/kinder-kinder" class="snap-start flex-none w-48 group bg-white rounded-2xl p-6 shadow-sm hover:shadow-hover transition-all duration-300 border border-slate-100 flex flex-col items-center text-center">
+                    <div class="h-24 w-full mb-4 flex items-center justify-center">
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/prod_cat_07.jpg" alt="Kinder - Kinder" class="max-h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <h4 class="font-semibold text-slate-800 group-hover:text-brand-blue transition-colors">Kinder - Kinder</h4>
+                </a>
+            </div>
+        </section>
+
+        <!-- BRANDS (Hersteller) -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-slate-200">
+             <div class="flex items-center justify-between mb-8">
+                <h2 class="text-2xl font-bold text-slate-800 relative inline-block">
+                    Hersteller
+                    <span class="absolute -bottom-2 left-0 w-12 h-1 bg-slate-300 rounded-full"></span>
+                </h2>
+            </div>
+            
+            <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 opacity-70">
+                <a href="/marken/aeris" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_aeris.png" alt="Aeris" class="h-10 object-contain"></a>
+                <a href="#" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_amego.png" alt="Byllet" class="h-10 object-contain"></a>
+                <a href="/marken/bakker-elkhuizen" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_bakker.png" alt="Bakker Elkhuizen" class="h-10 object-contain"></a>
+                <a href="#" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_cityergonomics.png" alt="Cityergonomics" class="h-10 object-contain"></a>
+                <a href="/marken/contour" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_contour.png" alt="Contour" class="h-10 object-contain"></a>
+                <a href="/marken/hag" class="hover:opacity-100 transition-opacity grayscale hover:grayscale-0 hidden md:block"><img src="https://www.ergoweb.de/media/catalog/category/cat_hersteller_one_hag.png" alt="HAG" class="h-10 object-contain"></a>
+            </div>
+        </section>
+
+        <!-- SEO / INFO TEXT -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-800 mb-6">Ergonomische Produkte, Beratung durch Ergonomie-Experten und ERGOCOACHING</h2>
+            <div class="prose prose-slate mx-auto text-sm text-slate-500 leading-relaxed space-y-4">
+                <p>Willkommen auf www.ergoweb.de. Wir, als <strong>Ergonomie-Experten</strong> seit 1986, freuen uns über Ihren Besuch auf unseren Seiten und haben stets den Anspruch Ihre ganz individuelle Arbeitsplatzsituation zu berücksichtigen. In unserem Online-Katalog finden sie alle Produkte um Ihren <strong>ergonomischen Arbeitsplatz</strong> zu gestalten.</p>
+                <p>Von <a href="#" class="text-brand-blue hover:underline">Ergonomische Tastaturen</a>, <a href="#" class="text-brand-blue hover:underline">Vertical Mäuse</a>, <a href="#" class="text-brand-blue hover:underline">ergonomische Tische und Stehpulte</a>, <a href="#" class="text-brand-blue hover:underline">ergonomische Stühle</a>, Hocker und Sessel sowie jede Menge an <a href="#" class="text-brand-blue hover:underline">ergonomischen Hilfsmitteln</a> rund um Ihren Arbeitsplatz.</p>
+                
+                <div class="mt-8 pt-8 border-t border-slate-200 text-left md:text-center">
+                    <h3 class="font-bold text-slate-700 mb-2">Hier eine Übersicht der beliebtesten Ergonomie-Kategorien:</h3>
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs font-medium text-slate-500">
+                        <a href="#" class="hover:text-brand-blue">Bürostühle</a> | 
+                        <a href="#" class="hover:text-brand-blue">Sattelstühle</a> | 
+                        <a href="#" class="hover:text-brand-blue">Entspannungssessel</a> | 
+                        <a href="#" class="hover:text-brand-blue">Rollermouse</a> | 
+                        <a href="#" class="hover:text-brand-blue">Trainingsstäbe</a> | 
+                        <a href="#" class="hover:text-brand-blue">Sitzbälle</a> | 
+                        <a href="#" class="hover:text-brand-blue">HAG</a> | 
+                        <a href="#" class="hover:text-brand-blue">BIOSWING</a> | 
+                        <a href="#" class="hover:text-brand-blue">IOE</a> | 
+                        <a href="#" class="hover:text-brand-blue">Monitorarme</a> | 
+                        <a href="#" class="hover:text-brand-blue">Dokumentenhalter</a>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-left md:text-center">
+                    <h3 class="font-bold text-slate-700 mb-2">Ergonomie-Topseller:</h3>
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs font-medium text-slate-500">
+                        <a href="#" class="hover:text-brand-blue">Hag Capisco 8106</a> | 
+                        <a href="#" class="hover:text-brand-blue">Swopper Classic</a> | 
+                        <a href="#" class="hover:text-brand-blue">Rollermouse RED</a> | 
+                        <a href="#" class="hover:text-brand-blue">E-Slide Pluss</a> | 
+                        <a href="#" class="hover:text-brand-blue">My View 1 - Monitorarm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-300 py-12 md:py-16 mt-12 border-t-4 border-brand-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Column 1 -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="info" class="w-5 h-5 text-brand-orange"></i> Information
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Über uns</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Service & ERGOCOACHING</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Gute Beratung</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">AGB</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Widerruf</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform">Impressum</a></li>
+                        <li><a href="#" class="hover:text-white hover:translate-x-1 inline-block transition-transform font-medium text-brand-orange">Kontaktieren Sie uns</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="truck" class="w-5 h-5 text-brand-orange"></i> Lieferung & Zahlung
+                    </h4>
+                    <div class="mb-6">
+                        <h5 class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-2">Lieferkonditionen</h5>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="#" class="hover:text-white">Liefer- und Versandkosten</a></li>
+                            <li><a href="#" class="hover:text-white">Lieferung Ausland</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-slate-400 font-semibold text-xs uppercase tracking-wider mb-3">Zahlungsmethoden</h5>
+                        <img src="https://www.ergoweb.de/skin/frontend/default/theme449/images/paymethods.png" alt="Zahlungsmethoden" class="h-10 bg-white rounded-md p-1 object-contain opacity-90 hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="building-2" class="w-5 h-5 text-brand-orange"></i> Kontakt
+                    </h4>
+                    <div class="text-sm space-y-4">
+                        <p>
+                            <strong class="text-white block mb-1">ErgoObject GmbH & Co. KG</strong>
+                            Burchardstraße 17<br>
+                            20095 Hamburg
+                        </p>
+                        <p class="pt-2 border-t border-slate-700">
+                            <span class="text-slate-400 block text-xs uppercase tracking-wider mb-1">Service Telefon</span>
+                            <a href="tel:+49403096920" class="text-white font-medium hover:text-brand-orange text-lg">+49 (0)40 309692-0</a>
+                        </p>
+                        <p class="pt-2 border-t border-slate-700">
+                            <span class="text-slate-400 block text-xs uppercase tracking-wider mb-1">Showroom Öffnungszeiten</span>
+                            Montag - Freitag: 10.00 – 17.00 Uhr<br>
+                            Samstag: Auf Anfrage
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="map" class="w-5 h-5 text-brand-orange"></i> Anfahrt
+                    </h4>
+                    <div class="text-sm space-y-4 text-slate-400">
+                        <p>Mit der Bahn erreichen Sie uns am besten über die Station <strong>U-Steinstraße</strong> und <strong>U-Meßberg</strong>.</p>
+                        <ul class="space-y-1">
+                            <li>- U Rathaus</li>
+                            <li>- U Meßberg</li>
+                            <li>- Bushaltestelle Jakobikirchhof</li>
+                        </ul>
+                        <p class="pt-4 border-t border-slate-700">
+                            <strong>Mit dem Auto:</strong> Wir haben direkt vor der Tür einen öffentlichen Behindertenparkplatz, sowie eine Ladezone.
+                        </p>
+                        
+                        <div class="mt-6">
+                            <button class="w-full bg-slate-800 hover:bg-brand-orange text-white font-semibold py-3 px-4 rounded-lg transition-colors border border-slate-700 hover:border-brand-orange flex items-center justify-center gap-2">
+                                <i data-lucide="mail-plus" class="w-4 h-4"></i> Newsletter abonnieren
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 ErgoObject GmbH & Co. KG. Alle Rechte vorbehalten.</p>
+                <div class="flex gap-4">
+                    <a href="https://www.facebook.com/ergoobject" class="hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="https://www.instagram.com/ergoobject" class="hover:text-white transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="https://mx.linkedin.com/company/ergoobject" class="hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons & Simple Interactions -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Header Scroll Effect
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
