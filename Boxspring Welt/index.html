@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxspringbett online kaufen - Boxspringwelt | Premium Redesign</title>
+    
+    <!-- Google Fonts: Inter for a clean, modern aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for interactive elements (mobile menu) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e63946',
+                            redHover: '#d92c3a',
+                            purple: '#4a3b52',
+                            dark: '#1a1a1a',
+                            beige: '#f7f5f2',
+                            gray: '#f3f4f6',
+                            text: '#333333',
+                            muted: '#6b7280'
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'floating': '0 20px 40px -10px rgba(0,0,0,0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-text bg-white antialiased" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 20)">
+
+    <!-- Sitewide Promo Banner -->
+    <div class="bg-[#f7f95d] text-black text-xs md:text-sm font-medium py-2 px-4 text-center relative z-50">
+        <p class="hidden md:inline-block">Traumtage bei Boxspringwelt – heute zum besten Preis <span class="font-bold ml-2">14 Std 26 Min 55 Sek</span></p>
+        <p class="inline-block md:hidden">Traumtage-Rabatt <span class="font-bold ml-2">14:26:55</span></p>
+    </div>
+
+    <!-- Navigation Header -->
+    <header :class="{ 'py-3 glass shadow-sm': scrolled, 'py-5 bg-white': !scrolled }" class="fixed w-full top-0 z-40 transition-all duration-300 mt-[32px] md:mt-[36px]">
+        <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="xl:hidden p-2 -ml-2 text-brand-dark focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0 z-50">
+                <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/Logo-Boxspringwelt.svg" alt="Boxspring-Welt" class="h-8 md:h-10 transition-all">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden xl:flex space-x-8 items-center font-medium text-brand-dark text-[15px]">
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Betten</a>
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Wunschbett konfigurieren</a>
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Matratzen & Topper</a>
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Rund ums Bett</a>
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Showrooms</a>
+                <a href="#" class="hover:text-brand-red transition-colors py-2 border-b-2 border-transparent hover:border-brand-red">Beratung & Inspiration</a>
+            </nav>
+
+            <!-- Icons Right -->
+            <div class="flex items-center space-x-4 lg:space-x-6">
+                <button class="text-brand-dark hover:text-brand-red transition-colors"><i data-lucide="search" class="w-5 h-5 md:w-6 md:h-6"></i></button>
+                <a href="#" class="text-brand-dark hover:text-brand-red transition-colors"><i data-lucide="user" class="w-5 h-5 md:w-6 md:h-6"></i></a>
+                <a href="#" class="text-brand-dark hover:text-brand-red transition-colors relative">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 md:w-6 md:h-6"></i>
+                    <span class="absolute -top-1.5 -right-1.5 bg-brand-red text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div x-show="mobileMenuOpen" class="fixed inset-0 bg-white z-40 pt-24 px-6 overflow-y-auto" x-transition.opacity style="display: none;">
+            <div class="flex flex-col space-y-6 text-lg font-medium text-brand-dark">
+                <a href="#" class="border-b border-gray-100 pb-4">Betten</a>
+                <a href="#" class="border-b border-gray-100 pb-4 text-brand-red">Wunschbett konfigurieren</a>
+                <a href="#" class="border-b border-gray-100 pb-4">Matratzen & Topper</a>
+                <a href="#" class="border-b border-gray-100 pb-4">Rund ums Bett</a>
+                <a href="#" class="border-b border-gray-100 pb-4">Showrooms</a>
+                <a href="#" class="pb-4">Beratung & Inspiration</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Contact Button -->
+    <button class="fixed bottom-6 right-6 z-50 bg-white p-4 rounded-full shadow-floating text-brand-dark hover:text-brand-red transition-transform hover:scale-110">
+        <i data-lucide="message-square-more" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="pt-[90px] md:pt-[100px]">
+
+        <!-- HERO SECTION -->
+        <section class="relative bg-brand-beige h-[85vh] min-h-[600px] flex items-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 w-full h-full">
+                <img src="https://www.boxspring-welt.de/media/marketing_campaigns/Traumtage_Header_LG_V3_neu_1.png" alt="Willkommen in der Boxspringwelt" class="w-full h-full object-cover object-center lg:object-right">
+                <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent lg:w-2/3"></div>
+            </div>
+
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <div class="max-w-2xl glass p-8 md:p-12 rounded-3xl shadow-premium">
+                    <span class="inline-block px-3 py-1 bg-brand-red/10 text-brand-red font-semibold rounded-full text-xs uppercase tracking-wider mb-6">Traumtage bei Boxspringwelt</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-brand-dark leading-tight mb-4">
+                        Mach dein Schlafzimmer zu deinem Lieblingsort.
+                    </h1>
+                    <p class="text-lg md:text-xl text-brand-muted mb-8 font-light">
+                        Boxspringbetten, individuell konfigurierbar.<br>
+                        <span class="font-medium text-brand-dark mt-2 block">Dein Bett. Dein Stil. Gestalte dein Boxspringbett in wenigen Schritten selbst.</span>
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                        <a href="#" class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg hover:shadow-xl w-full sm:w-auto text-center flex justify-center items-center gap-2">
+                            Jetzt Lieblingsbett gestalten
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <div class="text-sm font-medium text-brand-dark">
+                            <p class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-brand-red"></i> Rabatt endet in: <span class="text-brand-red">14:26:55</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISCOUNT TIERS SECTION -->
+        <section class="border-b border-gray-100 bg-white relative -mt-6 z-20 container mx-auto rounded-xl shadow-premium">
+            <div class="px-6 py-8 md:py-10">
+                <div class="text-center mb-6">
+                    <p class="text-sm text-brand-muted uppercase tracking-widest font-semibold mb-1">Rabatt - abhängig vom Warenkorbwert</p>
+                    <h2 class="text-2xl md:text-3xl font-serif text-brand-dark">So hoch ist dein Rabatt heute.</h2>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-100 border-t border-gray-100 pt-6">
+                    <div class="text-center px-4 py-2">
+                        <span class="block text-3xl md:text-4xl font-bold text-brand-red mb-1">789 €</span>
+                        <span class="text-sm text-brand-muted">ab 1.750 €</span>
+                    </div>
+                    <div class="text-center px-4 py-2">
+                        <span class="block text-3xl md:text-4xl font-bold text-brand-red mb-1">939 €</span>
+                        <span class="text-sm text-brand-muted">ab 2.250 €</span>
+                    </div>
+                    <div class="text-center px-4 py-2 mt-6 lg:mt-0">
+                        <span class="block text-3xl md:text-4xl font-bold text-brand-red mb-1">1.039 €</span>
+                        <span class="text-sm text-brand-muted">ab 3.350 €</span>
+                    </div>
+                    <div class="text-center px-4 py-2 mt-6 lg:mt-0">
+                        <span class="block text-3xl md:text-4xl font-bold text-brand-red mb-1">1.139 €</span>
+                        <span class="text-sm text-brand-muted">ab 4.050 €</span>
+                    </div>
+                </div>
+                <p class="text-xs text-center text-gray-400 mt-6">Gilt für Produkte ab 1.750 € Einzelpreis.</p>
+            </div>
+        </section>
+
+        <!-- FAVORITE CATEGORIES -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="mb-12">
+                    <p class="text-brand-muted text-sm font-semibold tracking-wider uppercase mb-2">Beliebte Kategorien</p>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand-dark">Boxspring-Komfort für dich.</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+                    <!-- Item 1 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/b/e/bestseller_room.png" alt="Bestseller" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Bestseller</span>
+                    </a>
+                    <!-- Item 2 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/s/c/schnell_lieferbar_room.png" alt="Schnell lieferbar" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Schnell lieferbar</span>
+                    </a>
+                    <!-- Item 3 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/b/u/budgetliebling_room.png" alt="Budgetlieblinge" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Budgetlieblinge</span>
+                    </a>
+                    <!-- Item 4 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/b/e/bettkasten_room.png" alt="Mit Bettkasten" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Mit Bettkasten</span>
+                    </a>
+                    <!-- Item 5 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/e/r/erik_romance_board-grau_winkel-schwarz_raum.png" alt="Mit Motor" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Mit Motor</span>
+                    </a>
+                    <!-- Item 6 -->
+                    <a href="#" class="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-premium transition-all duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square overflow-hidden mb-4 relative rounded-xl bg-brand-beige">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/h/o/holzbetten_room.png" alt="Holzbett" class="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <span class="font-medium text-brand-dark group-hover:text-brand-red transition-colors text-center">Holzbett</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BED ACCESSORIES (SPLIT SECTION) -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-serif text-brand-dark">Bettzubehör</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Spannbettlaken</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Schonbezüge</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Kissen</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Bettdecken</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Nachttische</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-premium">
+                    <!-- Text Side -->
+                    <div class="bg-[#e8e4e1] p-12 md:p-20 flex flex-col justify-center relative group">
+                        <a href="#" class="absolute inset-0 z-10"></a>
+                        <h3 class="text-3xl md:text-4xl font-serif text-brand-dark mb-6 leading-tight">Mach dein Bett komplett – bis ins Detail.</h3>
+                        <p class="text-brand-dark/80 text-lg mb-12">Von Matratzen über Topper bis zu stilvollen Nachttischen: Entdecke das Zubehör, das dein Bett zum Lieblingsplatz macht.</p>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                    <!-- Image Side -->
+                    <div class="h-[400px] lg:h-auto">
+                        <img src="https://www.boxspring-welt.de/media/ecw_widget/b/e/bettzubeho_r.jpg" alt="Bettzubehör" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FULL WIDTH BANNER -->
+        <section class="py-24 bg-brand-purple relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.boxspring-welt.de/media/ecw_widget/b/e/beratung_inspiration_unten.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+            <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Traumtage bei Boxspringwelt.</h2>
+                <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto font-light">Sichere dir jetzt deinen besten Preis – der Rabatt sinkt jeden Tag.</p>
+                <a href="#" class="inline-flex items-center gap-3 text-white border-b-2 border-white pb-1 hover:text-brand-red hover:border-brand-red transition-colors text-lg font-medium group">
+                    Dein Traumbett wartet.
+                    <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ADVISOR / BLOG SECTION -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="mb-12">
+                    <p class="text-brand-muted text-sm font-semibold tracking-wider uppercase mb-2">Ratgeber</p>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand-dark">Wissen & Wohnideen</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- General Blog Card -->
+                    <a href="#" class="group relative rounded-2xl overflow-hidden aspect-square flex flex-col justify-end p-8 shadow-sm hover:shadow-premium transition-all">
+                        <img src="https://www.boxspring-welt.de/media/ecw_widget/t/e/text_background.jpg" alt="Schlaftipps" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                        <div class="relative z-10 text-white">
+                            <h3 class="text-2xl font-serif mb-3">Schlaftipps, Wohnideen und mehr.</h3>
+                            <p class="text-sm text-white/80 line-clamp-3 mb-6">In unserem Blog findest du hilfreiche Beiträge, Trends und Expertenrat für erholsamen Schlaf und ein stilvolles Schlafzimmer.</p>
+                            <div class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center group-hover:bg-white group-hover:text-brand-dark transition-all">
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 1 -->
+                    <a href="#" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all flex flex-col">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full text-brand-dark">Betten</div>
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/b/o/boxspringbett_kaufen_was_ist_zu_beachten.jpg" alt="Boxspringbett kaufen" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <h3 class="text-lg font-medium text-brand-dark mb-4 group-hover:text-brand-red transition-colors">Boxspringbett kaufen – was beachten?</h3>
+                            <div class="flex items-center text-sm font-medium text-brand-red">
+                                Weiterlesen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="#" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all flex flex-col">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full text-brand-dark">Betten</div>
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/w/e/welches_boxspringbett_fuer_wen.jpg" alt="Welches Boxspringbett" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <h3 class="text-lg font-medium text-brand-dark mb-4 group-hover:text-brand-red transition-colors">Welches Boxspringbett für wen?</h3>
+                            <div class="flex items-center text-sm font-medium text-brand-red">
+                                Weiterlesen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="#" class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-premium transition-all flex flex-col">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <div class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full text-brand-dark">Härtegrad</div>
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/w/e/welcher_haertegrad_passt_zu_mir.jpg" alt="Härtegrad" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <h3 class="text-lg font-medium text-brand-dark mb-4 group-hover:text-brand-red transition-colors">Welcher Härtegrad passt zu mir?</h3>
+                            <div class="flex items-center text-sm font-medium text-brand-red">
+                                Weiterlesen <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOWROOMS (SPLIT SECTION REVERSE) -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-serif text-brand-dark">Showrooms in der Nähe</h2>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Bielefeld</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Schwaben</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Frankfurt</a>
+                        <a href="#" class="px-5 py-2 rounded-full border border-gray-200 text-brand-dark hover:border-brand-red hover:text-brand-red transition-colors text-sm font-medium">Schweizer Grenze</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-premium">
+                    <!-- Image Side -->
+                    <div class="h-[400px] lg:h-auto order-2 lg:order-1">
+                        <img src="https://www.boxspring-welt.de/media/ecw_widget/s/h/showrooms_1.jpg" alt="Showrooms" class="w-full h-full object-cover">
+                    </div>
+                    <!-- Text Side -->
+                    <div class="bg-[#f0ece9] p-12 md:p-20 flex flex-col justify-center relative group order-1 lg:order-2">
+                        <a href="#" class="absolute inset-0 z-10"></a>
+                        <h3 class="text-3xl md:text-4xl font-serif text-brand-dark mb-6 leading-tight">Erlebe unsere Boxspringbetten live vor Ort.</h3>
+                        <p class="text-brand-dark/80 text-lg mb-12">Jeder Showroom ist modern eingerichtet und präsentiert eine große Auswahl an Boxspringbetten und Zubehör – so kannst du Qualität und Komfort hautnah erleben.</p>
+                        <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-brand-red group-hover:text-white transition-all">
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS & TRUST -->
+        <section class="py-24 bg-gray-50 border-y border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
+                
+                <div class="flex justify-center -space-x-4 mb-8">
+                    <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/avatar-01.png" alt="User" class="w-16 h-16 rounded-full border-4 border-gray-50 z-10 relative">
+                    <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/avatar-02.png" alt="User" class="w-16 h-16 rounded-full border-4 border-gray-50 z-20 relative">
+                    <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/avatar-03.png" alt="User" class="w-16 h-16 rounded-full border-4 border-gray-50 z-30 relative">
+                    <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/avatar-04.png" alt="User" class="w-16 h-16 rounded-full border-4 border-gray-50 z-40 relative">
+                    <div class="w-16 h-16 rounded-full border-4 border-gray-50 z-50 relative bg-brand-red text-white flex items-center justify-center font-bold text-sm">+5k</div>
+                </div>
+
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="flex gap-1">
+                        <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/icon-star-orange.svg" alt="Star" class="w-6 h-6">
+                        <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/icon-star-orange.svg" alt="Star" class="w-6 h-6">
+                        <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/icon-star-orange.svg" alt="Star" class="w-6 h-6">
+                        <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/icon-star-orange.svg" alt="Star" class="w-6 h-6">
+                        <img src="https://www.boxspring-welt.de/media/wysiwyg/trusted_shops/icon-star-orange.svg" alt="Star" class="w-6 h-6">
+                    </div>
+                    <span class="text-2xl font-bold text-brand-dark ml-2">4.88</span>
+                    <span class="text-lg text-brand-muted font-medium">Sehr gut</span>
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-serif text-brand-dark mb-6 leading-tight">Tausende Kundinnen und Kunden schlafen schon besser.</h2>
+                <p class="text-lg text-brand-muted font-light max-w-2xl mx-auto">Über 5.000 echte Bewertungen mit 4,88 von 5 Sternen – unsere Kunden schätzen Qualität, Service und Schlafkomfort auf höchstem Niveau.</p>
+                
+                <!-- Trusted Shops Widget Placeholder for layout -->
+                <div class="mt-10 bg-white p-6 rounded-2xl shadow-sm inline-block mx-auto border border-gray-100">
+                    <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/icons/ts-logo.png" alt="Trusted Shops" class="h-10 mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICE FEATURES -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    
+                    <!-- Item 1: Stoffmuster -->
+                    <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-3xl">
+                        <div class="w-full md:w-1/2 flex-shrink-0">
+                            <img src="https://www.boxspring-welt.de/media/wysiwyg/stoffmuster.png" alt="Stoffmuster" class="w-full rounded-2xl shadow-sm">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-2 block">Kostenlose Stoffmuster</span>
+                            <h3 class="text-2xl md:text-3xl font-serif text-brand-dark mb-4">Fühl den Unterschied!</h3>
+                            <p class="text-brand-muted mb-6">Wähle aus über 100 Stoffen und Farben und bestelle bis zu 5 Muster gratis nach Hause – so findest du den perfekten Look für dein neues Boxspringbett.</p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-red font-semibold hover:gap-3 transition-all">
+                                Stoffmuster bestellen <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Kundenservice -->
+                    <div class="flex flex-col md:flex-row gap-8 items-center bg-gray-50 p-8 rounded-3xl">
+                        <div class="w-full md:w-1/2 flex-shrink-0">
+                            <img src="https://www.boxspring-welt.de/media/wysiwyg/haende_smiley.png" alt="Kundenservice" class="w-full rounded-2xl shadow-sm">
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <span class="text-xs font-bold uppercase tracking-wider text-brand-muted mb-2 block">Kundenservice</span>
+                            <h3 class="text-2xl md:text-3xl font-serif text-brand-dark mb-4">Wir sind für dich da!</h3>
+                            <p class="text-brand-muted mb-6">Du hast Fragen zu Größen, Komfort oder Konfiguration? Unsere Schlafexperten beraten dich kostenlos – online, telefonisch oder vor Ort im Showroom.</p>
+                            <div class="flex flex-col gap-3">
+                                <a href="tel:08001020450" class="inline-flex items-center gap-3 text-brand-dark hover:text-brand-red font-medium transition-colors">
+                                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-brand-red"><i data-lucide="phone" class="w-4 h-4"></i></div>
+                                    0800 - 10 20 450
+                                </a>
+                                <a href="mailto:info@boxspring-welt.de" class="inline-flex items-center gap-3 text-brand-dark hover:text-brand-red font-medium transition-colors">
+                                    <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm text-brand-red"><i data-lucide="mail" class="w-4 h-4"></i></div>
+                                    info@boxspring-welt.de
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECONDARY HERO (KONFIGURATOR) -->
+        <section class="relative py-32 bg-gray-900 flex items-center justify-center">
+            <div class="absolute inset-0">
+                <img src="https://www.boxspring-welt.de/media/ecw_widget/b/e/beratung_inspiration_unten_kopie.jpg" alt="Boxspringbett-Konfigurator" class="w-full h-full object-cover opacity-60">
+            </div>
+            <div class="relative z-10 text-center px-4 max-w-3xl">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6 leading-tight">Boxspringbett-Konfigurator:<br>Gestalte jedes Bett, wie es dir gefällt.</h2>
+                <a href="#" class="inline-block mt-4 bg-brand-red hover:bg-brand-redHover text-white px-10 py-4 rounded-full font-medium transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                    Jetzt konfigurieren
+                </a>
+            </div>
+        </section>
+
+        <!-- BENEFITS SECTION -->
+        <section class="py-24 bg-white border-b border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-muted mb-2 block">Deine Vorteile</span>
+                    <h2 class="text-3xl md:text-4xl font-serif text-brand-dark">Darum Boxspring Welt</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    
+                    <div class="text-center flex flex-col items-center group">
+                        <div class="h-24 mb-6 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/m/a/ma_geschneidert.png" alt="Maßgeschneidert" class="h-full object-contain">
+                        </div>
+                        <h4 class="text-xl font-medium text-brand-dark mb-4">Individueller<br>Schlafkomfort</h4>
+                        <p class="text-brand-muted text-sm leading-relaxed font-light">Dein Bett wird genau nach deinen Wünschen gefertigt. Wähle aus vielen Kombinationen – von Matratze und Topper bis zu Stoff, Kopfteil und Füßen.</p>
+                    </div>
+
+                    <div class="text-center flex flex-col items-center group">
+                        <div class="h-24 mb-6 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/l/i/lieferung.png" alt="Lieferung" class="h-full object-contain">
+                        </div>
+                        <h4 class="text-xl font-medium text-brand-dark mb-4">Lieferung bis ins<br>Schlafzimmer - mit Aufbau</h4>
+                        <p class="text-brand-muted text-sm leading-relaxed font-light">Wir liefern dein Bett bequem zu dir nach Hause und bauen es auf Wunsch direkt auf. Schnell, stressfrei und professionell.</p>
+                    </div>
+
+                    <div class="text-center flex flex-col items-center group">
+                        <div class="h-24 mb-6 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/f/a/fachberatung.png" alt="Fachberatung" class="h-full object-contain">
+                        </div>
+                        <h4 class="text-xl font-medium text-brand-dark mb-4">Persönliche Fachberatung<br>online & vor Ort</h4>
+                        <p class="text-brand-muted text-sm leading-relaxed font-light">Ob telefonisch, per Video oder im Showroom: Unsere Schlafberater begleiten dich persönlich bis zu deinem perfekten Bett.</p>
+                    </div>
+
+                    <div class="text-center flex flex-col items-center group">
+                        <div class="h-24 mb-6 flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                            <img src="https://www.boxspring-welt.de/media/ecw_widget/p/r/probeliegen.png" alt="Probeliegen" class="h-full object-contain">
+                        </div>
+                        <h4 class="text-xl font-medium text-brand-dark mb-4">100 Tage<br>risikofrei Probeliegen</h4>
+                        <p class="text-brand-muted text-sm leading-relaxed font-light">Teste dein Bett in Ruhe zu Hause. Wenn etwas nicht passt, tauschen wir Matratzen- oder Topperkern unkompliziert aus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWSLETTER SECTION -->
+        <section class="relative py-20 bg-brand-purple flex items-center justify-center">
+            <div class="absolute inset-0">
+                <img src="https://img.mailinblue.com/9047957/images/content_library/original/6967758e7e3877ec4eb73905.jpg" alt="Newsletter" class="w-full h-full object-cover opacity-30">
+            </div>
+            <div class="relative z-10 container mx-auto px-4 max-w-3xl text-center">
+                <h2 class="text-3xl md:text-4xl font-serif text-white mb-8">Erhalte exklusive Angebote, Schlaf-Tipps<br>und Wohnideen direkt in dein Postfach.</h2>
+                
+                <form class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto mb-6">
+                    <input type="email" placeholder="E-Mail-Adresse eingeben" required class="flex-grow px-6 py-4 rounded-full border-none focus:ring-2 focus:ring-brand-red outline-none text-brand-dark w-full">
+                    <button type="submit" class="bg-brand-red hover:bg-brand-redHover text-white px-8 py-4 rounded-full font-medium transition-all shadow-lg whitespace-nowrap w-full md:w-auto">
+                        Jetzt anmelden
+                    </button>
+                </form>
+                
+                <p class="text-xs text-white/60 font-light text-center max-w-xl mx-auto">
+                    Informationen dazu, wie wir mit deinen Daten umgeht, findest du in unserer <a href="#" class="underline hover:text-white transition-colors">Datenschutzerklärung</a>. Du kannst dich jederzeit kostenfrei abmelden.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#2a212e] pt-20 pb-10 text-white/80">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="mb-16">
+                <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/logo-footer.svg" alt="Boxspring-Welt" class="h-10">
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+                <!-- Column 1 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Über uns</h5>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-brand-red transition-colors">AGB</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Widerruf</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Datenschutz</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Über uns</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Stellenangebote</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Barrierefreiheitserklärung</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Marken</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">B2B - Betten für Hotelbranche</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Impressum</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 2 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Service</h5>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Showroom vor Ort</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Infos zur Lieferung</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Zahlungsarten</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Kontakt</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Privatsphäre-Einstellungen</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Zahlung und Versand</h5>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li>Vorkasse</li>
+                        <li>Rechnung</li>
+                        <li>0% Finanzierung</li>
+                        <li>Paypal</li>
+                        <li>Nachnahme</li>
+                        <li>Lastschrift</li>
+                        <li>Amazon Pay</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Einkaufswelt</h5>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Schlaflux Betten</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Sattler Betten</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspring Welt NL</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Comnata Esstische</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Bettenvergleich</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Bettenmagazin</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Betten-Themen</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Bettenfachgeschäfte</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 5 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Beliebte Größen</h5>
+                    <ul class="space-y-3 text-sm font-light">
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 180x200</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 140x200</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 160x200</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 200x200</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 200x220</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 240x200</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition-colors">Boxspringbett 180x220</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 6 (Payment & Socials) -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Zahlungsmethoden</h5>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/payment/icon-payment-klarna.svg" alt="Klarna" class="h-6">
+                        <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/payment/icon-payment-mastercard.svg" alt="Mastercard" class="h-6">
+                        <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/payment/icon-payment-sepa.svg" alt="Sepa" class="h-6">
+                        <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/payment/icon-payment-paypal.svg" alt="Paypal" class="h-6">
+                        <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/payment/icon-payment-visa.svg" alt="Visa" class="h-6">
+                    </div>
+
+                    <h5 class="text-white font-bold mb-6 tracking-wide">Folge uns</h5>
+                    <div class="flex gap-4">
+                        <a href="#" class="hover:opacity-75 transition-opacity"><img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/socials/icon-placeholder-facebook.svg" alt="Facebook" class="h-8"></a>
+                        <a href="#" class="hover:opacity-75 transition-opacity"><img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/socials/icon-placeholder-instagram.svg" alt="Instagram" class="h-8"></a>
+                        <a href="#" class="hover:opacity-75 transition-opacity"><img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/socials/icon-placeholder-youtube.svg" alt="YouTube" class="h-8"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-light">
+                <p>&copy; 2026 Boxspring Welt. Alle Rechte vorbehalten.</p>
+                <img src="https://www.boxspring-welt.de/skin/frontend/bxw/default/images/icons/ts-logo.png" alt="Trusted Shops" class="h-8">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
