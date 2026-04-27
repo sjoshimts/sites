@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfa Direkt - Qualität für's Handwerk - Premium</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e4001b',
+                            darkred: '#bd0039',
+                            dark: '#111827',
+                            gray: '#f3f4f6',
+                            text: '#374151'
+                        }
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+                        'hover': '0 10px 40px -4px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and baseline styles */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        
+        /* Hide scrollbar for clean carousels */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Line clamp for descriptions */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Top USP Bar -->
+    <div class="bg-brand-dark text-gray-300 text-xs sm:text-sm py-2.5">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-2 text-center sm:text-left">
+                <div class="flex items-center gap-6">
+                    <span class="flex items-center gap-2 hover:text-white transition-colors cursor-default">
+                        <i class="fa-solid fa-users text-brand-red"></i> 30.000 zufriedene Handwerker
+                    </span>
+                    <span class="hidden md:flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
+                        <i class="fa-solid fa-star text-brand-red"></i> Exklusive Vorteile mit <img src="https://media.alfa-direkt.de/alfaplus/alfa-plus-logo_inkl-alfa_blau.svg" alt="Alfa Plus" class="h-3.5 inline ml-1 brightness-0 invert">
+                    </span>
+                    <span class="hidden lg:flex items-center gap-2 hover:text-white transition-colors cursor-default">
+                        <i class="fa-solid fa-truck-fast text-brand-red"></i> Bis 16:30 Uhr bestellt, direkt versendet
+                    </span>
+                </div>
+                <div class="flex items-center gap-2 font-medium text-white bg-white/10 px-3 py-1 rounded-full cursor-pointer hover:bg-white/20 transition">
+                    <div class="flex text-yellow-400 text-xs">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span>Exzellent 4.79 / 5.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="flex items-center justify-between py-5 gap-8">
+                
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0 group">
+                    <img src="https://media.alfa-direkt.de/cdn/alfa-logo.png" alt="Alfa Direkt" class="h-12 w-auto group-hover:opacity-90 transition">
+                    <span class="block text-[10px] text-gray-500 font-medium tracking-widest uppercase mt-1">Qualität für's Handwerk</span>
+                </a>
+
+                <!-- Search Bar -->
+                <div class="hidden lg:flex flex-grow max-w-2xl relative">
+                    <input type="text" placeholder="Welches Produkt suchen Sie?" class="w-full bg-gray-100 text-sm border-transparent focus:border-brand-red focus:bg-white focus:ring-2 focus:ring-brand-red/20 rounded-full py-3.5 pl-5 pr-12 transition-all outline-none">
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-brand-red text-white rounded-full hover:bg-brand-darkred transition-colors">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="flex items-center gap-6 xl:gap-8">
+                    <!-- Contact -->
+                    <div class="hidden xl:flex flex-col text-right">
+                        <a href="#" class="text-sm font-semibold text-gray-800 hover:text-brand-red transition flex items-center justify-end gap-2">
+                            <i class="fa-solid fa-phone text-brand-red"></i> 07961 5799-0
+                        </a>
+                        <a href="#" class="text-xs text-green-600 font-medium hover:text-green-700 transition flex items-center justify-end gap-1 mt-0.5">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Service
+                        </a>
+                    </div>
+
+                    <!-- User Account -->
+                    <div class="group relative cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-50 border border-gray-200 flex items-center justify-center text-gray-500 group-hover:text-brand-red group-hover:border-brand-red/30 transition-colors">
+                                <i class="fa-regular fa-user text-lg"></i>
+                            </div>
+                            <div class="hidden md:block text-sm">
+                                <span class="block text-gray-500 text-xs">Kundenkonto</span>
+                                <span class="block font-semibold text-gray-800">Bitte anmelden</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="group cursor-pointer">
+                        <div class="flex items-center gap-3">
+                            <div class="relative w-10 h-10 rounded-full bg-brand-red/10 flex items-center justify-center text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+                                <i class="fa-solid fa-cart-shopping text-lg"></i>
+                                <span class="absolute -top-1 -right-1 bg-brand-dark text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">0</span>
+                            </div>
+                            <div class="hidden md:block text-sm">
+                                <span class="block text-gray-500 text-xs">Warenkorb</span>
+                                <span class="block font-semibold text-gray-800">0,00 €</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="lg:hidden text-2xl text-gray-600">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="hidden lg:block border-t border-gray-100 bg-white">
+            <div class="container mx-auto px-8 max-w-7xl">
+                <nav class="flex items-center gap-8 py-3.5 text-sm font-medium text-gray-600">
+                    <a href="#" class="flex items-center gap-2 text-brand-red font-semibold hover:opacity-80 transition">
+                        <i class="fa-solid fa-list-ul"></i> Gewerke / Branchen
+                    </a>
+                    <a href="#" class="hover:text-brand-red transition">Neuheiten</a>
+                    <a href="#" class="hover:text-brand-red transition">Bestseller</a>
+                    <a href="#" class="hover:text-brand-red transition text-red-600">Reduzierte Produkte %</a>
+                    <a href="#" class="hover:text-brand-red transition">Produktfinder</a>
+                    <a href="#" class="hover:text-brand-red transition">Ihre Vorteile</a>
+                    <a href="#" class="hover:text-brand-red transition">Kontakt</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banners Section -->
+    <section class="container mx-auto px-4 lg:px-8 max-w-7xl pt-8 pb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Main Hero -->
+            <a href="#" class="lg:col-span-2 group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-shadow duration-300 block bg-white border border-gray-100">
+                <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-500 z-10"></div>
+                <img src="https://media.alfa-direkt.de/cdn/alfa-schwerlastdübel-04-2026-desk.png" alt="Alfa Schwerlastdübel" class="w-full h-full object-cover object-center aspect-[21/9] lg:aspect-auto">
+                <!-- Overlay CTA -->
+                <div class="absolute bottom-6 left-8 z-20">
+                    <span class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-brand-red rounded-lg shadow-lg group-hover:bg-brand-darkred transform group-hover:-translate-y-1 transition-all">
+                        Jetzt entdecken <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </span>
+                </div>
+            </a>
+            
+            <!-- Side Banner -->
+            <a href="#" class="group relative rounded-2xl overflow-hidden shadow-soft hover:shadow-hover transition-shadow duration-300 block bg-white border border-gray-100">
+                <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-500 z-10"></div>
+                <img src="https://media.alfa-direkt.de/cdn/alfa-plus-max-2026-03-desk-klein.png" alt="Alfa Plus Max" class="w-full h-full object-cover aspect-[4/3] lg:aspect-auto lg:h-full">
+            </a>
+        </div>
+    </section>
+
+    <!-- Categories Section: Produkte für Ihre Branche -->
+    <section class="bg-white py-20 border-t border-b border-gray-100">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Produkte für Ihre Branche</h2>
+                    <p class="text-gray-500 mt-2">Finden Sie passgenaue Lösungen für Ihr Gewerk.</p>
+                </div>
+                <a href="#" class="hidden sm:inline-flex text-brand-red font-medium hover:text-brand-darkred transition items-center gap-2">
+                    Alle Kategorien ansehen <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Category Card Template -->
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-steildach-kategorie.png" alt="Steildach" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Steildach</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Dachdecker, Holzbau, Zimmerer. Abgestimmte Dachprodukte.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-flachdach-keller-terrasse-kategorie.png" alt="Flachdach" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Flachdach / Keller</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Dachabdichtung mit Flüssigkunststoffen nach ETAG.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-waende-fassaden-trockenbau-wdvs-kategorie.png" alt="Maler" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Maler & Lackierer</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Farbe, Pinsel, Walzen, Abdeckmaterial und mehr.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-fenster-tueren-kategorie.png" alt="Fenster" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Fenster & Türen</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Qualitätsprodukte für Fensterabdichtungen.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Second Row of Categories -->
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-befestigungstechnik-kategorie.png" alt="Befestigung" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Befestigungstechnik</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Schrauben, Dübel & mehr für den Profi.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-werkzeug-kategorie.png" alt="Werkzeug" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Werkzeug</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Großes Sortiment für den PROFI-Handwerker.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfa-arbeitssicherheit-entsorgung-kategorie.png" alt="Arbeitssicherheit" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">Arbeitssicherheit</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Schutzausrüstung für sicheres Arbeiten.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="group flex flex-col rounded-2xl bg-gray-50 border border-gray-100 overflow-hidden hover:shadow-hover transition-all duration-300">
+                    <div class="relative h-48 bg-gray-100 p-6 flex items-center justify-center overflow-hidden">
+                        <img src="https://media.alfa-direkt.de/cdn/alfatier-kategorie.png" alt="AlfaTier" class="object-contain w-full h-full group-hover:scale-110 transition-transform duration-500 drop-shadow-xl">
+                    </div>
+                    <div class="p-6 bg-white flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 group-hover:text-brand-red transition-colors">AlfaTier Workwear</h3>
+                            <p class="text-sm text-gray-500 mt-1 line-clamp-2">Die perfekte Kombination aus Workwear und Lifestyle.</p>
+                        </div>
+                        <div class="mt-4 text-sm font-semibold text-brand-red opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 -translate-x-2 group-hover:translate-x-0 transform duration-300">
+                            Entdecken <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Slider Section: Neuheiten -->
+    <section class="py-20 overflow-hidden">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Unsere Bestseller</h2>
+                    <p class="text-gray-500 mt-2">Die beliebtesten Produkte unserer Handwerker.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-100 transition"><i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="w-10 h-10 rounded-full bg-brand-dark text-white flex items-center justify-center hover:bg-gray-800 transition"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Product Grid (Simulating Slider) -->
+            <div class="flex overflow-x-auto hide-scrollbar gap-6 pb-8 snap-x">
+                <!-- Product Card 1 -->
+                <div class="min-w-[280px] sm:min-w-[300px] w-full max-w-[320px] bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-hover transition-all duration-300 group snap-center flex flex-col">
+                    <div class="relative p-6 bg-white rounded-t-2xl flex justify-center items-center h-60">
+                        <span class="absolute top-4 left-4 bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full">Bestseller</span>
+                        <img src="https://media.alfa-direkt.de/catalog/product/cache/1/small_image/400x/9df78eab33525d08d6e5fb8d27136e95/g/o/goldband-alfa-fineline.jpg" alt="FineLine GOLD" class="object-contain h-full group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 border-t border-gray-50 flex flex-col flex-grow">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 ml-1">(124)</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-4 group-hover:text-brand-red transition-colors flex-grow">521 Alfa FineLine GOLD - Spezialabdeckband</h3>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="block text-xs text-gray-500">ab</span>
+                                <span class="text-xl font-bold text-gray-900">4,95 €</span>
+                            </div>
+                            <button class="w-12 h-12 bg-gray-50 text-brand-red rounded-xl group-hover:bg-brand-red group-hover:text-white transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="min-w-[280px] sm:min-w-[300px] w-full max-w-[320px] bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-hover transition-all duration-300 group snap-center flex flex-col">
+                    <div class="relative p-6 bg-white rounded-t-2xl flex justify-center items-center h-60">
+                        <img src="https://media.alfa-direkt.de/catalog/product/cache/1/small_image/400x/9df78eab33525d08d6e5fb8d27136e95/a/l/alfa-flex-folienklebeband.jpg" alt="Alfa Flex" class="object-contain h-full group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 border-t border-gray-50 flex flex-col flex-grow">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                            <span class="text-gray-400 ml-1">(89)</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-4 group-hover:text-brand-red transition-colors flex-grow">153 Alfa Flex (flexibles Folienklebeband)</h3>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="block text-xs text-gray-500">ab</span>
+                                <span class="text-xl font-bold text-gray-900">12,50 €</span>
+                            </div>
+                            <button class="w-12 h-12 bg-gray-50 text-brand-red rounded-xl group-hover:bg-brand-red group-hover:text-white transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="min-w-[280px] sm:min-w-[300px] w-full max-w-[320px] bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-hover transition-all duration-300 group snap-center flex flex-col">
+                    <div class="relative p-6 bg-white rounded-t-2xl flex justify-center items-center h-60">
+                         <span class="absolute top-4 left-4 bg-gray-900 text-white text-[10px] font-bold uppercase tracking-wider py-1 px-3 rounded-full">Aktion</span>
+                        <img src="https://media.alfa-direkt.de/catalog/product/cache/1/small_image/400x/9df78eab33525d08d6e5fb8d27136e95/5/9/591-prd-frei-shop.jpg" alt="Abdeckvlies" class="object-contain h-full group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 border-t border-gray-50 flex flex-col flex-grow">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 ml-1">(210)</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-4 group-hover:text-brand-red transition-colors flex-grow">591 Alfa Abdeckvlies - Premium Qualität</h3>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="block text-xs text-gray-500">ab</span>
+                                <span class="text-xl font-bold text-gray-900">24,90 €</span>
+                            </div>
+                            <button class="w-12 h-12 bg-gray-50 text-brand-red rounded-xl group-hover:bg-brand-red group-hover:text-white transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Product Card 4 -->
+                 <div class="min-w-[280px] sm:min-w-[300px] w-full max-w-[320px] bg-white rounded-2xl border border-gray-100 shadow-soft hover:shadow-hover transition-all duration-300 group snap-center flex flex-col">
+                    <div class="relative p-6 bg-white rounded-t-2xl flex justify-center items-center h-60">
+                        <img src="https://media.alfa-direkt.de/catalog/category/621-prd-01.jpeg" alt="Montageschaum" class="object-contain h-full group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 border-t border-gray-50 flex flex-col flex-grow">
+                        <div class="flex items-center gap-1 text-yellow-400 text-xs mb-2">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="text-gray-400 ml-1">(56)</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-4 group-hover:text-brand-red transition-colors flex-grow">621 Alfa PU-Montageschaum (1-Komponent)</h3>
+                        <div class="flex items-end justify-between mt-auto">
+                            <div>
+                                <span class="block text-xs text-gray-500">ab</span>
+                                <span class="text-xl font-bold text-gray-900">6,80 €</span>
+                            </div>
+                            <button class="w-12 h-12 bg-gray-50 text-brand-red rounded-xl group-hover:bg-brand-red group-hover:text-white transition-colors flex items-center justify-center">
+                                <i class="fa-solid fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-gray-700 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
+                    Alle Bestseller ansehen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="bg-gray-900 text-white py-24 overflow-hidden relative">
+        <!-- Abstract background pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#e4001b 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Left: Image -->
+                <div class="relative max-w-lg mx-auto lg:mx-0">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-brand-red to-red-900 opacity-30 blur-2xl rounded-full"></div>
+                    <img src="https://www.alfa-direkt.de/media/alfaplus/alfa-mitarbeiter-mit-schwarzen-alfatier-hoodie.png" alt="Zufriedene Mitarbeiter und Kunden" class="relative z-10 w-full h-auto drop-shadow-2xl object-contain lg:scale-110 origin-bottom">
+                </div>
+                
+                <!-- Right: Testimonials -->
+                <div>
+                    <span class="text-brand-red font-bold tracking-wider uppercase text-sm mb-2 block">Handwerker-Erfahrungen</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-6 leading-tight">Über 30.000 Profis<br>vertrauen auf Alfa-Qualität.</h2>
+                    <p class="text-gray-400 text-lg mb-10 max-w-xl">Lesen Sie echte, ungeschönte Bewertungen unserer Partner aus dem Handwerk. Hohe Qualität und exzellenter Service sind unser Versprechen.</p>
+                    
+                    <!-- Review Card -->
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm relative">
+                        <i class="fa-solid fa-quote-right absolute top-6 right-8 text-4xl text-white/10"></i>
+                        <div class="flex items-center gap-1 text-yellow-400 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Super Qualität & Service!</h4>
+                        <p class="text-gray-300 mb-6 leading-relaxed">"Top Qualität, top Kundenservice immer wieder gern, schon länger ein fester Partner für unser Montagematerial. Schnelle und pünktliche Lieferung."</p>
+                        <div class="flex items-center justify-between border-t border-white/10 pt-4 mt-4">
+                            <span class="text-sm text-gray-400">Verifizierte Bewertung</span>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-white"></span>
+                                <span class="w-2 h-2 rounded-full bg-white/30"></span>
+                                <span class="w-2 h-2 rounded-full bg-white/30"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="#" class="text-white hover:text-brand-red transition font-medium flex items-center gap-2">
+                            Alle Bewertungen lesen <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO / About Text Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 lg:px-8 max-w-4xl text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Direktvertrieb für's Handwerk: Alfa Direkt macht Qualität dauerhaft preiswert</h2>
+            <div class="text-gray-600 space-y-4 leading-relaxed">
+                <p>
+                    Die Alfa GmbH hat sich mit einer <strong>hervorragenden Produktqualität</strong> & dauerhaft <strong>günstigen Preisen</strong> einen Namen unter den Handwerkern gemacht. Zu unseren Kunden zählen hauptsächlich qualitätsbewusste Handwerksbetriebe & Unternehmen aus der Baubranche.
+                </p>
+                <p>
+                    Allen voran Dachdecker, Zimmereien & Holzbau-Betriebe, Maler & Lackierer, Bodenleger & Raumausstatter, Gipser, Stuckateure oder Trockenbauer sowie Betriebe aus dem Bereich Fassadenbau, Metallbau & Fensterbau. Informieren Sie sich in Ruhe über unser Sortiment in unserem Alfa Direkt Online-Shop. Als registrierter gewerblicher Benutzer sehen Sie zudem alle <strong>Alfa-Dauertiefpreise</strong>.
+                </p>
+            </div>
+            <div class="mt-8">
+                <a href="#" class="inline-flex items-center justify-center px-8 py-3 text-sm font-semibold text-brand-red bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
+                    Jetzt kostenfreies Kundenkonto erstellen
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="container mx-auto px-4 lg:px-8 max-w-7xl pb-20">
+        <div class="bg-gradient-to-br from-brand-red to-red-800 rounded-3xl overflow-hidden shadow-2xl relative">
+            <div class="absolute top-0 right-0 w-1/2 h-full hidden lg:block">
+                <!-- Newsletter image as background element on the right -->
+                <img src="https://media.alfa-direkt.de/newsletter-footer-v2.png" alt="Newsletter" class="absolute bottom-0 right-0 object-contain h-full translate-y-4 translate-x-12">
+            </div>
+            
+            <div class="relative z-10 p-10 lg:p-16 max-w-2xl text-white">
+                <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 inline-block backdrop-blur-sm">Newsletter</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Wissen was im Handwerk läuft.</h2>
+                <p class="text-red-100 text-lg mb-8 leading-relaxed">Machen Sie es wie bereits über 7.000 andere Profis: Abonnieren Sie unseren Newsletter für exklusive Aktionen, Rabatte und neue Produkte.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-3 max-w-md">
+                    <input type="email" placeholder="Ihre E-Mail-Adresse" required class="flex-grow bg-white/10 border border-white/20 text-white placeholder-white/60 rounded-xl px-5 py-4 outline-none focus:bg-white/20 focus:border-white transition">
+                    <button type="submit" class="bg-white text-brand-red font-bold rounded-xl px-8 py-4 hover:bg-gray-100 shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-paper-plane"></i> Abonnieren
+                    </button>
+                </form>
+                <p class="text-xs text-red-200 mt-4 opacity-80">Kein Spam. Abmeldung jederzeit möglich. <a href="#" class="underline hover:text-white">Datenschutz</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-400 pt-16 pb-8 border-t-4 border-brand-red">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <!-- Top Footer Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+                <!-- Col 1: Brand & Contact -->
+                <div class="lg:col-span-2">
+                    <img src="https://media.alfa-direkt.de/cdn/alfa-logo.png" alt="Alfa Direkt" class="h-10 mb-6 brightness-0 invert">
+                    <p class="text-sm leading-relaxed mb-6 max-w-sm">
+                        Qualität für's Handwerk. Ihr zuverlässiger Partner für hochwertige Werkzeuge, Befestigungstechnik und Baumaterialien.
+                    </p>
+                    <div class="flex items-center gap-4 mb-6">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-red transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-red transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-red transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Service -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Service</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-red transition flex items-center gap-2">Alfa Plus <img src="https://media.alfa-direkt.de/cdn/alfa-plus-single.png" alt="Plus" class="h-3 brightness-0 invert opacity-70"></a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Kontakt & Hilfe</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Lieferung & Versand</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Kundenkonto erstellen</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Katalog bestellen</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Info -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Informationen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-red transition">Alfa Bonus</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Handwerker wirbt Handwerker</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Downloads</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Batterieentsorgung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Unternehmen -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Unternehmen</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-brand-red transition">Über uns</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Bewertungen</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition">Karriere & Jobs</a></li>
+                        <li><a href="#" class="hover:text-brand-red transition flex items-center gap-2">Wir handeln grün <img src="https://media.alfa-direkt.de/cdn/wir-handeln-grün-pikto-transparent.png" alt="Green" class="h-3 brightness-0 invert opacity-70"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-white/10 mb-8">
+
+            <!-- Payment & Shipping -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 mb-12">
+                <div class="w-full lg:w-auto text-center lg:text-left">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Sicher bezahlen</h4>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                        <img src="https://media.alfa-direkt.de/cdn/sepa.png" alt="SEPA" class="h-6">
+                        <img src="https://media.alfa-direkt.de/cdn/paypal.png" alt="PayPal" class="h-6">
+                        <img src="https://media.alfa-direkt.de/cdn/amazon-pay.png" alt="Amazon Pay" class="h-6 bg-white px-1 rounded-sm">
+                        <img src="https://media.alfa-direkt.de/cdn/text-rechnung.png" alt="Rechnung" class="h-6 bg-white px-1 rounded-sm">
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-auto text-center lg:text-left">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider mb-4">Schneller Versand</h4>
+                    <div class="flex flex-wrap justify-center lg:justify-start gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                        <img src="https://media.alfa-direkt.de/cdn/pikto/shipping/dhl.png" alt="DHL" class="h-6">
+                        <img src="https://media.alfa-direkt.de/cdn/pikto/shipping/dpd.png" alt="DPD" class="h-6">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Legal -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0 text-gray-500">
+                <p>&copy; 2026 Alfa GmbH. Alle Rechte vorbehalten.</p>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                    <a href="#" class="hover:text-white transition">Impressum</a>
+                    <a href="#" class="hover:text-white transition">AGB</a>
+                    <a href="#" class="hover:text-white transition">Datenschutz</a>
+                    <a href="#" class="hover:text-white transition">Widerruf</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
