@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heenemann | Präzisionsdruck & Intelligente Marketinglösungen</title>
+    <meta name="description" content="Ihre Premium Online Druckerei in Berlin. Digitaldruck & Offsetdruck in höchster Qualität. Profitieren Sie von über 100 Jahren Erfahrung.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, modern, high-end look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316', // Refined orange, matching the original brand spirit but modern
+                            600: '#ea580c',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                        },
+                        slate: {
+                            850: '#151e2e',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Mega Menu Logic & Smooth Utilities */
+        .group:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .mega-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .text-balance {
+            text-wrap: balance;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased bg-slate-50 selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-slate-900 text-slate-300 py-2.5 text-xs sm:text-sm font-medium border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-3">
+            <!-- Contact Info -->
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+                <div class="flex items-center gap-2 text-slate-400">
+                    <i class="fa-solid fa-phone text-brand-500"></i>
+                    <span>Beratung: <a href="tel:+4930753030" class="hover:text-white transition-colors">+49 (0) 30 753 03 0</a></span>
+                </div>
+                <div class="hidden sm:flex items-center gap-2 text-slate-400">
+                    <i class="fa-solid fa-envelope text-brand-500"></i>
+                    <a href="mailto:anfrage@heenemann-druck.de" class="hover:text-white transition-colors">anfrage@heenemann-druck.de</a>
+                </div>
+            </div>
+            
+            <!-- Account Links -->
+            <ul class="flex flex-wrap justify-center md:justify-end items-center gap-4 sm:gap-6">
+                <li><a href="#" class="hover:text-white transition-colors">Mein Konto</a></li>
+                <li class="w-1 h-1 bg-slate-700 rounded-full"></li>
+                <li><a href="#" class="hover:text-white transition-colors">Kasse</a></li>
+                <li class="w-1 h-1 bg-slate-700 rounded-full"></li>
+                <li><a href="#" class="hover:text-white transition-colors">Anmelden</a></li>
+                <li class="w-1 h-1 bg-slate-700 rounded-full"></li>
+                <li><a href="#" class="text-brand-500 hover:text-brand-400 transition-colors">Registrieren</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-gray-200 shadow-sm transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="block" aria-label="Heenemann Home">
+                        <img class="h-10 w-auto object-contain" src="https://www.heenemann-druck.de/skin/frontend/shopper/heenemann/img/logo.png" alt="Buch- und Offsetdruckerei Heenemann">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-8 items-center h-full">
+                    <a href="#" class="text-slate-800 hover:text-brand-600 font-medium transition-colors text-sm">Startseite</a>
+                    
+                    <!-- Mega Menu: Onlineshop -->
+                    <div class="group h-full flex items-center relative">
+                        <a href="#" class="text-slate-800 group-hover:text-brand-600 font-medium transition-colors text-sm flex items-center gap-1">
+                            Onlineshop <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        </a>
+                        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[800px] bg-white border border-gray-100 shadow-2xl rounded-2xl p-8 grid grid-cols-3 gap-8">
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Marketing & Promotion</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Flyer / Falzflyer</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Broschüren</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Plakate / Plots</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Aufkleber / Sticker</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Haftfolien</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Klatschpappen</a></li>
+                                    <li><a href="#" class="text-sm text-brand-600 font-medium hover:text-brand-700 transition-colors">Expressdruck - Same Day</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Business & Office</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Visitenkarten</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Briefpapier</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Präsentationsmappen</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Kalender</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Druckbogen / Planobogen</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Events & Gastro</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Eintrittskarten / Tickets</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Postkarten / Grußkarten</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Einladungskarten</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Flaschenanhänger</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Türanhänger</a></li>
+                                    <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors">Ansteckbuttons</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mega Menu: Print Lösungen -->
+                    <div class="group h-full flex items-center relative">
+                        <a href="#" class="text-slate-800 group-hover:text-brand-600 font-medium transition-colors text-sm flex items-center gap-1">
+                            Print Lösungen <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        </a>
+                        <div class="mega-menu absolute top-full left-0 w-[240px] bg-white border border-gray-100 shadow-xl rounded-xl p-4 py-6">
+                            <ul class="space-y-3">
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Automotive</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Industrie</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Verlage</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Lifestyle/Fashion/Art</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Handel</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Touristik & Hotellerie</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Öffentliche Verwaltung</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Banken & Versicherungen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="#" class="text-slate-800 hover:text-brand-600 font-medium transition-colors text-sm">Marketing Lösungen</a>
+                    <a href="#" class="text-slate-800 hover:text-brand-600 font-medium transition-colors text-sm">Shop Lösungen</a>
+                    
+                    <!-- Mega Menu: Unternehmen -->
+                    <div class="group h-full flex items-center relative">
+                        <a href="#" class="text-slate-800 group-hover:text-brand-600 font-medium transition-colors text-sm flex items-center gap-1">
+                            Unternehmen <i class="fa-solid fa-chevron-down text-[10px] mt-0.5"></i>
+                        </a>
+                        <div class="mega-menu absolute top-full -left-10 w-[220px] bg-white border border-gray-100 shadow-xl rounded-xl p-4 py-6">
+                            <ul class="space-y-3">
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Ansprechpartner</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Chronik</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Leistungen</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Service</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Stellenangebote</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Technik</a></li>
+                                <li><a href="#" class="text-sm text-slate-600 hover:text-brand-600 transition-colors block px-2">Umwelt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="text-slate-800 hover:text-brand-600 font-medium transition-colors text-sm">Ausbildung</a>
+                </nav>
+
+                <!-- Utility Icons (Search & Cart) -->
+                <div class="flex items-center gap-4 sm:gap-6">
+                    <button class="text-slate-500 hover:text-brand-600 transition-colors" aria-label="Suchen">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <a href="#" class="group flex items-center gap-2 bg-slate-50 hover:bg-brand-50 border border-slate-200 hover:border-brand-200 px-4 py-2 rounded-full transition-all duration-300">
+                        <div class="relative">
+                            <i class="fa-solid fa-cart-shopping text-slate-700 group-hover:text-brand-600 transition-colors"></i>
+                            <span class="absolute -top-2 -right-2.5 bg-brand-600 text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full border-2 border-white">0</span>
+                        </div>
+                        <span class="hidden sm:inline text-sm font-medium text-slate-700 group-hover:text-brand-600">Warenkorb</span>
+                    </a>
+                    <!-- Mobile menu button -->
+                    <button class="lg:hidden text-slate-800 p-2" id="mobile-menu-btn">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="lg:hidden hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-xl" id="mobile-menu">
+            <div class="px-4 pt-2 pb-6 space-y-1 h-[80vh] overflow-y-auto">
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Startseite</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Onlineshop</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Print Lösungen</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Marketing Lösungen</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Shop Lösungen</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Unternehmen</a>
+                <a href="#" class="block px-3 py-3 text-base font-medium text-slate-800 hover:bg-slate-50 rounded-lg">Ausbildung</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Premium Hero Section -->
+        <section class="relative w-full bg-slate-900 overflow-hidden min-h-[500px] lg:min-h-[600px] flex items-center">
+            <div class="absolute inset-0 w-full h-full">
+                <!-- Using the original Offsetdruck Banner but displaying it as a premium background cover -->
+                <img src="https://www.heenemann-druck.de/media/queldorei/shopper/revolution/Offsetdruck_Banner.jpg" 
+                     alt="Heenemann Premium Printing" 
+                     class="w-full h-full object-cover object-center opacity-60 mix-blend-overlay">
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/60 to-transparent"></div>
+            </div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 w-full z-10">
+                <div class="max-w-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-500/20 text-brand-400 font-semibold text-xs tracking-wider uppercase mb-6 border border-brand-500/30">
+                        Tradition trifft Innovation
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 tracking-tight text-balance">
+                        Präzisionsdruck & Intelligente Marketinglösungen.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-slate-300 mb-10 text-balance leading-relaxed">
+                        Verbinden Sie über ein Jahrhundert handwerkliche Expertise mit modernster Technologie. Wir liefern High-End Printprodukte und maßgeschneiderte Shop-Lösungen für zukunftsorientierte Marken.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-semibold rounded-xl text-white bg-brand-600 hover:bg-brand-500 transition-all duration-300 shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 hover:-translate-y-0.5">
+                            Produkte entdecken
+                        </a>
+                        <a href="#" class="inline-flex justify-center items-center px-8 py-4 border border-white/20 text-base font-semibold rounded-xl text-white bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5">
+                            Individuelle Anfrage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust & Value Proposition Bar -->
+        <section class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                    <div class="flex flex-col items-center pt-4 md:pt-0">
+                        <div class="h-12 w-12 rounded-full bg-brand-50 flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fa-solid fa-award text-xl"></i>
+                        </div>
+                        <h3 class="text-slate-800 font-semibold mb-2">Exzellente Druckqualität</h3>
+                        <p class="text-sm text-slate-500">Modernster Offset- und Digitaldruck garantiert brillante Ergebnisse.</p>
+                    </div>
+                    <div class="flex flex-col items-center pt-8 md:pt-0">
+                        <div class="h-12 w-12 rounded-full bg-brand-50 flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                        <h3 class="text-slate-800 font-semibold mb-2">Schnelle Produktion</h3>
+                        <p class="text-sm text-slate-500">Zuverlässige Lieferung inklusive Expressdruck-Optionen für eilige Projekte.</p>
+                    </div>
+                    <div class="flex flex-col items-center pt-8 md:pt-0">
+                        <div class="h-12 w-12 rounded-full bg-brand-50 flex items-center justify-center mb-4 text-brand-600">
+                            <i class="fa-solid fa-leaf text-xl"></i>
+                        </div>
+                        <h3 class="text-slate-800 font-semibold mb-2">Nachhaltiges Handeln</h3>
+                        <p class="text-sm text-slate-500">Zertifizierte Umweltstandards (FSC, PEFC, EMAS, ClimatePartner).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="py-20 lg:py-28 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">Häufig angefragte Produkte</h2>
+                        <p class="text-slate-600 text-lg">Entdecken Sie unsere Bestseller, gefertigt mit höchster Präzision – konfigurierbar bereits ab kleinen Auflagen.</p>
+                    </div>
+                    <a href="#" class="hidden md:inline-flex items-center gap-2 text-brand-600 font-medium hover:text-brand-700 transition-colors">
+                        Gesamtes Sortiment ansehen <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                        <div class="relative aspect-square overflow-hidden bg-white p-6 flex items-center justify-center">
+                            <img src="https://www.heenemann-druck.de/media/catalog/product/cache/1/small_image/504x504/9df78eab33525d08d6e5fb8d27136e95/b/r/broschueren-softcover_700.png" alt="Broschüre Softcover" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow border-t border-gray-50">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2 line-clamp-2">Broschüre (Softcover)</h3>
+                            <p class="text-sm text-slate-500 mb-4 flex-grow">Hochwertige Bindung, verfügbar ab 1 Exemplar.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div>
+                                    <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Ab</span>
+                                    <span class="text-2xl font-bold text-brand-600">0,49 €</span>
+                                </div>
+                                <button class="h-10 w-10 rounded-full bg-slate-50 text-slate-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                        <div class="relative aspect-square overflow-hidden bg-white p-6 flex items-center justify-center">
+                            <img src="https://www.heenemann-druck.de/media/catalog/product/cache/1/small_image/504x504/9df78eab33525d08d6e5fb8d27136e95/k/a/kalender_700.png" alt="Bildkalender Wire-O" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow border-t border-gray-50">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2 line-clamp-2">Bildkalender Wire-O</h3>
+                            <p class="text-sm text-slate-500 mb-4 flex-grow">Perfekt für Corporate Gifts, für 2027 verfügbar.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div>
+                                    <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Ab</span>
+                                    <span class="text-2xl font-bold text-brand-600">1,37 €</span>
+                                </div>
+                                <button class="h-10 w-10 rounded-full bg-slate-50 text-slate-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                        <div class="relative aspect-square overflow-hidden bg-white p-6 flex items-center justify-center">
+                            <img src="https://www.heenemann-druck.de/media/catalog/product/cache/1/small_image/504x504/9df78eab33525d08d6e5fb8d27136e95/k/l/klatschpappe_700.png" alt="Klatschpappen" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow border-t border-gray-50">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2 line-clamp-2">Fanklatschen</h3>
+                            <p class="text-sm text-slate-500 mb-4 flex-grow">Auffällige Werbung für Events, ab 10 Stück.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div>
+                                    <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Ab</span>
+                                    <span class="text-2xl font-bold text-brand-600">0,25 €</span>
+                                </div>
+                                <button class="h-10 w-10 rounded-full bg-slate-50 text-slate-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                        <div class="relative aspect-square overflow-hidden bg-white p-6 flex items-center justify-center">
+                            <img src="https://www.heenemann-druck.de/media/catalog/product/cache/1/small_image/504x504/9df78eab33525d08d6e5fb8d27136e95/f/a/falzflyer-1-bruch-quer_700.png" alt="Klappkarten" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow border-t border-gray-50">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2 line-clamp-2">Klappkarten / Einladungen</h3>
+                            <p class="text-sm text-slate-500 mb-4 flex-grow">Persönlich und professionell im Wunschformat.</p>
+                            <div class="flex items-center justify-between mt-auto">
+                                <div>
+                                    <span class="text-xs text-slate-500 font-medium uppercase tracking-wider block">Ab</span>
+                                    <span class="text-2xl font-bold text-brand-600">0,04 €</span>
+                                </div>
+                                <button class="h-10 w-10 rounded-full bg-slate-50 text-slate-600 group-hover:bg-brand-600 group-hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center md:hidden">
+                     <a href="#" class="inline-flex items-center gap-2 text-brand-600 font-medium hover:text-brand-700 transition-colors">
+                        Gesamtes Sortiment ansehen <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Solutions (Large Category Blocks) -->
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">Ganzheitliche Geschäftslösungen</h2>
+                    <p class="text-slate-600 text-lg">Mehr als nur Druck. Wir begleiten Sie von der ersten Print-Idee über intelligente Marketing-Kampagnen bis hin zu maßgeschneiderten E-Commerce-Plattformen.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Solution 1 -->
+                    <a href="#" class="group relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-video lg:aspect-[3/4] shadow-md hover:shadow-2xl transition-all duration-500">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Print_Loesungen.jpg" alt="Print Lösungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Print Lösungen</h3>
+                            <p class="text-slate-200 text-sm lg:text-base mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">Vereinigen Sie Ihre Branchenkenntnis mit unserem Know-how und finden Sie die optimale Print-Lösung für Ihre Absatzmärkte.</p>
+                            <span class="inline-flex items-center gap-2 text-white font-medium">
+                                Jetzt entdecken <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Solution 2 -->
+                    <a href="#" class="group relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-video lg:aspect-[3/4] shadow-md hover:shadow-2xl transition-all duration-500">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Marketing_Loesungen.jpg" alt="Marketing Lösungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Marketing Lösungen</h3>
+                            <p class="text-slate-200 text-sm lg:text-base mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">Crossmediale Kampagnen, personalisierte Ansprache und datengetriebene Strategien für maximalen ROI.</p>
+                            <span class="inline-flex items-center gap-2 text-white font-medium">
+                                Jetzt entdecken <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Solution 3 -->
+                    <a href="#" class="group relative rounded-3xl overflow-hidden aspect-[4/5] sm:aspect-video lg:aspect-[3/4] shadow-md hover:shadow-2xl transition-all duration-500">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Shop_Loesungen.jpg" alt="Shop Lösungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                        <div class="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
+                            <h3 class="text-2xl font-bold text-white mb-3 tracking-tight">Shop Lösungen</h3>
+                            <p class="text-slate-200 text-sm lg:text-base mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">Ob Heenemann PrintShop oder eine individuelle E-Commerce-Plattform für Ihren internen Einkauf – wir bauen Ihre Lösung.</p>
+                            <span class="inline-flex items-center gap-2 text-white font-medium">
+                                Jetzt entdecken <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Offer & Partner Section -->
+        <section class="py-16 bg-slate-900 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                    <!-- Partner -->
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-slate-400 font-medium tracking-wide uppercase text-xs mb-6">Offizieller Druckpartner</h4>
+                            <a href="https://www.sendasmile.de/" target="_blank" class="block mb-6">
+                                <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Sendasmile.png" alt="send a smile" class="h-12 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity">
+                            </a>
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6">Als ausgewählter Druckpartner produzieren wir Ihre Karten in höchster Qualität. Überzeugen Sie sich selbst von der Brillanz unserer Erzeugnisse.</p>
+                        </div>
+                        <a href="https://www.sendasmile.de/" target="_blank" class="text-brand-400 hover:text-brand-300 font-medium text-sm flex items-center gap-2 transition-colors">
+                            Send a Smile besuchen <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Top Angebot -->
+                    <div class="bg-gradient-to-br from-brand-600 to-brand-800 rounded-2xl p-8 text-white flex flex-col justify-between relative overflow-hidden shadow-xl shadow-brand-900/50">
+                        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full blur-2xl"></div>
+                        <div class="relative z-10 flex flex-col h-full">
+                            <div>
+                                <h4 class="text-brand-100 font-medium tracking-wide uppercase text-xs mb-4">Sonderaktion</h4>
+                                <div class="flex gap-4 mb-4">
+                                    <div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden border-2 border-white/20 shadow-lg">
+                                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Klatschpappen2.jpg" alt="Rabatt auf Klatschpappen" class="w-full h-full object-cover">
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-bold mb-1">Klatschpappen Sale</h3>
+                                        <p class="text-brand-100 text-sm leading-relaxed">Das perfekte Werbemittel für Augen und Ohren. Jetzt online superlaut & supergünstig drucken lassen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="mt-4 inline-flex justify-center items-center px-5 py-2.5 bg-white text-brand-700 font-semibold rounded-lg hover:bg-brand-50 transition-colors shadow-md w-max">
+                                Zum Angebot
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Unser Versprechen -->
+                    <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-slate-400 font-medium tracking-wide uppercase text-xs mb-6">Unser Versprechen</h4>
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/unser_versprechen.jpg" alt="Das Versprechen von Heenemann" class="rounded-xl mb-6 w-full object-cover h-32 opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-500">
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-center gap-3 text-slate-300 text-sm">
+                                    <i class="fa-solid fa-check text-brand-500"></i> Kompromisslose Druckqualität
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-300 text-sm">
+                                    <i class="fa-solid fa-check text-brand-500"></i> Persönliche, individuelle Beratung
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="text-brand-400 hover:text-brand-300 font-medium text-sm flex items-center gap-2 transition-colors">
+                            Unseren Shop entdecken <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industry Solutions Grid -->
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 tracking-tight mb-4">Branchenspezifische Lösungen</h2>
+                    <p class="text-slate-600 text-lg">Unsere Expertise erstreckt sich über vielfältige Industrien. Wir verstehen Ihre spezifischen Anforderungen und liefern passgenaue Resultate.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Industry Item -->
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Automotive.jpg" alt="Automotive" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Automotive</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">"Start your engines" – mit Heenemann auf der Überholspur.</p>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/startseite_industrie2.jpg" alt="Industrie" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Industrie</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Skalierbare Printlösungen für komplexe Industrieanforderungen.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Verlage.jpg" alt="Verlage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Verlage</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Seit über 100 Jahren ein verlässlicher Partner der Verlagswelt.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Lifestyle_Fashion.jpg" alt="Lifestyle / Fashion / Art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Lifestyle / Fashion / Art</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Kreative Veredelungen für die quirligste Metropole Europas.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Handel.jpg" alt="Handel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Handel</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Performante POS-Materialien und Komplettlösungen für Ihren Absatz.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Hotelgewerbe.jpg" alt="Touristik" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Touristik & Hotellerie</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Elegante Printlösungen, die Gäste begeistern und binden.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Verwaltung.jpg" alt="Öffentliche Verwaltung" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Öffentliche Verwaltung</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Sichere und intelligente Bestellplattformen für Behörden.</p>
+                        </div>
+                    </a>
+
+                    <a href="#" class="group block border border-gray-100 rounded-2xl p-3 hover:shadow-xl hover:border-brand-200 transition-all duration-300">
+                        <div class="rounded-xl overflow-hidden aspect-video mb-4 relative">
+                            <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/Banken.jpg" alt="Banken" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors"></div>
+                        </div>
+                        <div class="px-2 pb-2">
+                            <h3 class="font-semibold text-slate-800 mb-1 group-hover:text-brand-600 transition-colors">Banken & Versicherungen</h3>
+                            <p class="text-sm text-slate-500 line-clamp-2">Agile Druckerzeugnisse für dynamische Finanzmärkte.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Editorial / About Section -->
+        <section class="py-20 bg-slate-50 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8 lg:p-16">
+                    <div class="lg:flex gap-16">
+                        <!-- Left Column: Title & Main Intro -->
+                        <div class="lg:w-1/3 mb-10 lg:mb-0">
+                            <div class="sticky top-28">
+                                <span class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3 block">Tradition & Qualität</span>
+                                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 leading-tight">Ihre Premium Online Druckerei in Berlin</h2>
+                                <p class="text-slate-600 text-lg leading-relaxed mb-8">
+                                    Mit über 100 Jahren Erfahrung als Buch- und Offsetdruckerei sind wir Ihr starker Partner für professionelle Kommunikationsmittel – in Berlin und deutschlandweit.
+                                </p>
+                                <a href="#" class="inline-flex items-center gap-2 text-brand-600 font-semibold hover:text-brand-700 transition-colors pb-1 border-b-2 border-brand-200 hover:border-brand-600">
+                                    Mehr über unser Unternehmen erfahren
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Column: Formatted SEO Content -->
+                        <div class="lg:w-2/3 prose prose-slate prose-lg max-w-none">
+                            <p>
+                                Egal ob hochwertige Visitenkarten, effiziente Falzflyer oder aufmerksamkeitsstarke Plakate: Bei Heenemann erhalten Sie Druckerzeugnisse in Spitzenqualität. Wir betreuen Ihren Druckprozess vollstufig – von der Pre- und Postpress bis zum High-End Bogenoffset- und Digitaldruck mit bis zu 8 Farben.
+                            </p>
+                            
+                            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Print-on-Demand & Offsetdruck</h3>
+                            <p>
+                                Schon bei kleinen Auflagen ab 10 Stück können wir dank moderner Print-on-Demand-Technologien Ressourcen schonen und kosteneffizient produzieren. Für große Volumen nutzen wir unseren klassischen Offsetdruck mit attraktiven Mengenrabatten. Spezielle Veredelungen wie Folienkaschierungen machen Ihre Produkte unverwechselbar.
+                            </p>
+
+                            <div class="grid sm:grid-cols-2 gap-6 my-10">
+                                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                                    <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-book-open text-brand-500"></i> Corporate Publishing</h4>
+                                    <p class="text-sm text-slate-600 mb-0">Wir drucken Ihre Broschüren, Kataloge und Geschäftsberichte mit vielfältigen Bindungsarten: Wire-O, Rückstichheftung, Klebebindung oder als Premium-Softcover.</p>
+                                </div>
+                                <div class="bg-slate-50 p-6 rounded-xl border border-gray-100">
+                                    <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2"><i class="fa-solid fa-bullhorn text-brand-500"></i> Marketing Material</h4>
+                                    <p class="text-sm text-slate-600 mb-0">Von Flyern in diversen Papierstärken (80g/m² bis 350g/m²) über Aufkleber bis hin zu innovativen Klatschpappen für Ihr Event.</p>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">Nachhaltigkeit im Fokus</h3>
+                            <p>
+                                Als Berliner Traditionsunternehmen übernehmen wir Verantwortung. Wir legen größten Wert auf Umweltschutz und eine nachhaltige Produktion, bestätigt durch unsere PEFC, FSC und EMAS Zertifizierungen. Klimaneutraler Druck mit unserem Partner ClimatePartner ist auf Wunsch für all Ihre Projekte verfügbar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: Contact & Support -->
+                <div>
+                    <img src="https://www.heenemann-druck.de/skin/frontend/shopper/heenemann/img/logo.png" alt="Heenemann Logo" class="h-8 brightness-0 invert opacity-90 mb-6">
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                        Ihre renommierte Buch- und Offsetdruckerei in Berlin. Expertise seit über einem Jahrhundert.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-brand-500 mt-1"></i>
+                            <div>
+                                <p class="text-white text-sm font-medium">Shop Support</p>
+                                <a href="tel:+493075303167" class="text-slate-400 text-sm hover:text-brand-400">+49 (0) 30 753 03 167</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-brand-500 mt-1"></i>
+                            <div>
+                                <p class="text-white text-sm font-medium">Angebotsanfragen</p>
+                                <a href="mailto:anfrage@heenemann-druck.de" class="text-slate-400 text-sm hover:text-brand-400">anfrage@heenemann-druck.de</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Socials -->
+                    <div class="flex gap-4 mt-8">
+                        <a href="#" class="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-xing"></i></a>
+                        <a href="#" class="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Products -->
+                <div>
+                    <h4 class="text-white font-semibold tracking-wide uppercase text-sm mb-6">Sortiment</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Kalender & Broschüren</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Plakate & Poster</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Aufkleber & Haftfolien</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Post- & Visitenkarten</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Flyer & Klappkarten</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Klatschpappen</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Eintrittskarten</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Service -->
+                <div>
+                    <h4 class="text-white font-semibold tracking-wide uppercase text-sm mb-6">Hilfe & Service</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Versandinformationen</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Druckdateninfos</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Datenblätter & Papiere</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Persönliche Beratung</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">AGB & Impressum</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Datenschutz</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-400 text-sm transition-colors block">Widerrufsrecht</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Trust & Sustainability -->
+                <div>
+                    <h4 class="text-white font-semibold tracking-wide uppercase text-sm mb-6">Sicherheit & Zahlung</h4>
+                    <div class="flex items-center gap-3 mb-6 bg-white p-2 rounded-lg max-w-[200px]">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/pp_standard_100x45.gif" alt="PayPal" class="h-6 object-contain">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/zahlungart_kreditkarte.jpg" alt="Kreditkarten" class="h-6 object-contain">
+                    </div>
+                    <div class="mb-8">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/PSO-Zertifikat-Heenemann-small.png" alt="PSO Zertifikat" class="h-10">
+                    </div>
+                    
+                    <h4 class="text-white font-semibold tracking-wide uppercase text-sm mb-6">Nachhaltigkeit</h4>
+                    <div class="flex flex-wrap gap-3 items-center bg-slate-800 p-3 rounded-xl border border-slate-700">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/footer/pefc-label-pefc04-31-1156-heenemann-hoch.png" alt="PEFC" class="h-10 object-contain">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/footer/FSC_Logo_2.svg" alt="FSC" class="h-10 object-contain">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/footer/DE-107-00190_emas-logo.png" alt="EMAS" class="h-10 object-contain bg-white rounded p-1">
+                        <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/footer/logo_ClimatePartner.svg" alt="ClimatePartner" class="h-10 object-contain bg-white rounded p-1">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm text-center md:text-left">
+                    &copy; 2026 Buch- und Offsetdruckerei H. Heenemann GmbH & Co. KG. Alle Rechte vorbehalten.
+                </p>
+                <div class="flex items-center gap-4">
+                    <img src="https://www.heenemann-druck.de/media/wysiwyg/Bilder/footer/ssl-heenemann-2.jpg" alt="SSL Secure" class="h-8 rounded opacity-75">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Sticky Header & Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('main-header');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Sticky Header Effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md', 'py-0');
+                } else {
+                    header.classList.remove('shadow-md', 'py-0');
+                }
+            });
+
+            // Mobile Menu Toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-xmark text-xl"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
