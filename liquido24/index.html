@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Liquid & E-Zigaretten Onlineshop | Liquido24</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#e0f2fe',
+                            DEFAULT: '#0475b9', // Original Blue
+                            dark: '#0369a1',
+                        },
+                        accent: {
+                            DEFAULT: '#6ad300', // Original Green
+                            dark: '#5ab300',
+                        },
+                        sale: '#f14220' // Original Orange/Red
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-brand selection:text-white">
+
+    <!-- Promo Banner -->
+    <div class="bg-brand text-white text-center py-2.5 px-4 text-sm font-medium tracking-wide">
+        Erhalte jetzt <span class="font-bold text-yellow-300">10€ Rabatt</span> ab 100€ Bestellwert, Code: <span class="font-bold bg-white/20 px-2 py-0.5 rounded ml-1">LQ10</span>
+    </div>
+
+    <!-- Header (Sticky) -->
+    <header class="sticky top-0 z-50 glass-effect border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Top Row: Logo, Search, Actions -->
+            <div class="flex items-center justify-between h-20 gap-8">
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-slate-600 hover:text-brand transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/header/logo_black.svg" alt="Liquido24" class="h-8 lg:h-10 w-auto">
+                </a>
+
+                <!-- Search Bar (Desktop) -->
+                <div class="hidden lg:flex flex-1 max-w-2xl relative">
+                    <input type="text" placeholder="Liquid, E-Zigaretten & mehr suchen..." 
+                           class="w-full bg-gray-100 text-slate-800 rounded-full py-3 pl-12 pr-6 border border-transparent focus:bg-white focus:border-brand focus:ring-4 focus:ring-brand/10 transition-all outline-none">
+                    <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400"></i>
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-brand-dark transition-colors">
+                        Suchen
+                    </button>
+                </div>
+
+                <!-- Action Icons -->
+                <div class="flex items-center gap-5 lg:gap-6">
+                    <button class="lg:hidden text-slate-600 hover:text-brand transition-colors">
+                        <i data-lucide="search" class="w-6 h-6"></i>
+                    </button>
+                    <a href="#" class="flex flex-col items-center gap-1 text-slate-600 hover:text-brand transition-colors group">
+                        <i data-lucide="user" class="w-6 h-6 group-hover:-translate-y-0.5 transition-transform"></i>
+                        <span class="text-[10px] font-medium hidden lg:block uppercase tracking-wider">Anmelden</span>
+                    </a>
+                    <a href="#" class="flex flex-col items-center gap-1 text-slate-600 hover:text-brand transition-colors group relative">
+                        <div class="relative">
+                            <i data-lucide="shopping-cart" class="w-6 h-6 group-hover:-translate-y-0.5 transition-transform"></i>
+                            <span class="absolute -top-1.5 -right-2 bg-accent text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border border-white">0</span>
+                        </div>
+                        <span class="text-[10px] font-medium hidden lg:block uppercase tracking-wider">Warenkorb</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Row: Navigation (Desktop) -->
+            <nav class="hidden lg:flex items-center justify-center py-4">
+                <ul class="flex items-center gap-8 text-sm font-semibold tracking-wide text-slate-700">
+                    <li><a href="#" class="hover:text-brand transition-colors">Liquid</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">E-Zigaretten</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">Liquid mischen</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">Verdampfer</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">Zubehör</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">E-Shisha</a></li>
+                    <li><a href="#" class="hover:text-brand transition-colors">Neuheiten</a></li>
+                    <li class="relative group cursor-pointer">
+                        <span class="flex items-center gap-1 hover:text-brand transition-colors">
+                            Geschmäcker <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                        <!-- Dropdown stub -->
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-[600px] bg-white rounded-2xl shadow-xl border border-gray-100 p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                            <p class="text-brand font-bold text-lg mb-4">Wählen Sie Ihre gewünschte Geschmacksrichtung:</p>
+                            <div class="grid grid-cols-4 gap-4">
+                                <img src="https://www.liquido24.de/media/wysiwyg/flavours/erfrischend.png" alt="Erfrischend" class="hover:scale-105 transition-transform rounded-lg cursor-pointer">
+                                <img src="https://www.liquido24.de/media/wysiwyg/flavours/kaffee.png" alt="Kaffee" class="hover:scale-105 transition-transform rounded-lg cursor-pointer">
+                                <img src="https://www.liquido24.de/media/wysiwyg/flavours/fruchtig.png" alt="Fruchtig" class="hover:scale-105 transition-transform rounded-lg cursor-pointer">
+                                <img src="https://www.liquido24.de/media/wysiwyg/flavours/menthol.png" alt="Menthol" class="hover:scale-105 transition-transform rounded-lg cursor-pointer">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center gap-1 text-sale hover:text-red-700 transition-colors bg-red-50 px-3 py-1.5 rounded-full">
+                            <i data-lucide="flame" class="w-4 h-4"></i> Dampf-Deals
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="container mx-auto px-4 lg:px-8 py-8 lg:py-12">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl lg:text-5xl font-bold text-slate-900 mb-3 tracking-tight">Liquid & E-Zigaretten Onlineshop</h1>
+                <p class="text-lg text-slate-500 font-medium flex items-center justify-center gap-3">
+                    <span class="flex items-center gap-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent"></i> Turboversand</span>
+                    <span class="text-gray-300">•</span>
+                    <span class="flex items-center gap-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent"></i> Gute Preise</span>
+                    <span class="text-gray-300">•</span>
+                    <span class="flex items-center gap-1"><i data-lucide="check-circle-2" class="w-5 h-5 text-accent"></i> Riesige Auswahl</span>
+                </p>
+            </div>
+
+            <!-- Modern Hero Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Main Featured Banner -->
+                <a href="#" class="lg:col-span-2 relative rounded-3xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="https://www.liquido24.de/media/wysiwyg/startpage/2021-flavorist-maroc-mint-g.jpg" alt="Vaporist Longfills" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+                
+                <!-- Secondary Banners Stacked -->
+                <div class="flex flex-col gap-6">
+                    <a href="#" class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300 flex-1">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/elfliq-banner-g.jpg" alt="Elfliq by Elf Bar" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    </a>
+                    <a href="#" class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300 flex-1 bg-white">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/Sc-liquid-g.png" alt="SC Liquids" class="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-700">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Product Carousels Section -->
+        <section class="py-16 bg-white border-t border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-16">Die besten Liquids, Aromen und E-Zigaretten</h2>
+
+                <!-- Carousel 1: Neuheiten E-Zigaretten -->
+                <div class="mb-16">
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <span class="text-brand font-bold uppercase tracking-wider text-sm">Neuheiten</span>
+                            <h3 class="text-2xl font-bold text-slate-800">E-Zigaretten</h3>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-brand hover:text-brand-dark flex items-center gap-1 group">
+                            Entdecke mehr <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory pb-8 -mx-4 px-4 lg:mx-0 lg:px-0">
+                        <!-- Card Template -->
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <span class="absolute top-4 left-4 bg-red-500 text-white text-[10px] font-bold uppercase px-2 py-1 rounded shadow-sm z-10">Reduziert</span>
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/e/l/elfbar800_master_20_sorten.jpg" alt="Elf Bar 800" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                
+                                <!-- Hover Actions -->
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark">
+                                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Elf Bar</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Elf Bar 800 - Einweg E-Zigarette</h4>
+                            </div>
+                        </div>
+
+                        <!-- Products -> Geekvape Aegis Legend 5 -->
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/g/e/geekvape_aegis_legend_5_dunkelgruen.jpg" alt="Geekvape" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">GeekVape</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Geekvape Aegis Legend 5 E-Zigaretten Set</h4>
+                            </div>
+                        </div>
+
+                        <!-- Justfog Q16 -->
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/j/u/justfog-q16-pro-plus-kit-teaser.jpg" alt="Justfog" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">JustFog</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Justfog Q16 Pro Plus E-Zigaretten Set</h4>
+                            </div>
+                        </div>
+
+                        <!-- GeekVape Sonder Q2 -->
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/g/e/geekvape_sonder_q_2_kit_rocket-silver.jpg" alt="Geekvape" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">GeekVape</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">GeekVape Sonder Q2 Pod-Kit</h4>
+                            </div>
+                        </div>
+
+                         <!-- Vaporesso ECO Nano -->
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/v/a/vaporesso-eco-nano-2-kit-blau.jpg" alt="Vaporesso" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Vaporesso</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Vaporesso ECO Nano 2 Pod-Kit</h4>
+                            </div>
+                        </div>
+                        
+                         <!-- Vaporesso Luxe -->
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/v/a/vaporesso_luxe_x_pro_kit_blau.jpg" alt="Vaporesso" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Vaporesso</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Vaporesso Luxe X Pro Pod-Kit</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel 2: Bestseller Nikotinsalzliquids -->
+                <div class="mb-16">
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <span class="text-brand font-bold uppercase tracking-wider text-sm">Bestseller</span>
+                            <h3 class="text-2xl font-bold text-slate-800">Nikotinsalzliquids</h3>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-brand hover:text-brand-dark flex items-center gap-1 group">
+                            Entdecke mehr <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory pb-8 -mx-4 px-4 lg:mx-0 lg:px-0">
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/e/l/elfliq-nicsalt-watermelon_10mg.jpg" alt="Elfliq Watermelon" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Elfliq by Elf Bar</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Watermelon - Elfliq by Elfbar Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/f/l/flerbar-liquid-nicsalt-blueberry-20mg.jpg" alt="Flerbar Blueberry" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Flerbar</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Blueberry - Flerbar Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/p/o/pod-salt-ice-menthol-11mg-750x1000.jpg" alt="Pod Salt Ice Menthol" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Pod Salt</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Ice Menthol - Pod Salt Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+                        
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/s/c/sc_nikotinsalz-liquid_spearmint.jpg" alt="SC Spearmint" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">SC</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Spearmint - SC Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/t/w/twelve-monkeys-nicsalt-20mg-tropika.jpg" alt="Twelve Monkeys" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Twelve Monkeys</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Tropika - Iced - Twelve Monkeys Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/r/e/revoltage-yellow-raspberry-nikotinsalz-liquid.jpg" alt="Revoltage" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Revoltage</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Yellow Raspberry - Revoltage Hybrid Nikotinsalz Liquid</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel 3: Bestseller Fertigliquids -->
+                <div class="mb-16">
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <span class="text-brand font-bold uppercase tracking-wider text-sm">Bestseller</span>
+                            <h3 class="text-2xl font-bold text-slate-800">Fertigliquids</h3>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-brand hover:text-brand-dark flex items-center gap-1 group">
+                            Entdecke mehr <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory pb-8 -mx-4 px-4 lg:mx-0 lg:px-0">
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/b/g/bg_10ml_heisenberg.jpg" alt="Heisenberg" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex text-yellow-400 mb-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                                    <span class="text-[10px] text-gray-400 ml-1">(2)</span>
+                                </div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Vampire Vape</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Heisenberg Liquid - Vampire Vape</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/b/g/bg_10ml_pinkman.jpg" alt="Pinkman" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                 <div class="flex text-yellow-400 mb-1">
+                                    <i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i><i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                                    <span class="text-[10px] text-gray-400 ml-1">(4)</span>
+                                </div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Vampire Vape</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Pinkman Liquid - Vampire Vape</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/m/e/menthol-sc-liquid.jpg" alt="Menthol" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">SC</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Menthol - SC Liquid</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/i/n/innocigs-liquid-white_glacier.jpg" alt="InnoCigs" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Innocigs</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">White Glacier Fresh Liquid - InnoCigs</h4>
+                            </div>
+                        </div>
+
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/i/n/innocigs-liquid-milli.jpg" alt="InnoCigs" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Innocigs</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Milli Vanille Liquid - InnoCigs</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel 4: Bestseller Longfills -->
+                <div>
+                    <div class="flex items-end justify-between mb-6">
+                        <div>
+                            <span class="text-brand font-bold uppercase tracking-wider text-sm">Bestseller</span>
+                            <h3 class="text-2xl font-bold text-slate-800">Longfills</h3>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-brand hover:text-brand-dark flex items-center gap-1 group">
+                            Entdecke mehr <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory pb-8 -mx-4 px-4 lg:mx-0 lg:px-0">
+                        <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/b/a/bad-candy-longfill-paradise-peach.jpg" alt="Bad Candy" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Bad Candy</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Aroma Paradise Peach - Bad Candy (10/120ml)</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/v/a/vaporist-treibstoff-longfill-baba-minze.jpg" alt="Vaporist" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Vaporist</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Aroma Baba Minze - Treibstoff - Vaporist (10/60ml)</h4>
+                            </div>
+                        </div>
+                        
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/r/e/revoltage_aroma_black-blueberry.jpg" alt="Revoltage" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Revoltage</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Aroma Black Blueberry - Revoltage (15/75ml)</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/a/r/arctic-mint-big_bottle.jpg" alt="Big Bottle" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Big Bottle</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Aroma Arctic Mint - Big Bottle (10/120ml)</h4>
+                            </div>
+                        </div>
+
+                         <div class="snap-start flex-shrink-0 w-64 bg-white border border-gray-100 rounded-2xl p-4 relative group hover:shadow-2xl hover:border-transparent transition-all duration-300 cursor-pointer flex flex-col justify-between">
+                            <div class="relative w-full h-48 mb-4 rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center p-2">
+                                <img src="https://www.liquido24.de/media/catalog/product/cache/1/small_image/320x320/9df78eab33525d08d6e5fb8d27136e95/f/l/flavorist_lf10_tabak_royal_classic_60ml.jpg" alt="Flavorist" class="object-contain h-full mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <button class="bg-brand text-white rounded-full p-3 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg hover:bg-brand-dark"><i data-lucide="shopping-cart" class="w-5 h-5"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Flavorist</p>
+                                <h4 class="font-semibold text-slate-800 leading-tight group-hover:text-brand transition-colors line-clamp-2">Aroma Tabak Royal Classic - Flavorist (10/60ml)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Trust Features Grid -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 lg:px-8">
+                <h3 class="text-3xl font-bold text-center mb-12">Ein Online-Shop, viele Vorteile</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <a href="#" class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/liquido24-plus-banner.jpg" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Liquido24 Plus" loading="lazy" />
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4 flex justify-center">
+                            <span class="text-white font-medium flex items-center gap-2 group-hover:-translate-y-1 transition-transform">Vorteile genießen <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+                    <a href="#" class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/liquido24-guide-banner.jpg" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Liquido24 Guide" loading="lazy" />
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4 flex justify-center">
+                            <span class="text-white font-medium flex items-center gap-2 group-hover:-translate-y-1 transition-transform">Wissen erweitern <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+                    <a href="#" class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/liquido24-rechner-banner.jpg" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Liquido24 Rechner" loading="lazy" />
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4 flex justify-center">
+                            <span class="text-white font-medium flex items-center gap-2 group-hover:-translate-y-1 transition-transform">Zeit sparen <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+                    <a href="#" class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/liquido24-nachhaltigkeit.jpg" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500" alt="Liquido24 Nachhaltigkeit" loading="lazy" />
+                        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent p-4 flex justify-center">
+                            <span class="text-white font-medium flex items-center gap-2 group-hover:-translate-y-1 transition-transform">Verantwortung übernehmen <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Text Area / Magazine Layout -->
+        <section class="py-20 bg-white border-y border-gray-100">
+            <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Liquido24.de - der Dampfer Shop mit Leidenschaft</h2>
+                    <p class="text-xl text-brand font-medium italic">Mit Sicherheit zufrieden!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                    <div class="prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Erstklassiger Service</h3>
+                        <p class="text-slate-600 mb-6">
+                            Liquido24 ist dein <strong>24/7 Dampfershop</strong> - rund um die Uhr für dich geöffnet. Profitiere von unserer handverlesenen Auswahl an E-Zigaretten, E-Liquids und Zubehör. Genieße blitzschnellen Versand und Service nah am Kunden. Ein rauchfreies Leben ist nicht länger ein Traum - mit uns kann er Wirklichkeit werden.
+                        </p>
+                        <p class="text-slate-600 mb-6">
+                            Was unseren Dampfer Shop so besonders macht? Wir verkaufen nicht einfach wahllos Dampferzubehör. Hinter all unseren Artikeln steht die pure Leidenschaft und Erfahrung aus unserer langjährigen Firmengeschichte.
+                        </p>
+                        <p class="text-slate-600">
+                            Unser Service-Team aus erfahrenen Dampfern berät dich kompetent und unkompliziert: per E-Mail unter service@liquido24.de. Wir möchten dieselbe exzellente Beratung bieten, die ein Kunde auch in einem Offline Dampferladen erwarten würde - das ist unser Anspruch!
+                        </p>
+                    </div>
+
+                    <div class="prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">E-Zigaretten - Wissen für alle</h3>
+                        <p class="text-slate-600 mb-6">
+                            Die Welt der E-Zigaretten ist kontinuierlich im Wandel. Seit der Erfindung der heutigen E-Zigarette im Jahr 2003 von Hon Lik hat sich viel getan. Auch wenn die Technik der E-Zigarette heute komplex erscheint - mit dem richtigen Wissen kann jeder den Umstieg schaffen!
+                        </p>
+                        <p class="text-slate-600 mb-6">
+                            Fakten, Know-how und Wissenswertes rund um die E-Zigarette stellen wir in unseren kostenlosen Guides zur Verfügung. Egal welche Frage aufkommt - wir haben die Antwort. Denn unsere Kunden sollen sich bereits vor dem Kauf bestens informiert fühlen.
+                        </p>
+                    </div>
+
+                    <div class="prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Riesige Auswahl und maximale Verfügbarkeit</h3>
+                        <p class="text-slate-600 mb-6">
+                            Wer online in einem Fachhandel bestellt, möchte nicht zu lange auf seine Schätze warten. Deswegen legen wir uns bei unserer Warenbevorratung extra ins Zeug. <strong>Unser Versprechen:</strong> Wir halten alles auf Lager! Wenn du bei uns bestellst, kannst du dir sicher sein - die Ware ist aktuell vorrätig in unserem Dampfer Shop.
+                        </p>
+                        <p class="text-slate-600">
+                            Viele Menschen möchten nicht online in einem Dampf Shop bestellen, weil sie die Versandkosten scheuen. Deswegen liefern wir bereits <strong>ab 50 Euro Warenwert versandkostenfrei</strong>.
+                        </p>
+                    </div>
+
+                    <div class="prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Nachhaltigkeit im Versand</h3>
+                        <p class="text-slate-600 mb-6">
+                            Wir glauben, dass auch E-Commerce umwelt- und ressourcenschonend funktionieren kann. Deswegen sind wir bestrebt, diesen Aspekt laufend auszubauen. Mit unseren Einnahmen unterstützen wir nachhaltige Projekte, die sich dem Erhalt unserer wunderschönen Umwelt widmen.
+                        </p>
+                        <p class="text-slate-600">
+                            Auch in unserem Onlineshop achten wir darauf, so klimaneutral wie möglich zu versenden. Dazu verzichten wir bei der Verpackung auf Plastik. Wir verwenden ausschließlich recycelbares Klebeband und Knüllpapier aus 100 % recyceltem Papier als Polstermaterial.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Worlds (Shoppingwelten) -->
+        <section class="py-20 bg-gray-50 overflow-hidden relative">
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-3">Unsere Shoppingwelten</h2>
+                    <p class="text-xl text-brand font-medium italic">Tauche ein und lass dich inspirieren!</p>
+                </div>
+
+                <!-- World 1: E-Zigaretten -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-24">
+                    <div class="lg:w-1/2 relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/e-zigarette-shop-wolken.png" alt="E-Zigaretten Shop" class="relative z-10 w-full max-w-lg mx-auto transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    </div>
+                    <div class="lg:w-1/2 prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">E-Zigaretten Shop - ausgewählte Hightech-Geräte</h3>
+                        <p class="text-slate-600 mb-6">
+                            Unser <strong>E-Zigaretten Shop</strong> ist das Herzstück unseres Angebots. Wir wissen, dass Dampfen individuell ist. Deswegen deckt unser Sortiment alle Bedürfnisse ab. Jedem Dampfer sein Modell: Vom günstigen Einsteigergerät wie der Elf Bar 800 bis hin zur High-End-Dampfe.
+                        </p>
+                        <p class="text-slate-600 mb-8">
+                            Doch nicht jedes Gerät schafft es in unseren E-Zigaretten Shop. Wir führen nur die Modelle, die wir selbst für gut genug befunden haben. Dafür sorgt unser Team aus erfahrenen Dampfern und Technikfans, die all unsere Produkte <strong>auf Herz und Nieren</strong> prüfen.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 no-underline">
+                            E-Zigaretten kaufen <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- World 2: E-Liquid -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+                    <div class="lg:w-1/2 relative group">
+                        <div class="absolute -inset-4 bg-gradient-to-l from-blue-200 to-cyan-200 rounded-full blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                        <img src="https://www.liquido24.de/media/wysiwyg/startpage/liquid-shop-wolken.png" alt="E-Liquid Shop" class="relative z-10 w-full max-w-lg mx-auto transform group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                    </div>
+                    <div class="lg:w-1/2 prose prose-slate prose-p:leading-relaxed">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">E-Liquid Shop - Top Brands, herausragender Geschmack</h3>
+                        <p class="text-slate-600 mb-6">
+                            In unserem <strong>Liquid Shop</strong> stehen Geschmack und Genuss im Vordergrund. Bei der Auswahl unserer Liquids zapfen wir die Dampferszene und ihre Vorlieben direkt an. Durch diese enge Vernetzung filtern wir aus der Fülle der E-Liquids genau jene heraus, die besonders gut ankommen.
+                        </p>
+                        <p class="text-slate-600 mb-8">
+                            Bekannte Marken wie Vampire Vape, Pod Salt oder Elf Bar, die zu den besten Liquids am Markt gehören, haben es bereits in unseren Liquid Shop geschafft. Dort befinden sie sich in bester Gesellschaft.
+                        </p>
+                        <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-8 py-3 rounded-full font-semibold hover:bg-brand-dark transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 no-underline">
+                            Liquid kaufen <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA / Support Banner -->
+        <section class="bg-brand py-12 text-center text-white">
+            <div class="container mx-auto px-4">
+                <i data-lucide="headphones" class="w-12 h-12 mx-auto mb-4 opacity-80"></i>
+                <h3 class="text-2xl font-medium mb-2">Hast du eine Frage?</h3>
+                <p class="text-3xl font-bold mb-4">service@liquido24.de</p>
+                <a href="#" class="inline-block border border-white/30 rounded-full px-6 py-2 text-sm hover:bg-white hover:text-brand transition-colors">
+                    Alle Kontaktmöglichkeiten anzeigen
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t-[6px] border-brand relative">
+        <div class="absolute -top-[25px] left-1/2 -translate-x-1/2 bg-slate-900 px-6 py-2 rounded-full border-t border-brand/20">
+            <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/logofoot.png" alt="Liquido24" class="h-6 filter brightness-0 invert opacity-50">
+        </div>
+
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Service Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="heart-handshake" class="w-5 h-5 text-brand-light"></i> Unser Service
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Zahlungsarten</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Versand & Retouren</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Blog</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">E-Zigaretten Guide</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Händler werden</a></li>
+                    </ul>
+                </div>
+
+                <!-- FAQ Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="info" class="w-5 h-5 text-brand-light"></i> FAQ & Qualität
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Häufige Fragen</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Inhaltsstoffe E-Liquids</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Premium E-Liquid</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sonstiges Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6 flex items-center gap-2">
+                        <i data-lucide="link" class="w-5 h-5 text-brand-light"></i> Sonstiges
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Benutzerkonto</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Kontaktmöglichkeiten</a></li>
+                        <li><a href="#" class="hover:text-white hover:underline transition-all">Newsletter Abmeldung</a></li>
+                    </ul>
+                </div>
+
+                <!-- Socials & Plus -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Fan werden</h4>
+                    <div class="flex gap-4 mb-8">
+                        <a href="#" class="bg-slate-800 p-3 rounded-full hover:bg-brand hover:text-white transition-colors">
+                            <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/facebook.png" class="w-5 h-5 object-contain" alt="FB">
+                        </a>
+                        <a href="#" class="bg-slate-800 p-3 rounded-full hover:bg-brand hover:text-white transition-colors">
+                            <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/instagram.png" class="w-5 h-5 object-contain filter invert" alt="IG">
+                        </a>
+                    </div>
+                    
+                    <h4 class="text-white font-bold text-lg mb-4">Verantwortung</h4>
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/adult.png" class="w-48 opacity-80 hover:opacity-100 transition-opacity" alt="18+ Only">
+                </div>
+            </div>
+
+            <!-- Payments & Trust Badges -->
+            <div class="border-t border-slate-800 pt-8 flex flex-col lg:flex-row items-center justify-between gap-8">
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/klarna1.png" alt="Klarna" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/vorkasse.png" alt="Vorkasse" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/sofort.png" alt="Sofort" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/bitcoin.png" alt="Bitcoin" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/rechnung.png" alt="Rechnung" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/visa.png" alt="Visa" class="h-8 bg-white px-2 py-1 rounded">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/mastercard.png" alt="Mastercard" class="h-8 bg-white px-2 py-1 rounded">
+                </div>
+                <div class="flex items-center gap-6">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/vdeh.png" alt="VDEH" class="h-16 opacity-70 hover:opacity-100 transition-opacity">
+                    <img src="https://www.liquido24.de/skin/frontend/ultimo/default/png/bftg.png" alt="BFTG" class="h-12 opacity-70 hover:opacity-100 transition-opacity bg-white p-1 rounded">
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-sm text-slate-500 mt-12 space-y-2">
+                <p>&copy; 2026 Liquido24. Alle Rechte vorbehalten. Alle Preise inkl. gesetzl. Mehrwertsteuer zzgl. Versandkosten</p>
+                <p>
+                    <a href="#" class="hover:text-white transition-colors">Impressum</a> &middot; 
+                    <a href="#" class="hover:text-white transition-colors">Datenschutzerklärung</a> &middot; 
+                    <a href="#" class="hover:text-white transition-colors">Widerrufsbelehrung</a> &middot; 
+                    <a href="#" class="hover:text-white transition-colors">AGB</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
