@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubilee Mint | UK and British Coins | Commemorative Coins</title>
+    <meta name="description" content="Jubilee Mint - Commemorative Coins, Gold Coins, Silver Coins, and more.">
+    
+    <!-- Fonts: Inter for clean UI, Playfair Display for premium headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            DEFAULT: '#40243f', // Deep Purple
+                            light: '#5d375c',
+                            dark: '#2d192c',
+                            gold: '#d4af37', // Premium Gold
+                            goldlight: '#f0eac2',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        
+        /* Smooth interactions */
+        html { scroll-behavior: smooth; }
+        
+        /* Tab Transitions */
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-[#f9fafb] antialiased">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-gray-100 border-b border-gray-200 text-xs font-medium text-gray-600">
+        <div class="container mx-auto px-4 lg:px-8 py-2.5 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <!-- Trustpilot Element -->
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+                <span>Excellent 4.8 out of 5 based on customer reviews</span>
+            </div>
+            <!-- Account Links -->
+            <div class="flex items-center gap-5">
+                <a href="/account" class="hover:text-brand transition-colors">My Account</a>
+                <a href="/checkout/cart" class="hover:text-brand transition-colors">Checkout</a>
+                <a href="/login" class="hover:text-brand transition-colors">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Sticky Header -->
+    <header class="sticky top-0 bg-white z-50 border-b border-gray-100 shadow-sm transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex items-center justify-between py-4 lg:py-5 gap-4 lg:gap-8">
+                
+                <!-- Logo -->
+                <a href="/" class="flex-shrink-0">
+                    <img src="https://zappa-static-jubilee-production.s3.amazonaws.com/storefront/jubilee/logo.svg" alt="Jubilee Mint" class="h-10 lg:h-14 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-gray-700">
+                    <a href="/home" class="text-brand border-b-2 border-brand py-1">Home</a>
+                    <a href="/gold-coins" class="hover:text-brand py-1 transition-colors">Gold Coins</a>
+                    <a href="/silver-coins" class="hover:text-brand py-1 transition-colors">Silver Coins</a>
+                    <a href="/uk-coins" class="hover:text-brand py-1 transition-colors">UK</a>
+                    <a href="/the-royal-family" class="hover:text-brand py-1 transition-colors">Royal Family</a>
+                    <a href="/QueenElizabethIICentenary" class="hover:text-brand py-1 transition-colors">QEII Centenary</a>
+                </nav>
+
+                <!-- Right Actions: Search, Contact, Cart -->
+                <div class="flex items-center gap-5 lg:gap-8 flex-shrink-0">
+                    
+                    <!-- Search Bar (Desktop) -->
+                    <form action="/search" class="hidden md:flex items-center relative w-48 xl:w-64">
+                        <input type="text" name="searched" placeholder="Priority Order Ref:" class="w-full bg-gray-50 border border-gray-200 text-sm rounded-full py-2.5 pl-4 pr-10 focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand transition-all">
+                        <button type="submit" class="absolute right-3 text-gray-400 hover:text-brand">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </button>
+                    </form>
+
+                    <!-- Contact Block -->
+                    <div class="hidden xl:flex flex-col items-end text-right">
+                        <span class="text-[11px] text-gray-500 font-medium uppercase tracking-wider">Order Online or Call FREE On</span>
+                        <a href="tel:08000385510" class="text-brand font-serif font-bold text-lg leading-tight">0800 038 5510</a>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <a href="/checkout/cart" class="group flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-4 py-2.5 rounded-full transition-colors duration-300">
+                        <svg class="w-5 h-5 text-brand-goldlight" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span class="text-sm font-semibold hidden sm:block">Basket</span>
+                    </a>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobile-menu-btn" class="lg:hidden text-gray-600 hover:text-brand focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Search (Visible only on mobile) -->
+            <form action="/search" class="md:hidden pb-4">
+                <div class="relative w-full">
+                    <input type="text" name="searched" placeholder="Priority Order Ref:" class="w-full bg-gray-50 border border-gray-200 text-sm rounded-full py-2.5 pl-4 pr-10 focus:outline-none focus:border-brand">
+                    <button type="submit" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Mobile Navigation Panel -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 shadow-inner absolute w-full left-0 z-40">
+            <nav class="flex flex-col py-2 px-4 divide-y divide-gray-100 font-medium text-sm text-gray-700">
+                <a href="/home" class="py-3 text-brand">Home</a>
+                <a href="/gold-coins" class="py-3 hover:text-brand">Gold Coins</a>
+                <a href="/silver-coins" class="py-3 hover:text-brand">Silver Coins</a>
+                <a href="/uk-coins" class="py-3 hover:text-brand">UK</a>
+                <a href="/the-royal-family" class="py-3 hover:text-brand">Royal Family</a>
+                <a href="/QueenElizabethIICentenary" class="py-3 hover:text-brand">QEII Centenary</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Premium Hero Section -->
+        <section class="container mx-auto px-4 lg:px-8 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
+                <!-- Primary Hero Banner -->
+                <a href="/search/the-new-centenary-of-queen-elizabeth-ii-5-coin-collection-jc-clone-clone" class="lg:col-span-2 block group relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100 aspect-auto lg:aspect-[16/9]">
+                    <img src="https://jubilee-mint-public-images.s3.amazonaws.com/6105_The_NEW_Centenary_of_Queen_Elizabeth_II_5_Coin_Collection_not_SOTD.jpg" alt="The NEW Centenary of Queen Elizabeth II 5 Coin Collection" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                </a>
+
+                <!-- Secondary Banners Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-6 h-full">
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-solid-gold-proof-coin-sotd-clone-clone" class="block group relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/6118-The-NEW-QEII-Centenary-Solid-Gold-Proof-Coin-1g-9C-SOTD.jpg" alt="Solid Gold Proof Coin" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                    </a>
+                    
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-gold-proof-tenth-sovereign-tm-clone1" class="block group relative overflow-hidden bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/5963-The-NEW-Centenary-of-Queen-Elizabeth-II-Gold-Proof-Tenth-Sovereign.jpg" alt="Gold Proof Tenth Sovereign" class="w-full h-full object-cover transform group-hover:scale-[1.03] transition-transform duration-700 ease-out">
+                        <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Recommendations Grid -->
+        <section class="container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-serif text-brand mb-4">Curated Product Recommendations</h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                
+                <!-- Product 1 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-king-george-vi-coronation-proof-coin-collection5" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.eu-west-2.amazonaws.com/jubilee_mint_import/c/o/collection_1_9.jpg" alt="The King George VI Coronation Proof Coin Collection" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-king-george-vi-coronation-proof-coin-collection5" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The King George VI Coronation Proof Coin Collection
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£995.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="6441ADP">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-pure-gold-proof-5-coin" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65197/Crossed.jpg-256x256" alt="The NEW Centenary of Queen Elizabeth II Pure Gold Proof £5 Coin (SD)" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-pure-gold-proof-5-coin" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The NEW Centenary of Queen Elizabeth II Pure Gold Proof £5 Coin (SD)
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£99.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="594801AEN">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-new-50th-anniversary-of-concorde-solid-gold-proof-coin-sotd-" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65243/Crossed.gif-256x256" alt="The NEW 50th Anniversary of Concorde Solid Gold Proof Coin (SOTD)" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-new-50th-anniversary-of-concorde-solid-gold-proof-coin-sotd-" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The NEW 50th Anniversary of Concorde Solid Gold Proof Coin (SOTD)
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£150.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="606401AEN">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/uks-new-2026-annual-coin-collection-1" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65270/Outer.jpg-256x256" alt="The UK’s NEW 2026 Annual Coin Collection" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/uks-new-2026-annual-coin-collection-1" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The UK’s NEW 2026 Annual Coin Collection
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£99.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="606501AAP">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-gold-proof-tenth-sovereign-tm-clone1" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65665/Crossed.jpg-256x256" alt="The NEW Centenary of Queen Elizabeth II Gold Proof Tenth Sovereign (TM)" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-gold-proof-tenth-sovereign-tm-clone1" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The NEW Centenary of Queen Elizabeth II Gold Proof Tenth Sovereign (TM)
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£199.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="596301AEN">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-uks-1970-proof-coin-collection-clone-clone" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65722/1970.jpg-256x256" alt="The UK’s 1970 Proof Coin Collection" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-uks-1970-proof-coin-collection-clone-clone" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The UK’s 1970 Proof Coin Collection
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£125.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="498401AAP">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-5-coin-collection-jc-clone-clone" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65789/Collection.jpg-256x256" alt="The NEW Centenary of Queen Elizabeth II £5 Coin Collection (JC)" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-5-coin-collection-jc-clone-clone" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The NEW Centenary of Queen Elizabeth II £5 Coin Collection (JC)
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£95.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="610501AAP">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:shadow-xl hover:border-gray-200 transition-all duration-300 relative">
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-solid-gold-proof-coin-sotd-clone-clone" class="block aspect-square mb-6 overflow-hidden relative">
+                        <img src="https://jubilee-mint-public-images.s3.amazonaws.com/jubilee/65808/Crossed.jpg-256x256" alt="The NEW Centenary of Queen Elizabeth II Solid Gold Proof Coin (SOTD)" class="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-700 ease-in-out">
+                    </a>
+                    <a href="/search/the-new-centenary-of-queen-elizabeth-ii-solid-gold-proof-coin-sotd-clone-clone" class="text-center text-[15px] font-medium text-gray-800 line-clamp-2 min-h-[44px] mb-3 hover:text-brand transition-colors">
+                        The NEW Centenary of Queen Elizabeth II Solid Gold Proof Coin (SOTD)
+                    </a>
+                    <div class="text-center text-xl font-bold text-brand mb-6 mt-auto">£150.00</div>
+                    <form action="/checkout/cart" method="post" class="w-full mt-auto">
+                        <input type="hidden" name="sku" value="611801AEN">
+                        <button type="submit" class="w-full py-3 bg-gray-50 text-brand font-semibold text-sm rounded-xl border border-gray-200 group-hover:bg-brand group-hover:text-white group-hover:border-brand transition-all duration-300">
+                            Add To Basket
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Tabs Section -->
+        <section class="bg-white border-t border-gray-200 py-16 lg:py-24">
+            <div class="container mx-auto px-4 max-w-4xl">
+                
+                <!-- Tab Navigation -->
+                <div class="flex flex-col sm:flex-row justify-center gap-2 sm:gap-4 mb-8">
+                    <button class="tab-btn active w-full sm:w-auto px-6 py-3 rounded-full text-sm font-semibold bg-brand text-white border border-brand transition-all duration-300 shadow-md" data-target="tab1">
+                        From idea to strike
+                    </button>
+                    <button class="tab-btn w-full sm:w-auto px-6 py-3 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-300 hover:border-brand hover:text-brand transition-all duration-300" data-target="tab2">
+                        Achieving a high proof finish
+                    </button>
+                    <button class="tab-btn w-full sm:w-auto px-6 py-3 rounded-full text-sm font-medium bg-white text-gray-600 border border-gray-300 hover:border-brand hover:text-brand transition-all duration-300" data-target="tab3">
+                        Different types of coins
+                    </button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="bg-[#fcfbf9] rounded-3xl p-8 lg:p-12 shadow-[inset_0_0_20px_rgba(0,0,0,0.02)] border border-gray-100 text-center">
+                    
+                    <div id="tab1" class="tab-content active text-gray-600 leading-relaxed font-serif text-lg lg:text-xl">
+                        Modern coins, whether for circulating legal tender or special commemorative issues, are produced in exactly the same way using sophisticated minting techniques. The process begins when an engraver or artist is commissioned to create a design, which is typically much larger than the final coin will be. Artwork is often sculpted by hand before being digitally scanned for use. Once approved, the ‘blanks’ are made - a blanking press can produce up to 10,000 blank coins every minute! Next, the design is engraved into a piece of steel called a ‘reduction punch’ at the coin’s exact size, which is used to create the dies for striking. Finally, the blanks are inserted into a coining press where the two dies strike the finished design onto the coin.
+                    </div>
+
+                    <div id="tab2" class="tab-content text-gray-600 leading-relaxed font-serif text-lg lg:text-xl">
+                        Most commemorative coins issued by The Jubilee Mint are struck to the highest possible standard - the sought-after Proof finish. Achieving this level of quality takes significantly longer than other finishes; only a few can be produced each hour, compared to circulating coins, which are made at a much faster rate of 750 pieces per minute. While circulating coins are mass produced, Proof coins are made in smaller quantities to showcase the finest exemplary minting standards. The extended timeframe is crucial because the dies used are carefully prepared, cleaned after every strike, and replaced regularly to ensure outstanding quality. Proof releases are also struck at least twice to reveal the design at the most pristine clarity.
+                    </div>
+
+                    <div id="tab3" class="tab-content text-gray-600 leading-relaxed font-serif text-lg lg:text-xl">
+                        For the most important events or anniversaries, such as Queen Elizabeth II’s historic Platinum Jubilee, a number of different coin specifications are struck, ranging from the smallest coins to impressive large kilo pieces. In order to produce a varied range with different price points for collectors, Platinum Jubilee issues were struck in a mixture of base and precious metals, often to a high Proof finish. Higher priced premium pieces were available, such as the Piedfort, always a sought-after issue due to its double thickness, as well as sizeable 5oz golds and silvers, and even photographic issues whereby a full colour image is reproduced onto the coin’s reverse.
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand text-gray-300 pt-16 lg:pt-20 pb-8 mt-auto border-t-[8px] border-brand-gold">
+        <div class="container mx-auto px-4 lg:px-8">
+            
+            <!-- Trustpilot & Main Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16 border-b border-[#5d375c] pb-16">
+                
+                <!-- Trustpilot Placeholder Section -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-white text-lg font-serif mb-6">What our clients say about us...</h4>
+                    <div class="bg-[#2d192c] rounded-xl p-6 border border-[#5d375c] flex flex-col justify-center min-h-[140px]">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="flex text-green-500 text-xl">★★★★★</div>
+                            <span class="text-white font-medium">Excellent</span>
+                        </div>
+                        <p class="text-sm text-gray-400 italic">"The member of staff was courteous, informative and regrettably I was in a hurry... Excellent service."</p>
+                        <a href="#" class="text-brand-gold text-xs mt-4 font-semibold uppercase tracking-wider hover:text-white transition-colors">Read all reviews on Trustpilot</a>
+                    </div>
+                </div>
+
+                <!-- Link Columns -->
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-6 uppercase tracking-wider text-sm">Customer Services</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="/about-us" class="hover:text-white hover:pl-1 transition-all duration-300">About Us</a></li>
+                        <li><a href="/contact-us" class="hover:text-white hover:pl-1 transition-all duration-300">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-6 uppercase tracking-wider text-sm">Information</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="/terms-and-conditions" class="hover:text-white hover:pl-1 transition-all duration-300">Terms &amp; Conditions</a></li>
+                        <li><a href="/privacy-policy-cookie-restriction-mode" class="hover:text-white hover:pl-1 transition-all duration-300">Privacy, Security &amp; Cookies</a></li>
+                        <li><a href="/faqs" class="hover:text-white hover:pl-1 transition-all duration-300">FAQ's</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-base font-semibold mb-6 uppercase tracking-wider text-sm">Categories</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="/sitemap/categories" class="hover:text-white hover:pl-1 transition-all duration-300">Browse Categories</a></li>
+                        <li><a href="/sitemap/products" class="hover:text-white hover:pl-1 transition-all duration-300">All Products</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Area: Payment & Copyright -->
+            <div class="flex flex-col lg:flex-row justify-between items-center gap-8 text-sm">
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <span class="font-semibold text-white uppercase tracking-wider text-xs">Secure Payments</span>
+                    <div class="flex items-center gap-2 bg-white px-3 py-2 rounded">
+                        <img src="https://zappa-static-jubilee-production.s3.amazonaws.com/storefront/media-content/wysiwyg/CreditCardLogos/cc-card-visa.jpg" alt="Visa" class="h-6">
+                        <img src="https://zappa-static-jubilee-production.s3.amazonaws.com/storefront/media-content/wysiwyg/CreditCardLogos/cc-card-visa-debit.jpg" alt="Visa Debit" class="h-6">
+                        <img src="https://zappa-static-jubilee-production.s3.amazonaws.com/storefront/media-content/wysiwyg/CreditCardLogos/cc-card-visa-electron.jpg" alt="Visa Electron" class="h-6">
+                        <img src="https://zappa-static-jubilee-production.s3.amazonaws.com/storefront/media-content/wysiwyg/CreditCardLogos/cc-card-mastercard.jpg" alt="Mastercard" class="h-6">
+                    </div>
+                </div>
+
+                <div class="text-center lg:text-right text-xs leading-relaxed text-gray-400 max-w-2xl">
+                    <p class="mb-4 text-gray-300 font-medium">
+                        The Jubilee Mint Ltd do not sell collectable coins as investments nor offer any future valuation guarantees.
+                    </p>
+                    <p>
+                        © <script>document.write(new Date().getFullYear())</script> The Jubilee Mint Ltd.<br>
+                        The Jubilee Mint Ltd, Third Floor, 26-32 Oxford Road, Bournemouth, Dorset, BH8 8EZ<br>
+                        Company No. 08464959 - VAT No. 235 4560 14
+                    </p>
+                    <p class="mt-4">
+                        Site: <a href="https://www.bluefrontier.co.uk/" target="_blank" class="text-brand-gold hover:text-white transition-colors">Blue Frontier</a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Tab Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active states from all
+                    tabBtns.forEach(b => {
+                        b.classList.remove('bg-brand', 'text-white', 'border-brand', 'shadow-md');
+                        b.classList.add('bg-white', 'text-gray-600', 'border-gray-300');
+                    });
+                    tabContents.forEach(c => c.classList.remove('active'));
+
+                    // Add active state to clicked
+                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-300');
+                    btn.classList.add('bg-brand', 'text-white', 'border-brand', 'shadow-md');
+                    
+                    const targetId = btn.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Sticky Header Resize Effect
+            window.addEventListener('scroll', () => {
+                const header = document.getElementById('main-header');
+                if (window.scrollY > 20) {
+                    header.classList.add('py-1');
+                } else {
+                    header.classList.remove('py-1');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
