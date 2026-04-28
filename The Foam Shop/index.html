@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Foam Cut to Size & Upholstery Supplies | The Foam Shop</title>
+    <meta name="description" content="Foam Cut to Size, Suppliers of Foam for Upholstery, Memory Foam Mattresses, Packaging Foam and Upholstery Services. DIY Upholstery Supplies" />
+    
+    <!-- Fonts: Inter for clean, modern readability -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for premium minimal iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#002B44', // Deeper, more premium version of original #004266
+                            DEFAULT: '#004266', // Original brand color
+                            light: '#006B99',
+                            accent: '#E6F4FA'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Hide scrollbar for cleaner look in horizontal scrollers */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth Mega Menu transitions */
+        .group:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .mega-menu {
+            transition: all 0.2s ease-in-out;
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50 antialiased selection:bg-brand selection:text-white">
+
+    <!-- Utility Bar -->
+    <div class="bg-brand-dark text-white text-xs md:text-sm font-medium py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i class="ph ph-phone text-lg"></i> 01473 624034</span>
+                <span class="hidden md:flex items-center gap-2 text-brand-accent"><i class="ph ph-check-circle text-lg"></i> UK's Largest Supplier</span>
+            </div>
+            <div class="flex items-center gap-4 md:gap-6">
+                <a href="#" class="hover:text-brand-accent transition-colors">My Account</a>
+                <a href="#" class="hover:text-brand-accent transition-colors hidden sm:block">My Wishlist</a>
+                <a href="#" class="hover:text-brand-accent transition-colors">Checkout</a>
+                <a href="#" class="hover:text-brand-accent transition-colors font-semibold">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+            <div class="flex items-center justify-between gap-8">
+                <!-- Logo -->
+                <a href="#" class="shrink-0">
+                    <img src="https://www.foamshop.co.uk/skin/frontend/default/metro-blue/images/logo.jpg" alt="The Foam Shop" class="h-12 object-contain mix-blend-multiply" />
+                </a>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-2xl relative">
+                    <input type="text" placeholder="Search entire store here..." class="w-full bg-gray-100 border-transparent focus:bg-white focus:border-brand focus:ring-2 focus:ring-brand/20 rounded-full py-3 px-6 text-sm transition-all" />
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-brand text-white rounded-full hover:bg-brand-dark transition-colors">
+                        <i class="ph ph-magnifying-glass text-lg leading-none"></i>
+                    </button>
+                </div>
+
+                <!-- Cart -->
+                <div class="shrink-0 flex items-center gap-4">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <div class="relative">
+                            <i class="ph ph-shopping-bag text-3xl text-gray-700 group-hover:text-brand transition-colors"></i>
+                            <span class="absolute -top-1 -right-1 bg-brand text-white text-[10px] font-bold h-5 w-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                        </div>
+                        <div class="hidden lg:block text-sm">
+                            <span class="block text-gray-500 font-medium">Cart Subtotal</span>
+                            <span class="block font-bold text-gray-900">£0.00</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Mega Menu -->
+        <nav class="hidden lg:block border-t border-gray-100 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex justify-center space-x-8 text-sm font-semibold text-gray-700">
+                    <li class="py-4 hover:text-brand transition-colors"><a href="#">Home</a></li>
+                    
+                    <!-- Dropdown: Sundries -->
+                    <li class="py-4 group relative">
+                        <a href="#" class="flex items-center gap-1 hover:text-brand transition-colors">Sundries <i class="ph ph-caret-down"></i></a>
+                        <div class="mega-menu absolute top-full left-0 w-[600px] bg-white shadow-xl border border-gray-100 rounded-b-lg opacity-0 invisible z-50 p-6 grid grid-cols-2 gap-x-8 gap-y-2">
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Adhesives and Aerosols</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Popular Foam Products</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Upholstery Fabrics</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Cotton Piping Cords</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Foam Support Wedges</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Miscellaneous</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Press Studs and Tools</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Quality Scatter Cushions</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Roof Lining Fabrics</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Springs</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Std Size Mattress Overlays</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Thin Foam Sheeting</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Tacks, Nails and Pins</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Threads, Cottons and Twines</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Upholstery Tools & Padding</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Webbings, Legs, Feet</a>
+                        </div>
+                    </li>
+
+                    <!-- Dropdown: Foams -->
+                    <li class="py-4 group relative">
+                        <a href="#" class="flex items-center gap-1 hover:text-brand transition-colors">Foams <i class="ph ph-caret-down"></i></a>
+                        <div class="mega-menu absolute top-full left-0 w-[400px] bg-white shadow-xl border border-gray-100 rounded-b-lg opacity-0 invisible z-50 p-6 grid grid-cols-1 gap-y-2">
+                            <a href="#" class="text-brand font-semibold text-sm py-1 border-b border-gray-100 mb-2 pb-2">Foam Cut To Size</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Which Foam is right for Me?</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Boat and Yacht Seating</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Caravans and Motor Homes</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Church Pews and Kneelers</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Cushion Refilling Service</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Dining Chair Seating & Headboards</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Display and Case Foams</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Mattresses, Overlays and Toppers</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Foam FAQ's</a>
+                        </div>
+                    </li>
+
+                    <!-- Dropdown: Upholstery -->
+                    <li class="py-4 group relative">
+                        <a href="#" class="flex items-center gap-1 hover:text-brand transition-colors">Upholstery <i class="ph ph-caret-down"></i></a>
+                        <div class="mega-menu absolute top-full left-0 w-[300px] bg-white shadow-xl border border-gray-100 rounded-b-lg opacity-0 invisible z-50 p-6 grid grid-cols-1 gap-y-2">
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Vintage Car Upholstery</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Cushion & Cover Making Service</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Reupholstery and Repairs</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">DIY Upholstery Supplies</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">French Polishing</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Furniture Spring Replacements</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Upholstery Fabrics</a>
+                        </div>
+                    </li>
+
+                    <!-- Simple Links -->
+                    <li class="py-4 group relative">
+                        <a href="#" class="flex items-center gap-1 hover:text-brand transition-colors">About Us <i class="ph ph-caret-down"></i></a>
+                        <div class="mega-menu absolute top-full left-0 w-[200px] bg-white shadow-xl border border-gray-100 rounded-b-lg opacity-0 invisible z-50 p-4 grid grid-cols-1 gap-y-2">
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Blog</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Gallery</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Tip of the Month</a>
+                        </div>
+                    </li>
+                    <li class="py-4 hover:text-brand transition-colors"><a href="#">Custom Cut Foams</a></li>
+                    <li class="py-4 hover:text-brand transition-colors"><a href="#">Custom Cut Overlays</a></li>
+                    <li class="py-4 hover:text-brand transition-colors"><a href="#">Custom Cut Mattresses</a></li>
+                    <li class="py-4 group relative">
+                        <a href="#" class="flex items-center gap-1 hover:text-brand transition-colors">Contact Us <i class="ph ph-caret-down"></i></a>
+                        <div class="mega-menu absolute top-full right-0 w-[200px] bg-white shadow-xl border border-gray-100 rounded-b-lg opacity-0 invisible z-50 p-4 grid grid-cols-1 gap-y-2">
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Customer Service</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Cookie Policy</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Privacy Policy</a>
+                            <a href="#" class="text-gray-500 hover:text-brand text-sm py-1">Links and Feedback</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section (Premium Layout) -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 h-auto lg:h-[500px]">
+                
+                <!-- Main Feature (Col-span-2) -->
+                <div class="lg:col-span-2 relative rounded-2xl overflow-hidden shadow-lg group">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/the-foam-shop.jpg" alt="The Foam Shop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <!-- Elegant Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/70 to-transparent flex flex-col justify-center p-8 md:p-14">
+                        <span class="inline-block px-3 py-1 bg-brand text-white text-xs font-bold tracking-widest uppercase rounded-sm mb-4 w-max">Est. 1969</span>
+                        <h1 class="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">Premium Quality<br>Foam & Upholstery</h1>
+                        <ul class="text-gray-200 mb-8 space-y-2 font-medium text-sm md:text-base">
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-brand-accent"></i> Safe UK Payments</li>
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-brand-accent"></i> Fast UK Delivery only £8.95</li>
+                            <li class="flex items-center gap-2"><i class="ph ph-check-circle text-brand-accent"></i> Domestic and Commercial Solutions</li>
+                        </ul>
+                        <a href="#" class="bg-white text-brand-dark px-8 py-3.5 rounded-full font-semibold w-max hover:bg-gray-100 transition-colors shadow-lg">Shop Our Collections</a>
+                    </div>
+                </div>
+
+                <!-- Side Banners (Col-span-1) -->
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Top Side Banner -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-md group h-[240px]">
+                        <img src="https://www.foamshop.co.uk/media/metro-blue/banner-01.jpg" alt="Find the right foam grade for you" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                            <h2 class="text-xl font-bold text-white mb-2">Find Your Ideal Grade</h2>
+                            <p class="text-white/80 text-sm mb-3">Discover the perfect density for your project.</p>
+                            <a href="#" class="text-white text-sm font-semibold hover:text-brand-accent flex items-center gap-1 w-max group-hover:underline">Learn More <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Side Banner -->
+                    <div class="relative rounded-2xl overflow-hidden shadow-md group h-[240px]">
+                        <img src="https://www.foamshop.co.uk/media/metro-blue/foam-cut-to-size-and-shape.jpg" alt="Foam Cut to Size Calculator" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-6">
+                            <h2 class="text-xl font-bold text-white mb-2">Instant Quote Calculator</h2>
+                            <p class="text-white/80 text-sm mb-3">Custom cut foam to exact specifications.</p>
+                            <a href="#" class="text-white text-sm font-semibold hover:text-brand-accent flex items-center gap-1 w-max group-hover:underline">Calculate Now <i class="ph ph-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Callout -->
+        <section class="max-w-4xl mx-auto px-4 text-center py-12 md:py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">Welcome to the Foamshop</h2>
+            <p class="text-lg text-gray-600 mb-4">The largest online supplier of foam and upholstery sundries and products. Bringing master craftsmanship directly to your doorstep.</p>
+            <div class="inline-flex items-center gap-2 bg-brand/10 text-brand px-5 py-2.5 rounded-full font-medium text-sm">
+                <i class="ph-fill ph-storefront"></i> We now do Click & Collect. Call us for details.
+            </div>
+        </section>
+
+        <!-- Category Showcase Grids -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Upholstery-Foam-Cut-To-Size.jpg" alt="Upholstery Foams Cut To Size" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Foam Cut To Size</h3>
+                    </div>
+                </a>
+                <!-- Card 2 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Upholstery-Supplies-and-Sundries.jpg" alt="Upholstery Supplies" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Supplies & Sundries</h3>
+                    </div>
+                </a>
+                <!-- Card 3 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Dining-Chair-Upholstery.jpg" alt="Dining Chair Upholstery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Dining Chair Services</h3>
+                    </div>
+                </a>
+                <!-- Card 4 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Cushion-and-Cover-Making-Services.jpg" alt="Cushion Services" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Cushion & Cover Making</h3>
+                    </div>
+                </a>
+                <!-- Card 5 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Professional-Upholstery-Repairs.jpg" alt="Professional Repairs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Professional Repairs</h3>
+                    </div>
+                </a>
+                <!-- Card 6 -->
+                <a href="#" class="group relative rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all aspect-[4/3]">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Upholstery-Fabrics.jpg" alt="Upholstery Fabrics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                        <h3 class="text-xl font-bold text-white group-hover:-translate-y-1 transition-transform">Upholstery Fabrics</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="bg-white py-16 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-10 border-b border-gray-200 pb-4">
+                    <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 tracking-tight">Featured Supplies</h2>
+                        <p class="text-gray-500 mt-2">Professional grade materials for every project.</p>
+                    </div>
+                    <a href="#" class="hidden sm:inline-flex items-center gap-1 text-brand font-semibold hover:text-brand-dark">View All <i class="ph ph-arrow-right"></i></a>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+                    
+                    <!-- Product 1 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/t/e/teak-dining-chair-foam.jpg" alt="1960's Teak Dining Chairs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">1960's Teak Dining Chairs</a>
+                        <p class="text-lg font-bold text-brand mt-2">£4.75</p>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/n/x/nx3r8858.jpg" alt="20 inch Foam Support Wedge" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">20" Foam Support Wedge</a>
+                        <p class="text-lg font-bold text-brand mt-2">£33.50</p>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/t/h/thin-foam-sheet_6.jpg" alt="6mm foam sheeting" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">6mm Foam Sheeting 92" x 77"</a>
+                        <p class="text-lg font-bold text-brand mt-2">£33.00</p>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/c/h/chenille-fabric-o.jpg" alt="Chenille Fabric" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">Chenille - Fabric O</a>
+                        <p class="text-lg font-bold text-brand mt-2">£15.99</p>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/d/i/dining-seat-foam.jpg" alt="Dining Seat Foam" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">Dining Seat Foam</a>
+                        <p class="text-lg font-bold text-brand mt-2">£9.53</p>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/f/o/foam_crmb.jpg" alt="Foam Crumb" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">Premium Foam Crumb</a>
+                        <p class="text-lg font-bold text-brand mt-2">£25.00</p>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/h/e/headboard-foams.jpg" alt="Headboard Foams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">Headboard Foams</a>
+                        <p class="text-lg font-bold text-brand mt-2">£28.00</p>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="group flex flex-col">
+                        <div class="relative bg-gray-50 rounded-xl aspect-square overflow-hidden mb-4">
+                            <img src="https://www.foamshop.co.uk/media/catalog/product/cache/1/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/l/u/luxury-sofa-cushion-foam.jpg" alt="Luxury Sofa Cushions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 mix-blend-multiply" />
+                            <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur text-gray-900 font-semibold py-2 rounded shadow opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all hover:bg-brand hover:text-white">Add to Cart</button>
+                        </div>
+                        <a href="#" class="text-sm font-semibold text-gray-900 hover:text-brand line-clamp-2">Luxury Sofa Cushions</a>
+                        <p class="text-lg font-bold text-brand mt-2">£73.00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wide Information Banners -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8">
+            <a href="#" class="block overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+                <img src="https://www.foamshop.co.uk/media/metro-blue/wide-banner.jpg" alt="The Foam Shop Ipswich Logo" class="w-full h-auto object-cover" />
+            </a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="#" class="block overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Foam-Shop-Upholstery-Supply-Store.jpg" alt="DIY Upholstery Tools and Supplies" class="w-full h-full object-cover" />
+                </a>
+                <a href="#" class="block overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-shadow">
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/coronavirus2.jpg" alt="Service Update" class="w-full h-full object-cover" />
+                </a>
+            </div>
+        </section>
+
+        <!-- Brand Story / SEO Section -->
+        <section class="bg-white py-16 lg:py-24 border-t border-gray-100">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="prose prose-lg prose-blue text-gray-600 text-center mx-auto">
+                    <h2 class="text-3xl font-bold text-brand-dark mb-6">Master Craftsmanship Since 1969</h2>
+                    <p class="leading-relaxed mb-6">
+                        We are a family run firm established in 1969, originally trading as Howards Upholstery, an internationally renowned fine handmade furniture manufacturer. This background has given us an unrivalled experience in producing high quality, bespoke foam and upholstery services.
+                    </p>
+                    <p class="leading-relaxed mb-6">
+                        We have an excellent reputation locally and receive many visitors in our shop. Because of our understanding and vast experience, we have the ability to tailor make your item to your specific needs. Ranging from replacement foam or cover making service on an individual basis to a complete supply of foams, cushions and covers for homes, boats and caravans, using only the highest quality foam and materials.
+                    </p>
+                    <p class="leading-relaxed mb-6">
+                        We are using this expertise to bring you a website, not only of foam products of various kinds, but upholstery items and tools for the professional and DIY enthusiast. Our constant striving for perfection has resulted in many of our fond customers frequently returning over the years. For those of you who are looking to undertake minor repairs or willing to take on your first antique restore project, The Foam Shop Team are only a phone call away for advice and assistance.
+                    </p>
+                    <div class="bg-gray-50 p-8 rounded-2xl mt-10 border border-gray-100 text-left">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Order with Confidence</h3>
+                        <p class="text-sm mb-4">You can have complete confidence that, although our prices are most competitive, your order will be processed smoothly and efficiently. To ensure you order the correct foam choice, please check out our "How to find the right foam" page.</p>
+                        <p class="text-sm font-semibold text-brand-dark">The easy to use calculator pages are set up to offer instant prices for foam cut to size, custom mattresses and overlays. UK Mainland Delivery is only £8.95 per order.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-300 pt-16 pb-8 border-t-4 border-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- About -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 tracking-wide">About Foamshop</h3>
+                    <p class="text-sm leading-relaxed mb-6 text-gray-400">
+                        Established in 1969, we bring unrivalled experience in high quality bespoke foam and upholstery. For your assurance, we have been an established member of the Guild of Master Craftsmen since 1990.
+                    </p>
+                    <img src="https://www.foamshop.co.uk/media/wysiwyg/Logos/the_guild_of_master_craftsmen.jpg" alt="Guild of Master Craftsmen" class="h-20 rounded bg-white p-1" />
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 tracking-wide">Contact Us</h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="ph-fill ph-map-pin text-brand-accent text-xl mt-0.5"></i>
+                            <span>2 Montana Road, Kesgrave,<br>IP5 1ER</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-phone text-brand-accent text-xl"></i>
+                            <span class="text-white font-medium">0800 521 641</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph-fill ph-envelope text-brand-accent text-xl"></i>
+                            <a href="mailto:info@foamshop.co.uk" class="hover:text-white transition-colors">info@foamshop.co.uk</a>
+                        </li>
+                        <li class="flex items-start gap-3 pt-2">
+                            <i class="ph-fill ph-clock text-brand-accent text-xl mt-0.5"></i>
+                            <span>Mon-Fri: 09:15 - 14:00<br>Sat: 09:15 - 14:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 tracking-wide">Information</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 tracking-wide">Shipping & Support</h3>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Orders and Returns</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Delivery Information</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Secure Shopping</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">Customer Assistance</a></li>
+                        <li><a href="#" class="hover:text-brand-accent transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="pt-8 border-t border-gray-700/50 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-sm text-gray-500">
+                    &copy; 2026 Foamshop.co.uk - All Rights Reserved. VAT No: 299845283
+                </div>
+                
+                <!-- Payment Methods -->
+                <div class="flex items-center gap-4 bg-white/5 py-2 px-4 rounded-lg">
+                    <span class="text-xs text-gray-400 uppercase tracking-wider font-semibold mr-2">Secure Checkout</span>
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/AM_mc_vs_ms_ae_UK.png" alt="Accepted Cards" class="h-6" />
+                    <img src="https://www.foamshop.co.uk/media/metro-blue/Secured-by-SP-copy.jpg" alt="Sagepay" class="h-6 rounded-sm" />
+                </div>
+                
+                <!-- Social Links -->
+                <div class="flex items-center gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-white transition-all"><i class="ph-fill ph-facebook-logo text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-white transition-all"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand hover:text-white transition-all"><i class="ph-fill ph-instagram-logo text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
