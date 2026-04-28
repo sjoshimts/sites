@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerbody.eu - Wholesale Sports Bodybuilding Supplements</title>
+    <link rel="icon" href="https://www.powerbody.eu/media/favicon/stores/7/favicon_w.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#e61e25',
+                            redHover: '#cc1920',
+                            dark: '#1a1a1a',
+                            yellow: '#fbbc05'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for horizontal carousels on mobile */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth fade for hero slider */
+        .hero-slide { transition: opacity 0.8s ease-in-out; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- TOP BAR -->
+    <div class="bg-gray-100 text-xs font-medium text-gray-600 border-b border-gray-200 hidden md:block">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-2">
+            <div class="flex items-center space-x-6">
+                <span class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    +44 (0) 1904 486 336 <span class="text-gray-400 font-normal ml-1">8am-4pm*</span>
+                </span>
+                <nav class="flex space-x-4">
+                    <a href="#" class="hover:text-brand-red transition-colors">Contact Us</a>
+                    <a href="#" class="hover:text-brand-red transition-colors">About Us</a>
+                    <a href="#" class="hover:text-brand-red transition-colors">Delivery</a>
+                    <a href="#" class="hover:text-brand-red transition-colors">FAQ</a>
+                    <a href="#" class="hover:text-brand-red transition-colors">Brexit update</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-3 group relative cursor-pointer">
+                <span>Language</span>
+                <div class="flex space-x-2">
+                    <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/websites_flags/de.png" alt="DE" class="h-3 rounded-sm opacity-60 hover:opacity-100 transition-opacity">
+                    <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/websites_flags/fr.png" alt="FR" class="h-3 rounded-sm opacity-60 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-white sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-5 flex items-center justify-between gap-4 lg:gap-8">
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/logo.png" alt="Powerbody Logo" class="h-8 lg:h-10 object-contain">
+            </a>
+
+            <!-- Search Bar (Desktop) -->
+            <div class="hidden md:flex flex-1 max-w-3xl relative">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Search over 9906 products..." class="w-full bg-gray-100 border border-transparent text-gray-900 text-sm rounded-full py-3 pl-5 pr-12 focus:outline-none focus:bg-white focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-all">
+                    <button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-brand-red hover:text-brand-redHover">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Controls -->
+            <div class="flex md:hidden items-center gap-4">
+                <button class="p-2 text-gray-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg></button>
+                <button class="p-2 text-gray-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></button>
+                <button class="p-2 text-gray-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            </div>
+
+            <!-- Cart/Account (Desktop) -->
+            <div class="hidden md:flex items-center space-x-6">
+                <div class="flex flex-col items-end">
+                    <span class="text-xs text-gray-500 font-medium uppercase tracking-wider">Cart total</span>
+                    <span class="font-bold text-gray-900 leading-none">0 items</span>
+                </div>
+                <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full text-brand-red transition-colors relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span class="absolute -top-1 -right-1 bg-brand-red text-white text-[10px] font-bold h-4 w-4 flex items-center justify-center rounded-full shadow-sm">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- NAVIGATION MENU -->
+        <div class="bg-brand-red hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <ul class="flex space-x-1">
+                    <li><a href="#" class="block text-white font-semibold text-sm py-3 px-5 hover:bg-black/10 transition-colors uppercase tracking-wide">Brands</a></li>
+                    <li><a href="#" class="block text-white font-semibold text-sm py-3 px-5 hover:bg-black/10 transition-colors uppercase tracking-wide">Categories</a></li>
+                    <li><a href="#" class="block text-brand-yellow font-bold text-sm py-3 px-5 hover:bg-black/10 transition-colors uppercase tracking-wide">Deals</a></li>
+                    <li><a href="#" class="block text-white font-semibold text-sm py-3 px-5 hover:bg-black/10 transition-colors uppercase tracking-wide">Promotions guide</a></li>
+                    <li><a href="#" class="block text-white font-semibold text-sm py-3 px-5 hover:bg-black/10 transition-colors uppercase tracking-wide">Dropshipping</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION & B2B LOGIN -->
+    <main class="flex-grow">
+        <div class="relative bg-gray-900 w-full overflow-hidden">
+            <!-- Hero Slider Background -->
+            <div class="relative h-[400px] lg:h-[500px] w-full" id="hero-slider">
+                <div class="hero-slide absolute inset-0 opacity-100 bg-cover bg-center" style="background-image: url('https://www.powerbody.eu/media//go/cream-of-oats.png');"></div>
+                <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://www.powerbody.eu/media//go/2080-magento-1_0-olivit.co.uk---pb--5Bwholesale-5D-27.03---mutant---mutant-madness-30-25-discount-slider_1900x416px-eng.jpg');"></div>
+                <div class="hero-slide absolute inset-0 opacity-0 bg-cover bg-center" style="background-image: url('https://www.powerbody.eu/media//go/dotm--5Bbuyaget---applied-nutrition---iso-2C-creatine-2C-tumbler-5D-slider_1900x416px_eng--281-29.png');"></div>
+                <!-- Gradient Overlay for readability -->
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gray-900/50 to-gray-900/95"></div>
+            </div>
+
+            <!-- Login Panel Overlay -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+                <div class="absolute top-0 right-4 lg:right-8 h-[400px] lg:h-[500px] flex items-center justify-end w-full lg:w-auto mt-8 lg:mt-0 px-4 lg:px-0 z-10 hidden md:flex">
+                    <div class="bg-gray-800/95 backdrop-blur-md text-white w-[380px] p-8 rounded-xl shadow-2xl border border-gray-700">
+                        <h2 class="text-2xl font-bold mb-6 tracking-tight">Log in to your account</h2>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="email" placeholder="E-mail address..." class="w-full bg-gray-900 border border-gray-600 rounded p-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors">
+                            </div>
+                            <div>
+                                <input type="password" placeholder="Password..." class="w-full bg-gray-900 border border-gray-600 rounded p-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition-colors">
+                            </div>
+                            <button type="button" class="w-full bg-brand-red hover:bg-brand-redHover text-white font-bold py-3 px-4 rounded transition-colors uppercase text-sm tracking-wider shadow-lg shadow-brand-red/30">
+                                Log in!
+                            </button>
+                        </form>
+
+                        <div class="mt-8 pt-6 border-t border-gray-700">
+                            <h3 class="font-semibold mb-2">Register with Powerbody!</h3>
+                            <p class="text-gray-400 text-xs mb-4 leading-relaxed">You need to register in order to see our wholesale prices and special offers. It only takes a minute.</p>
+                            <button type="button" class="w-full bg-transparent border border-white hover:bg-white hover:text-gray-900 text-white font-bold py-2 px-4 rounded transition-all uppercase text-sm tracking-wider">
+                                Register now!
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Login (Stacks below hero on small screens) -->
+            <div class="bg-gray-800 text-white p-6 md:hidden">
+                <h2 class="text-xl font-bold mb-4">Log in to your account</h2>
+                <form class="space-y-3">
+                    <input type="email" placeholder="E-mail address..." class="w-full bg-gray-900 border border-gray-700 rounded p-3 text-sm text-white">
+                    <input type="password" placeholder="Password..." class="w-full bg-gray-900 border border-gray-700 rounded p-3 text-sm text-white">
+                    <button type="button" class="w-full bg-brand-red text-white font-bold py-3 rounded uppercase text-sm">Log in!</button>
+                </form>
+                <div class="mt-6 pt-6 border-t border-gray-700 text-center">
+                    <p class="text-gray-400 text-xs mb-3">Register for wholesale prices & offers.</p>
+                    <button type="button" class="text-white font-bold uppercase text-sm border-b border-white pb-1">Register now!</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRUST BADGES -->
+        <div class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                    <div class="flex items-center justify-center space-x-4 pt-4 md:pt-0">
+                        <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/icons/delivery-cms-block-icon.png" alt="Delivery" class="h-10 w-10 opacity-80">
+                        <div>
+                            <p class="font-bold text-gray-900 text-sm leading-tight">Free shipping for all orders</p>
+                            <p class="text-gray-500 text-xs">over £99 (UK Zone 1)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center space-x-4 pt-4 md:pt-0">
+                        <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/icons/basket-cms-block-icon.png" alt="Stock" class="h-10 w-10 opacity-80">
+                        <div>
+                            <p class="font-bold text-gray-900 text-sm leading-tight">Over 7000 products</p>
+                            <p class="text-gray-500 text-xs">in stock ready to ship</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center space-x-4 pt-4 md:pt-0">
+                        <img src="https://www.powerbody.eu/skin/frontend/wholesale_layout/default/images/icons/clock-cms-block-icon.png" alt="Minimum Order" class="h-10 w-10 opacity-80">
+                        <div>
+                            <p class="font-bold text-gray-900 text-sm leading-tight">No minimum order</p>
+                            <p class="text-gray-500 text-xs">(UK Zone 1)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES CARDS -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Card 1: Dropshipping -->
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative bg-gradient-to-br from-[#3b82f6] to-[#1d4ed8] p-8 text-white min-h-[220px] flex flex-col justify-center group">
+                    <div class="absolute top-0 right-0 p-4 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2v-2h14v-2h3V8zm-5 5H5V6h10v7zM3 19h18v2H3z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">Automated Dropshipping</h3>
+                    <ul class="text-sm space-y-2 text-blue-50 relative z-10 font-medium">
+                        <li class="flex items-start"><span class="mr-2 text-blue-300">•</span> Over 7000 products available</li>
+                        <li class="flex items-start"><span class="mr-2 text-blue-300">•</span> Branded invoices & labels</li>
+                        <li class="flex items-start"><span class="mr-2 text-blue-300">•</span> Same day shipping</li>
+                        <li class="flex items-start"><span class="mr-2 text-blue-300">•</span> No upfront cost</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Innovations -->
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative bg-gradient-to-br from-[#f59e0b] to-[#d97706] p-8 text-white min-h-[220px] flex flex-col justify-center group">
+                    <div class="absolute top-0 right-0 p-4 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">Smart B2B Tools</h3>
+                    <ul class="text-sm space-y-2 text-yellow-50 relative z-10 font-medium">
+                        <li class="flex items-start"><span class="mr-2 text-yellow-200">•</span> Comprehensive B2B Analytics</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-200">•</span> Smart product reservations</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-200">•</span> Bulk upload orders via file</li>
+                        <li class="flex items-start"><span class="mr-2 text-yellow-200">•</span> Curated favorite lists</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: API -->
+                <div class="rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow relative bg-gradient-to-br from-brand-red to-red-800 p-8 text-white min-h-[220px] flex flex-col justify-center group">
+                    <div class="absolute top-0 right-0 p-4 opacity-20 transform group-hover:scale-110 transition-transform duration-500">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">System Integrations</h3>
+                    <ul class="text-sm space-y-2 text-red-100 relative z-10 font-medium">
+                        <li class="flex items-start"><span class="mr-2 text-red-300">•</span> Auto-import products to your system</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-300">•</span> Live stock levels & pricing sync</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-300">•</span> Direct catalog access via API</li>
+                        <li class="flex items-start"><span class="mr-2 text-red-300">•</span> Advanced CSV data files available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT TABS & GRID -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <!-- Tabs Header -->
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-200 mb-8 pb-2">
+                <div class="flex space-x-6 lg:space-x-10 w-full md:w-auto overflow-x-auto hide-scrollbar">
+                    <button class="tab-btn font-bold text-lg md:text-xl pb-2 border-b-4 border-brand-yellow text-gray-900 whitespace-nowrap" onclick="switchTab('deals')">
+                        Deals of the Month
+                    </button>
+                    <button class="tab-btn font-medium text-lg md:text-xl pb-2 border-b-4 border-transparent text-gray-400 hover:text-gray-900 whitespace-nowrap transition-colors" onclick="switchTab('short')">
+                        Short Dates <span class="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded ml-1 font-bold uppercase">New</span>
+                    </button>
+                    <button class="tab-btn font-medium text-lg md:text-xl pb-2 border-b-4 border-transparent text-gray-400 hover:text-gray-900 whitespace-nowrap transition-colors" onclick="switchTab('new')">
+                        New Products
+                    </button>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-sm font-semibold text-brand-red hover:text-brand-redHover uppercase tracking-wide">
+                    View All Deals <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+            </div>
+
+            <!-- Products Grid (Deals) -->
+            <div id="tab-deals" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 flex flex-col relative hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+                    <div class="absolute top-4 left-4 z-10">
+                        <img src="https://www.powerbody.eu/media/manufacturer/cache/Life_Extension_100_x.jpg" alt="Life Extension" class="h-8 object-contain mix-blend-multiply">
+                    </div>
+                    <div class="absolute top-4 right-4 z-10 bg-brand-yellow text-white w-12 h-12 rounded-full flex flex-col items-center justify-center font-bold shadow-md transform rotate-12 group-hover:rotate-0 transition-transform">
+                        <span class="text-sm leading-none mt-1">24%</span>
+                        <span class="text-[9px] uppercase">Off</span>
+                    </div>
+                    
+                    <div class="text-center text-xs text-gray-500 font-medium mb-2 mt-8">
+                        <span class="bg-gray-100 px-2 py-1 rounded inline-flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            2d 16h 03m
+                        </span>
+                    </div>
+                    
+                    <div class="h-48 w-full flex items-center justify-center mb-4 p-2 relative">
+                        <img src="https://www.powerbody.eu/media/catalog/product/cache/7/image/265x/9df78eab33525d08d6e5fb8d27136e95/i/m/image_2020-10-27_5f980c912a052.jpg" alt="Black Cumin Seed Oil" class="max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    
+                    <div class="text-xs text-brand-yellow font-bold uppercase tracking-wide mb-1 text-center">Deal of the Month</div>
+                    <h3 class="font-bold text-gray-900 text-sm line-clamp-2 text-center mb-1 flex-grow">
+                        Black Cumin Seed Oil and Curcumin Elite Turmeric Extract
+                    </h3>
+                    <p class="text-gray-500 text-xs text-center mb-4">60 softgels</p>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-brand-red hover:text-white text-gray-800 font-semibold py-2 rounded transition-colors text-sm opacity-0 group-hover:opacity-100">
+                        View Product
+                    </button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 flex flex-col relative hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+                    <div class="absolute top-4 left-4 z-10">
+                        <img src="https://www.powerbody.eu/media/manufacturer/cache/521b34cecd416_100_x.jpg" alt="Scitec Nutrition" class="h-8 object-contain mix-blend-multiply">
+                    </div>
+                    <div class="absolute top-4 right-4 z-10 bg-brand-yellow text-white w-12 h-12 rounded-full flex flex-col items-center justify-center font-bold shadow-md transform -rotate-6 group-hover:rotate-0 transition-transform">
+                        <span class="text-sm leading-none mt-1">18%</span>
+                        <span class="text-[9px] uppercase">Off</span>
+                    </div>
+                    
+                    <div class="text-center text-xs text-gray-500 font-medium mb-2 mt-8">
+                        <span class="bg-gray-100 px-2 py-1 rounded inline-flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            2d 16h 03m
+                        </span>
+                    </div>
+                    
+                    <div class="h-48 w-full flex items-center justify-center mb-4 p-2 relative">
+                        <img src="https://www.powerbody.eu/media/catalog/product/cache/7/image/265x/9df78eab33525d08d6e5fb8d27136e95/i/m/image_2023-04-04_642c2f6dca225.jpg" alt="Superhero Pre-workout" class="max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    
+                    <div class="text-xs text-brand-yellow font-bold uppercase tracking-wide mb-1 text-center">Deal of the Month</div>
+                    <h3 class="font-bold text-gray-900 text-sm line-clamp-2 text-center mb-1 flex-grow">
+                        Superhero Pre-Workout Formula
+                    </h3>
+                    <p class="text-gray-500 text-xs text-center mb-4">285 grams</p>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-brand-red hover:text-white text-gray-800 font-semibold py-2 rounded transition-colors text-sm opacity-0 group-hover:opacity-100">
+                        View Product
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 flex flex-col relative hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+                    <div class="absolute top-4 left-4 z-10">
+                        <img src="https://www.powerbody.eu/media/manufacturer/cache/Life_Extension_100_x.jpg" alt="Life Extension" class="h-8 object-contain mix-blend-multiply">
+                    </div>
+                    <div class="absolute top-4 right-4 z-10 bg-brand-yellow text-white w-12 h-12 rounded-full flex flex-col items-center justify-center font-bold shadow-md transform rotate-12 group-hover:rotate-0 transition-transform">
+                        <span class="text-sm leading-none mt-1">23%</span>
+                        <span class="text-[9px] uppercase">Off</span>
+                    </div>
+                    
+                    <div class="text-center text-xs text-gray-500 font-medium mb-2 mt-8">
+                        <span class="bg-gray-100 px-2 py-1 rounded inline-flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            2d 16h 03m
+                        </span>
+                    </div>
+                    
+                    <div class="h-48 w-full flex items-center justify-center mb-4 p-2 relative">
+                        <img src="https://www.powerbody.eu/media/catalog/product/cache/7/image/265x/9df78eab33525d08d6e5fb8d27136e95/i/m/image_2025-07-17_6878f18136b8b.jpg" alt="Creatine Capsules" class="max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    
+                    <div class="text-xs text-brand-yellow font-bold uppercase tracking-wide mb-1 text-center">Deal of the Month</div>
+                    <h3 class="font-bold text-gray-900 text-sm line-clamp-2 text-center mb-1 flex-grow">
+                        Creatine Capsules
+                    </h3>
+                    <p class="text-gray-500 text-xs text-center mb-4">120 caps</p>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-brand-red hover:text-white text-gray-800 font-semibold py-2 rounded transition-colors text-sm opacity-0 group-hover:opacity-100">
+                        View Product
+                    </button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-5 flex flex-col relative hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
+                    <div class="absolute top-4 left-4 z-10">
+                        <img src="https://www.powerbody.eu/media/manufacturer/cache/Life_Extension_100_x.jpg" alt="Life Extension" class="h-8 object-contain mix-blend-multiply">
+                    </div>
+                    <div class="absolute top-4 right-4 z-10 bg-brand-yellow text-white w-12 h-12 rounded-full flex flex-col items-center justify-center font-bold shadow-md transform -rotate-6 group-hover:rotate-0 transition-transform">
+                        <span class="text-sm leading-none mt-1">24%</span>
+                        <span class="text-[9px] uppercase">Off</span>
+                    </div>
+                    
+                    <div class="text-center text-xs text-gray-500 font-medium mb-2 mt-8">
+                        <span class="bg-gray-100 px-2 py-1 rounded inline-flex items-center gap-1">
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            2d 16h 03m
+                        </span>
+                    </div>
+                    
+                    <div class="h-48 w-full flex items-center justify-center mb-4 p-2 relative">
+                        <img src="https://www.powerbody.eu/media/catalog/product/cache/7/image/265x/9df78eab33525d08d6e5fb8d27136e95/i/m/image_2021-03-11_604a07d31274a.jpg" alt="D-Ribose Powder" class="max-h-full object-contain mix-blend-multiply transition-transform duration-500 group-hover:scale-105">
+                    </div>
+                    
+                    <div class="text-xs text-brand-yellow font-bold uppercase tracking-wide mb-1 text-center">Deal of the Month</div>
+                    <h3 class="font-bold text-gray-900 text-sm line-clamp-2 text-center mb-1 flex-grow">
+                        D-Ribose Powder
+                    </h3>
+                    <p class="text-gray-500 text-xs text-center mb-4">150g</p>
+                    
+                    <button class="w-full bg-gray-100 hover:bg-brand-red hover:text-white text-gray-800 font-semibold py-2 rounded transition-colors text-sm opacity-0 group-hover:opacity-100">
+                        View Product
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-block bg-white border border-gray-300 hover:border-brand-red text-gray-800 font-bold py-2 px-6 rounded transition-colors uppercase text-sm">
+                    View All Deals
+                </a>
+            </div>
+        </div>
+
+        <!-- FULL WIDTH PARALLAX FEATURE (What makes us stand out) -->
+        <div class="relative bg-fixed bg-center bg-cover py-20 lg:py-24" style="background-image: url('https://www.powerbody.eu/media//go/best-background.png');">
+            <!-- Dark modern overlay -->
+            <div class="absolute inset-0 bg-gray-900/80 backdrop-blur-[2px]"></div>
+            
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 text-center">
+                <div class="inline-block mb-10 border-b-2 border-brand-red pb-4">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Why Partner With Powerbody</h2>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left max-w-5xl mx-auto">
+                    <!-- Col 1 -->
+                    <div class="bg-white/10 backdrop-blur p-8 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
+                        <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+                            <span class="bg-brand-red rounded p-2 mr-3"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0
