@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contemporary Furniture for Commercial Interiors | Lee & Plumpton</title>
+    
+    <!-- Google Fonts: Inter for a clean, modern, high-end look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#00508F', // Extracted from original branding
+                            light: '#F8FAFC',
+                            dark: '#0F172A',
+                            accent: '#E87722'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+    <!-- Top Bar (Utility) -->
+    <div class="bg-brand-dark text-gray-300 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="tel:01953453830" class="hover:text-white transition flex items-center gap-2">
+                    <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 22.621l-3.521-6.792c-.007.003-.019.005-.026.008l-3.504 1.83c-3.197-1.554-5.83-4.187-7.385-7.385l1.83-3.504c.003-.007.005-.019.008-.026L.631 3.231C.376 2.76.014 1.884 1.096.802 1.666.232 2.378-.057 3.093.009c5.158.468 15.353 3.655 20.898 20.898.066.715-.223 1.427-.793 1.997-1.082 1.082-1.958.72-2.429.465z"/></svg>
+                    01953 453830
+                </a>
+                <span class="hidden sm:inline opacity-50">|</span>
+                <span class="hidden sm:inline">British Manufacturers Since 1974</span>
+            </div>
+            <div>
+                <a href="/customer/account/login/" class="font-medium hover:text-white transition">Approved Partner Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation (Sticky) -->
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/logo.svg" alt="Lee & Plumpton Logo" class="h-10 md:h-12 w-auto">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="/products/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">Products</a>
+                <a href="/sales-support/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">Support</a>
+                <a href="/news/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">News</a>
+                <a href="/news/category/case-studies/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">Case Studies</a>
+                <a href="/downloads/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">Downloads</a>
+                <a href="/faq/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">FAQ</a>
+                <a href="/about-us/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">About</a>
+                <a href="/contact-us/" class="text-sm font-medium text-gray-700 hover:text-brand-blue transition">Contact</a>
+            </nav>
+
+            <!-- Icons (Search / Favorites / Mobile Toggle) -->
+            <div class="flex items-center gap-5">
+                <button class="text-gray-600 hover:text-brand-blue transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <button class="text-gray-600 hover:text-brand-blue transition flex items-center gap-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <span class="text-xs hidden sm:block bg-gray-100 text-gray-600 px-2 rounded-full">0</span>
+                </button>
+                <button class="lg:hidden text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-[80vh] min-h-[600px] flex items-center bg-gray-900">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/hero/image/a/u/aurabench_nebraska_natural_oak_2.jpg')] bg-cover bg-center opacity-80 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/40 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 w-full">
+            <div class="max-w-2xl text-white">
+                <span class="uppercase tracking-widest text-sm font-semibold text-gray-300 mb-4 block">Commercial Interiors</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Designing Environments for the Modern Workforce</h1>
+                <p class="text-lg md:text-xl text-gray-200 mb-8 font-light leading-relaxed">We manufacture premium commercial furniture in Britain, focusing on adaptable, high-quality solutions that meet the evolving demands of today's professional spaces.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/products/" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-3.5 rounded-sm font-medium transition duration-300 shadow-lg">Explore the Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Bar (Pulled up over the hero slightly for modern overlap) -->
+    <div class="relative z-20 max-w-7xl mx-auto px-4 -mt-12 sm:-mt-16 mb-20">
+        <div class="bg-white rounded-sm shadow-xl grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 divide-x divide-y md:divide-y-0 divide-gray-100 overflow-hidden border border-gray-100">
+            <a href="/desks/" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/range-icons/desks.svg" alt="Desks" class="w-10 h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                <span class="text-sm font-medium text-gray-600">Desks</span>
+            </a>
+            <a href="/tables/" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/range-icons/tables.svg" alt="Tables" class="w-10 h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                <span class="text-sm font-medium text-gray-600">Tables</span>
+            </a>
+            <a href="/storage/" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/range-icons/storage.svg" alt="Storage" class="w-10 h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                <span class="text-sm font-medium text-gray-600">Storage</span>
+            </a>
+            <a href="/task-seating/" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/range-icons/seats.svg" alt="Seating" class="w-10 h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                <span class="text-sm font-medium text-gray-600">Seating</span>
+            </a>
+            <a href="/customer/account/login/" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <div class="w-10 h-10 flex items-center justify-center text-brand-blue opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <span class="text-sm font-medium text-gray-600">Partner Login</span>
+            </a>
+            <a href="https://www.instagram.com/leeandplumpton/" target="_blank" class="p-6 flex flex-col items-center justify-center gap-3 hover:bg-gray-50 transition group">
+                <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/social/instagram.svg" alt="Instagram" class="w-8 h-8 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                <span class="text-sm font-medium text-gray-600">Get Inspired</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Featured Insights & Collections (Bento Grid) -->
+    <section class="max-w-7xl mx-auto px-4 mb-24">
+        <div class="flex justify-between items-end mb-10">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Featured Collections & Resources</h2>
+                <p class="text-gray-500 mt-2">Discover the latest evolutions in workplace design.</p>
+            </div>
+            <a href="/products/" class="hidden md:inline-flex items-center gap-2 text-brand-blue font-medium hover:text-blue-800 transition">
+                View All Ranges <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[320px]">
+            
+            <!-- 1. Collection (Large Feature) -->
+            <a href="/resources/brochures/" class="lg:col-span-2 lg:row-span-2 group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/1/_/1._furniture_collection.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-xs font-bold text-white/70 uppercase tracking-wider mb-2 block">Latest Release</span>
+                    <h3 class="text-3xl font-bold text-white mb-3">Comprehensive Product Portfolio</h3>
+                    <p class="text-gray-200 text-sm max-w-md line-clamp-2 mb-5">Explore our latest adaptations in workspace architecture, prioritizing flexible layouts and sustainable materials for contemporary interiors.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        Download Catalogue &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 2. Atmosphere -->
+            <a href="/atmosphere-1/" class="lg:col-span-2 group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/5/_/5._atmosphere_workplace.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <h3 class="text-xl font-bold text-white mb-2">Evolving the Executive Space</h3>
+                    <p class="text-gray-200 text-sm max-w-md line-clamp-2 mb-4">The redesigned Atmosphere series addresses modern executive requirements with refined aesthetics and robust functionality.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        View Atmosphere &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 3. Collaboration -->
+            <a href="/resources/brochures/" class="group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/7/_/7._collaboration_social_spaces.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <h3 class="text-lg font-bold text-white mb-2">Social & Collaborative</h3>
+                    <p class="text-gray-200 text-sm line-clamp-2 mb-4">Configurations to support agile communication.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        Explore &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 4. Education -->
+            <a href="/resources/brochures/" class="group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/e/d/education_training_right_1.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <h3 class="text-lg font-bold text-white mb-2">Learning Environments</h3>
+                    <p class="text-gray-200 text-sm line-clamp-2 mb-4">Durable frameworks for educational facilities.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        View Solutions &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 5. Downloads (Wide) -->
+            <a href="/products/" class="lg:col-span-2 group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/e/a/easy_downloads_1.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full">
+                    <span class="text-xs font-bold text-white/70 uppercase tracking-wider mb-2 block">For Architects & Designers</span>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Assets & CAD Resources</h3>
+                    <p class="text-gray-200 text-sm max-w-lg line-clamp-2 mb-4">Access a comprehensive library of CAD blocks, space planning scenes, and technical specifications to streamline your design process.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        Access Resources &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 6. Active -->
+            <a href="/active/" class="group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/3/_/3._active.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <h3 class="text-lg font-bold text-white mb-2">Agile Storage</h3>
+                    <p class="text-gray-200 text-sm line-clamp-2 mb-4">Pedestals bridging secure storage with meeting points.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        View Range &rarr;
+                    </span>
+                </div>
+            </a>
+
+            <!-- 7. Signature -->
+            <a href="/signature-1/" class="group relative overflow-hidden rounded-md shadow-sm block bg-gray-900">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/4/_/4._grow_recyc.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6 w-full">
+                    <h3 class="text-lg font-bold text-white mb-2">Integrated Planters</h3>
+                    <p class="text-gray-200 text-sm line-clamp-2 mb-4">Biophilic additions for natural space division.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        Explore Signature &rarr;
+                    </span>
+                </div>
+            </a>
+            
+            <!-- 8. NHS (Full Width Banner Style) -->
+            <a href="/news/important-messages/nhs-sbs-framework-for-office-and-residential-furniture/" class="lg:col-span-4 group relative overflow-hidden rounded-md shadow-sm block bg-gray-900 h-[280px]">
+                <div class="absolute inset-0 bg-[url('https://www.leeandplumpton.co.uk/media/cta/image/8/_/8._nhs_sbs.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-90"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/90 lg:via-black/50 lg:to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 lg:p-12 w-full lg:w-2/3 h-full flex flex-col justify-end lg:justify-center">
+                    <div class="bg-blue-600/90 text-white text-xs font-bold px-3 py-1 rounded-sm w-max mb-4">Framework Contractor</div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">NHS Appointed Supplier</h3>
+                    <p class="text-gray-200 text-sm md:text-base mb-6 max-w-xl">We are an accredited supplier for the NHS Shared Business Services framework, providing compliant and reliable furniture solutions across healthcare and residential sectors.</p>
+                    <span class="inline-flex items-center text-sm font-semibold text-white group-hover:underline">
+                        Learn More &rarr;
+                    </span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-400 pt-16 pb-8 mt-auto border-t-[6px] border-brand-blue">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-6">Head Office</h4>
+                    <p class="mb-4 leading-relaxed text-sm">
+                        Bunns Bank, Attleborough<br>
+                        Norfolk<br>
+                        NR17 1QD
+                    </p>
+                    <p class="mb-2">
+                        <a href="tel:01953453830" class="text-white hover:text-brand-blue transition text-lg font-medium">01953 453830</a>
+                    </p>
+                    <p>
+                        <a href="mailto:customerservices@leeandplumpton.co.uk" class="hover:text-white transition text-sm">customerservices@leeandplumpton.co.uk</a>
+                    </p>
+                </div>
+
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-6">Information</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/terms-and-conditions-of-use/" class="hover:text-white transition">Terms and Conditions of Use</a></li>
+                        <li><a href="/privacy-policy/" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="/sitemap/" class="hover:text-white transition">Site Map</a></li>
+                        <li><a href="/competition-terms-and-conditions/" class="hover:text-white transition">Competition Terms and Conditions</a></li>
+                        <li><a href="/faq/" class="hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Heritage -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-6">Connect With Us</h4>
+                    <div class="flex gap-4 mb-8">
+                        <a href="https://www.facebook.com/leeandplumpton" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        </a>
+                        <a href="https://twitter.com/leeandplumpton" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/leeandplumpton/" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/company/lee-&-plumpton-ltd" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-blue transition text-white">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-4">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/icons/made-in-britain-white.svg" alt="Made in Great Britain" class="h-16 opacity-90">
+                        <div>
+                            <p class="text-sm font-semibold text-white">British Manufacturers</p>
+                            <p class="text-xs">Proudly manufacturing since 1974.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accreditations -->
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-6">Accreditations</h4>
+                    <div class="grid grid-cols-3 gap-4 items-center">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/creds/bsi.svg" alt="BSI" class="h-10 w-auto opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/creds/fsc.svg" alt="FSC" class="h-10 w-auto opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/creds/bcfa.svg" alt="BCFA" class="h-10 w-auto opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/creds/ofas.svg" alt="OFAS" class="h-10 w-auto opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0">
+                        <img src="https://www.leeandplumpton.co.uk/skin/frontend/coolbaby/default/images/creds/fira.svg" alt="FIRA" class="h-10 w-auto opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0 col-span-2">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
+                <p>&copy; 2022 Lee and Plumpton Ltd. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Registered in England No. 1201175. VAT registration No. GB 282 1353 72</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
