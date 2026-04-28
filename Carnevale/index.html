@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnevale | Heritage Italian Food Suppliers Since 1966</title>
+    <meta name="description" content="Carnevale is an Italian food supplier and national distributor of premium ambient, fresh, and drink products.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#006233', // Carnevale core green
+                            red: '#cc0d30',   // Carnevale core red
+                            dark: '#111827',
+                            light: '#F9FAFB',
+                            cream: '#F3F0E9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9FAFB;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #006233;
+            border-radius: 4px;
+        }
+        /* Smooth image rendering */
+        img {
+            -webkit-user-drag: none;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .text-shadow-md {
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="font-sans text-brand-dark bg-brand-light antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-dark text-white text-xs tracking-wider py-2 px-4 relative z-50">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center opacity-90">
+            <div class="flex items-center space-x-6 mb-2 sm:mb-0">
+                <a href="tel:02076078777" class="hover:text-brand-green transition flex items-center">
+                    <i class="fa-solid fa-phone mr-2 text-brand-green"></i> 020 7607 8777
+                </a>
+                <span class="hidden md:inline text-gray-500">|</span>
+                <span class="hidden md:inline text-gray-300">National Distributors of Chilled, Frozen, Ambient Foods & Beverages</span>
+            </div>
+            <div class="flex items-center space-x-6 uppercase font-medium">
+                <a href="#" class="hover:text-brand-green transition">Register Account</a>
+                <a href="#" class="hover:text-brand-green transition">Sign In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header id="main-header" class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-40 transition-all duration-300 w-full shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0 group">
+                    <img src="https://www.carnevale.co.uk/skin/frontend/arw_sebian/carnevale/images/media/logo.png" alt="Carnevale Logo" class="h-16 w-auto transition-transform duration-500 group-hover:scale-105">
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex space-x-8 items-center h-full">
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Cheeses</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Meats</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Pasta & Rice</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Flour & Bakery</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Groceries</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Beverages</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">Frozen & Non Food</a>
+                    <a href="#" class="text-sm font-medium text-gray-800 hover:text-brand-green transition h-full flex items-center border-b-2 border-transparent hover:border-brand-green">About Us</a>
+                </nav>
+
+                <!-- Utility Icons -->
+                <div class="hidden lg:flex items-center space-x-6 text-gray-800">
+                    <button class="hover:text-brand-green transition"><i class="fa-solid fa-magnifying-glass text-lg"></i></button>
+                    <button class="hover:text-brand-green transition relative">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span class="absolute -top-1.5 -right-2 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-800 text-2xl focus:outline-none" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Editorial Style) -->
+    <section class="relative w-full h-[85vh] min-h-[600px] flex items-center bg-brand-dark overflow-hidden group">
+        <!-- Background Image with zoom effect -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="https://www.carnevale.co.uk/media/wysiwyg/hero/Hero_Slide_2.jpg" alt="Specialist Manufacturers" class="w-full h-full object-cover object-center scale-105 transition-transform duration-[10s] group-hover:scale-100">
+            <!-- Gradient Overlay for text readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 xl:px-0 w-full">
+            <div class="max-w-2xl">
+                <p class="text-brand-green font-semibold tracking-widest uppercase mb-4 text-sm flex items-center">
+                    <span class="w-8 h-px bg-brand-green mr-4"></span> Since 1966
+                </p>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6 text-shadow-md">
+                    Heritage Italian <br><span class="text-gray-200 italic font-light">Provisions</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 font-light mb-10 leading-relaxed max-w-xl">
+                    Crafting, importing, and delivering premium cheeses, fresh pasta, and fine meats for the discerning food service sector.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="bg-brand-green hover:bg-green-800 text-white px-8 py-4 text-sm tracking-wide font-medium transition-colors duration-300 text-center uppercase">
+                        Download Product List
+                    </a>
+                    <a href="#" class="bg-transparent border border-white text-white hover:bg-white hover:text-brand-dark px-8 py-4 text-sm tracking-wide font-medium transition-colors duration-300 text-center uppercase">
+                        Explore Catalogue
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Banner (Armatore) -->
+    <section class="bg-brand-light py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <a href="#" class="block relative rounded-2xl overflow-hidden group shadow-lg hover:shadow-2xl transition-all duration-500">
+                <img src="https://www.carnevale.co.uk/media/wysiwyg/27042026_Armatore_promotional_material_1024x365_WebBanner.jpg" alt="Armatore Cetara's Anchovies & Tuna Products" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-[1.02]">
+                <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Secondary Promos -->
+    <section class="max-w-7xl mx-auto px-4 xl:px-0 pb-16 md:pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Promo 1 -->
+            <a href="#" class="group relative h-[350px] rounded-xl overflow-hidden shadow-md">
+                <img src="https://www.carnevale.co.uk/media/wysiwyg/Banner_small_website_13_.png" alt="Promotions and New Products" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+                    <div>
+                        <p class="text-white/80 uppercase tracking-wider text-xs font-semibold mb-2">Discover</p>
+                        <h2 class="text-white font-serif text-3xl">Promotions & New</h2>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+            <!-- Promo 2 -->
+            <a href="#" class="group relative h-[350px] rounded-xl overflow-hidden shadow-md">
+                <img src="https://www.carnevale.co.uk/media/wysiwyg/Banner_small_website_12_.png" alt="Product List 2026" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/10"></div>
+                <div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+                    <div>
+                        <p class="text-white/80 uppercase tracking-wider text-xs font-semibold mb-2">Catalogue</p>
+                        <h2 class="text-white font-serif text-3xl">Product List 2026</h2>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Categories Grid -->
+    <section class="bg-white py-20 md:py-32 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <p class="text-brand-green font-semibold tracking-widest uppercase mb-3 text-sm">Curated Selection</p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-dark">The Carnevale Collection</h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-sm font-semibold tracking-wider uppercase text-brand-dark hover:text-brand-green transition border-b border-brand-dark hover:border-brand-green pb-1 mt-6">
+                    View Entire Range <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Category 1 -->
+                <a href="#" class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/treccia_1.jpg" alt="Dairy Products" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+                        <h3 class="text-white font-serif text-2xl mb-2">Dairy Products</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Authentic Italian cheeses and daily UK made mozzarella.</p>
+                    </div>
+                </a>
+                
+                <!-- Category 2 -->
+                <a href="#" class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/featured_category_pasta_salsiccia_1.jpg" alt="Premium Sausages" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+                        <h3 class="text-white font-serif text-2xl mb-2">Premium Sausages</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Artisan crafted sausages using traditional recipes.</p>
+                    </div>
+                </a>
+
+                <!-- Category 3 -->
+                <a href="#" class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/featured_category_pasta_ravioli.jpg" alt="Fresh Pasta" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+                        <h3 class="text-white font-serif text-2xl mb-2">Fresh Pasta</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Daily made plain, filled, and retail pasta varieties.</p>
+                    </div>
+                </a>
+
+                <!-- Category 4 -->
+                <a href="#" class="group relative aspect-[4/5] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/chorizo_feat_panel_1.jpg" alt="Cured Meats" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                    <div class="absolute inset-0 p-6 flex flex-col justify-end transform transition-transform duration-500 translate-y-4 group-hover:translate-y-0">
+                        <h3 class="text-white font-serif text-2xl mb-2">Cured Meats</h3>
+                        <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Premium imported whole and pre-sliced selections.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-flex items-center text-sm font-semibold tracking-wider uppercase text-brand-dark hover:text-brand-green transition border-b border-brand-dark pb-1">
+                    View Entire Range <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Value Proposition -->
+    <section class="bg-brand-cream py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                
+                <!-- Distribution -->
+                <div class="relative group">
+                    <div class="aspect-w-16 aspect-h-10 md:aspect-h-12 rounded-2xl overflow-hidden relative shadow-2xl">
+                        <img src="https://www.carnevale.co.uk/media/wysiwyg/vanshoot_2.jpg" alt="National Distribution Fleet" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-dark/40"></div>
+                    </div>
+                    <!-- Overlaid Content Card -->
+                    <div class="bg-white p-8 md:p-12 shadow-xl w-[90%] md:w-3/4 mx-auto -mt-20 relative z-10 rounded-xl">
+                        <p class="text-brand-green font-semibold tracking-widest uppercase mb-3 text-xs">Logistics</p>
+                        <h3 class="text-3xl font-serif text-brand-dark mb-4">Nationwide Distribution</h3>
+                        <p class="text-gray-600 font-light mb-6 leading-relaxed">
+                            Ensuring seamless supply for the foodservice industry with our own dedicated multi-temp fleet. Zero minimum order requirements and complementary delivery to keep your kitchen running smoothly.
+                        </p>
+                        <div class="flex items-center space-x-6 pt-4 border-t border-gray-100">
+                            <img src="https://www.carnevale.co.uk/media/wysiwyg/homepage-logos/Logo_BRC_Storage2.png" alt="BRC Storage" class="h-10 opacity-80 grayscale hover:grayscale-0 transition">
+                            <img src="https://www.carnevale.co.uk/media/wysiwyg/homepage-logos/Logo_BRC_Food2.png" alt="BRC Food" class="h-10 opacity-80 grayscale hover:grayscale-0 transition">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consultancy -->
+                <div class="relative group mt-12 lg:mt-0">
+                    <div class="aspect-w-16 aspect-h-10 md:aspect-h-12 rounded-2xl overflow-hidden relative shadow-2xl">
+                        <img src="https://www.carnevale.co.uk/media/wysiwyg/hero/Marco_Fuso_Pizza.jpg" alt="Pizza Consultancy" class="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105" style="object-position: top;">
+                        <div class="absolute inset-0 bg-brand-dark/20"></div>
+                    </div>
+                    <!-- Overlaid Content Card -->
+                    <div class="bg-white p-8 md:p-12 shadow-xl w-[90%] md:w-3/4 mx-auto -mt-20 relative z-10 rounded-xl">
+                        <p class="text-brand-green font-semibold tracking-widest uppercase mb-3 text-xs">Expertise</p>
+                        <h3 class="text-3xl font-serif text-brand-dark mb-4">Professional Pizza Consultancy</h3>
+                        <p class="text-gray-600 font-light mb-8 leading-relaxed">
+                            Partnering with industry experts like Marco Fuso to elevate your menu. We provide the finest ingredients paired with the technical knowledge to craft the perfect authentic Italian pizza.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-sm font-semibold tracking-wider uppercase text-brand-green group-hover:text-brand-dark transition border-b border-brand-green pb-1">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- History / Heritage Section -->
+    <section class="py-20 md:py-32 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-5 order-2 lg:order-1 relative">
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-light rounded-full -z-10"></div>
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/history/history_5_.jpg" alt="Carnevale Founders" class="w-full rounded-2xl shadow-xl relative z-10 border border-gray-100">
+                    <div class="absolute -bottom-8 -right-8 bg-brand-green text-white p-8 rounded-xl shadow-xl z-20 hidden md:block">
+                        <p class="font-serif text-5xl mb-1">1966</p>
+                        <p class="text-sm tracking-wider uppercase font-medium text-green-100">The Beginning</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 order-1 lg:order-2">
+                    <p class="text-brand-green font-semibold tracking-widest uppercase mb-4 text-sm flex items-center">
+                        <span class="w-8 h-px bg-brand-green mr-4"></span> Our Heritage
+                    </p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-dark mb-8 leading-tight">A Legacy Born in the Apennine Mountains</h2>
+                    
+                    <div class="space-y-6 text-gray-600 font-light leading-relaxed text-lg">
+                        <p>
+                            Carnevale dates back to 1966 when two young brothers, Carmine and Giovanni Carnevale, journeyed from the village of Capracotta in Molise, Southern Italy. With a passion for authentic flavors, they established the company, manufacturing and selling mozzarella and ricotta for the first time in central London.
+                        </p>
+                        <p>
+                            Today, Carnevale remains a fiercely proud family-run business. The second generation has joined to continue the work of evolving the company, upholding its reputation as an industry-leading manufacturer, importer, and distributor of premium foods, provisions, and beverages.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t border-gray-100">
+                        <div>
+                            <p class="text-brand-dark font-serif text-2xl mb-1">50+</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Years Experience</p>
+                        </div>
+                        <div>
+                            <p class="text-brand-dark font-serif text-2xl mb-1">6</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">National Depots</p>
+                        </div>
+                        <div>
+                            <p class="text-brand-dark font-serif text-2xl mb-1">100%</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Family Owned</p>
+                        </div>
+                        <div>
+                            <p class="text-brand-dark font-serif text-2xl mb-1">Daily</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider">Fresh Production</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Associated Companies -->
+    <section class="bg-gray-50 py-16 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <h4 class="text-center text-sm font-semibold tracking-widest uppercase text-gray-400 mb-10">Associated Companies</h4>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 opacity-70">
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/delicatezza-on-line-store_copy.png" alt="Delicatezza" class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/Untitled_design_1_.png" alt="Pasta & Pasta" class="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300 bg-white rounded p-1">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/LogoSalsicciamo2317x1639.png" alt="Salsicciamo" class="h-10 md:h-14 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/CC-Wines_Logo_1.png" alt="C&C Wines" class="h-10 md:h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/valerio.png" alt="Valerio" class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+                <a href="#" class="hover:opacity-100 transition-opacity duration-300">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/j_g-logo-pantone-colours.png" alt="J&G" class="h-8 md:h-10 w-auto grayscale hover:grayscale-0 transition-all duration-300">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10 border-t-4 border-brand-green">
+        <div class="max-w-7xl mx-auto px-4 xl:px-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <img src="https://www.carnevale.co.uk/media/wysiwyg/logo_footer.png" alt="Carnevale Ltd" class="h-16 mb-6">
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Specialists in Italian cheeses, fresh pasta & meat products.<br> 
+                        Importers & distributors of fine wines & provisions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-brand-green hover:text-white transition-colors duration-300"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-brand-green hover:text-white transition-colors duration-300"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-gray-300 hover:bg-brand-green hover:text-white transition-colors duration-300"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation 1 -->
+                <div>
+                    <h4 class="text-lg font-serif mb-6 text-white tracking-wide">Products</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-green transition">Daily UK Made</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Ambient Groceries</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Chilled Selections</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Beverages & Wines</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Frozen Foods</a></li>
+                    </ul>
+                </div>
+
+                <!-- Navigation 2 -->
+                <div>
+                    <h4 class="text-lg font-serif mb-6 text-white tracking-wide">Company</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-brand-green transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Recruitment</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-brand-green transition">Modern Slavery Statement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-serif mb-6 text-white tracking-wide">Contact</h4>
+                    <address class="not-italic text-sm text-gray-400 space-y-3 leading-relaxed">
+                        <p><strong class="text-white block mb-1">Head Office - London</strong> 107 Blundell Street,<br>London, N7 9BN</p>
+                        <p class="pt-2"><span class="text-gray-500">Phone:</span> <a href="tel:02076078777" class="text-white hover:text-brand-green transition">020 7607 8777</a></p>
+                        <p><span class="text-gray-500">Fax:</span> <span class="text-white">020 7607 8774</span></p>
+                    </address>
+                </div>
+
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Carnevale Ltd. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Premium Redesign Presentation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimalist Cookie Notice (Fixed to bottom, visually less intrusive than original) -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-brand-dark text-white p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.2)] z-50 transform transition-transform duration-500 translate-y-0 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="text-sm text-gray-300 max-w-4xl font-light">
+            <span class="font-semibold text-white mr-2 border-b border-brand-green pb-0.5">Cookie Notice.</span> 
+            This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies to ensure you get the best experience.
+        </div>
+        <div class="flex space-x-3 shrink-0">
+            <button onclick="document.getElementById('cookie-banner').style.transform = 'translateY(100%)'" class="px-5 py-2 bg-brand-green hover:bg-green-700 text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors">Accept</button>
+            <button onclick="document.getElementById('cookie-banner').style.transform = 'translateY(100%)'" class="px-5 py-2 bg-transparent border border-white/30 hover:border-white text-white text-xs font-semibold uppercase tracking-wider rounded transition-colors">Close</button>
+        </div>
+    </div>
+
+    <!-- Script for sticky header logic -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 40) {
+                header.classList.add('shadow-md');
+                header.classList.replace('py-4', 'py-0');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('py-0', 'py-4');
+            }
+        });
+    </script>
+</body>
+</html>
