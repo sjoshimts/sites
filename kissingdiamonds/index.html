@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kissing Diamonds | The Ultimate Expression of Devotion</title>
+    <meta name="description" content="Kissing Diamonds - Explore our exquisite engagement rings and wedding bands.">
+    
+    <!-- Google Fonts for Premium E-commerce Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fcfaf9',
+                            100: '#f5efeb',
+                            400: '#c5a58d',
+                            600: '#a37a5c', // Copper/Gold accent
+                            900: '#1a1a1a', // Rich Black
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Utilities */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth fade in for elements */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-900 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Top Utility Bar -->
+    <div class="bg-brand-900 text-gray-300 text-xs py-2 px-4 w-full">
+        <div class="max-w-7xl mx-auto flex justify-between items-center tracking-widest uppercase">
+            <div class="hidden sm:block">Complimentary Global Shipping & Returns</div>
+            <div class="flex space-x-6 items-center w-full sm:w-auto justify-center sm:justify-end">
+                <a href="http://www.kissingdiamonds.com/contacts/" class="hover:text-white transition-colors duration-300">Contact Us</a>
+                <span class="w-px h-3 bg-gray-600"></span>
+                <a href="#" class="hover:text-white transition-colors duration-300">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden">
+                    <button type="button" class="text-gray-500 hover:text-brand-900 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center lg:justify-start w-full lg:w-auto">
+                    <a href="http://www.kissingdiamonds.com/" title="Kissing Diamonds">
+                        <img class="h-10 w-auto" src="https://www.kissingdiamonds.com/skin/frontend/default/kissingdiamond/images/logo.png" alt="Kissing Diamonds Logo">
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-10 items-center">
+                    <a href="http://www.kissingdiamonds.com/about-kissing/" class="text-sm tracking-wider uppercase text-gray-600 hover:text-brand-600 transition-colors duration-200">About Kissing</a>
+                    <a href="http://www.kissingdiamonds.com/kissing-products.html" class="text-sm tracking-wider uppercase text-gray-600 hover:text-brand-600 transition-colors duration-200">Kissing Products</a>
+                    <a href="http://www.kissingdiamonds.com/kissing-in-public/" class="text-sm tracking-wider uppercase text-gray-600 hover:text-brand-600 transition-colors duration-200">Kissing In Public</a>
+                    <a href="http://www.kissingdiamonds.com/kissing-locations/" class="text-sm tracking-wider uppercase text-gray-600 hover:text-brand-600 transition-colors duration-200">Kissing Locations</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <form action="http://www.kissingdiamonds.com/catalogsearch/result/" method="get" class="relative group">
+                        <input type="text" name="q" placeholder="Search..." class="w-40 border-b border-gray-300 py-1 text-sm bg-transparent focus:outline-none focus:border-brand-600 transition-all duration-300 group-hover:w-48 placeholder-gray-400">
+                        <button type="submit" class="absolute right-0 top-1 text-gray-400 hover:text-brand-600">
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="http://www.kissingdiamonds.com/about-kissing/" class="block px-3 py-3 text-sm tracking-widest uppercase text-gray-800 hover:bg-gray-50 border-b border-gray-50">About Kissing</a>
+                <a href="http://www.kissingdiamonds.com/kissing-products.html" class="block px-3 py-3 text-sm tracking-widest uppercase text-gray-800 hover:bg-gray-50 border-b border-gray-50">Kissing Products</a>
+                <a href="http://www.kissingdiamonds.com/kissing-in-public/" class="block px-3 py-3 text-sm tracking-widest uppercase text-gray-800 hover:bg-gray-50 border-b border-gray-50">Kissing In Public</a>
+                <a href="http://www.kissingdiamonds.com/kissing-locations/" class="block px-3 py-3 text-sm tracking-widest uppercase text-gray-800 hover:bg-gray-50 border-b border-gray-50">Kissing Locations</a>
+                <a href="http://www.kissingdiamonds.com/contacts/" class="block px-3 py-3 text-sm tracking-widest uppercase text-gray-800 hover:bg-gray-50">Kissing Enquiries</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative w-full bg-brand-50 pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="max-w-3xl mx-auto fade-in-up">
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-brand-900 mb-6 leading-tight">
+                        A Diamond That <span class="italic text-brand-600">Kisses</span>
+                    </h1>
+                    <p class="text-gray-500 mb-12 text-lg md:text-xl font-light tracking-wide">
+                        Elevate your promise with a signature cut designed for unmatched brilliance. Every timeless story begins with a singular, unforgettable moment.
+                    </p>
+                </div>
+                
+                <!-- Main Slider Image Repurposed as Hero -->
+                <div class="w-full max-w-5xl mx-auto mb-16 fade-in-up" style="animation-delay: 0.2s;">
+                    <img src="https://www.kissingdiamonds.com/media/images/default/banner5_29.jpg" 
+                         alt="Kissing Diamonds Collection" 
+                         class="w-full h-auto object-contain mix-blend-multiply">
+                </div>
+
+                <div class="fade-in-up" style="animation-delay: 0.4s;">
+                    <a href="http://www.kissingdiamonds.com/kissing-products.html" class="inline-block bg-brand-900 text-white px-10 py-4 text-sm tracking-widest uppercase hover:bg-brand-600 transition-colors duration-300 shadow-lg hover:shadow-xl">
+                        Discover The Collection
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Elements (Text/SVG based, no new image assets) -->
+        <section class="bg-white border-y border-gray-100 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+                    <div class="px-6 py-4 md:py-0">
+                        <svg class="w-8 h-8 mx-auto text-brand-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase mb-2">Masterfully Crafted</h3>
+                        <p class="text-gray-500 text-sm">Exquisite attention to detail in every piece.</p>
+                    </div>
+                    <div class="px-6 py-4 md:py-0">
+                        <svg class="w-8 h-8 mx-auto text-brand-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase mb-2">Ethically Sourced</h3>
+                        <p class="text-gray-500 text-sm">Conflict-free diamonds with verified origins.</p>
+                    </div>
+                    <div class="px-6 py-4 md:py-0">
+                        <svg class="w-8 h-8 mx-auto text-brand-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase mb-2">Secure Experience</h3>
+                        <p class="text-gray-500 text-sm">Fully insured shipping and discreet packaging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Feature Block -->
+        <section class="py-20 lg:py-32 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                    <div class="w-full lg:w-1/2 group overflow-hidden bg-brand-50">
+                        <img src="https://www.kissingdiamonds.com/media/images/default/banner4_3.jpg" 
+                             alt="Experience the Brilliance" 
+                             class="w-full h-auto object-cover transition duration-1000 group-hover:scale-105 mix-blend-multiply p-8">
+                    </div>
+                    <div class="w-full lg:w-1/2 text-center lg:text-left">
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-900 mb-6">Crafted for the Modern Romance</h2>
+                        <p class="text-gray-500 text-lg mb-8 leading-relaxed font-light">
+                            Experience a diamond cut like no other. Meticulously designed to capture light and imagination, ensuring your declaration of love is as unique and enduring as your bond. Let our artisans guide you to the perfect symbol of your commitment.
+                        </p>
+                        <a href="http://www.kissingdiamonds.com/about-kissing/" class="inline-block border-b-2 border-brand-900 text-brand-900 pb-1 text-sm tracking-widest uppercase hover:text-brand-600 hover:border-brand-600 transition-colors duration-300">
+                            Read Our Story
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curated Collections Grid (Repurposed Footer Banners) -->
+        <section class="py-24 bg-brand-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-16">
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-900 mb-4">Explore The Kissing World</h2>
+                    <!-- Original Floral Divider -->
+                    <img src="https://www.kissingdiamonds.com/media/wysiwyg/Floral_Dividers_blk.png" alt="Divider" class="mx-auto h-4 opacity-30">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                    
+                    <!-- Card 1: Social / Facebook -->
+                    <a href="http://www.facebook.com/kissingdiamonds/" target="_blank" class="group block text-center">
+                        <div class="relative overflow-hidden bg-white aspect-square mb-6 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                            <img src="https://www.kissingdiamonds.com/media/wysiwyg/highlight_banner1_2.jpg" alt="Facebook Community" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+                        </div>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase text-brand-900 mb-2">Join Our Community</h3>
+                        <p class="text-xs text-brand-600 tracking-wider uppercase group-hover:underline">Follow Us</p>
+                    </a>
+
+                    <!-- Card 2: Intimate Touch -->
+                    <a href="http://www.kissingdiamonds.com/about-kissing" class="group block text-center">
+                        <div class="relative overflow-hidden bg-white aspect-square mb-6 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                            <img src="https://www.kissingdiamonds.com/media/wysiwyg/highlight_banner4_2.jpg" alt="The Intimate Touch" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+                        </div>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase text-brand-900 mb-2">The Signature Touch</h3>
+                        <p class="text-xs text-brand-600 tracking-wider uppercase group-hover:underline">Discover More</p>
+                    </a>
+
+                    <!-- Card 3: Overlapping Rings -->
+                    <a href="http://www.kissingdiamonds.com/kissing-products.html" class="group block text-center">
+                        <div class="relative overflow-hidden bg-white aspect-square mb-6 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                            <img src="https://www.kissingdiamonds.com/media/wysiwyg/highlight_banner3_5.jpg" alt="Exquisite Bands" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+                        </div>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase text-brand-900 mb-2">Exquisite Bands</h3>
+                        <p class="text-xs text-brand-600 tracking-wider uppercase group-hover:underline">Shop Now</p>
+                    </a>
+
+                    <!-- Card 4: Lips -->
+                    <a href="http://www.kissingdiamonds.com/kissing-locations/" class="group block text-center">
+                        <div class="relative overflow-hidden bg-white aspect-square mb-6 shadow-sm group-hover:shadow-xl transition-all duration-500">
+                            <img src="https://www.kissingdiamonds.com/media/wysiwyg/highlight_banner2_4.jpg" alt="Share Your Kiss" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition duration-500"></div>
+                        </div>
+                        <h3 class="text-sm font-semibold tracking-widest uppercase text-brand-900 mb-2">Global Boutiques</h3>
+                        <p class="text-xs text-brand-600 tracking-wider uppercase group-hover:underline">Find A Store</p>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modern Premium Footer -->
+    <footer class="bg-brand-900 text-white pt-20 pb-10 border-t-4 border-brand-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <img class="h-10 w-auto mb-6 brightness-0 invert" src="https://www.kissingdiamonds.com/skin/frontend/default/kissingdiamond/images/logo.png" alt="Kissing Diamonds Logo">
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Crafting unforgettable moments with precision, elegance, and the unmistakable brilliance of a Kissing Diamond.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-xs tracking-widest uppercase text-gray-500">More Kisses</span>
+                        <a href="http://www.facebook.com/kissingdiamonds" target="_blank" class="hover:opacity-75 transition-opacity">
+                            <img src="https://www.kissingdiamonds.com/skin/frontend/default/kissingdiamond/images/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="https://twitter.com/kissingdiamonds" target="_blank" class="hover:opacity-75 transition-opacity">
+                            <img src="https://www.kissingdiamonds.com/skin/frontend/default/kissingdiamond/images/twiter.png" alt="Twitter">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quicklinks -->
+                <div>
+                    <h4 class="text-sm font-semibold tracking-widest uppercase mb-6 text-brand-400">Quicklinks</h4>
+                    <ul class="space-y-4">
+                        <li><a href="http://www.kissingdiamonds.com/about-kissing/" class="text-gray-400 hover:text-white transition-colors text-sm">About Kissing</a></li>
+                        <li><a href="http://www.kissingdiamonds.com/kissing-products.html" class="text-gray-400 hover:text-white transition-colors text-sm">Kissing Products</a></li>
+                        <li><a href="http://www.kissingdiamonds.com/kissing-in-public/" class="text-gray-400 hover:text-white transition-colors text-sm">Kissing In Public</a></li>
+                        <li><a href="http://www.kissingdiamonds.com/kissing-locations/" class="text-gray-400 hover:text-white transition-colors text-sm">Kissing Locations</a></li>
+                        <li><a href="http://www.kissingdiamonds.com/contacts/" class="text-gray-400 hover:text-white transition-colors text-sm">Kissing Enquiries</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Catalogue -->
+                <div>
+                    <h4 class="text-sm font-semibold tracking-widest uppercase mb-6 text-brand-400">Catalogue</h4>
+                    <ul class="space-y-4">
+                        <li><a href="http://www.kissingdiamonds.com/kissing-products/engagement-rings.html" class="text-gray-400 hover:text-white transition-colors text-sm">Engagement Rings</a></li>
+                        <li><a href="http://www.kissingdiamonds.com/kissing-products/wedding-rings.html" class="text-gray-400 hover:text-white transition-colors text-sm">Wedding Bands</a></li>
+                    </ul>
+                </div>
+
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-sm font-semibold tracking-widest uppercase mb-6 text-brand-400">Useful Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="http://www.brangredi.com" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm">Brangredi Limited</a></li>
+                        <li><a href="http://www.continental.com.hk" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm">Continental Holding Limited</a></li>
+                        <li><a href="http://www.contidiamond.com" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm">Continental Diamonds</a></li>
+                        <li><a href="https://www.gia.edu/" target="_blank" class="text-gray-400 hover:text-white transition-colors text-sm">GIA Certification</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-gray-500 text-xs tracking-wider uppercase">
+                    &copy; 2026 Kissing Diamonds &bull; All Rights Reserved
+                </p>
+                
+                <!-- Footer Search -->
+                <form action="http://www.kissingdiamonds.com/catalogsearch/result/" method="get" class="relative w-full md:w-64">
+                    <input type="text" name="q" placeholder="Enter Keywords..." class="w-full bg-transparent border-b border-gray-700 py-2 text-sm text-white focus:outline-none focus:border-brand-400 transition-colors placeholder-gray-600">
+                    <button type="submit" class="absolute right-0 top-2 text-gray-500 hover:text-brand-400 transition-colors">
+                        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
