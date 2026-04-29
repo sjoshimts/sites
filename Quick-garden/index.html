@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Garden Buildings: Your Wooden Prefab Experts in UK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f5f7f5',
+                            100: '#e1e6e2',
+                            500: '#2A4D3E', // Sophisticated Forest Green
+                            800: '#1A3329',
+                            900: '#11221B',
+                        },
+                        accent: {
+                            light: '#FAF5F0', // Soft Pearl
+                            DEFAULT: '#C86A4C', // Terracotta
+                            dark: '#A6553A'
+                        },
+                        surface: '#F8F8F6'
+                    },
+                    boxShadow: {
+                        'hyva': '0 4px 40px rgba(0, 0, 0, 0.04)',
+                        'hyva-hover': '0 10px 50px rgba(0, 0, 0, 0.08)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hyvä-style fluid micro-interactions */
+        .zoom-wrapper { overflow: hidden; }
+        .zoom-wrapper img { transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .zoom-wrapper:hover img { transform: scale(1.04); }
+        
+        .fade-up-hover .reveal-text { 
+            opacity: 0; 
+            transform: translateY(10px); 
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+        .fade-up-hover:hover .reveal-text { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    </style>
+</head>
+<body class="font-sans text-stone-600 bg-white antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Utility Top Bar -->
+    <div class="bg-brand-900 text-stone-300 py-2.5 px-4 text-[11px] font-semibold tracking-widest uppercase">
+        <div class="max-w-[1440px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    Sales: <a href="tel:02070994301" class="text-white hover:text-accent transition-colors">020 7099 4301</a>
+                </span>
+                <span class="hidden md:flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    Support: <a href="tel:07418351697" class="text-white hover:text-accent transition-colors">07418 351 697</a>
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                <span class="w-px h-3 bg-stone-700"></span>
+                <a href="#" class="hover:text-white transition-colors">Customer Service</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Editorial Header -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-stone-100 transition-all">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-[88px]">
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0">
+                    <img src="https://www.quick-garden.co.uk/build/quickgarden/images/quickgarden_logo.217ce322.svg" alt="Quick-garden.co.uk" class="h-9">
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden xl:flex space-x-8 items-center font-medium text-[13px] tracking-wide text-stone-800 uppercase">
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Log Cabins
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Garden Rooms
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Pods
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Granny Annexes
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Offices
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Garages
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Carports
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="hover:text-brand-500 transition-colors py-2 relative group">
+                        Saunas
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-accent hover:text-accent-dark transition-colors py-2 flex items-center gap-1">
+                        Offers
+                    </a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-5">
+                    <button aria-label="Search" class="text-stone-900 hover:text-brand-500 transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </button>
+                    <a href="#" class="flex items-center gap-2 text-stone-900 hover:text-brand-500 transition-colors group">
+                        <div class="relative">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                            <span class="absolute -top-1.5 -right-1.5 bg-brand-500 text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-white">0</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Immersive Editorial Hero -->
+    <section class="p-4 sm:p-6 lg:p-8">
+        <div class="max-w-[1440px] mx-auto bg-surface rounded-[2.5rem] overflow-hidden relative flex flex-col lg:flex-row items-center min-h-[85vh]">
+            
+            <!-- Text Content -->
+            <div class="w-full lg:w-5/12 p-8 lg:p-16 xl:p-24 z-10">
+                <div class="inline-block px-3 py-1 bg-white border border-stone-200 text-stone-500 text-[11px] font-bold uppercase tracking-widest rounded-full mb-8">
+                    Est. 1993
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-[56px] text-stone-900 font-bold leading-[1.1] tracking-tight mb-6">
+                    Elevate your <br>outdoor living.
+                </h1>
+                <p class="text-lg text-stone-500 mb-10 leading-relaxed max-w-md font-light">
+                    As home wellness and remote work redefine our lifestyles, our premium wooden structures offer the perfect spatial extension for your garden landscape.
+                </p>
+                
+                <!-- Refined Soft-Sell Banner -->
+                <div class="bg-white p-6 rounded-2xl shadow-hyva border border-stone-100 max-w-md">
+                    <div class="flex justify-between items-start mb-2">
+                        <span class="text-accent text-xs font-bold uppercase tracking-widest">Spring Collection</span>
+                        <span class="text-stone-400 text-xs">Ends 05/04</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-1">Seasonal considerations.</h3>
+                    <p class="text-stone-500 text-sm mb-4">Invest in your property's functionality with thoughtfully designed structures, currently available with savings up to £13,600.</p>
+                    <a href="#" class="inline-flex items-center justify-center w-full bg-brand-900 text-white text-sm font-semibold py-3.5 px-6 rounded-xl hover:bg-brand-800 transition-colors">
+                        Explore the collection
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image Full Bleed on Right -->
+            <div class="w-full lg:w-7/12 h-[50vh] lg:h-full lg:absolute right-0 top-0 bottom-0 zoom-wrapper">
+                <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/4f/27/6d3618cd2f4cbe0fa1b6a50c860c.jpg" alt="Modern architectural garden building" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent lg:block hidden w-1/3"></div>
+                
+                <!-- Trust Badge - Floating -->
+                <div class="absolute bottom-8 right-8 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-hyva flex items-center gap-4 hidden md:flex">
+                    <div class="bg-[#00B67A] text-white p-2 rounded-full">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                    </div>
+                    <div>
+                        <p class="font-bold text-stone-900 text-[13px]">Excellent on Trustpilot</p>
+                        <p class="text-[11px] text-stone-500 uppercase tracking-wide mt-0.5">26,000+ Customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition / Features Strip -->
+    <section class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-2 lg:grid-cols-4 border border-stone-100 rounded-2xl bg-white shadow-sm overflow-hidden divide-y lg:divide-y-0 lg:divide-x divide-stone-100">
+            <div class="flex items-center gap-4 p-8 group">
+                <div class="shrink-0">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/03/dd/6cc295121231b2bb9f55eb07c440.png" alt="Advice" class="h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-stone-900 mb-1">Expert Guidance</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Consultation on selection, installation, and care.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-8 group">
+                <div class="shrink-0">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/a5/71/325828db30cfb0d231dbd42ebfab.png" alt="Delivery" class="h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-stone-900 mb-1">Complimentary Delivery</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Mainland England, Wales & orders over £3000 to Scotland.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-8 group">
+                <div class="shrink-0">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/81/4e/8d34d728d8e11948474523f800ff.png" alt="Deposit" class="h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-stone-900 mb-1">Flexible Payments</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Secure your order with a 20-30% initial deposit.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 p-8 group">
+                <div class="shrink-0">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/91/f9/8ddc8ff32fdb348757cda7c682f2.png" alt="Warranty" class="h-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-stone-900 mb-1">Decade Warranty</h4>
+                    <p class="text-xs text-stone-500 leading-relaxed">Comprehensive 10-year anti-rot guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Product Bento Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl md:text-4xl text-stone-900 font-bold tracking-tight mb-4">Curated Categories</h2>
+                    <p class="text-stone-500 font-light text-lg">Explore tailored architectural solutions crafted from sustainable, slow-grown timber.</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-stone-900 hover:text-brand-500 transition-colors uppercase tracking-widest border-b border-stone-900 hover:border-brand-500 pb-1">
+                    View full catalogue
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 auto-rows-[340px]">
+                
+                <!-- Log Cabins -->
+                <a href="#" class="lg:col-span-8 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/de/0a/25c390ae8bce837dc46254168862.jpeg" alt="Garden Log Cabins" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-10 text-white w-full">
+                        <h3 class="text-3xl font-bold mb-3 tracking-tight">Garden Log Cabins</h3>
+                        <p class="text-stone-300 text-sm mb-5 max-w-lg font-light leading-relaxed">Versatile structures designed to expand your living footprint. Ideal for storage, leisure, or establishing a dedicated personal sanctuary.</p>
+                        <span class="reveal-text inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest bg-white/20 backdrop-blur px-4 py-2 rounded-full">
+                            Explore Series <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Residential -->
+                <a href="#" class="lg:col-span-4 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/3b/31/1f7ee3cc98c2b504e1e42f6e2723.jpeg" alt="Residential Log Cabins" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-8 text-white w-full">
+                        <h3 class="text-2xl font-bold mb-3 tracking-tight">Residential</h3>
+                        <p class="text-stone-300 text-sm mb-5 font-light leading-relaxed">Engineered for year-round habitation with optimal thermal properties.</p>
+                        <span class="reveal-text inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest">
+                            View Models <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Granny Annexes -->
+                <a href="#" class="lg:col-span-3 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/d0/e8/597b4cc9a8b7d13914cb4672a556.jpeg" alt="Granny Annexes" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-8 text-white w-full">
+                        <span class="bg-white/20 backdrop-blur border border-white/30 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3 inline-block">Planning Friendly</span>
+                        <h3 class="text-xl font-bold tracking-tight">Annexes</h3>
+                    </div>
+                </a>
+
+                <!-- Garden Rooms -->
+                <a href="#" class="lg:col-span-3 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/d0/1f/ca595f0dffceb9a3cc7ef1c249ed.jpeg" alt="Garden Rooms" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-8 text-white w-full">
+                        <h3 class="text-xl font-bold tracking-tight">Studios & Gyms</h3>
+                    </div>
+                </a>
+
+                <!-- Garages -->
+                <a href="#" class="lg:col-span-3 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/2f/62/561da588c7ec4f005cff816e4418.jpeg" alt="Wooden Garages" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-8 text-white w-full">
+                        <h3 class="text-xl font-bold tracking-tight">Garages</h3>
+                    </div>
+                </a>
+
+                <!-- Carports -->
+                <a href="#" class="lg:col-span-3 group relative rounded-[2rem] zoom-wrapper bg-surface flex items-end shadow-hyva hover:shadow-hyva-hover transition-all fade-up-hover">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/64/fb/42ddc1aee34ca4cca035ab6a9169.jpeg" alt="Wooden Carports" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+                    <div class="relative p-8 text-white w-full">
+                        <h3 class="text-xl font-bold tracking-tight">Carports</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Projects Sub-Hero -->
+    <section class="py-12">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-brand-900 rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row items-center relative shadow-hyva">
+                <!-- Abstract pattern overlay -->
+                <div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-20 bg-[url('https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/79/64/ec9f28e0744a991541b2752be25b.png')] bg-no-repeat bg-right bg-cover mix-blend-overlay"></div>
+                
+                <div class="relative z-10 p-10 lg:p-20 w-full md:w-1/2">
+                    <span class="text-accent font-bold uppercase tracking-widest text-[11px] mb-4 block">Architectural Customization</span>
+                    <h2 class="text-3xl md:text-4xl text-white font-bold mb-6 tracking-tight leading-tight">Tailored structures for specific landscapes.</h2>
+                    <p class="text-stone-300 font-light mb-10 max-w-md text-lg">
+                        Beyond our standard collections, we offer comprehensive bespoke design services. Outline your spatial requirements, and our team will engineer a solution.
+                    </p>
+                    <a href="#" class="inline-flex bg-white text-brand-900 font-semibold px-8 py-4 rounded-xl hover:bg-stone-100 transition-colors text-sm">
+                        Discuss your project
+                    </a>
+                </div>
+                
+                <div class="relative z-10 hidden md:block w-1/2 h-full flex justify-end items-end pt-12 pr-12">
+                    <img src="https://www.quick-garden.co.uk/build/quickgarden/images/manager.d6d6164f.png" alt="Consultant" class="h-[350px] lg:h-[450px] object-contain object-bottom filter drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Editorial Lookbook (Exclusive Buildings) -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-20">
+                <span class="text-brand-500 font-bold uppercase tracking-widest text-[11px] mb-4 block">Signature Series</span>
+                <h2 class="text-4xl md:text-5xl text-stone-900 font-bold tracking-tight mb-6">Exclusive Collections</h2>
+                <p class="text-stone-500 font-light text-lg">Detailed craftsmanship meeting contemporary demands for functional outdoor space.</p>
+            </div>
+
+            <div class="space-y-32">
+                <!-- Highlight 1 -->
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7 zoom-wrapper rounded-[2rem] overflow-hidden shadow-hyva relative">
+                        <div class="absolute inset-0 bg-stone-900/5 z-10 mix-blend-multiply"></div>
+                        <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/ce/51/d40171f2031f39c65774ca6cb546.jpeg" alt="Wooden garden buildings" class="w-full aspect-[4/3] object-cover">
+                    </div>
+                    <div class="lg:col-span-5 lg:-ml-10 z-20">
+                        <div class="bg-white p-8 lg:p-12 rounded-[2rem] shadow-hyva-hover border border-stone-50">
+                            <h3 class="text-2xl text-stone-900 font-bold mb-4 tracking-tight">Maximising functional space.</h3>
+                            <p class="text-stone-500 font-light leading-relaxed mb-8 text-[15px]">
+                                Whether your aesthetic leans traditional or modern, our garden buildings are structured for utility. High-grade timber, precision-engineered joints, and abundant natural light create environments suited for everything from focused work to evening relaxation.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-900 font-semibold text-sm uppercase tracking-widest hover:text-brand-500 transition-colors group">
+                                View collection <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Highlight 2 -->
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-5 lg:order-1 order-2 z-20 lg:-mr-10">
+                        <div class="bg-white p-8 lg:p-12 rounded-[2rem] shadow-hyva-hover border border-stone-50">
+                            <h3 class="text-2xl text-stone-900 font-bold mb-4 tracking-tight">Engineered for four seasons.</h3>
+                            <p class="text-stone-500 font-light leading-relaxed mb-8 text-[15px]">
+                                Insulation transforms a seasonal outbuilding into a permanent extension of your home. Options ranging from twin-skin walls to advanced SIPs technology ensure superior thermal regulation, acoustical privacy, and energy efficiency year-round.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-900 font-semibold text-sm uppercase tracking-widest hover:text-brand-500 transition-colors group">
+                                Insulated options <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 lg:order-2 order-1 zoom-wrapper rounded-[2rem] overflow-hidden shadow-hyva relative">
+                        <div class="absolute inset-0 bg-stone-900/5 z-10 mix-blend-multiply"></div>
+                        <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/66/df/3730f88bc80ff830f02beac969ff.jpeg" alt="Insulated garden buildings" class="w-full aspect-[4/3] object-cover">
+                    </div>
+                </div>
+                
+                <!-- Highlight 3 -->
+                <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+                    <div class="lg:col-span-7 zoom-wrapper rounded-[2rem] overflow-hidden shadow-hyva relative">
+                        <div class="absolute inset-0 bg-stone-900/5 z-10 mix-blend-multiply"></div>
+                        <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/a1/00/7a911abf20fb82f29a4c540e1acf.jpeg" alt="Contemporary garden buildings" class="w-full aspect-[4/3] object-cover">
+                    </div>
+                    <div class="lg:col-span-5 lg:-ml-10 z-20">
+                        <div class="bg-white p-8 lg:p-12 rounded-[2rem] shadow-hyva-hover border border-stone-50">
+                            <h3 class="text-2xl text-stone-900 font-bold mb-4 tracking-tight">Contemporary architectural lines.</h3>
+                            <p class="text-stone-500 font-light leading-relaxed mb-8 text-[15px]">
+                                For properties with modern aesthetics, our contemporary range offers minimalist facades, floor-to-ceiling glazing, and flush finishes. These structures serve as sophisticated focal points that blend seamlessly into considered landscaping.
+                            </p>
+                            <a href="#" class="inline-flex items-center gap-2 text-brand-900 font-semibold text-sm uppercase tracking-widest hover:text-brand-500 transition-colors group">
+                                Contemporary series <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center pt-8">
+                    <button class="bg-white border border-stone-200 text-stone-900 px-8 py-4 rounded-xl font-bold text-sm tracking-wide hover:bg-surface hover:border-stone-300 transition-all">View Complete Lookbook</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Authority & Validation -->
+    <section class="py-24 bg-white border-y border-stone-100">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div>
+                    <span class="text-brand-500 font-bold uppercase tracking-widest text-[11px] mb-4 block">Proven Reliability</span>
+                    <h2 class="text-3xl md:text-4xl text-stone-900 font-bold tracking-tight mb-8">Trusted by over 26,000 properties across Europe.</h2>
+                    <p class="text-stone-500 font-light text-lg leading-relaxed mb-6">
+                        Since 1993, we've focused on engineering structures that balance aesthetic appeal with long-term durability. 
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div>
+                            <div class="h-1 w-8 bg-brand-500 mb-3"></div>
+                            <h4 class="font-bold text-stone-900 mb-1">Slow-grown Timber</h4>
+                            <p class="text-xs text-stone-500">Denser, stronger wood ensuring structural integrity.</p>
+                        </div>
+                        <div>
+                            <div class="h-1 w-8 bg-brand-500 mb-3"></div>
+                            <h4 class="font-bold text-stone-900 mb-1">Precision Manufacturing</h4>
+                            <p class="text-xs text-stone-500">Interchangeable walls and moisture-resistant fittings.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center gap-2 bg-stone-900 text-white px-6 py-3.5 rounded-xl text-sm font-semibold hover:bg-stone-800 transition-colors">
+                        Learn about our materials
+                    </a>
+                </div>
+                
+                <!-- Video / Media Presentation -->
+                <div class="relative rounded-[2rem] overflow-hidden shadow-hyva-hover group cursor-pointer bg-stone-100">
+                    <img src="https://www.quick-garden.co.uk/media/cache/omni_sylius_banner/13/c1/a6c55113e81045d307443c8e8fa1.jpeg" alt="Quick Garden Video" class="w-full aspect-video object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700">
+                    <div class="absolute inset-0 bg-stone-900/10 group-hover:bg-transparent transition-colors"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-20 h-20 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+                            <svg class="w-6 h-6 text-brand-900 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights / Journal -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12 border-b border-stone-200 pb-6">
+                <div>
+                    <h2 class="text-3xl text-stone-900 font-bold tracking-tight">Journal & Insights</h2>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-stone-900 hover:text-brand-500 transition-colors uppercase tracking-widest">View all <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></a>
+            </div>
+
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- Article 1 -->
+                <article class="group cursor-pointer">
+                    <div class="zoom-wrapper rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-stone-200">
+                        <img src="https://www.quick-garden.co.uk/media/cache/avp_content_page_image_thumbnail/media/image/image3%20%282%29.jpg" alt="Small log cabins" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-[11px] text-stone-400 uppercase tracking-widest font-semibold mb-3">Architecture</div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">Small log cabins: utmost comfort, sustainability, and flexibility</h3>
+                    <p class="text-stone-500 font-light text-sm line-clamp-3">A concentrated spatial experience can be incredibly rewarding. Discover how smaller footprints are redefining luxury and utility.</p>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="group cursor-pointer">
+                    <div class="zoom-wrapper rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-stone-200">
+                        <img src="https://www.quick-garden.co.uk/media/cache/avp_content_page_image_thumbnail/media/image/20240519_160906.900x600.jpg" alt="Wooden Garages" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-[11px] text-stone-400 uppercase tracking-widest font-semibold mb-3">Compliance</div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">Wooden Garages: Permits and Building Regulations in the UK</h3>
+                    <p class="text-stone-500 font-light text-sm line-clamp-3">Navigating the regulatory landscape for outbuildings. A comprehensive guide to planning permissions and compliance.</p>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="group cursor-pointer">
+                    <div class="zoom-wrapper rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-stone-200">
+                        <img src="https://www.quick-garden.co.uk/media/cache/avp_content_page_image_thumbnail/media/image/Copy%20of%20Eliza_FR_Residential_12%20900x600.jpg" alt="Insulated log cabin" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-[11px] text-stone-400 uppercase tracking-widest font-semibold mb-3">Maintenance</div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">How to prepare an insulated log cabin for winter and summer</h3>
+                    <p class="text-stone-500 font-light text-sm line-clamp-3">Best practices for maintaining thermal efficiency and protecting your timber structure across changing seasons.</p>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="group cursor-pointer">
+                    <div class="zoom-wrapper rounded-2xl overflow-hidden mb-6 aspect-[4/3] bg-stone-200">
+                        <img src="https://www.quick-garden.co.uk/media/cache/avp_content_page_image_thumbnail/media/image/1_%2812%29.jpg" alt="Summer House" class="w-full h-full object-cover">
+                    </div>
+                    <div class="text-[11px] text-stone-400 uppercase tracking-widest font-semibold mb-3">Lifestyle</div>
+                    <h3 class="text-lg font-bold text-stone-900 mb-3 group-hover:text-brand-600 transition-colors leading-snug">How to Choose the Right Summer House for Your Garden</h3>
+                    <p class="text-stone-500 font-light text-sm line-clamp-3">Matching architectural styles with landscape design to create a cohesive outdoor living environment.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Footer Action Blocks -->
+    <section class="py-16 bg-white relative z-10 -mb-8">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Newsletter Box -->
+                <div class="bg-brand-50 rounded-[2rem] p-10 flex flex-col justify-between shadow-hyva transition-all">
+                    <div>
+                        <h4 class="text-2xl text-stone-900 font-bold mb-3 tracking-tight">Curated Updates</h4>
+                        <p class="text-stone-500 text-sm font-light mb-8">Receive architectural inspiration, maintenance advice, and exclusive access to seasonal collections.</p>
+                    </div>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Email address" class="w-full px-5 py-3.5 rounded-xl border border-stone-200 text-sm focus:outline-none focus:ring-1 focus:ring-brand-500 focus:border-brand-500 bg-white shadow-sm">
+                        <button class="w-full bg-brand-900 text-white font-bold text-sm tracking-wide py-3.5 rounded-xl hover:bg-brand-800 transition-colors shadow-sm">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- Catalog Box -->
+                <div class="bg-surface border border-stone-100 rounded-[2rem] p-10 flex flex-col justify-between shadow-hyva overflow-hidden relative group">
+                    <div class="relative z-10 mb-8 max-w-[220px]">
+                        <h4 class="text-2xl text-stone-900 font-bold mb-3 tracking-tight">Digital Lookbook</h4>
+                        <p class="text-stone-500 text-sm font-light mb-8">Download our comprehensive catalogue detailing technical specifications and design variants.</p>
+                        <button class="bg-white border border-stone-200 text-stone-900 px-6 py-3 rounded-xl font-bold text-sm shadow-sm hover:border-stone-300 transition-colors">Request Document</button>
+                    </div>
+                    <img src="https://www.quick-garden.co.uk/build/quickgarden/images/img_footer_catalog.640ce548.jpg" alt="Catalog" class="absolute -bottom-4 -right-4 w-48 opacity-80 transform rotate-12 group-hover:rotate-6 transition-transform duration-500">
+                </div>
+
+                <!-- Map/Locations Box -->
+                <div class="bg-surface border border-stone-100 rounded-[2rem] p-10 flex flex-col justify-between shadow-hyva overflow-hidden relative group">
+                    <div class="relative z-10 mb-8 max-w-[220px]">
+                        <h4 class="text-2xl text-stone-900 font-bold mb-3 tracking-tight">Client Installations</h4>
+                        <p class="text-stone-500 text-sm font-light mb-8">View completed projects in your area to assess material quality and finish in person.</p>
+                        <button class="bg-white border border-stone-200 text-stone-900 px-6 py-3 rounded-xl font-bold text-sm shadow-sm hover:border-stone-300 transition-colors">View Map</button>
+                    </div>
+                    <img src="https://www.quick-garden.co.uk/build/quickgarden/images/img_footer_map.441bf57a.jpg" alt="Map" class="absolute bottom-0 right-0 w-48 opacity-60 object-cover h-full group-hover:scale-105 transition-transform duration-500 mix-blend-multiply">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Structural Footer -->
+    <footer class="bg-stone-900 text-stone-400 pt-32 pb-12 text-[13px]">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-16 mb-16 border-b border-stone-800 pb-16">
+                <!-- Col 1 -->
+                <div class="col-span-2 lg:col-span-1">
+                    <img src="https://www.quick-garden.co.uk/build/quickgarden/images/quickgarden_logo.217ce322.svg" alt="Quick-garden.co.uk" class="h-8 mb-6 filter brightness-0 invert opacity-90">
+                    <p class="mb-8 font-light leading-relaxed pr-4">Precision-engineered wooden structures designed to elevate your living, working, and recreational spaces.</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-stone-500 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                        <a href="#" class="text-stone-500 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                        <a href="#" class="text-stone-500 hover:text-white transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide uppercase text-[11px]">Direct Contact</h5>
+                    <ul class="space-y-5">
+                        <li>
+                            <p class="text-stone-500 mb-1 text-xs uppercase tracking-widest">Sales Consultations</p>
+                            <a href="tel:02070994301" class="text-stone-300 hover:text-white transition-colors block text-base font-medium">020 7099 4301</a>
+                            <a href="mailto:clients@quick-garden.co.uk" class="hover:text-white transition-colors block mt-1">clients@quick-garden.co.uk</a>
+                        </li>
+                        <li>
+                            <p class="text-stone-500 mb-1 text-xs uppercase tracking-widest mt-6">After-delivery Support</p>
+                            <a href="tel:07418351697" class="text-stone-300 hover:text-white transition-colors block text-base font-medium">07418 351 697</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide uppercase text-[11px]">Services</h5>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Financial Options</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Payment Methods</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Delivery Logistics</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Professional Assembly</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Warranty Details</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Returns Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Price Promise</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Complaints Procedure</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide uppercase text-[11px]">Technical Resources</h5>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">Planning Permission</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Foundation Guidelines</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Construction Types</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Insulation Specs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Roofing Materials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Glazing & Doors</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Maintenance Guide</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5 -->
+                <div>
+                    <h5 class="text-white font-bold mb-6 tracking-wide uppercase text-[11px]">Corporate</h5>
+                    <ul class="space-y-3 font-light">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Quality Assurance</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Client Installations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Journal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors mt-6 pt-6 border-t border-stone-800 block">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Management</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Deep SEO Structure Grid (Hyvä clean grid layout) -->
+            <div class="border-b border-stone-800 pb-12 mb-8">
+                <h5 class="text-stone-300 font-bold mb-6 text-[11px] uppercase tracking-widest">Site Directory</h5>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-[11px] font-light leading-loose text-stone-500">
+                    <div>
+                        <strong class="text-stone-300 font-semibold block mb-2 uppercase tracking-wide">Log Cabins</strong> 
+                        <div class="flex flex-wrap gap-x-3">
+                            <a href="#" class="hover:text-white transition">Traditional</a>
+                            <a href="#" class="hover:text-white transition">Modern</a>
+                            <a href="#" class="hover:text-white transition">Small</a>
+                            <a href="#" class="hover:text-white transition">Large</a>
+                            <a href="#" class="hover:text-white transition">Residential</a>
+                            <a href="#" class="hover:text-white transition">1-2 Bedrooms</a>
+                            <a href="#" class="hover:text-white transition">Insulated</a>
+                            <a href="#" class="hover:text-white transition">Mobile</a>
+                            <a href="#" class="hover:text-white transition">Offices</a>
+                            <a href="#" class="hover:text-white transition">Summer Houses</a>
+                            <a href="#" class="hover:text-white transition">With Storage</a>
+                            <a href="#" class="hover:text-white transition">With Veranda</a>
+                            <a href="#" class="hover:text-white transition">Apex/Flat Roof</a>
+                            <a href="#" class="hover:text-white transition">BBQ Huts</a>
+                        </div>
+                    </div>
+                    <div>
+                        <strong class="text-stone-300 font-semibold block mb-2 uppercase tracking-wide">Garden Rooms</strong> 
+                        <div class="flex flex-wrap gap-x-3">
+                            <a href="#" class="hover:text-white transition">Contemporary</a>
+                            <a href="#" class="hover:text-white transition">Traditional</a>
+                            <a href="#" class="hover:text-white transition">Studios</a>
+                            <a href="#" class="hover:text-white transition">Gyms</a>
+                            <a href="#" class="hover:text-white transition">SIPs Rooms</a>
+                            <a href="#" class="hover:text-white transition">With Toilet</a>
+                            <a href="#" class="hover:text-white transition">Man Cave</a>
+                            <a href="#" class="hover:text-white transition">3x3m to 7x4m</a>
+                            <strong class="text-stone-300 font-semibold block w-full mt-4 mb-2 uppercase tracking-wide">Pods & Annexes</strong>
+                            <a href="#" class="hover:text-white transition">Office Pods</a>
+                            <a href="#" class="hover:text-white transition">Camping Pods</a>
+                            <a href="#" class="hover:text-white transition">Garden Lodges</a>
+                        </div>
+                    </div>
+                    <div>
+                        <strong class="text-stone-300 font-semibold block mb-2 uppercase tracking-wide">Garages & Carports</strong> 
+                        <div class="flex flex-wrap gap-x-3">
+                            <a href="#" class="hover:text-white transition">Single Garages</a>
+                            <a href="#" class="hover:text-white transition">Double Garages</a>
+                            <a href="#" class="hover:text-white transition">With Carport</a>
+                            <a href="#" class="hover:text-white transition">Log Garages</a>
+                            <a href="#" class="hover:text-white transition">Single Carports</a>
+                            <a href="#" class="hover:text-white transition">Double Carports</a>
+                            <a href="#" class="hover:text-white transition">With Storage Shed</a>
+                        </div>
+                    </div>
+                    <div>
+                        <strong class="text-stone-300 font-semibold block mb-2 uppercase tracking-wide">Outdoor Saunas</strong> 
+                        <div class="flex flex-wrap gap-x-3">
+                            <a href="#" class="hover:text-white transition">Cabin Style</a>
+                            <a href="#" class="hover:text-white transition">Modern Saunas</a>
+                            <a href="#" class="hover:text-white transition">With Changing Room</a>
+                            <a href="#" class="hover:text-white transition">With Shower</a>
+                            <a href="#" class="hover:text-white transition">Wood Burning</a>
+                            <strong class="text-stone-300 font-semibold block w-full mt-4 mb-2 uppercase tracking-wide">Barrel Saunas</strong>
+                            <a href="#" class="hover:text-white transition">Panoramic</a>
+                            <a href="#" class="hover:text-white transition">Wood Fired</a>
+                            <a href="#" class="hover:text-white transition">1-2 Person</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal & International -->
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 text-[11px] font-light text-stone-500">
+                <div class="max-w-2xl">
+                    <p>Quick Garden Limited is registered in England Company Number 08398831. Registered office: Unit 3 Seeleys Park 4 Seeleys Road Birmingham B11 2LR England.</p>
+                    <p class="mt-1">Authorised and regulated by the Financial Conduct Authority, Firm Reference Number 658783. We act as a credit broker, not a lender.</p>
+                </div>
+                <div class="lg:text-right">
+                    <p>© 2026 Quick Garden Ltd. International regions:</p>
+                    <p class="mt-1 flex gap-3 lg:justify-end uppercase font-semibold text-stone-400">
+                        <a href="#" class="hover:text-white transition-colors">FR</a> 
+                        <a href="#" class="hover:text-white transition-colors">DE</a> 
+                        <a href="#" class="hover:text-white transition-colors">IT</a> 
+                        <a href="#" class="hover:text-white transition-colors">ES</a> 
+                        <a href="#" class="hover:text-white transition-colors">PT</a> 
+                        <a href="#" class="hover:text-white transition-colors">NL</a> 
+                        <a href="#" class="hover:text-white transition-colors">SE</a> 
+                        <a href="#" class="hover:text-white transition-colors">AT</a> 
+                        <a href="#" class="hover:text-white transition-colors">PL</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
