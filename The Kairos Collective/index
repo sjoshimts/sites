@@ -1,0 +1,596 @@
+	<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamono - Vintage & Antique Furniture, Lighting & Art</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Font Assignments */
+        body { font-family: 'Inter', sans-serif; color: #1a1a1a; background-color: #faf9f6; }
+        h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Smooth Image Hover Effects */
+        .img-zoom-container { overflow: hidden; }
+        .img-zoom { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .group:hover .img-zoom { transform: scale(1.07); }
+        
+        /* Mega Menu Transitions */
+        .mega-menu { opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); }
+        .nav-item:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf9f6; }
+        ::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #999; }
+    </style>
+</head>
+<body class="antialiased text-gray-900 bg-[#faf9f6]">
+
+    <!-- USP Top Bar -->
+    <div class="bg-[#1a1a1a] text-white text-xs font-medium uppercase tracking-wider py-2.5 text-center px-4 relative z-50">
+        Free Shipping to London on selected products - prices include all customs & import duties
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md z-40 border-b border-gray-100 transition-all duration-300" id="header">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center h-20">
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center gap-1.5 w-8 h-8">
+                <span class="w-6 h-[2px] bg-black block"></span>
+                <span class="w-6 h-[2px] bg-black block"></span>
+                <span class="w-6 h-[2px] bg-black block"></span>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0" aria-label="Pamono Home">
+                <img src="https://www.pamono.co.uk/skin/frontend/lamono/redesign/images/logo/pamono-chairish-sharp.svg" alt="Pamono Logo" class="h-6 md:h-8">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 h-full">
+                <!-- Nav Item: What's New -->
+                <div class="nav-item h-full flex items-center group relative">
+                    <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">What's New</a>
+                    <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[1200px] bg-white border border-gray-100 shadow-2xl p-12 flex gap-12 cursor-default">
+                        <div class="w-1/3">
+                            <img src="https://www.pamono.co.uk/media/catalog/category/Furniture.jpg" class="w-full aspect-[4/3] object-cover mb-4" alt="What's New">
+                            <h3 class="font-serif text-2xl mb-2">Shop Our Latest Finds</h3>
+                            <p class="text-sm text-gray-500 leading-relaxed">Shop our latest vintage and contemporary design finds from around the globe.</p>
+                        </div>
+                        <div class="w-2/3 grid grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="font-semibold text-xs uppercase tracking-widest mb-4 border-b pb-2">New Arrivals</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li><a href="#" class="hover:text-black transition">New Today</a></li>
+                                    <li><a href="#" class="hover:text-black transition">New This Week</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Seating</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Tables</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Storage</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs uppercase tracking-widest mb-4 border-b pb-2">More Categories</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li><a href="#" class="hover:text-black transition">Lighting</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Accessories</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Art</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Jewelry & Watches</a></li>
+                                    <li><a href="#" class="hover:text-black transition">Building Elements</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Item: Furniture -->
+                <div class="nav-item h-full flex items-center group relative">
+                    <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Furniture</a>
+                    <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[1200px] bg-white border border-gray-100 shadow-2xl p-12 flex gap-12">
+                        <div class="w-1/4">
+                            <h3 class="font-serif text-2xl mb-4">Furniture</h3>
+                            <p class="text-sm text-gray-500 mb-6">Shop seating, tables, storage, and more from our vintage and contemporary collections</p>
+                            <a href="#" class="text-xs uppercase tracking-widest font-semibold border-b border-black pb-1 hover:text-gray-500">All Furniture</a>
+                        </div>
+                        <div class="w-3/4 grid grid-cols-3 gap-8">
+                            <div>
+                                <h4 class="font-semibold text-xs uppercase tracking-widest mb-4 border-b pb-2">Seating</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li><a href="#" class="hover:text-black">Side Chairs & Dining</a></li>
+                                    <li><a href="#" class="hover:text-black">Lounge Chairs & Armchairs</a></li>
+                                    <li><a href="#" class="hover:text-black">Couches & Sofas</a></li>
+                                    <li><a href="#" class="hover:text-black">Office Chairs</a></li>
+                                    <li><a href="#" class="hover:text-black">Beds & Bedroom Sets</a></li>
+                                    <li><a href="#" class="hover:text-black">Daybeds & Chaise Lounges</a></li>
+                                    <li><a href="#" class="hover:text-black">Benches & Stools</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs uppercase tracking-widest mb-4 border-b pb-2">Tables</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li><a href="#" class="hover:text-black">Coffee & Side Tables</a></li>
+                                    <li><a href="#" class="hover:text-black">Dining Tables & Sets</a></li>
+                                    <li><a href="#" class="hover:text-black">Desks & Worktables</a></li>
+                                    <li><a href="#" class="hover:text-black">Console Tables</a></li>
+                                    <li><a href="#" class="hover:text-black">Nightstands</a></li>
+                                    <li><a href="#" class="hover:text-black">Garden Tables</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xs uppercase tracking-widest mb-4 border-b pb-2">Storage</h4>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li><a href="#" class="hover:text-black">Cabinets & Wardrobes</a></li>
+                                    <li><a href="#" class="hover:text-black">Shelves & Wall Units</a></li>
+                                    <li><a href="#" class="hover:text-black">Sideboards & Buffets</a></li>
+                                    <li><a href="#" class="hover:text-black">Dressers & Chests</a></li>
+                                    <li><a href="#" class="hover:text-black">Serving Carts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nav Item: Lighting -->
+                <div class="nav-item h-full flex items-center group relative">
+                    <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Lighting</a>
+                    <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 w-[800px] bg-white border border-gray-100 shadow-2xl p-12 flex gap-12">
+                        <div class="w-1/3">
+                            <h3 class="font-serif text-2xl mb-4">Lighting</h3>
+                            <p class="text-sm text-gray-500 mb-6">Shop lamps, sconces, pendants, and chandeliers from the early-20th century to today.</p>
+                            <a href="#" class="text-xs uppercase tracking-widest font-semibold border-b border-black pb-1 hover:text-gray-500">All Lighting</a>
+                        </div>
+                        <div class="w-2/3 grid grid-cols-2 gap-8">
+                            <div>
+                                <ul class="space-y-3 text-sm text-gray-600 mt-2">
+                                    <li><a href="#" class="hover:text-black">Ceiling Lights</a></li>
+                                    <li><a href="#" class="hover:text-black">Chandeliers</a></li>
+                                    <li><a href="#" class="hover:text-black">Pendant Lights</a></li>
+                                    <li><a href="#" class="hover:text-black">Table Lamps</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="space-y-3 text-sm text-gray-600 mt-2">
+                                    <li><a href="#" class="hover:text-black">Wall Lights & Sconces</a></li>
+                                    <li><a href="#" class="hover:text-black">Floor Lamps</a></li>
+                                    <li><a href="#" class="hover:text-black">Garden Lighting</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Nav Items (Simplified for visual brevity, matching content) -->
+                <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Decor</a>
+                <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Contemporary</a>
+                <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Art</a>
+                <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Jewelry & Watches</a>
+                <a href="#" class="text-sm font-medium tracking-wide uppercase hover:text-gray-500 transition-colors">Trade</a>
+                <a href="#" class="text-sm font-medium tracking-wide uppercase text-red-600 hover:text-red-800 transition-colors">Sale</a>
+            </nav>
+
+            <!-- Utility Icons -->
+            <div class="flex items-center space-x-5 lg:space-x-6">
+                <button aria-label="Search" class="hover:text-gray-500 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+                <div class="hidden lg:flex items-center space-x-4 text-xs font-medium uppercase tracking-widest border-l border-gray-200 pl-6">
+                    <a href="#" class="hover:text-gray-500 transition">Sign Up</a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="hover:text-gray-500 transition">Log In</a>
+                </div>
+                <button aria-label="Wishlist" class="hover:text-gray-500 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                </button>
+                <button aria-label="Cart" class="hover:text-gray-500 transition relative">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <span class="absolute -top-1.5 -right-2 bg-black text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 transform -translate-x-full transition-transform duration-300 overflow-y-auto">
+        <div class="p-6">
+            <button id="close-mobile-menu" class="absolute top-6 right-6">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <nav class="flex flex-col space-y-6 mt-12 text-lg font-serif">
+                <a href="#" class="border-b pb-2">What's New</a>
+                <a href="#" class="border-b pb-2">Furniture</a>
+                <a href="#" class="border-b pb-2">Lighting</a>
+                <a href="#" class="border-b pb-2">Decor</a>
+                <a href="#" class="border-b pb-2">Contemporary</a>
+                <a href="#" class="border-b pb-2">Art</a>
+                <a href="#" class="border-b pb-2">Jewelry & Watches</a>
+                <a href="#" class="border-b pb-2">Trade</a>
+                <a href="#" class="border-b pb-2 text-red-600">Sale</a>
+            </nav>
+            <div class="mt-12 flex flex-col space-y-4 text-sm font-medium uppercase tracking-widest">
+                <a href="#" class="bg-black text-white text-center py-3">Log In / Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HERO (Cinematic Full Width) -->
+    <section class="relative h-[85vh] lg:h-[90vh] w-full overflow-hidden group">
+        <img src="https://cdn20.pamono.com/l/f/2026/01/0000079037-2400x1600/img.jpg" alt="The Rare Edit" class="absolute inset-0 w-full h-full object-cover img-zoom">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div class="absolute inset-0 flex flex-col justify-end items-center text-center pb-24 px-4">
+            <span class="text-white text-xs font-semibold uppercase tracking-[0.2em] mb-4 drop-shadow-md">Explore</span>
+            <h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-serif mb-6 drop-shadow-lg">The Rare Edit</h1>
+            <p class="text-white text-lg md:text-xl font-light mb-10 max-w-2xl drop-shadow-md">Shop our monthly roundup of rarities and art</p>
+            <a href="#" class="inline-block bg-white text-black px-12 py-4 text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-colors duration-300">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- TRUST BANNER -->
+    <section class="bg-white border-b border-gray-200 py-8 hidden md:block">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 flex justify-between items-center text-xs font-semibold uppercase tracking-widest text-gray-500">
+            <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> World-Class Design</span>
+            <span>|</span>
+            <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg> Inspiring Editorial</span>
+            <span>|</span>
+            <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> Worldwide Shipping</span>
+            <span>|</span>
+            <span class="flex items-center gap-2"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"></path></svg> Outstanding Service</span>
+        </div>
+    </section>
+
+    <!-- FEATURED HIGHLIGHTS (2x2 Asymmetric Grid replacing Carousel) -->
+    <section class="max-w-[1600px] mx-auto px-4 lg:px-12 py-16 lg:py-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
+            <!-- Investment Edit -->
+            <a href="#" class="group relative overflow-hidden aspect-[4/3] block img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/f/2025/09/0000078980-2400x1600/img.jpg" alt="The Investment Edit" class="w-full h-full object-cover img-zoom">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2">Monthly Roundup</p>
+                    <h3 class="font-serif text-3xl md:text-4xl mb-2">The Investment Edit</h3>
+                    <p class="font-light text-sm">Designs that cultivate a legacy and grow in value</p>
+                </div>
+            </a>
+            <!-- Bestsellers -->
+            <a href="#" class="group relative overflow-hidden aspect-[4/3] block img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/f/2026/01/0000079036-2400x1600/img.jpg" alt="Vintage You Will Love" class="w-full h-full object-cover img-zoom">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2">Bestsellers</p>
+                    <h3 class="font-serif text-3xl md:text-4xl mb-2">Vintage You Will Love</h3>
+                    <p class="font-light text-sm">Discover PAMONO's all-time top designs</p>
+                </div>
+            </a>
+            <!-- Trade Program -->
+            <a href="#" class="group relative overflow-hidden aspect-[4/3] block img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/f/2025/09/0000078982-2400x1600/img.jpg" alt="Trade Program" class="w-full h-full object-cover img-zoom">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition duration-500"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2">Design Professionals</p>
+                    <h3 class="font-serif text-3xl md:text-4xl mb-2">Trade Program</h3>
+                    <p class="font-light text-sm">Up to 30% off and many other benefits</p>
+                </div>
+            </a>
+            <!-- Newsletter Highlight -->
+            <a href="#" class="group relative overflow-hidden aspect-[4/3] block img-zoom-container bg-[#1a1a1a]">
+                <img src="https://cdn20.pamono.com/l/f/2025/09/0000078983-2400x1600/img.jpg" alt="A Dose of Inspiration" class="w-full h-full object-cover img-zoom opacity-80">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-500"></div>
+                <div class="absolute bottom-8 left-8 text-white pr-8">
+                    <p class="text-xs font-bold uppercase tracking-widest mb-2">Exclusive</p>
+                    <h3 class="font-serif text-3xl md:text-4xl mb-2">A Dose of Inspiration</h3>
+                    <p class="font-light text-sm">Our weekly newsletter is your door to a world full of design, art, and beautiful things</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE CURATED HOME (Editorial Grid) -->
+    <section class="bg-white py-16 lg:py-24">
+        <div class="max-w-[1600px] mx-auto px-4 lg:px-12">
+            <header class="text-center mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl mb-4">The Curated Home</h2>
+                <div class="h-px w-24 bg-black mx-auto"></div>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Large Left (Sideboards) -->
+                <article class="lg:col-span-7 group cursor-pointer">
+                    <div class="overflow-hidden mb-6 img-zoom-container bg-gray-100 aspect-[4/3]">
+                        <img src="https://cdn20.pamono.com/l/s/2025/09/0000078984-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Best of Sideboards">
+                    </div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Explore</p>
+                    <h3 class="font-serif text-3xl mb-2 group-hover:text-gray-600 transition">Best of Sideboards</h3>
+                    <p class="text-gray-600">Our curated sideboards offer style and function</p>
+                </article>
+
+                <!-- Two Stacked Right (Seating & Dining) -->
+                <div class="lg:col-span-5 flex flex-col gap-8">
+                    <article class="group cursor-pointer">
+                        <div class="overflow-hidden mb-6 img-zoom-container bg-gray-100 aspect-video">
+                            <img src="https://cdn20.pamono.com/l/s/2025/09/0000078985-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Trending Seating">
+                        </div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Discover</p>
+                        <h3 class="font-serif text-2xl mb-2 group-hover:text-gray-600 transition">Trending Seating</h3>
+                        <p class="text-gray-600 text-sm">Beautiful seating for every occasion</p>
+                    </article>
+                    <article class="group cursor-pointer">
+                        <div class="overflow-hidden mb-6 img-zoom-container bg-gray-100 aspect-video">
+                            <img src="https://cdn20.pamono.com/l/s/2025/09/0000078986-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Dine with Style">
+                        </div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">Discover</p>
+                        <h3 class="font-serif text-2xl mb-2 group-hover:text-gray-600 transition">Dine with Style</h3>
+                        <p class="text-gray-600 text-sm">Shop the most beautiful dining sets out there</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ERAS & STYLES (Tall 3-Column Grid) -->
+    <section class="max-w-[1600px] mx-auto px-4 lg:px-12 py-16 lg:py-24">
+        <header class="text-center mb-16">
+            <h2 class="font-serif text-4xl lg:text-5xl mb-4">Eras & Styles</h2>
+            <div class="h-px w-24 bg-black mx-auto"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Antique -->
+            <article class="group text-center">
+                <div class="overflow-hidden mb-8 img-zoom-container bg-gray-100 aspect-[3/4]">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078991-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Antique">
+                </div>
+                <h3 class="font-serif text-3xl mb-3">Antique</h3>
+                <p class="text-gray-500 text-sm italic mb-6">Pre-1920s Design</p>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition">Shop Category</a>
+            </article>
+            <!-- Vintage -->
+            <article class="group text-center">
+                <div class="overflow-hidden mb-8 img-zoom-container bg-gray-100 aspect-[3/4]">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078990-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Vintage">
+                </div>
+                <h3 class="font-serif text-3xl mb-3">Vintage</h3>
+                <p class="text-gray-500 text-sm italic mb-6">20th century design made to last</p>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition">Shop Category</a>
+            </article>
+            <!-- Contemporary -->
+            <article class="group text-center">
+                <div class="overflow-hidden mb-8 img-zoom-container bg-gray-100 aspect-[3/4]">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078992-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Contemporary">
+                </div>
+                <h3 class="font-serif text-3xl mb-3">Contemporary</h3>
+                <p class="text-gray-500 text-sm italic mb-6">Design in the now</p>
+                <a href="#" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition">Shop Category</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- RECOMMENDED & BESTSELLERS (Full width slider illusion) -->
+    <section class="bg-[#1a1a1a] text-white py-20 lg:py-32">
+        <div class="max-w-[1600px] mx-auto px-4 lg:px-12 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/3">
+                <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Inspiration</p>
+                <h2 class="font-serif text-5xl lg:text-6xl mb-6">Bestsellers</h2>
+                <p class="text-gray-300 mb-10 text-lg font-light leading-relaxed">Discover a collection of our all time best-selling designs. Hand-picked and highly sought after by collectors worldwide.</p>
+                <a href="#" class="inline-block border border-white px-10 py-4 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors duration-300">Explore Collection</a>
+            </div>
+            <div class="lg:w-2/3 w-full">
+                <div class="group relative overflow-hidden aspect-[16/9] lg:aspect-[2/1] img-zoom-container">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078988-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Bestsellers">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: EDITORIAL & CULTURE (Masonry/Mixed Grid) -->
+    <section class="max-w-[1600px] mx-auto px-4 lg:px-12 py-16 lg:py-24">
+        <header class="text-center mb-16">
+            <h2 class="font-serif text-4xl lg:text-5xl mb-4">Culture & Curation</h2>
+            <div class="h-px w-24 bg-black mx-auto"></div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Art Edit -->
+            <article class="lg:col-span-2 group cursor-pointer relative overflow-hidden aspect-video lg:aspect-auto h-full img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/s/2025/09/0000078987-2400x1600/img.jpg" class="absolute inset-0 w-full h-full object-cover img-zoom" alt="The Art Edit">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <p class="text-[10px] font-bold uppercase tracking-widest mb-1">Inspiration</p>
+                    <h3 class="font-serif text-3xl mb-1">The Art Edit</h3>
+                    <p class="text-sm font-light">Our art editor's favourite picks</p>
+                </div>
+            </article>
+            
+            <!-- UK Galleries -->
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden mb-4 img-zoom-container aspect-square bg-gray-100">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078989-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Best of UK Galleries">
+                </div>
+                <h3 class="font-serif text-xl mb-1">Best of UK Galleries</h3>
+                <p class="text-gray-500 text-sm">Must-have vintage & fine antiques</p>
+            </article>
+
+            <!-- Editor's Picks -->
+            <article class="group cursor-pointer">
+                <div class="overflow-hidden mb-4 img-zoom-container aspect-square bg-gray-100">
+                    <img src="https://cdn20.pamono.com/l/s/2025/09/0000078995-2400x1600/img.jpg" class="w-full h-full object-cover img-zoom" alt="Editor's picks">
+                </div>
+                <h3 class="font-serif text-xl mb-1">Editor's Picks</h3>
+                <p class="text-gray-500 text-sm">Our monthly edit of treasures</p>
+            </article>
+
+            <!-- Get Inspired -->
+            <article class="lg:col-span-2 group cursor-pointer relative overflow-hidden aspect-video lg:aspect-[2/1] img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/s/2025/09/0000078996-2400x1600/img.jpg" class="absolute inset-0 w-full h-full object-cover img-zoom" alt="Get Inspired">
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <h3 class="font-serif text-3xl mb-1">Get Inspired</h3>
+                    <p class="text-sm font-light max-w-sm">Discover the people, places, and things that shape design.</p>
+                </div>
+            </article>
+
+            <!-- Become a Vendor -->
+            <article class="lg:col-span-2 group cursor-pointer relative overflow-hidden aspect-video lg:aspect-[2/1] img-zoom-container">
+                <img src="https://cdn20.pamono.com/l/s/2025/09/0000078994-2400x1600/img.jpg" class="absolute inset-0 w-full h-full object-cover img-zoom" alt="Become a Vendor">
+                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition"></div>
+                <div class="absolute bottom-6 left-6 text-white">
+                    <p class="text-[10px] font-bold uppercase tracking-widest mb-1">Apply</p>
+                    <h3 class="font-serif text-3xl mb-1">Become a Vendor</h3>
+                    <p class="text-sm font-light">Make the most of your business by joining us.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- BRAND STORY / INTRO (Magazine Split Layout) -->
+    <section class="bg-white border-t border-gray-100">
+        <div class="flex flex-col lg:flex-row">
+            <!-- Image Side -->
+            <div class="lg:w-1/2 relative h-[50vh] lg:h-auto">
+                <img src="https://cdn1.pamono.com/l/f/2017/05/0000063060-0800x0501/img.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Pamono Interior">
+            </div>
+            <!-- Text Side -->
+            <div class="lg:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24 bg-[#faf9f6]">
+                <div class="max-w-xl">
+                    <h2 class="font-serif text-4xl lg:text-5xl mb-8 leading-tight">Welcome to Pamono, your source for design for a life less ordinary!</h2>
+                    
+                    <div class="prose prose-lg text-gray-600 font-light leading-relaxed mb-10">
+                        <p class="mb-4">Pamono is a one-of-a-kind marketplace and magazine specializing in distinctive design objects and the stories behind them. We believe that a life well lived means surrounding yourself with beauty and soul, so we work hard to offer you a collection of quality, character-rich furniture, lighting, and decorative accessories you won’t find anywhere else.</p>
+                        <p class="mb-4">Our passionate team scours the globe to source from established and emerging galleries, makers, and designers both near and far—and then delivers your purchases directly to your doorstep.</p>
+                        <p>Whether you’re new to design or already an expert, shopping for yourself or for a client, our curated collection has something for everyone.</p>
+                    </div>
+
+                    <a href="#" class="inline-block border-b-2 border-black pb-1 text-sm font-bold uppercase tracking-widest hover:text-gray-500 hover:border-gray-500 transition">Read Our Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER SIGNUP -->
+    <section class="bg-[#e8e6e1] py-20 px-4 text-center">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-serif text-4xl mb-4">Get your weekly design fix!</h2>
+            <p class="text-gray-600 mb-8 font-light">Sign up for our newsletter to stay up-to-date on our latest design finds and inspiring stories. Plus you'll never miss promotions and discounts.</p>
+            <form class="flex flex-col sm:flex-row max-w-lg mx-auto">
+                <input type="email" placeholder="Email address" class="flex-grow px-6 py-4 bg-white border border-transparent focus:outline-none focus:border-black text-sm transition-colors mb-4 sm:mb-0" required>
+                <button type="submit" class="bg-black text-white px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PREMIUM FOOTER -->
+    <footer class="bg-[#1a1a1a] text-white pt-20 pb-10 px-6 lg:px-12">
+        <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+            
+            <!-- Column 1 -->
+            <div>
+                <h4 class="font-serif text-xl mb-6">Pamono</h4>
+                <ul class="space-y-3 text-sm text-gray-400 font-light">
+                    <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                    <li><a href="#" class="hover:text-white transition">Jobs</a></li>
+                    <li><a href="#" class="hover:text-white transition">Vendor Application</a></li>
+                    <li><a href="#" class="hover:text-white transition">Trade Program</a></li>
+                    <li><a href="#" class="hover:text-white transition">Vendor Login</a></li>
+                    <li><a href="#" class="hover:text-white transition">Press</a></li>
+                    <li><a href="#" class="hover:text-white transition">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h4 class="font-serif text-xl mb-6">Customer Service</h4>
+                <ul class="space-y-3 text-sm text-gray-400 font-light">
+                    <li><a href="#" class="hover:text-white transition">Help & FAQ</a></li>
+                    <li><a href="#" class="hover:text-white transition">Contact Us</a></li>
+                    <li><a href="#" class="hover:text-white transition">Terms & Conditions</a></li>
+                    <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition">Purchase Protection</a></li>
+                    <li><a href="#" class="hover:text-white transition">Gift Cards</a></li>
+                    <li><a href="#" class="hover:text-white transition">Design Guide</a></li>
+                    <li><a href="#" class="hover:text-white transition">Sell a personal item</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <h4 class="font-serif text-xl mb-6">Payment & Apps</h4>
+                <div class="flex items-center gap-4 mb-4 bg-white/10 w-fit px-4 py-2 rounded">
+                    <img src="https://www.pamono.co.uk/skin/frontend/lamono/redesign/images/payment-methods/paypal.png" alt="PayPal" class="h-5 object-contain filter invert brightness-0">
+                    <img src="https://www.pamono.co.uk/skin/frontend/lamono/redesign/images/payment-methods/visa.png" alt="VISA" class="h-5 object-contain filter invert brightness-0">
+                    <img src="https://www.pamono.co.uk/skin/frontend/lamono/redesign/images/payment-methods/mastercard.png" alt="MasterCard" class="h-5 object-contain filter invert brightness-0">
+                </div>
+                <p class="text-sm text-gray-400 font-light mb-8">Bank Transfer Accepted</p>
+                
+                <h4 class="font-serif text-xl mb-4">Pamono App</h4>
+                <div class="flex flex-col gap-3">
+                    <a href="#" class="opacity-80 hover:opacity-100 transition"><img src="https://www.pamono.co.uk/skin/frontend/lamono/redesign/images/app-store-icons/app-store-en.png" alt="App Store" class="h-10"></a>
+                    <a href="#" class="opacity-80 hover:opacity-100 transition"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play" class="h-14 -ml-2"></a>
+                </div>
+            </div>
+
+            <!-- Column 4 -->
+            <div>
+                <h4 class="font-serif text-xl mb-6">Join Our Social Network</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-light">
+                    <li><a href="#" class="flex items-center gap-3 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        Follow us on Twitter
+                    </a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        Follow us on Facebook
+                    </a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.163 0 7.398 2.967 7.398 6.923 0 4.136-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+                        Follow us on Pinterest
+                    </a></li>
+                    <li><a href="#" class="flex items-center gap-3 hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Follow us on Instagram
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-[1600px] mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+            <p>© 2026 Pamono GmbH. <a href="#" class="hover:text-white transition underline ml-2">Imprint</a></p>
+            <div class="mt-4 md:mt-0 flex gap-4">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactivity Script -->
+    <script>
+        // Header sticky state & mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header');
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const closeMobileBtn = document.getElementById('close-mobile-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('-translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeMobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('-translate-x-full');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>
