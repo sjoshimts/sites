@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Топ Шоп - Премиум шопинг искуство</title>
+    
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using a combination of Playfair for elegance and Inter for UI readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#dc2626',
+                            dark: '#0a0a0a',
+                            surface: '#f5f5f7', // Apple-like soft gray
+                            muted: '#86868b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-brand-dark font-sans antialiased selection:bg-brand-dark selection:text-white flex flex-col min-h-screen">
+
+    <!-- Minimal Utility Bar -->
+    <div class="bg-brand-dark text-white text-[11px] font-medium tracking-widest uppercase py-2.5 hidden md:block">
+        <div class="max-w-[1400px] mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-8 text-gray-400">
+                <span>За инфо и нарачки: <strong class="text-white">02 3094-550</strong></span>
+                <a href="#" class="hover:text-white transition-colors">Продавници</a>
+            </div>
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors">Најава</a>
+                <a href="#" class="flex items-center gap-1 text-[#d4af37] hover:text-white transition-colors">
+                    <i class="ph-fill ph-star"></i> Клуб 5*
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ultra-Clean Header -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-6 py-6 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img src="https://topshopmk.azureedge.net/skin/frontend/sm/topshop/images/logo.png" alt="Top Shop" class="h-8 object-contain">
+            </a>
+
+            <!-- Navigation - Centered -->
+            <nav class="hidden lg:block absolute left-1/2 -translate-x-1/2">
+                <ul class="flex items-center gap-10 text-[13px] font-medium tracking-wide uppercase text-gray-500">
+                    <li><a href="#" class="text-brand-dark transition-colors">Почетна</a></li>
+                    <li><a href="#" class="hover:text-brand-dark transition-colors">Домаќинство</a></li>
+                    <li><a href="#" class="hover:text-brand-dark transition-colors">Кујна</a></li>
+                    <li><a href="#" class="hover:text-brand-dark transition-colors">Спорт</a></li>
+                    <li><a href="#" class="hover:text-brand-dark transition-colors">Убавина</a></li>
+                    <li><a href="#" class="text-brand-red font-semibold hover:text-brand-dark transition-colors">Акција</a></li>
+                </ul>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center gap-6">
+                <button class="text-brand-dark hover:opacity-70 transition-opacity"><i class="ph ph-magnifying-glass text-2xl"></i></button>
+                <button class="hidden md:block text-brand-dark hover:opacity-70 transition-opacity"><i class="ph ph-user text-2xl"></i></button>
+                <button class="text-brand-dark hover:opacity-70 transition-opacity relative">
+                    <i class="ph ph-shopping-bag text-2xl"></i>
+                    <span class="absolute -bottom-1 -right-1 bg-brand-dark text-white text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+                <button class="lg:hidden text-brand-dark"><i class="ph ph-list text-2xl"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section - Magazine Style -->
+        <section class="max-w-[1400px] mx-auto px-4 md:px-6 py-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                <!-- Main Feature -->
+                <a href="#" class="lg:col-span-8 relative rounded-2xl overflow-hidden group block aspect-[16/9] md:aspect-[21/9]">
+                    <img src="https://topshopmk.azureedge.net/media/redboxdigital_banners/h/e/hero-sales-general-topshop-left-800x340-general-copy-5.png" alt="Hero Sales" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+                        <span class="text-white/80 text-xs md:text-sm tracking-[0.2em] uppercase font-semibold mb-3">Специјална Понуда</span>
+                        <h1 class="font-serif text-4xl md:text-6xl text-white mb-4 md:mb-6 leading-tight">Hero Sales <br>до -70%</h1>
+                        <div class="inline-flex items-center gap-3 text-white uppercase tracking-widest text-xs md:text-sm font-semibold group-hover:gap-5 transition-all">
+                            Откријте повеќе <i class="ph ph-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Side Feature -->
+                <a href="#" class="hidden lg:block lg:col-span-4 relative rounded-2xl overflow-hidden group bg-brand-surface aspect-[21/9] lg:aspect-auto">
+                    <img src="https://topshopmk.azureedge.net/media/redboxdigital_banners/k/i/kitchen-robot-topshop-left-800x340-general-copy-2.png" alt="Kitchen Robot" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1.5s] ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                        <h3 class="font-serif text-2xl md:text-3xl text-white mb-2">Кујнски робот</h3>
+                        <p class="text-gray-300 text-sm mb-4">Моќен процесор на храна.</p>
+                        <div class="flex items-baseline gap-3 mb-6">
+                            <span class="text-xl md:text-2xl font-bold text-white">6.490 ден.</span>
+                            <span class="text-sm text-gray-400 line-through">12.390 ден.</span>
+                        </div>
+                        <div class="h-10 md:h-12 w-full bg-white text-brand-dark rounded-full flex items-center justify-center text-xs md:text-sm font-semibold uppercase tracking-wider hover:bg-gray-100 transition-colors">
+                            Купи веднаш
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Elegant Brands Strip -->
+        <section class="max-w-[1400px] mx-auto px-6 py-12 mb-12">
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40">
+                <img src="https://topshopmk.azureedge.net/media/wysiwyg/liveactive/brands/dormeo.png" alt="Dormeo" class="h-6 md:h-8 object-contain hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+                <img src="https://topshopmk.azureedge.net/media/wysiwyg/liveactive/brands/delimano.png" alt="Delimano" class="h-6 md:h-8 object-contain hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+                <img src="https://topshopmk.azureedge.net/media/wysiwyg/liveactive/brands/wellneo.png" alt="Wellneo" class="h-6 md:h-8 object-contain hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+                <img src="https://topshopmk.azureedge.net/media/wysiwyg/Rovus/rovus.png" alt="Rovus" class="h-6 md:h-8 object-contain hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+            </div>
+        </section>
+
+        <!-- Premium Product Showcase -->
+        <section class="max-w-[1400px] mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="font-serif text-4xl md:text-5xl text-brand-dark mb-4">Избрано за вас.</h2>
+                    <p class="text-brand-muted text-lg font-light">Најсофистицираните производи од нашата колекција, дизајнирани да го подобрат вашето секојдневие.</p>
+                </div>
+                <a href="#" class="text-sm uppercase tracking-widest font-semibold border-b border-brand-dark pb-1 hover:text-brand-muted hover:border-brand-muted transition-all whitespace-nowrap">
+                    Види ги сите
+                </a>
+            </div>
+
+            <!-- Products Grid - Clean White Backgrounds with object-contain -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+                
+                <!-- Item 1 -->
+                <div class="group cursor-pointer">
+                    <!-- Image Wrapper with clean background -->
+                    <div class="relative aspect-square bg-white border border-gray-100 rounded-2xl p-6 mb-5 overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] group-hover:border-transparent">
+                        <div class="absolute top-4 left-4 z-10 flex gap-2">
+                            <span class="bg-brand-red text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full">-30%</span>
+                        </div>
+                        <img src="https://topshopmk.azureedge.net/media/catalog/product/cache/64/small_image/258x193/9df78eab33525d08d6e5fb8d27136e95/d/o/dormeo_air_comfort_mattress_4_render_1.jpg" alt="Dormeo Air+" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="px-1">
+                        <p class="text-[11px] uppercase tracking-widest text-brand-muted mb-2 font-semibold">Dormeo</p>
+                        <h3 class="text-lg font-medium text-brand-dark mb-3 line-clamp-2">Air+ Comfort Премиум Душек</h3>
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-medium">25.194 ден.</span>
+                            <span class="text-sm text-brand-muted line-through">39.990 ден.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-square bg-white border border-gray-100 rounded-2xl p-6 mb-5 overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] group-hover:border-transparent">
+                        <div class="absolute top-4 left-4 z-10 flex gap-2">
+                            <span class="bg-brand-dark text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full">-41%</span>
+                        </div>
+                        <img src="https://topshopmk.azureedge.net/media/catalog/product/cache/64/small_image/258x193/9df78eab33525d08d6e5fb8d27136e95/a/i/air-fryer-prime_3.jpg" alt="Delimano Air Fryer" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="px-1">
+                        <p class="text-[11px] uppercase tracking-widest text-brand-muted mb-2 font-semibold">Delimano</p>
+                        <h3 class="text-lg font-medium text-brand-dark mb-3 line-clamp-2">Air Fryer Prime Апарат за готвење</h3>
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-medium text-brand-red">3.690 ден.</span>
+                            <span class="text-sm text-brand-muted line-through">6.290 ден.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-square bg-white border border-gray-100 rounded-2xl p-6 mb-5 overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] group-hover:border-transparent">
+                        <div class="absolute top-4 left-4 z-10 flex gap-2">
+                            <span class="bg-brand-dark text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full">-39%</span>
+                        </div>
+                        <img src="https://topshopmk.azureedge.net/media/catalog/product/cache/64/small_image/258x193/9df78eab33525d08d6e5fb8d27136e95/1/9/1920x1440_rovus_new_product_16.jpg" alt="Rovus Vacuum" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="px-1">
+                        <p class="text-[11px] uppercase tracking-widest text-brand-muted mb-2 font-semibold">Rovus</p>
+                        <h3 class="text-lg font-medium text-brand-dark mb-3 line-clamp-2">Безжична правосмукалка PowerMax</h3>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-xl font-medium">10.990 ден.</span>
+                            <span class="text-sm text-brand-muted line-through">17.990 ден.</span>
+                        </div>
+                        <p class="text-xs text-[#d4af37] font-semibold"><i class="ph-fill ph-star"></i> Клуб 5* Цена: 10.690 ден.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group cursor-pointer">
+                    <div class="relative aspect-square bg-white border border-gray-100 rounded-2xl p-6 mb-5 overflow-hidden flex items-center justify-center transition-all duration-500 group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] group-hover:border-transparent">
+                        <div class="absolute top-4 left-4 z-10 flex gap-2">
+                            <span class="bg-brand-dark text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full">-38%</span>
+                        </div>
+                        <img src="https://topshopmk.azureedge.net/media/catalog/product/cache/64/small_image/258x193/9df78eab33525d08d6e5fb8d27136e95/d/l/dl_electric_pressure_multicooker_pro_5_5_l_3_1.jpg" alt="Delimano Multicooker" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="px-1">
+                        <p class="text-[11px] uppercase tracking-widest text-brand-muted mb-2 font-semibold">Delimano</p>
+                        <h3 class="text-lg font-medium text-brand-dark mb-3 line-clamp-2">Electric Pressure Мултикукер</h3>
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-medium">6.190 ден.</span>
+                            <span class="text-sm text-brand-muted line-through">9.990 ден.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Feature Story (Promo) -->
+        <section class="py-16 md:py-24 bg-brand-dark text-white my-12">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                    <div class="lg:w-1/2 text-center lg:text-left">
+                        <h2 class="font-serif text-4xl md:text-6xl mb-6 leading-tight">Откријте ја моќта на <br><span class="text-brand-muted">Air Fryer</span>.</h2>
+                        <p class="text-lg md:text-xl font-light text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                            Подготвувајте ги вашите омилени оброци до совршенство. Крцкави, вкусни и здрави, со значително помалку масло. 
+                        </p>
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 bg-white text-brand-dark text-sm font-bold uppercase tracking-widest rounded-full hover:bg-gray-200 transition-colors">
+                            Разгледај модели
+                        </a>
+                    </div>
+                    <div class="lg:w-1/2 w-full">
+                        <div class="relative aspect-video lg:aspect-[4/3] rounded-2xl overflow-hidden">
+                            <img src="https://www.studio-moderna-admin.com/media/catalog/product/f/r/friteza-slimbanner-desktop-v2.png" alt="Air Fryer Collection" class="absolute inset-0 w-full h-full object-cover lg:scale-105">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Editorial Categories -->
+        <section class="max-w-[1400px] mx-auto px-6 py-16 mb-16">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl text-brand-dark mb-4">Колекции</h2>
+                <p class="text-brand-muted">Истражете го нашиот внимателно избран асортиман.</p>
+            </div>
+
+            <!-- Restored Natural Aspect Ratios for Categories -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#" class="relative rounded-2xl overflow-hidden group block aspect-[4/3]">
+                    <img src="https://topshopmk.azureedge.net/media/wysiwyg/topshop/categories/Category_home_and_living.jpg" alt="Дом" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="font-serif text-2xl text-white">Дом</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="relative rounded-2xl overflow-hidden group block aspect-[4/3]">
+                    <img src="https://topshopmk.azureedge.net/media/wysiwyg/topshop/categories/Category_kitchen.jpg" alt="Кујна" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="font-serif text-2xl text-white">Кујна</h3>
+                    </div>
+                </a>
+                
+                <a href="#" class="relative rounded-2xl overflow-hidden group block aspect-[4/3]">
+                    <img src="https://topshopmk.azureedge.net/media/wysiwyg/topshop/categories/Category_sports_and_outdoor.jpg" alt="Фитнес" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="font-serif text-2xl text-white">Фитнес</h3>
+                    </div>
+                </a>
+
+                <a href="#" class="relative rounded-2xl overflow-hidden group block aspect-[4/3]">
+                    <img src="https://topshopmk.azureedge.net/media/wysiwyg/topshop/categories/Category_health_and_beauty.jpg" alt="Убавина" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
+                    <div class="absolute bottom-6 left-6">
+                        <h3 class="font-serif text-2xl text-white">Убавина</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Refined Minimal Footer -->
+    <footer class="bg-brand-surface pt-24 pb-12 mt-auto">
+        <div class="max-w-[1400px] mx-auto px-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+                <!-- Branding & Intro -->
+                <div class="lg:col-span-4">
+                    <img src="https://topshopmk.azureedge.net/skin/frontend/sm/topshop/images/logo.png" alt="Top Shop" class="h-8 object-contain mb-8 mix-blend-multiply opacity-80">
+                    <p class="text-brand-muted text-sm leading-relaxed mb-8">
+                        Специјализирани за иновативни решенија кои го унапредуваат секојдневниот живот. Од напредна фитнес опрема до револуционерни кујнски апарати.
+                    </p>
+                    <form class="relative">
+                        <input type="email" placeholder="Вашата е-маил адреса" class="w-full bg-white border-none text-sm px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-dark/10">
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 h-10 w-10 bg-brand-dark text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors">
+                            <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Navigation Columns -->
+                <div class="lg:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-brand-dark mb-6">Услуги</h4>
+                        <ul class="space-y-4 text-sm text-brand-muted">
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Достава</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Плаќање на рати</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Инструкции</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-brand-dark mb-6">Поддршка</h4>
+                        <ul class="space-y-4 text-sm text-brand-muted">
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Контакт</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Продавници</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">ЧПП</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-brand-dark mb-6">Инфо</h4>
+                        <ul class="space-y-4 text-sm text-brand-muted">
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Заштита на податоци</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Општи услови</a></li>
+                            <li><a href="#" class="hover:text-brand-dark transition-colors">Клуб 5* Правила</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-widest text-brand-dark mb-6">Следете нè</h4>
+                        <div class="flex gap-4">
+                            <a href="#" class="text-brand-muted hover:text-brand-dark text-2xl transition-colors"><i class="ph ph-facebook-logo"></i></a>
+                            <a href="#" class="text-brand-muted hover:text-brand-dark text-2xl transition-colors"><i class="ph ph-instagram-logo"></i></a>
+                            <a href="#" class="text-brand-muted hover:text-brand-dark text-2xl transition-colors"><i class="ph ph-youtube-logo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-muted">
+                <p>© 2026 Студио Модерна Дооел Скопје. Сите права се задржани.</p>
+                <div class="flex gap-6">
+                    <span class="flex items-center gap-2"><i class="ph ph-shield-check text-lg"></i> Безбедно купување</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
