@@ -22,7 +22,7 @@
                     colors: {
                         argo: {
                             yellow: '#FFC80A',
-                            dark: '#111111',
+                            dark: '#1C1C1C', /* Matches the original dark grey header */
                             gray: '#F8F9FA',
                             text: '#333333'
                         }
@@ -33,355 +33,339 @@
     </script>
 
     <style>
-        /* Custom Utilities */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
         .tab-content.active { display: block; }
-        
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-
-        .nav-link { position: relative; }
-        .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: -4px; left: 0; background-color: #FFC80A;
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
         
+        /* Dropdown Styles */
         .dropdown-menu {
             opacity: 0; visibility: hidden; transform: translateY(10px);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
         .group:hover .dropdown-menu {
             opacity: 1; visibility: visible; transform: translateY(0);
         }
     </style>
 </head>
-<body class="font-sans text-argo-text bg-white antialiased selection:bg-argo-yellow selection:text-argo-dark">
+<body class="font-sans text-argo-text bg-white antialiased">
 
-    <!-- Top Bar -->
-    <div class="bg-argo-dark text-white text-xs tracking-wider py-2 border-b border-white/10 hidden md:block">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-6">
+    <!-- Top Bar & Logo Area (Matches Original Dark Section) -->
+    <div class="bg-argo-dark py-4 px-6 relative z-50">
+        <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center h-auto md:h-16">
+            
+            <!-- Left: Contact Info -->
+            <div class="flex items-center space-x-6 text-white text-xs sm:text-sm font-light tracking-wide mb-4 md:mb-0 w-full md:w-1/3">
                 <a href="tel:9819130009" class="flex items-center space-x-2 hover:text-argo-yellow transition">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headermob.png" alt="Phone" class="h-4">
                     <span>9819130009</span>
                 </a>
                 <a href="mailto:info@argolighting.in" class="flex items-center space-x-2 hover:text-argo-yellow transition">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headeremail.png" alt="Email" class="h-3">
                     <span>info@argolighting.in</span>
                 </a>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="https://www.facebook.com/argolightingofficial/" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico1.png" alt="Facebook" class="h-4 w-4 filter invert opacity-80"></a>
-                <a href="https://twitter.com/Argolighting" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico2.png" alt="Twitter" class="h-4 w-4 filter invert opacity-80"></a>
-                <a href="https://www.linkedin.com/company/argo-lighting-private-limited" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico3.png" alt="LinkedIn" class="h-4 w-4 filter invert opacity-80"></a>
-                <a href="https://www.instagram.com/argolightingpvtltd" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico4.png" alt="Instagram" class="h-4 w-4 filter invert opacity-80"></a>
+
+            <!-- Center: Logo -->
+            <div class="flex justify-center w-full md:w-1/3 mb-4 md:mb-0">
+                <a href="#">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" alt="Argo Lighting" class="h-10 sm:h-12 object-contain">
+                </a>
+            </div>
+
+            <!-- Right: Social Icons -->
+            <div class="flex items-center justify-end space-x-3 w-full md:w-1/3">
+                <a href="https://www.facebook.com/argolightingofficial/" class="hover:opacity-75 transition bg-black/30 rounded-full p-2 border border-white/10">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico1.png" alt="Facebook" class="h-4 w-4 filter invert">
+                </a>
+                <a href="https://twitter.com/Argolighting" class="hover:opacity-75 transition bg-black/30 rounded-full p-2 border border-white/10">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico2.png" alt="Twitter" class="h-4 w-4 filter invert">
+                </a>
+                <a href="https://www.linkedin.com/company/argo-lighting-private-limited" class="hover:opacity-75 transition bg-black/30 rounded-full p-2 border border-white/10">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico3.png" alt="LinkedIn" class="h-4 w-4 filter invert">
+                </a>
+                <a href="https://www.instagram.com/argolightingpvtltd" class="hover:opacity-75 transition bg-black/30 rounded-full p-2 border border-white/10">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico4.png" alt="Instagram" class="h-4 w-4 filter invert">
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center h-20">
-            <!-- Logo -->
-            <a href="#" class="flex-shrink-0">
-                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" alt="Argo Lighting" class="h-10">
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden md:flex space-x-10 text-sm font-medium">
-                <a href="#" class="nav-link text-argo-dark">Home</a>
-                
-                <!-- About Dropdown -->
-                <div class="relative group cursor-pointer">
-                    <span class="nav-link text-argo-dark flex items-center">About Us <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
-                    <div class="dropdown-menu absolute top-full left-0 mt-4 w-48 bg-white border border-gray-100 shadow-xl py-2 rounded-md">
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Our Journey</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Company Profile</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Our Infrastructure</a>
-                    </div>
-                </div>
-
-                <!-- Products Dropdown -->
-                <div class="relative group cursor-pointer">
-                    <span class="nav-link text-argo-dark flex items-center">Products <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
-                    <div class="dropdown-menu absolute top-full left-0 mt-4 w-56 bg-white border border-gray-100 shadow-xl py-2 rounded-md">
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Retail</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Office Lighting</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Warehouse & Industrial</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Architectural</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Landscape Lighting</a>
-                        <a href="#" class="block px-6 py-2.5 text-xs text-gray-600 hover:text-argo-dark hover:bg-gray-50 transition">Outdoor Lighting</a>
-                    </div>
-                </div>
-
-                <a href="#" class="nav-link text-argo-dark">Contact Us</a>
-            </nav>
-
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button class="text-argo-dark hover:text-argo-yellow focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
+    <!-- Navigation Bar (Matches Original Yellow Strip) -->
+    <nav class="bg-argo-yellow sticky top-0 z-40 shadow-md border-b border-yellow-500/20">
+        <div class="max-w-[1400px] mx-auto px-6 hidden md:flex justify-center space-x-12">
+            <a href="#" class="py-3 text-sm font-bold text-argo-dark hover:text-black transition tracking-wider uppercase">Home</a>
+            
+            <div class="relative group">
+                <button class="py-3 text-sm font-bold text-argo-dark hover:text-black transition tracking-wider uppercase flex items-center">
+                    About Us
                 </button>
+                <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-xl rounded-b border-t-2 border-argo-yellow">
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Our Journey</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Company Profile</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark">Our Infrastructure</a>
+                </div>
             </div>
-        </div>
-    </header>
 
-    <!-- Hero Slider -->
-    <section class="relative w-full h-[60vh] md:h-[80vh] bg-argo-dark overflow-hidden group">
-        <div id="hero-slider" class="w-full h-full relative">
-            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_1.jpg" alt="Hero Banner 1" class="absolute inset-0 w-full h-full object-cover object-center opacity-100 transition-opacity duration-1000 slide">
-            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_2.jpg" alt="Hero Banner 2" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 slide">
-            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_3.jpg" alt="Hero Banner 3" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 slide">
+            <div class="relative group">
+                <button class="py-3 text-sm font-bold text-argo-dark hover:text-black transition tracking-wider uppercase flex items-center">
+                    Products
+                </button>
+                <div class="dropdown-menu absolute top-full left-1/2 -translate-x-1/2 w-56 bg-white shadow-xl rounded-b border-t-2 border-argo-yellow">
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Retail</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Office Lighting</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Warehouse & Industrial</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Architectural</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark border-b border-gray-100">Landscape Lighting</a>
+                    <a href="#" class="block px-6 py-3 text-xs font-semibold text-gray-700 hover:bg-gray-50 hover:text-argo-dark">Outdoor Lighting</a>
+                </div>
+            </div>
+
+            <a href="#" class="py-3 text-sm font-bold text-argo-dark hover:text-black transition tracking-wider uppercase">Contact Us</a>
         </div>
         
-        <!-- Controls -->
-        <button onclick="prevSlide()" class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-        </button>
-        <button onclick="nextSlide()" class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-all">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </button>
+        <!-- Mobile Nav Toggle -->
+        <div class="md:hidden flex justify-center p-3">
+            <button class="text-argo-dark font-bold text-sm tracking-wider uppercase flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                Menu
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Slider -->
+    <section class="relative w-full h-[50vh] md:h-[70vh] bg-argo-dark overflow-hidden group border-b border-gray-200">
+        <div id="hero-slider" class="w-full h-full relative">
+            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_1.jpg" alt="Banner" class="absolute inset-0 w-full h-full object-cover object-center opacity-100 transition-opacity duration-1000 slide">
+            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_2.jpg" alt="Banner" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 slide">
+            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/home_banners/newbanner_3.jpg" alt="Banner" class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-1000 slide">
+        </div>
     </section>
 
-    <!-- Trending Products Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-light text-argo-dark mb-4">Trending <span class="font-semibold">Products</span></h2>
-                <div class="w-16 h-1 bg-argo-yellow mx-auto"></div>
+    <!-- Trending Products Section (Matches Original Bordered Layout) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-[1200px] mx-auto px-6">
+            
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#4A4A4A] tracking-wide uppercase">Trending Products</h2>
             </div>
 
-            <!-- Custom Tabs -->
-            <div class="flex flex-wrap justify-center gap-4 mb-16 border-b border-gray-100 pb-2">
-                <button onclick="openTab('tab1')" class="tab-btn px-6 py-2 text-sm font-medium text-gray-400 hover:text-argo-dark border-b-2 border-transparent hover:border-argo-yellow transition-all duration-300 active-tab">Warehouse & Industrial</button>
-                <button onclick="openTab('tab2')" class="tab-btn px-6 py-2 text-sm font-medium text-gray-400 hover:text-argo-dark border-b-2 border-transparent hover:border-argo-yellow transition-all duration-300">Retail</button>
-                <button onclick="openTab('tab3')" class="tab-btn px-6 py-2 text-sm font-medium text-gray-400 hover:text-argo-dark border-b-2 border-transparent hover:border-argo-yellow transition-all duration-300">Architectural</button>
-                <button onclick="openTab('tab4')" class="tab-btn px-6 py-2 text-sm font-medium text-gray-400 hover:text-argo-dark border-b-2 border-transparent hover:border-argo-yellow transition-all duration-300">Landscape</button>
+            <!-- Authentic Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="openTab('tab1', this)" class="tab-btn px-6 py-2.5 text-xs font-bold rounded shadow-sm border border-transparent bg-argo-yellow text-argo-dark transition-all">Warehouse & Industrial</button>
+                <button onclick="openTab('tab2', this)" class="tab-btn px-6 py-2.5 text-xs font-bold rounded shadow-sm border border-gray-200 bg-white text-gray-500 hover:border-argo-yellow hover:text-argo-dark transition-all">Retail</button>
+                <button onclick="openTab('tab3', this)" class="tab-btn px-6 py-2.5 text-xs font-bold rounded shadow-sm border border-gray-200 bg-white text-gray-500 hover:border-argo-yellow hover:text-argo-dark transition-all">Architectural</button>
+                <button onclick="openTab('tab4', this)" class="tab-btn px-6 py-2.5 text-xs font-bold rounded shadow-sm border border-gray-200 bg-white text-gray-500 hover:border-argo-yellow hover:text-argo-dark transition-all">Landscape Lighting</button>
             </div>
 
             <!-- Tab 1: Warehouse & Industrial -->
             <div id="tab1" class="tab-content active">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/y/cynosure_bt1x2.jpg" alt="Cynosure B/T 1X2" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
+                    <!-- Product Card Original Style -->
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/y/cynosure_bt1x2.jpg" alt="Cynosure B/T 1X2" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Cynosure B/T 1X2</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">cynosure B/T 1X2</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/y/cynosure_bt_2x2.jpg" alt="Cynosure B/T 2X2" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/y/cynosure_bt_2x2.jpg" alt="Cynosure B/T 2X2" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Cynosure B/T 2X2</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">cynosure B/T 2X2</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/o/coin_b.jpg" alt="Coin S / Coin B" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/c/o/coin_b.jpg" alt="Coin S / Coin B" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Coin S / Coin B</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">coin S / coin B</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                 </div>
             </div>
 
             <!-- Tab 2: Retail -->
-            <div id="tab2" class="tab-content">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div id="tab2" class="tab-content hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
                         <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/t/r/trent-v_1_3.jpg" alt="Trent V - Track Series" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/t/r/trent-v_1_3.jpg" alt="Trent V" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-base font-medium text-argo-dark mb-4 text-center">Trent V - Track Series</h3>
-                        <a href="#" class="mt-auto px-6 py-2.5 text-[10px] font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">trent v - track</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
                         <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia2-both.jpg" alt="Grazia II" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia2-both.jpg" alt="Grazia II" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-base font-medium text-argo-dark mb-4 text-center">Grazia II</h3>
-                        <a href="#" class="mt-auto px-6 py-2.5 text-[10px] font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">grazia II</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
                         <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia-1-both_2.jpg" alt="Grazia AR I" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia-1-both_2.jpg" alt="Grazia AR I" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-base font-medium text-argo-dark mb-4 text-center">Grazia AR I</h3>
-                        <a href="#" class="mt-auto px-6 py-2.5 text-[10px] font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">grazia AR I</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
                         <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia2-ar-both.jpg" alt="Grazia AR II" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-grazia2-ar-both.jpg" alt="Grazia AR II" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-base font-medium text-argo-dark mb-4 text-center">Grazia AR II</h3>
-                        <a href="#" class="mt-auto px-6 py-2.5 text-[10px] font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">grazia AR II</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                 </div>
             </div>
 
             <!-- Tab 3: Architectural -->
-            <div id="tab3" class="tab-content">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div id="tab3" class="tab-content hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-planer-s.jpg" alt="Planer S" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-planer-s.jpg" alt="Planer S" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Planer S</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">planer S</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-lightline-r-both.jpg" alt="Lightline R" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-lightline-r-both.jpg" alt="Lightline R" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Lightline R</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">lightline R</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                     <!-- Product Card -->
-                    <div class="group bg-white rounded-xl p-6 hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-50 flex flex-col items-center">
-                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-4">
-                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-lightline-r-led-both.jpg" alt="Lightline S" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700">
+                    <div class="bg-white rounded p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center">
+                        <div class="w-full aspect-square mb-6 overflow-hidden flex items-center justify-center p-2">
+                            <img src="https://www.argolighting.co.in/media/catalog/product/cache/1/small_image/504x458/9df78eab33525d08d6e5fb8d27136e95/a/r/argo-lightline-r-led-both.jpg" alt="Lightline S" class="max-w-full max-h-full object-contain">
                         </div>
-                        <h3 class="text-lg font-medium text-argo-dark mb-4 text-center">Lightline S</h3>
-                        <a href="#" class="mt-auto px-8 py-3 text-xs font-semibold tracking-widest uppercase border border-argo-dark text-argo-dark group-hover:bg-argo-dark group-hover:text-white transition-colors duration-300">View Details</a>
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 text-center lowercase">lightline S</h3>
+                        <a href="#" class="mt-auto px-6 py-2 text-xs font-semibold rounded bg-[#333333] text-white hover:bg-argo-yellow hover:text-argo-dark transition-colors duration-300">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Tab 4: Landscape (Empty State) -->
-            <div id="tab4" class="tab-content text-center py-20 text-gray-400">
-                <svg class="mx-auto h-12 w-12 mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                <p>New collections arriving soon.</p>
+            <!-- Tab 4: Landscape -->
+            <div id="tab4" class="tab-content hidden text-center py-20 text-gray-400">
+                <p class="font-semibold">New collections arriving soon.</p>
             </div>
             
         </div>
     </section>
 
-    <!-- Moonlight Promo Section (Dark Elegance) -->
-    <section class="bg-zinc-950 py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Original Moonlight Section Overlay Architecture -->
+    <section class="bg-[#1a1a1a] py-16 relative w-full border-t border-b border-gray-700">
+        <div class="max-w-[1400px] mx-auto px-6 flex flex-col items-center">
+            <!-- Center Text Match -->
+            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" class="h-8 md:h-10 opacity-70 filter invert grayscale mb-4" alt="Argo">
+            <h2 class="text-white text-lg md:text-2xl font-light tracking-wide uppercase text-center mb-1">Introducing THE NEW LOOK OF DELIGHT</h2>
+            <h3 class="text-[#2a2a2a] text-6xl md:text-8xl font-black uppercase tracking-widest text-center mb-10 select-none">moonlight</h3>
             
-            <!-- Left Text Content -->
-            <div class="text-white">
-                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" class="h-8 filter invert brightness-0 mb-8 opacity-80" alt="Argo Logo">
-                <h4 class="text-argo-yellow text-sm font-semibold tracking-widest uppercase mb-4">Introducing</h4>
-                <h2 class="text-4xl md:text-5xl font-light leading-tight mb-2">The New Look of <br><span class="font-bold">Delight</span></h2>
-                <h3 class="text-6xl md:text-8xl font-black text-white/5 tracking-tighter -ml-1 mt-4">MOONLIGHT</h3>
+            <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec5frontlight.png" class="w-full max-w-4xl opacity-80" alt="Frontlight Banner">
+            
+            <!-- Exact Thumb Row -->
+            <div class="w-full max-w-5xl mt-8 grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 px-4">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb1.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb2.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb3.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb4.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb5.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb6.jpg" class="w-full aspect-square object-cover opacity-60 hover:opacity-100 transition border border-gray-700" alt="Thumb">
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission Section (Original Card Layout) -->
+    <section class="py-20 bg-[#fafafa]">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
                 
-                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec5frontlight.png" class="w-64 mt-12 mix-blend-lighten opacity-80" alt="Frontlight">
+                <!-- Vision Card -->
+                <div class="bg-white border border-gray-200 rounded p-10 md:p-14 text-center shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style="background: linear-gradient(135deg, #FFC80A 20%, transparent 20%);"></div>
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/vision.png" class="mx-auto h-20 md:h-24 object-contain mb-6 relative z-10" alt="Vision">
+                    <h3 class="text-2xl font-bold text-argo-dark mb-4 relative z-10">Vision</h3>
+                    <p class="text-gray-500 text-sm leading-loose relative z-10 font-light">Argo Lighting was conceived with the only sole purpose of making a mark in the luminarie industry. With multiple brands offering the same services, Argo decides to stand-out by developing state of the art products. Our Founders believe in the concept of "doing the extraordinary" instead of following the masses. In 10 years from now, Argo aspires to become a household name both in India as well as overseas by being known for its innovative luminaire solutions.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="bg-white border border-gray-200 rounded p-10 md:p-14 text-center shadow-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style="background: linear-gradient(135deg, transparent 80%, #FFC80A 80%);"></div>
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/mission.png" class="mx-auto h-20 md:h-24 object-contain mb-6 relative z-10" alt="Mission">
+                    <h3 class="text-2xl font-bold text-argo-dark mb-4 relative z-10">Mission</h3>
+                    <p class="text-gray-500 text-sm leading-loose relative z-10 font-light">Argo Lighting will be taken forward with a mission to become the leading seller in the world of innovative luminaire lightings using the latest technology along with playing a role in conserving the environment with its unique eco-friendly concept. Our products speak for themselves in the way that they have been designed and developed. Argo also aspires to creating an impact by giving values for the consumers based on their mental and intellectual needs.</p>
+                </div>
             </div>
 
-            <!-- Right Gallery Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb1.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 1">
-                </div>
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb2.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 2">
-                </div>
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb3.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 3">
-                </div>
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb4.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 4">
-                </div>
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb5.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 5">
-                </div>
-                <div class="overflow-hidden rounded-lg group">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec4thumb6.jpg" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" alt="Thumbnail 6">
-                </div>
+            <!-- Architectural Blueprint Base Image -->
+            <div class="w-full shadow-md border border-gray-300 bg-white p-2">
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec6sideoutimg.jpg" class="w-full h-auto object-cover" alt="Blueprint Details">
             </div>
         </div>
     </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="py-24 bg-zinc-50 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 mb-16">
-                
-                <!-- Vision -->
-                <div class="flex flex-col items-start bg-white p-12 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-argo-yellow/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/vision.png" class="h-16 w-16 object-contain mb-8 z-10" alt="Vision">
-                    <h3 class="text-2xl font-bold text-argo-dark mb-4 z-10">Vision</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm z-10">Argo Lighting was conceived with the only sole purpose of making a mark in the luminaire industry. With multiple brands offering the same services, Argo decides to stand-out by developing state of the art products. Our Founders believe in the concept of "doing the extraordinary" instead of following the masses. In 10 years from now, Argo aspires to become a household name both in India as well as overseas by being known for its innovative luminaire solutions.</p>
-                </div>
-
-                <!-- Mission -->
-                <div class="flex flex-col items-start bg-white p-12 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-argo-yellow/5 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/mission.png" class="h-16 w-16 object-contain mb-8 z-10" alt="Mission">
-                    <h3 class="text-2xl font-bold text-argo-dark mb-4 z-10">Mission</h3>
-                    <p class="text-gray-600 leading-relaxed text-sm z-10">Argo Lighting will be taken forward with a mission to become the leading seller in the world of innovative luminaire lightings using the latest technology along with playing a role in conserving the environment with its unique eco-friendly concept. Our products speak for themselves in the way that they have been designed and developed. Argo also aspires to creating an impact by giving values for the consumers based on their mental and intellectual needs.</p>
-                </div>
-            </div>
-
-            <!-- Architectural Graphic -->
-            <div class="w-full mt-12 rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/sec6sideoutimg.jpg" class="w-full h-auto object-cover opacity-90" alt="Architectural Plan">
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-argo-dark pt-20 pb-10 text-white/70 text-sm">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10 pb-16">
+    <!-- Footer matching original exactly -->
+    <footer class="bg-[#1f1f1f] text-gray-300 pt-16">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-gray-700">
             
-            <!-- Brand & Newsletter -->
+            <!-- Col 1: Subscribe -->
             <div>
-                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" class="h-8 filter invert brightness-0 mb-8 opacity-90" alt="Argo Lighting">
-                <h4 class="font-semibold text-white mb-4">Subscribe to our Newsletter</h4>
-                <form class="flex items-center w-full bg-white/5 border border-white/10 rounded-md overflow-hidden focus-within:border-argo-yellow transition-colors">
-                    <input type="email" placeholder="Email Address" class="w-full bg-transparent px-4 py-3 text-sm text-white focus:outline-none placeholder-white/30">
-                    <button type="submit" class="bg-argo-yellow text-argo-dark px-6 py-3 font-semibold hover:bg-white transition-colors">Submit</button>
-                </form>
-                
-                <div class="mt-8 flex items-center space-x-4">
-                    <a href="https://www.facebook.com/argolightingofficial/" class="hover:text-white transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico1.png" class="h-4 filter invert opacity-50 hover:opacity-100" alt="FB"></a>
-                    <a href="https://twitter.com/Argolighting" class="hover:text-white transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico2.png" class="h-4 filter invert opacity-50 hover:opacity-100" alt="TW"></a>
-                    <a href="https://www.linkedin.com/company/argo-lighting-private-limited" class="hover:text-white transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico3.png" class="h-4 filter invert opacity-50 hover:opacity-100" alt="LI"></a>
-                    <a href="https://www.instagram.com/argolightingpvtltd" class="hover:text-white transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico4.png" class="h-4 filter invert opacity-50 hover:opacity-100" alt="IG"></a>
+                <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/headerlogo.png" class="h-10 mb-8 filter invert grayscale opacity-80" alt="Argo">
+                <h4 class="text-sm font-semibold text-white mb-4">Subscribe our Newsletter</h4>
+                <div class="flex">
+                    <input type="email" placeholder="Email" class="w-full bg-white text-black px-3 py-2 text-sm focus:outline-none rounded-l-sm">
+                    <button class="bg-argo-yellow text-black font-bold px-4 py-2 text-sm rounded-r-sm hover:bg-white transition">Subscribe</button>
                 </div>
             </div>
 
-            <!-- Contact Info -->
-            <div>
-                <h4 class="text-white font-semibold mb-6 tracking-wide uppercase text-xs">Contact Us</h4>
-                <address class="not-italic leading-loose mb-4 opacity-80">
+            <!-- Col 2: Contact -->
+            <div class="text-sm leading-relaxed font-light">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-6">CONTACT</h4>
+                <p class="mb-6 opacity-80">
                     413, Orion Business Park,<br>
                     Ghodbunder Road, Kapurbawdi,<br>
                     Thane(W) - 400607<br>
                     Maharashtra, India.
-                </address>
-                <div class="space-y-2 opacity-80">
-                    <p>Tel : <a href="tel:9819130009" class="hover:text-argo-yellow transition">9819130009</a></p>
-                    <p>Email : <a href="mailto:info@argolighting.in" class="hover:text-argo-yellow transition">info@argolighting.in</a></p>
+                </p>
+                <p class="opacity-80">TeL : - 9819130009</p>
+                <p class="mb-6 opacity-80">Email :- info@argolighting.in</p>
+                <p class="opacity-80 text-xs mb-4">Visit our social media handles today to know more about what we have to offer.</p>
+                <div class="flex items-center space-x-3">
+                    <a href="https://www.facebook.com/argolightingofficial/" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico1.png" class="h-5 w-5 filter invert opacity-70" alt="FB"></a>
+                    <a href="https://twitter.com/Argolighting" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico2.png" class="h-5 w-5 filter invert opacity-70" alt="TW"></a>
+                    <a href="https://www.linkedin.com/company/argo-lighting-private-limited" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico3.png" class="h-5 w-5 filter invert opacity-70" alt="LI"></a>
+                    <a href="https://www.instagram.com/argolightingpvtltd" class="hover:opacity-75 transition"><img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/socico4.png" class="h-5 w-5 filter invert opacity-70" alt="IG"></a>
                 </div>
             </div>
 
-            <!-- Quick Links -->
+            <!-- Col 3: Catalog -->
             <div>
-                <h4 class="text-white font-semibold mb-6 tracking-wide uppercase text-xs">Quick Links</h4>
-                <ul class="space-y-3 opacity-80">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-6">OUR CATALOG</h4>
+                <div class="bg-white p-2 inline-block mb-3 rounded-sm">
+                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/argo-brochure-qr-code.png" alt="QR Code" class="w-24 h-24 object-cover">
+                </div>
+                <p class="text-xs opacity-80 mb-1">Scan QR Code</p>
+                <p class="text-xs opacity-80 mb-1">Or</p>
+                <a href="http://drive.google.com/uc?export=download&id=1uFa0CMkUSEAHv4KcJqB2AGeYEnf_AMeY" class="text-xs text-gray-300 hover:text-argo-yellow transition underline">Click Here to Download</a>
+            </div>
+
+            <!-- Col 4: Quick Links -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-6">QUICK LINKS</h4>
+                <ul class="space-y-2 text-sm font-light opacity-80">
                     <li><a href="#" class="hover:text-argo-yellow transition">Home</a></li>
                     <li><a href="#" class="hover:text-argo-yellow transition">Company Profile</a></li>
                     <li><a href="#" class="hover:text-argo-yellow transition">Our Journey</a></li>
@@ -390,22 +374,14 @@
                     <li><a href="#" class="hover:text-argo-yellow transition">Contact Us</a></li>
                 </ul>
             </div>
-
-            <!-- Catalog -->
-            <div>
-                <h4 class="text-white font-semibold mb-6 tracking-wide uppercase text-xs">Our Catalog</h4>
-                <div class="bg-white p-2 rounded inline-block mb-4">
-                    <img src="https://www.argolighting.co.in/skin/frontend/shopper/default/images/argo/argo-brochure-qr-code.png" alt="QR Code" class="w-24 h-24 object-cover">
-                </div>
-                <p class="opacity-80 mb-1">Scan QR Code or</p>
-                <a href="http://drive.google.com/uc?export=download&id=1uFa0CMkUSEAHv4KcJqB2AGeYEnf_AMeY" class="text-argo-yellow hover:text-white transition font-medium underline underline-offset-4">Click Here to Download</a>
-            </div>
-
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-xs opacity-60">
-            <p>&copy; 2024 Argo Lighting | All Rights Reserved.</p>
-            <p class="mt-4 md:mt-0">Developed and Maintained By: <a href="#" class="hover:text-argo-yellow transition">Aspiring Media Tech Pvt. Ltd.</a></p>
+        <!-- Yellow Copyright Bar exactly as requested -->
+        <div class="bg-argo-yellow text-black text-xs font-semibold">
+            <div class="max-w-[1400px] mx-auto px-6 py-4 flex flex-col sm:flex-row justify-center sm:space-x-4 text-center">
+                <p>&copy; Copyright 2024 Argo Lighting | All Rights Reserved.</p>
+                <p class="mt-1 sm:mt-0">Developed and Maintained By: <span class="font-bold">Aspiring Media Tech Pvt. Ltd.</span></p>
+            </div>
         </div>
     </footer>
 
@@ -414,44 +390,34 @@
         // Hero Slider Logic
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.replace('opacity-100', 'opacity-0'));
-            slides[index].classList.replace('opacity-0', 'opacity-100');
-        }
-
+        
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
+            if (slides.length === 0) return;
+            slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
         }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        // Auto advance slide every 5 seconds
         setInterval(nextSlide, 5000);
 
-        // Tab Logic
-        function openTab(tabId) {
-            // Hide all tab contents
+        // Tab Logic mapping closely to original design
+        function openTab(tabId, btn) {
+            // Hide contents
             document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
                 content.classList.remove('active');
             });
-            // Remove active styling from all buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('text-argo-dark', 'border-argo-yellow');
-                btn.classList.add('text-gray-400', 'border-transparent');
-            });
-            
-            // Show target content
+            // Show target
+            document.getElementById(tabId).classList.remove('hidden');
             document.getElementById(tabId).classList.add('active');
             
-            // Add active styling to clicked button
-            event.currentTarget.classList.remove('text-gray-400', 'border-transparent');
-            event.currentTarget.classList.add('text-argo-dark', 'border-argo-yellow');
+            // Reset buttons
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('bg-argo-yellow', 'text-argo-dark', 'border-transparent');
+                b.classList.add('bg-white', 'text-gray-500', 'border-gray-200');
+            });
+            // Highlight active button
+            btn.classList.remove('bg-white', 'text-gray-500', 'border-gray-200');
+            btn.classList.add('bg-argo-yellow', 'text-argo-dark', 'border-transparent');
         }
     </script>
 </body>
