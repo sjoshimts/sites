@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firechief® Global - Premium Fire Safety Solutions</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter for a clean, modern aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        firechief: {
+                            red: '#da2b1f',
+                            dark: '#111111',
+                            gray: '#f6f6f6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for horizontal scrolling containers but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- Top Bar -->
+    <div class="bg-firechief-dark text-white text-xs font-medium py-2">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <a href="mailto:sales@firechiefglobal.com" class="flex items-center gap-2 hover:text-gray-300 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> sales@firechiefglobal.com
+                </a>
+                <a href="tel:03309990019" class="flex items-center gap-2 hover:text-gray-300 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> 0330 999 0019
+                </a>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="#" class="hover:text-gray-300 transition-colors">Want to hear more? Sign up here!</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Firechief® Academy</a>
+                <a href="#" class="hover:text-gray-300 transition-colors">Help & Support</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header (Sticky) -->
+    <header class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden p-2 -ml-2 text-gray-600 hover:text-firechief-red transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0">
+                    <img src="https://firechiefglobal.com/media/logo/stores/1/Firechief_Logo_1.png" alt="Firechief Global" class="h-10 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 ml-8">
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">All Products</a>
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">Home & Leisure</a>
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">Professional</a>
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">Education Hub</a>
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">About</a>
+                    <a href="#" class="text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">Help & Support</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center gap-4 lg:gap-6 ml-auto">
+                    <div class="hidden md:flex relative group">
+                        <input type="text" placeholder="Search for a product..." class="bg-gray-50 border border-transparent focus:border-gray-200 focus:bg-white text-sm rounded-full pl-4 pr-10 py-2 w-64 transition-all outline-none">
+                        <i data-lucide="search" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-firechief-red"></i>
+                    </div>
+                    <button class="md:hidden p-2 text-gray-600 hover:text-firechief-red transition-colors">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <a href="#" class="hidden sm:block text-sm font-semibold text-gray-800 hover:text-firechief-red transition-colors">Sign In</a>
+                    <a href="#" class="p-2 text-gray-600 hover:text-firechief-red transition-colors relative">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        <span class="absolute top-0 right-0 bg-firechief-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+            <div class="px-4 pt-2 pb-4 space-y-1">
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">All Products</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">Home & Leisure</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">Professional</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">Education Hub</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">About</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-gray-800 hover:bg-gray-50 hover:text-firechief-red rounded-md">Help & Support</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-firechief-red bg-red-50 rounded-md mt-4">Sign In / Register</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Sections -->
+    <section class="grid grid-cols-1 md:grid-cols-2">
+        <!-- Home & Leisure -->
+        <div class="relative bg-firechief-red flex flex-col items-center justify-center p-12 lg:p-24 min-h-[500px] overflow-hidden group">
+            <div class="absolute inset-0 bg-[url('https://firechiefglobal.com/wp/wp-content/uploads/2024/02/Home_Leisure_Block_Background_Red_v2.svg')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+            <div class="relative z-10 flex flex-col items-center text-center">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Secure Your Home & Leisure</h2>
+                <p class="text-red-100 text-lg mb-8 max-w-md">Trusted solutions for homeowners, DIYers, and retailers demanding uncompromising safety.</p>
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/08/Home-page-HL-Block-web-1.png" alt="Home and Leisure Fire Safety" class="w-full max-w-[400px] h-auto object-contain mb-8 group-hover:scale-105 transition-transform duration-700 ease-out drop-shadow-2xl">
+                <a href="#" class="inline-flex items-center justify-center bg-white text-firechief-red font-bold uppercase tracking-wider text-sm px-8 py-4 rounded-sm hover:bg-gray-100 transition-colors shadow-lg">
+                    Explore Solutions
+                </a>
+            </div>
+        </div>
+
+        <!-- Professional -->
+        <div class="relative bg-firechief-dark flex flex-col items-center justify-center p-12 lg:p-24 min-h-[500px] overflow-hidden group">
+            <div class="absolute inset-0 bg-[url('https://firechiefglobal.com/wp/wp-content/uploads/2024/02/Professional_Block_Background_Black_v2.svg')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+            <div class="relative z-10 flex flex-col items-center text-center">
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">Equip Your Professionals</h2>
+                <p class="text-gray-400 text-lg mb-8 max-w-md">High-performance gear engineered for installers, resellers, and corporate buyers.</p>
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/08/Firechief-Home-page-Pro-Block-extinguishers-web.png" alt="Professional Fire Safety Equipment" class="w-full max-w-[400px] h-auto object-contain mb-8 group-hover:scale-105 transition-transform duration-700 ease-out drop-shadow-2xl">
+                <a href="#" class="inline-flex items-center justify-center border-2 border-white text-white font-bold uppercase tracking-wider text-sm px-8 py-3.5 rounded-sm hover:bg-white hover:text-firechief-dark transition-colors shadow-lg">
+                    Discover More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome / Brand Introduction -->
+    <section class="bg-firechief-gray py-20 lg:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-sm font-bold tracking-widest text-firechief-red uppercase mb-3">About Us</h2>
+                    <h3 class="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">Empowering Safety, Protecting Lives.</h3>
+                    <div class="prose prose-lg text-gray-600">
+                        <p class="mb-4">At Firechief®, we envision a world where people can live and work free from the fear of fire. Since developing our first fire blanket in 1963, we have been resolutely committed to making the world a safer place.</p>
+                        <p class="mb-4">We provide a range of proven fire safety products trusted to perform when the heat is on, all underpinned by an exceptional end-to-end customer experience.</p>
+                        <p class="mb-6">Operating from our Head Office in Rutland and Global Distribution Centre in Corby, we work with an extensive network of experts and hold stock of up to half a million products, ready for immediate dispatch.</p>
+                    </div>
+                    <a href="#" class="inline-flex items-center font-semibold text-firechief-red hover:text-red-700 transition-colors group">
+                        Learn more about our legacy
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="order-1 lg:order-2 relative">
+                    <div class="absolute inset-0 bg-firechief-red transform translate-x-4 translate-y-4 rounded-xl opacity-20"></div>
+                    <img src="https://firechiefglobal.com/wp/wp-content/uploads/bb-plugin/cache/SEN002_08_LifestylePhotography_Location_04-1-landscape-a9da6b98e8dacb830cf038fef03604b5-l9xtnpvsirqu.jpg" alt="Firechief Global Lifestyle" class="relative rounded-xl shadow-xl w-full h-auto object-cover aspect-[4/3]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources & Information Grid -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Resources & Support Hub</h2>
+                <p class="text-lg text-gray-600">Everything you need from extensive knowledge bases to dedicated partnership programs.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/11/Firechief-academy-logo-web.jpg" alt="Firechief Academy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Firechief® Academy</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Interested in learning more about Lithium-ion battery fires? Firechief® Academy offers a wide range of accredited courses.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Find Out More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/08/firefighters-at-the-window-of-house.jpg" alt="News & Insights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">News & Insights</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Whether it's tips, advice, or the latest product news, we have lots of resources. Head over to our blog to stay informed.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Learn More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/08/100-1596-FAP2-Panini-Focus-kitchen-web.jpg" alt="Become a Distributor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Become a Distributor</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Discover our highly rewarding Distributor Program and learn how you can partner with us to supply premium products.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Find Out More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2025/07/Firechief-Education-Case-Studies.jpeg" alt="Case Studies" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Case Studies</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Our case studies demonstrate our versatility and ability to adapt to the unique fire safety challenges faced by businesses today.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Read More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2025/08/Web-button-image-7-Warranty-and-returns.jpeg" alt="Warranty & Returns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Warranty & Returns</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Visit our comprehensive Warranty and Returns page for detailed policy information, or contact our support team directly.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Find Out More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+
+                <!-- Card 6 -->
+                <a href="#" class="group flex flex-col bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                    <div class="h-56 overflow-hidden">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2025/07/Firechief-Education-6-Knowlegde-bank.jpeg" alt="Knowledge Bank" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Knowledge Bank</h3>
+                        <p class="text-gray-600 mb-6 flex-grow">Access our extensive Knowledge Bank, where you can find answers to FAQs, technical tutorials, and safety resources.</p>
+                        <span class="inline-flex items-center text-sm font-bold text-firechief-red uppercase tracking-wider">Learn More <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carbon Journey Banner -->
+    <section class="relative bg-firechief-dark py-32 overflow-hidden flex items-center justify-center">
+        <!-- Parallax BG representation -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://firechiefglobal.com/wp/wp-content/uploads/2024/09/Firechief-Our-Carbon-Journey-top-banner-web.jpg" alt="Carbon Journey Background" class="w-full h-full object-cover opacity-30 object-center">
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-8">Pioneering a Sustainable Future</h2>
+            <a href="#" class="inline-flex items-center justify-center bg-firechief-red text-white font-bold uppercase tracking-wider text-sm px-10 py-4 rounded-sm hover:bg-red-700 transition-colors shadow-lg">
+                Follow Our Carbon Journey
+            </a>
+        </div>
+    </section>
+
+    <!-- Upcoming Events & News Section -->
+    <section class="py-20 lg:py-28 bg-firechief-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-sm font-bold tracking-widest text-firechief-red uppercase mb-2">Updates</h2>
+                    <h3 class="text-3xl lg:text-4xl font-bold text-gray-900">Industry Insights & Events</h3>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center font-semibold text-gray-600 hover:text-firechief-red transition-colors">
+                    View All Articles <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+
+            <!-- Horizontal Scrollable Container -->
+            <div class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+                
+                <!-- Event Card -->
+                <div class="flex-none w-80 sm:w-96 snap-start flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56">
+                        <span class="absolute top-4 left-4 bg-firechief-dark text-white text-xs font-bold px-3 py-1 uppercase rounded-sm z-10">Event</span>
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/2026/01/Firechief-Fire-Safety-Event-Banner-26-768x432.jpg" alt="Fire Safety Event" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">January 22, 2026</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">The Fire Safety Event 26</h4>
+                        <p class="text-gray-600 mb-6 text-sm flex-grow line-clamp-3">We’re excited to be exhibiting at The Fire Safety Event 26. Come and meet our expert team to explore our latest innovations.</p>
+                        <a href="#" class="text-sm font-bold text-firechief-red hover:text-red-800 transition-colors uppercase flex items-center">
+                            Find out more <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 1 -->
+                <div class="flex-none w-80 sm:w-96 snap-start flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56">
+                        <span class="absolute top-4 left-4 bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 uppercase rounded-sm z-10">Team News</span>
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/bb-plugin/cache/New-starter-Andrea-1024x683-landscape-353b53a02de9e34bb47dba7d5da86add-.jpg" alt="Welcome Andrea" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">April 22, 2026</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Welcome to the team, Andrea!</h4>
+                        <p class="text-gray-600 mb-6 text-sm flex-grow line-clamp-3">We’re delighted to welcome Andrea to the Firechief® team. Bringing with her an impressive 27 years of experience...</p>
+                        <a href="#" class="text-sm font-bold text-firechief-red hover:text-red-800 transition-colors uppercase flex items-center">
+                            Continue Reading <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 2 -->
+                <div class="flex-none w-80 sm:w-96 snap-start flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56">
+                        <span class="absolute top-4 left-4 bg-gray-100 text-gray-800 text-xs font-bold px-3 py-1 uppercase rounded-sm z-10">Carbon Journey</span>
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/bb-plugin/cache/Carbon-Journey-Earth-Day-2026-1024x683-landscape-1d77135d65ebf05af14eb04223b58aa3-.jpg" alt="Earth Day 2026" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">April 22, 2026</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Earth Day 2026: Two Years On. Here Is What We Have Done.</h4>
+                        <p class="text-gray-600 mb-6 text-sm flex-grow line-clamp-3">Two years ago, on Earth Day 2024, we announced our partnership with Auditel and took our first formal steps on our carbon journey.</p>
+                        <a href="#" class="text-sm font-bold text-firechief-red hover:text-red-800 transition-colors uppercase flex items-center">
+                            Continue Reading <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 3 -->
+                <div class="flex-none w-80 sm:w-96 snap-start flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/bb-plugin/cache/Team-News-Investors-in-People-Platinum_3-1024x683-landscape-9e30ec3ab05c49949aeb8bff8a84c992-.jpeg" alt="Investors In People Platinum" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">March 4, 2026</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">We’re Platinum! Firechief® Achieves Highest Accreditation From Investors In People®</h4>
+                        <p class="text-gray-600 mb-6 text-sm flex-grow line-clamp-3">For a number of years, Firechief® has proudly held Gold accreditation, and this time, we’ve taken it to Platinum.</p>
+                        <a href="#" class="text-sm font-bold text-firechief-red hover:text-red-800 transition-colors uppercase flex items-center">
+                            Continue Reading <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- News 4 -->
+                <div class="flex-none w-80 sm:w-96 snap-start flex flex-col bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-56">
+                        <img src="https://firechiefglobal.com/wp/wp-content/uploads/bb-plugin/cache/News__Insights_Reassuringly_Safe_-_7_Pillars_of_Premium_-_premium_materials-1024x683-landscape-35f4df4ac2be3937224dcc5a7ff2d9b6-.jpeg" alt="Material Quality" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="text-xs text-gray-500 mb-2 font-medium">February 27, 2026</div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3 line-clamp-2">Why Material Quality Is Non-Negotiable in Fire Safety</h4>
+                        <p class="text-gray-600 mb-6 text-sm flex-grow line-clamp-3">When a fire breaks out, nobody asks what grade of steel was used to make the cylinder. We explain why it matters.</p>
+                        <a href="#" class="text-sm font-bold text-firechief-red hover:text-red-800 transition-colors uppercase flex items-center">
+                            Continue Reading <i data-lucide="chevron-right" class="w-4 h-4 ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-8 text-center md:hidden">
+                <a href="#" class="inline-flex items-center font-semibold text-gray-600 hover:text-firechief-red transition-colors">
+                    View All Articles <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations -->
+    <section class="py-16 border-t border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-sm font-bold text-gray-400 tracking-widest uppercase mb-10">Trusted & Certified by Industry Leaders</h3>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2022/01/Sedex-logo.png" alt="Sedex" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2022/01/BSI-UKAS-new.png" alt="BSI UKAS" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2026/04/we-invest-in-people-platinum-R-01-scaled.png" alt="Investors In People" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2022/01/LPCBnew.png" alt="LPCB" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/10/BSI-multischeme-logo.jpg" alt="BSI Multischeme" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2020/04/ApragazQA-web-1.jpg" alt="Apragaz" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2020/04/Shipwheel-1.jpg" alt="Shipwheel" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/10/MER-logo.jpg" alt="MER" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://firechiefglobal.com/wp/wp-content/uploads/2023/10/UKCA-CE-Logo.jpg" alt="UKCA CE" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8 border-t-[6px] border-firechief-red">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- USPs -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-12 border-b border-gray-800">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 text-firechief-red">
+                        <!-- Original SVG perfectly retained -->
+                        <svg width="40" height="30" viewBox="0 0 40 30" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M35.1363 0L15.7484 19.3891L4.87033 8.51339L0.00390625 13.381L15.7484 29.1265L40.0039 4.86757L35.1363 0Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 uppercase tracking-wide">100% Satisfaction<br>Guaranteed</h4>
+                        <p class="text-sm text-gray-400">We pride ourselves on resolving your challenges and giving you an easy life!</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 text-firechief-red">
+                        <!-- Original SVG perfectly retained -->
+                        <svg width="41" height="17" viewBox="0 0 41 17" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.99967 8.66537C1.0792 8.66537 0.333008 7.91917 0.333008 6.9987C0.333008 6.07822 1.0792 5.33203 1.99967 5.33203H2.69308C3.97901 2.38886 6.91581 0.332031 10.333 0.332031C13.3737 0.332031 16.034 1.96056 17.4893 4.39299C18.3072 3.92876 19.2938 3.66536 20.333 3.66536C21.3722 3.66536 22.3588 3.92876 23.1767 4.39299C24.632 1.96056 27.2923 0.332031 30.333 0.332031C33.7502 0.332031 36.687 2.38886 37.9729 5.33203H38.6663C39.5868 5.33203 40.333 6.07822 40.333 6.9987C40.333 7.91917 39.5868 8.66537 38.6663 8.66537C38.6663 13.2677 34.9354 16.9987 30.333 16.9987C25.7306 16.9987 21.9997 13.2677 21.9997 8.66537C21.9997 8.38412 22.0136 8.10612 22.0408 7.83203H21.9997C21.9997 7.49299 21.3406 6.9987 20.333 6.9987C19.3254 6.9987 18.6663 7.49299 18.6663 7.83203H18.6252C18.6524 8.10612 18.6663 8.38412 18.6663 8.66537C18.6663 13.2677 14.9354 16.9987 10.333 16.9987C5.73063 16.9987 1.99967 13.2677 1.99967 8.66537ZM10.333 13.6654C13.0944 13.6654 15.333 11.4268 15.333 8.66537C15.333 5.90394 13.0944 3.66536 10.333 3.66536C7.57158 3.66536 5.33301 5.90394 5.33301 8.66537C5.33301 11.4268 7.57158 13.6654 10.333 13.6654ZM30.333 13.6654C33.0944 13.6654 35.333 11.4268 35.333 8.66537C35.333 5.90394 33.0944 3.66536 30.333 3.66536C27.5716 3.66536 25.333 5.90394 25.333 8.66537C25.333 11.4268 27.5716 13.6654 30.333 13.6654Z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 uppercase tracking-wide">Friendly, Technically<br>Qualified Team</h4>
+                        <p class="text-sm text-gray-400">Advice and guidance for any product or fire safety application.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 text-firechief-red">
+                        <!-- Original SVG perfectly retained -->
+                        <svg width="41" height="40" viewBox="0 0 41 40" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_5468_3838" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="41" height="40">
+                                <rect x="0.666992" width="40" height="40" fill="#D9D9D9"/>
+                            </mask>
+                            <g mask="url(#mask0_5468_3838)">
+                                <path d="M10.667 35.0013V31.668L11.3545 31.2513C11.8128 30.9735 12.3128 30.5638 12.8545 30.0221C13.3962 29.4805 13.8892 28.786 14.3337 27.9388C14.7781 27.0916 15.0003 26.1124 15.0003 25.0013C15.0003 24.6957 14.9795 24.4041 14.9378 24.1263C14.8962 23.8485 14.8475 23.5846 14.792 23.3346H10.667V20.0013H13.167C12.5837 19.0846 12.0212 18.1194 11.4795 17.1055C10.9378 16.0916 10.667 14.8346 10.667 13.3346C10.667 10.7791 11.5559 8.61241 13.3337 6.83464C15.1114 5.05686 17.2781 4.16797 19.8337 4.16797C21.8059 4.16797 23.5559 4.70964 25.0837 5.79297C26.6114 6.8763 27.7087 8.27908 28.3753 10.0013L25.292 11.293C24.8753 10.1819 24.1739 9.27214 23.1878 8.5638C22.2017 7.85547 21.0837 7.5013 19.8337 7.5013C18.2225 7.5013 16.8475 8.07075 15.7087 9.20964C14.5698 10.3485 14.0003 11.7235 14.0003 13.3346C14.0003 14.668 14.3337 15.7791 15.0003 16.668C15.667 17.5569 16.3475 18.668 17.042 20.0013H24.0003V23.3346H18.2087C18.2642 23.5846 18.2989 23.8485 18.3128 24.1263C18.3267 24.4041 18.3337 24.6957 18.3337 25.0013C18.3337 26.3902 18.0906 27.6402 17.6045 28.7513C17.1184 29.8624 16.5281 30.8346 15.8337 31.668H24.0003C25.1114 31.668 25.9587 31.3763 26.542 30.793C27.1253 30.2096 27.5281 29.4596 27.7503 28.543L30.667 30.0013C30.3614 31.5291 29.5767 32.7444 28.3128 33.6471C27.0489 34.5499 25.6114 35.0013 24.0003 35.0013H10.667Z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1 uppercase tracking-wide">Free Next<br>Day Delivery</h4>
+                        <p class="text-sm text-gray-400">Free next day delivery on orders over £250!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Main Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-12 border-b border-gray-800">
+                <!-- About Column -->
+                <div>
+                    <img src="https://firechiefglobal.com/media/logo/stores/1/Firechief_Logo_1.png" alt="Firechief" class="h-10 mb-6 brightness-0 invert">
+                    <p class="text-sm text-gray-400 mb-4 leading-relaxed">The Firechief® range of products set the standard for those who are seeking competitively priced, superior quality, UK-approved fire safety products.</p>
+                    <p class="text-sm text-gray-400 leading-relaxed">Look out for the Firechief® brand for products you can trust to help keep you safe.</p>
+                </div>
+                
+                <!-- Links Column -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Additional Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Our Suppliers</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Refund and Returns Policy</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-sm text-gray-400 hover:text-white transition-colors">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Get In Touch</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5"></i>
+                            <span class="text-sm text-gray-400">Firechief® Global, 3 Lands End Way,<br>Oakham, Rutland, LE15 6RB</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gray-500 flex-shrink-0"></i>
+                            <a href="mailto:sales@firechiefglobal.com" class="text-sm text-gray-400 hover:text-white transition-colors">sales@firechiefglobal.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gray-500 flex-shrink-0"></i>
+                            <a href="tel:+4403309990019" class="text-sm text-gray-400 hover:text-white transition-colors">+44(0) 330 999 0019</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Connect/Newsletter Column -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Connect With Us</h4>
+                    <div class="flex gap-4 mb-10">
+                        <a href="#" class="bg-gray-800 p-2 rounded-sm hover:bg-firechief-red transition-colors"><img src="https://firechiefglobal.com/static/version1776830359/frontend/Rixxo/firechief/en_GB/images/social/icon-yt.png" alt="YT" class="w-5 h-5 invert brightness-0"></a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-sm hover:bg-firechief-red transition-colors"><img src="https://firechiefglobal.com/static/version1776830359/frontend/Rixxo/firechief/en_GB/images/social/icon-linkedin.png" alt="IN" class="w-5 h-5 invert brightness-0"></a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-sm hover:bg-firechief-red transition-colors"><img src="https://firechiefglobal.com/static/version1776830359/frontend/Rixxo/firechief/en_GB/images/social/icon-facebook.png" alt="FB" class="w-5 h-5 invert brightness-0"></a>
+                    </div>
+                    
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-4 text-sm">Sign Up for Our Newsletter</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="Enter your email address" class="bg-gray-800 text-sm text-white px-4 py-2 w-full outline-none focus:ring-1 focus:ring-firechief-red rounded-l-sm">
+                        <button type="submit" class="bg-firechief-red text-white px-4 py-2 text-sm font-bold uppercase hover:bg-red-700 transition-colors rounded-r-sm">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 text-center sm:text-left text-xs text-gray-500">
+                <p>© 2026 Firechief Global®. All Rights Reserved. | Part of Sentura Group Ltd. Registered in England. Company No. 09100012</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
