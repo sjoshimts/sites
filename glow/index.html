@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Glow Company | Premium Sensory, Solar & Home Lighting</title>
+    <meta name="description" content="Home and Garden Lights, Fairy Lights, Disco Lights, Candles, Glow Sticks, Mood Lights, Lava Lamp, Light Up Sensory Toys and Glow in the Dark - The Glow Company">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#111827', // Gray-900
+                            slate: '#334155', // Slate-700
+                            light: '#f8fafc', // Slate-50
+                            accent: '#06b6d4', // Cyan-500
+                            accentHover: '#0891b2', // Cyan-600
+                            red: '#ef4444', // Red-500
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Hide scrollbar for horizontal scroll areas but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Smooth transitions for mega menu */
+        .group:hover .mega-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .mega-menu {
+            transition: all 0.2s ease-in-out;
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+<body class="bg-white text-brand-slate font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-white text-xs sm:text-sm py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 tracking-wide font-light">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-brand-accent"></i>
+                <span><strong>Free Delivery Over £50</strong> | Fast dispatch & Express delivery available</span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:+44-345-505-9090" class="hover:text-brand-accent transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-brand-accent"></i>
+                    <span>Call Us: <strong>0345 505 9090</strong></span>
+                </a>
+                <div class="hidden md:flex items-center gap-2">
+                    <img src="https://www.glow.co.uk/media/wysiwyg/glow/banners/content/uk-independent-retailer.png" class="h-4 w-auto" alt="UK flag" />
+                    <span>Independent Retailer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 py-5 flex items-center justify-between gap-8">
+            
+            <!-- Logo -->
+            <a href="#" class="flex-shrink-0">
+                <img class="h-12 lg:h-16 w-auto object-contain" src="https://www.glow.co.uk/skin/frontend/base-design-2019/glowco/images/glow-logo-2019.png" alt="The Glow Company">
+            </a>
+
+            <!-- Search Bar -->
+            <div class="hidden md:block flex-1 max-w-2xl">
+                <form action="#" class="relative group">
+                    <input type="text" placeholder="I'm looking for..." class="w-full bg-brand-light border border-gray-200 rounded-full py-3 pl-6 pr-12 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent focus:border-transparent transition-all group-hover:bg-white group-hover:shadow-md">
+                    <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-accent text-white p-2 rounded-full hover:bg-brand-accentHover transition-colors h-8 w-8 flex items-center justify-center">
+                        <i class="fa-solid fa-search text-xs"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- User Actions -->
+            <div class="flex items-center gap-6">
+                <a href="#" class="flex flex-col items-center text-gray-500 hover:text-brand-accent transition-colors">
+                    <i class="fa-regular fa-circle-question text-xl mb-1"></i>
+                    <span class="text-[10px] uppercase font-semibold tracking-wider">Help</span>
+                </a>
+                <a href="#" class="flex flex-col items-center text-gray-500 hover:text-brand-accent transition-colors">
+                    <i class="fa-regular fa-user text-xl mb-1"></i>
+                    <span class="text-[10px] uppercase font-semibold tracking-wider">Account</span>
+                </a>
+                <a href="#" class="flex flex-col items-center text-gray-500 hover:text-brand-accent transition-colors relative">
+                    <div class="relative">
+                        <i class="fa-solid fa-cart-shopping text-xl mb-1"></i>
+                        <span class="absolute -top-2 -right-2 bg-brand-red text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                    </div>
+                    <span class="text-[10px] uppercase font-semibold tracking-wider">Basket</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mega Navigation -->
+        <nav class="hidden lg:block border-t border-gray-100">
+            <ul class="max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between">
+                <!-- Nav Item: Solar Lights -->
+                <li class="group">
+                    <a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent border-b-2 border-transparent hover:border-brand-accent transition-colors uppercase tracking-wide">Solar Lights</a>
+                    <div class="mega-menu absolute left-0 w-full bg-white shadow-2xl opacity-0 invisible border-t border-gray-100 z-50">
+                        <div class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-5 gap-8">
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-dark mb-4 uppercase tracking-wider">Solar Garden Lights</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Fairy Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Lanterns & Hanging Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Flame Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Garden Ornaments</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Table Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Decorative Solar Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Gazebo, Parasol & Pagoda Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Festoon Lights</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-dark mb-4 uppercase tracking-wider">Solar Lighting</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Wall Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Spot & Flood Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Security Lights & PIR</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Shed Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Camping Lights</a></li>
+                                </ul>
+                                <h3 class="text-sm font-bold text-brand-dark mt-8 mb-4 uppercase tracking-wider">Solar Path Lights</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Post & Path Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Stake Lights</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-bold text-brand-dark mb-4 uppercase tracking-wider">Solar Lights By Type</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Fence Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Intelligent Solar Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Warm White Solar Lights</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Commercial Solar Lighting</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Outdoor Entertaining</a></li>
+                                    <li><a href="#" class="text-sm text-gray-500 hover:text-brand-accent transition-colors">Solar Animal Lights</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-span-2 grid grid-cols-2 gap-4">
+                                <a href="#" class="group/promo relative rounded-xl overflow-hidden aspect-square block">
+                                    <img src="https://www.glow.co.uk/media/wysiwyg/glow/banners/collections/collection-solar-crazy-deals.jpg" alt="Crazy Deals" class="w-full h-full object-cover group-hover/promo:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                        <span class="text-white font-bold tracking-wide flex items-center gap-2">Crazy Deals <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                                    </div>
+                                </a>
+                                <a href="#" class="group/promo relative rounded-xl overflow-hidden aspect-square block">
+                                    <img src="https://www.glow.co.uk/media/wysiwyg/glow/banners/collections/collection-solar-security-lights-pir.jpg" alt="Solar Security Lights" class="w-full h-full object-cover group-hover/promo:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                                        <span class="text-white font-bold tracking-wide flex items-center gap-2">Security Lights <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!-- Nav Item: Garden -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Garden</a></li>
+                <!-- Nav Item: Fairy Lights -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Fairy Lights</a></li>
+                <!-- Nav Item: Home & Lighting -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Home & Lighting</a></li>
+                <!-- Nav Item: Sensory -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Sensory</a></li>
+                <!-- Nav Item: Candles -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Candles</a></li>
+                <!-- Nav Item: Glow Kids -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Glow Kids</a></li>
+                <!-- Nav Item: Glow Party -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-dark hover:text-brand-accent transition-colors uppercase tracking-wide">Glow Party</a></li>
+                <!-- Nav Item: Glow Sticks & Light Up Toys -->
+                <li class="group"><a href="#" class="block py-4 text-sm font-semibold text-brand-accent border-b-2 border-brand-accent uppercase tracking-wide">Glow Sticks & Toys</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Modern Bento Hero Section -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-[500px]">
+                <!-- Main Feature -->
+                <a href="#" class="md:col-span-2 relative rounded-3xl overflow-hidden group shadow-lg">
+                    <img src="https://www.glow.co.uk/media/catalog/category/glow-banner-sensory.jpg" alt="Sensory Lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-10">
+                        <span class="bg-brand-accent text-white text-xs font-bold uppercase tracking-widest py-1 px-3 rounded-full w-max mb-4">Featured Collection</span>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-white mb-2 leading-tight">Sensory Room Essentials</h2>
+                        <p class="text-gray-200 mb-6 max-w-md">Help stimulate and relax the senses with our curated collection of projectors, fibre optics, and light panels.</p>
+                        <span class="inline-flex items-center gap-2 text-white font-semibold group-hover:text-brand-accent transition-colors">Shop Sensory <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <!-- Side Features -->
+                <div class="grid grid-rows-2 gap-6 h-full">
+                    <a href="#" class="relative rounded-3xl overflow-hidden group shadow-md">
+                        <img src="https://www.glow.co.uk/media/catalog/category/glow-banner-crazy-deals_1.jpg" alt="Crazy Deals" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                            <h3 class="text-2xl font-bold text-white mb-1">Crazy Deals</h3>
+                            <span class="text-brand-accent font-semibold flex items-center gap-2">Save Up to 70% <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+                    <a href="#" class="relative rounded-3xl overflow-hidden group shadow-md">
+                        <img src="https://www.glow.co.uk/media/catalog/category/glow-banner-solar-lights.jpg" alt="Solar Lights" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                            <h3 class="text-2xl font-bold text-white mb-1">Solar Garden Lights</h3>
+                            <span class="text-brand-accent font-semibold flex items-center gap-2">Illuminate Outdoors <i class="fa-solid fa-arrow-right text-xs"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shop by Category (Replaces Old Section Pads) -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+            <div class="flex items-end justify-between mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-brand-dark tracking-tight">Explore Collections</h2>
+                    <p class="text-gray-500 mt-2">Find exactly what you need to light up your life.</p>
+                </div>
+                <a href="#" class="hidden sm:inline-flex items-center gap-2 text-brand-accent font-semibold hover:text-brand-dark transition-colors">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-6">
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-lava-lamps_2.jpg" alt="Lava Lamps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Lava Lamps</h3>
+                </a>
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-mood-lighting_1_1.jpg" alt="Mood Lights" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Mood Lights</h3>
+                </a>
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-solar-garden-ornaments_1.jpg" alt="Solar Ornaments" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Solar Ornaments</h3>
+                </a>
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-crazy-deals.jpg" alt="Crazy Deals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Crazy Deals</h3>
+                </a>
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-sensory-room.jpg" alt="Sensory Lighting" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Sensory Room</h3>
+                </a>
+                <a href="#" class="group flex flex-col items-center text-center">
+                    <div class="w-full aspect-square rounded-2xl overflow-hidden mb-4 shadow-sm group-hover:shadow-xl transition-all border border-gray-100">
+                        <img src="https://www.glow.co.uk/media/catalog/category/cat-solar-fairy-lights-2.jpg" alt="Solar Fairy Lights" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors">Solar Fairy Lights</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Product Grid: Trending Now (From "prdthumbs") -->
+        <section class="bg-brand-light py-20 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-dark tracking-tight mb-4">Trending Now</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Discover our most popular lighting and sensory products handpicked for you.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Product 1 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/4/m/4m-decorative-solar-rope-light-4_1.jpg" alt="2PK Solar Decorative Rope Light 4M" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                            <div class="absolute top-2 right-2 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer hover:text-brand-accent">
+                                <i class="fa-regular fa-heart"></i>
+                            </div>
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">2PK Solar Decorative Rope Light 4M</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£17.95</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/i/m/img_4675.jpeg" alt="Luxa Fire Lamp" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">Luxa Fire Lamp</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£24.95</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/s/o/solar-papillon-decor-disc-2.jpg" alt="Solar Butterfly Garden Wings Decor Disc" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">Solar Butterfly Garden Wings Decor Disc – Warm White</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£11.99</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/a/u/aura-sensory-projector-6_1.jpg" alt="OPTI Aura Sensory Projector" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">OPTI Aura Sensory Projector</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£192.00</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 5 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/t/r/trueflame-usb-solar-crook-lantern-3.jpg" alt="Trueflame Solar Crook Lantern" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">Trueflame Solar Crook Lantern</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£19.75</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/s/o/solar-blinkin-owl-1.jpg" alt="Solar Powered Winking & Blinking Owl" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">Solar Powered Winking & Blinking Owl</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£19.75</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col">
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/f/l/flicker-bulb-flame-effect-fairy-lights-group-logo.jpg" alt="10 Flickering Flame - Flicker Bulb Fairy Lights" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">10 Flickering Flame - Flicker Bulb Fairy Lights</a>
+                        <div class="mt-auto">
+                            <div class="text-lg font-bold text-brand-dark mb-4">£34.99</div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-gray-100 text-brand-dark hover:bg-brand-dark hover:text-white transition-colors border border-transparent">Add to Basket</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 (Sale Example) -->
+                    <div class="bg-white p-4 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group flex flex-col relative overflow-hidden">
+                        <div class="absolute top-4 left-0 bg-brand-red text-white text-xs font-bold px-3 py-1 uppercase tracking-wider z-10 rounded-r-lg shadow-md">On Sale</div>
+                        <div class="relative aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                            <img src="https://www.glow.co.uk/media/catalog/product/cache/1/small_image/313x/9df78eab33525d08d6e5fb8d27136e95/l/e/led-curved-furniture-5.jpg" alt="Light Up Mood Curved Table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                        </div>
+                        <a href="#" class="font-semibold text-brand-dark leading-tight hover:text-brand-accent transition-colors line-clamp-2 mb-2 flex-grow">Light Up Mood Curved Table</a>
+                        <div class="mt-auto">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="text-lg font-bold text-brand-red">£190.00</span>
+                                <span class="text-sm text-gray-400 line-through">£199.00</span>
+                            </div>
+                            <button class="w-full py-3 rounded-xl font-bold text-sm bg-brand-red text-white hover:bg-red-600 transition-colors border border-transparent shadow-sm">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <button class="px-8 py-4 bg-white border-2 border-brand-dark text-brand-dark font-bold rounded-full hover:bg-brand-dark hover:text-white transition-colors">View All Trending Products</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals & Hot Picks Horizontal Scroll (Replaces Sidebar) -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- What's New -->
+                <div>
+                    <div class="flex items-center justify-between border-b-2 border-gray-100 pb-4 mb-8">
+                        <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-3">
+                            <i class="fa-solid fa-sparkles text-brand-accent"></i> What's New?
+                        </h2>
+                        <a href="#" class="text-sm font-semibold text-brand-accent hover:underline">See All</a>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/i/m/img_4571_1.jpeg" alt="LED Lightstick" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">LED Lightstick - Multicolour - Multi Function</h3>
+                                <p class="text-brand-slate font-semibold">As low as £2.04 each</p>
+                            </div>
+                        </a>
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/i/m/img_4540.jpeg" alt="Lotus Path Lights" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">4 Piece Lotus Path Lights Warm White Outdoor</h3>
+                                <p class="text-brand-slate font-semibold">£19.99</p>
+                            </div>
+                        </a>
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/p/h/photoroom_20260325_140211.jpeg" alt="1000 LED Solar String" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">1000 LED Solar String Lights 25M Warm White</h3>
+                                <p class="text-brand-slate font-semibold">£35.99</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- What's Hot -->
+                <div>
+                    <div class="flex items-center justify-between border-b-2 border-gray-100 pb-4 mb-8">
+                        <h2 class="text-2xl font-bold text-brand-dark flex items-center gap-3">
+                            <i class="fa-solid fa-fire text-brand-red"></i> What's Hot?
+                        </h2>
+                        <a href="#" class="text-sm font-semibold text-brand-accent hover:underline">See All</a>
+                    </div>
+                    <div class="space-y-6">
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/s/o/solar-dandelions-2.jpg" alt="Solar Dandelion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">Solar Dandelion - Allium (single light)</h3>
+                                <p class="text-brand-slate font-semibold">From £19.75</p>
+                            </div>
+                        </a>
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/s/o/solar-wings-decor-disc-2.jpg" alt="Solar Hummingbird" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">Solar Hummingbird Garden Wings Decor Disc</h3>
+                                <p class="text-brand-slate font-semibold">£11.99</p>
+                            </div>
+                        </a>
+                        <!-- Item -->
+                        <a href="#" class="flex items-center gap-6 group">
+                            <div class="w-24 h-24 rounded-xl overflow-hidden bg-gray-50 flex-shrink-0 shadow-sm">
+                                <img src="https://www.glow.co.uk/media/catalog/product/cache/1/thumbnail/194x/9df78eab33525d08d6e5fb8d27136e95/i/m/img_1950.jpg" alt="Solar Balloon Tree Light" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-brand-dark group-hover:text-brand-accent transition-colors leading-snug mb-1">Solar Balloon Tree Light</h3>
+                                <p class="text-brand-slate font-semibold">£14.95</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer Reviews (Premium Re-design) -->
+        <section class="bg-brand-dark text-white py-20 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                <div class="flex justify-center gap-2 text-yellow-400 text-2xl mb-8">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <blockquote class="text-3xl md:text-4xl font-light italic leading-relaxed mb-8">
+                    "Looks very good. A first time buyer. Found what I was looking for. Thank you."
+                </blockquote>
+                <div class="flex items-center justify-center gap-4">
+                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center font-bold text-xl">R</div>
+                    <div class="text-left">
+                        <div class="font-bold tracking-wide">Robert</div>
+                        <div class="text-sm text-gray-400">Verified Buyer • <a href="#" class="hover:text-white underline">Read more reviews</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Banner -->
+        <section class="max-w-7xl mx-auto px-4 lg:px-8 py-12 transform -translate-y-6 relative z-20">
+            <div class="bg-brand-red rounded-3xl p-8 md:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 bg-[url('https://www.glow.co.uk/media/wysiwyg/glow/banners/gap/glow-gap-banner-newsletter-5.png')] bg-cover bg-center blend-overlay">
+                <!-- Using solid background as fallback, image as texture if it loads -->
+                <div class="absolute inset-0 bg-brand-red/90 rounded-3xl mix-blend-multiply"></div>
+                <div class="relative z-10 md:w-1/2 text-white">
+                    <h2 class="text-4xl lg:text-5xl font-black italic tracking-tighter mb-2 drop-shadow-md">5% JOIN US</h2>
+                    <p class="text-xl font-medium">Sign up and get <strong>5% OFF</strong> your order today, and receive exclusive discounts.</p>
+                </div>
+                <div class="relative z-10 md:w-1/2 w-full">
+                    <form class="flex flex-col gap-4">
+                        <div class="flex bg-white rounded-xl overflow-hidden shadow-lg p-1">
+                            <input type="email" placeholder="you@example.com" class="w-full px-4 py-3 text-brand-dark focus:outline-none" required>
+                            <button type="submit" class="bg-brand-dark text-white px-6 py-3 rounded-lg font-bold hover:bg-black transition-colors flex items-center justify-center">
+                                <i class="fa-regular fa-envelope text-lg"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2 text-white/90 text-sm">
+                            <input type="checkbox" id="newsletter_gdpr" class="w-4 h-4 rounded border-white/30 bg-white/10 text-brand-dark focus:ring-0">
+                            <label for="newsletter_gdpr">I'm happy to receive weekly updates.</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-light border-t border-gray-200 pt-16 pb-8 mt-10">
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <!-- Column 1 -->
+            <div>
+                <h4 class="text-brand-dark font-bold uppercase tracking-wider mb-6">Wholesale Products</h4>
+                <ul class="space-y-3 text-brand-slate">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Wholesale Glowsticks & Novelties</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Wholesale Flashing Novelties</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Printed Promotional Glow Products</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Fundraising Ideas</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <h4 class="text-brand-dark font-bold uppercase tracking-wider mb-6">Help & Information</h4>
+                <ul class="space-y-3 text-brand-slate">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Contact The Glow Company</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Customer Services Area</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Our Customer Comments</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Press Releases and Press Area</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Glow Articles</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Lava Lamp Troubleshooting</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <h4 class="text-brand-dark font-bold uppercase tracking-wider mb-6">Glow Company Products</h4>
+                <ul class="space-y-3 text-brand-slate">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Advanced Website Search</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Seasonal Product Ranges</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Featured Product Ranges</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Quality and Safety Information</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div>
+                <h4 class="text-brand-dark font-bold uppercase tracking-wider mb-6">Other Information</h4>
+                <ul class="space-y-3 text-brand-slate">
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Ordering and Payment Options</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Delivery Information</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Terms and Conditions</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Website Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-brand-accent transition-colors">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 lg:px-8 border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Social -->
+            <div class="flex items-center gap-4">
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm"><i class="fa-brands fa-pinterest-p"></i></a>
+            </div>
+
+            <!-- Address/Copyright -->
+            <div class="text-center md:text-right text-sm text-gray-500">
+                <p>&copy; The Glow Company UK Ltd. 2026. All rights reserved.</p>
+                <p class="mt-1">Unit 3 Faraday Close, Harworth, Doncaster, DN11 8RU | Tel: <strong>0345 505 9090</strong></p>
+                <p class="mt-1 text-xs">Registered in England and Wales: 04827875 | UK VAT: GB 817 5629 08</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
