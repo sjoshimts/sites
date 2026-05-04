@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Gold Bullion & Silver Bullion Online - UKBullion</title>
+    <meta name="description" content="Buy Gold & Silver Bullion Bars, Coins & British Sovereigns in the UK. We offer the best prices for buying & selling in the UK. Highest rated Bullion dealer on Trustpilot.">
+    
+    <!-- Google Fonts: Playfair Display for luxury headings, Inter for clean modern body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            50: '#fbf9f4',
+                            100: '#f5efe4',
+                            200: '#eadeca',
+                            300: '#dbc3a6',
+                            400: '#cea57b',
+                            500: '#c58b59',
+                            600: '#b87247',
+                            700: '#99593c',
+                            800: '#7e4a36',
+                            900: '#653e2d',
+                        },
+                        brand: {
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and basic cleanups */
+        html { scroll-behavior: smooth; }
+        .product-card:hover .product-img { transform: scale(1.08); }
+        .product-img { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hide { display: none !important; }
+    </style>
+</head>
+<body class="bg-brand-light text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Alert Bar -->
+    <div class="bg-red-900 text-red-50 text-sm py-3 px-4 text-center font-medium tracking-wide">
+        <strong>Bank Holiday Weekend:</strong> Our offices will be closed from 4pm Friday 1st May until 10am Tuesday 5th May. Orders can be placed as usual via our website 24/7 and any outstanding orders will be dispatched from Tuesday 5th May.
+    </div>
+
+    <!-- Top Utility Bar -->
+    <div class="bg-brand-dark text-slate-300 text-xs py-2 px-6 hidden md:block">
+        <div class="max-w-[1400px] mx-auto flex justify-between items-center">
+            <div class="flex space-x-6 items-center">
+                <a href="tel:08000903256" class="hover:text-gold-400 transition flex items-center gap-2">
+                    <i class="fa fa-phone"></i> 0800 090 3256
+                </a>
+                <a href="/about-us" class="hover:text-gold-400 transition">About Us</a>
+                <a href="/contact-us" class="hover:text-gold-400 transition">Contact Us</a>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <a href="/customer/account/login" class="hover:text-gold-400 transition flex items-center gap-2">
+                    <i class="fa fa-user"></i> Hello. Sign in / Your Account
+                </a>
+                <a href="/customer/account/create" class="hover:text-gold-400 transition">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation (Sticky) -->
+    <header class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200 shadow-sm">
+        <div class="max-w-[1400px] mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0">
+                <img src="https://www.ukbullion.com/media/wysiwyg/ukblogo.png" alt="UKBullion" class="h-10 w-auto">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium tracking-wide text-slate-700">
+                <a href="/" class="hover:text-gold-600 transition">Home</a>
+                <a href="/gold.html" class="hover:text-gold-600 transition">Gold <i class="fa fa-angle-down text-[10px] ml-1 opacity-50"></i></a>
+                <a href="/silver.html" class="hover:text-gold-600 transition">Silver <i class="fa fa-angle-down text-[10px] ml-1 opacity-50"></i></a>
+                <a href="/platinum.html" class="hover:text-gold-600 transition">Platinum</a>
+                <a href="/gifts.html" class="hover:text-gold-600 transition">Gifts</a>
+                <a href="/accessories.html" class="hover:text-gold-600 transition">Accessories</a>
+                <a href="/selling" class="hover:text-gold-600 transition">Selling to Us</a>
+                <a href="/secure-vaulted-storage" class="hover:text-gold-600 transition">Storage</a>
+                <a href="/learning-centre" class="hover:text-gold-600 transition">Learning Centre</a>
+                <div class="relative group cursor-pointer">
+                    <span class="hover:text-gold-600 transition flex items-center">Charts <i class="fa fa-angle-down text-[10px] ml-1 opacity-50"></i></span>
+                </div>
+                <div class="relative group cursor-pointer">
+                    <span class="hover:text-gold-600 transition flex items-center">Help <i class="fa fa-angle-down text-[10px] ml-1 opacity-50"></i></span>
+                </div>
+            </nav>
+
+            <!-- Search & Cart -->
+            <div class="flex items-center space-x-5">
+                <form id="search_mini_form" action="/catalogsearch/result/" method="get" class="hidden md:flex items-center bg-slate-50 border border-slate-200 rounded-full px-4 py-2">
+                    <input type="text" name="q" placeholder="Search entire store..." class="bg-transparent border-none outline-none text-sm w-48 text-slate-700 placeholder-slate-400">
+                    <button type="submit" class="text-slate-400 hover:text-gold-600"><i class="fa fa-search"></i></button>
+                </form>
+                <a href="/checkout/cart" class="flex items-center gap-2 text-slate-700 hover:text-gold-600 transition">
+                    <div class="relative">
+                        <i class="fa fa-shopping-cart text-lg"></i>
+                        <span class="absolute -top-2 -right-2 bg-gold-600 text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                    </div>
+                    <span class="text-sm font-medium hidden md:block">Cart</span>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button class="lg:hidden text-slate-700 text-xl"><i class="fa fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="max-w-[1400px] mx-auto px-4 sm:px-6 mt-8 mb-12">
+            <a href="https://www.ukbullion.com/new-gold-and-silver-bullion/promotions.html" class="block rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 relative group">
+                <div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition duration-500 z-10"></div>
+                <img src="https://www.ukbullion.com/media/wysiwyg/2026-main-banner-desktop-cgt-free-opt.jpg" alt="2026 Capital Gains Tax Free Gold and Silver Coins" class="w-full h-auto object-cover block">
+            </a>
+        </section>
+
+        <!-- Trust & Value Proposition Bar -->
+        <section class="border-y border-slate-200 bg-white py-8">
+            <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+                <div class="flex flex-col items-center justify-center space-y-3 px-4 pt-4 md:pt-0">
+                    <i class="fa fa-truck fa-2x text-gold-500"></i>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-800">Free Insured Delivery</h3>
+                    <p class="text-xs text-slate-500">On all standard UK orders</p>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-3 px-4 pt-4 md:pt-0">
+                    <i class="fa fa-line-chart fa-2x text-gold-500"></i>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-800">Live Pricing</h3>
+                    <p class="text-xs text-slate-500">Best rates updated in real-time</p>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-3 px-4 pt-4 md:pt-0">
+                    <i class="fa fa-shield-alt fa-2x text-gold-500"></i>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-800">Buy Securely</h3>
+                    <p class="text-xs text-slate-500">Encrypted online purchasing</p>
+                </div>
+                <div class="flex flex-col items-center justify-center space-y-3 px-4 pt-4 md:pt-0">
+                    <div class="flex text-green-500 space-x-1 text-lg">
+                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+                    </div>
+                    <h3 class="text-sm font-bold uppercase tracking-widest text-slate-800">Excellent</h3>
+                    <p class="text-xs text-slate-500">Rated highly on Trustpilot</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Categories (Replaces old sidebar links) -->
+        <section class="py-16 bg-brand-light">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <h1 class="text-3xl md:text-5xl font-serif text-center max-w-4xl mx-auto mb-12 text-slate-900 leading-tight">
+                    Buy Gold & Silver Bars and Coins from the Number 1 Trusted Investment Bullion Dealer in the UK
+                </h1>
+                
+                <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-16">
+                    <a href="https://www.ukbullion.com/gold/gold-bars.html" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">Gold Bars</a>
+                    <a href="https://www.ukbullion.com/gold/buy-gold-coins.html" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">Gold Coins</a>
+                    <a href="https://www.ukbullion.com/silver/silver-bars.html" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">Silver Bars</a>
+                    <a href="https://www.ukbullion.com/silver/buy-silver-coins.html" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">Silver Coins</a>
+                    <a href="https://www.ukbullion.com/new-gold-and-silver-bullion.html" class="bg-slate-900 text-white rounded-full px-6 py-3 text-sm font-medium hover:bg-gold-600 hover:shadow-md transition-all">New Bullion For 2026</a>
+                    <a href="/live-chart" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">Price Charts</a>
+                    <a href="https://www.ukbullion.com/silver/secure-vaulted-vat-free-silver.html" class="bg-white border border-slate-200 text-slate-700 rounded-full px-6 py-3 text-sm font-medium hover:border-gold-500 hover:text-gold-600 hover:shadow-md transition-all">VAT FREE Silver</a>
+                </div>
+
+                <!-- Featured Promos -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <a href="https://www.ukbullion.com/gold.html?prod_material=8" class="block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition z-10"></div>
+                        <img src="https://www.ukbullion.com/media/wysiwyg/2026-vat-free-bullion-sidebar.jpg" title="VAT Free Bullion" class="w-full transform group-hover:scale-105 transition duration-700">
+                    </a>
+                    <a href="https://www.ukbullion.com/new-gold-and-silver-bullion.html" class="block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 group relative">
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition z-10"></div>
+                        <img src="https://www.ukbullion.com/media/wysiwyg/new-2026-bullion-cta.jpg" title="Check Out Our New Products for 2026" class="w-full transform group-hover:scale-105 transition duration-700">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Grid Section -->
+        <section class="py-24 bg-white border-y border-slate-100">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <h2 class="text-3xl font-serif text-slate-900">Featured Investments</h2>
+                    <a href="/gold.html" class="text-sm font-semibold uppercase tracking-wider text-gold-600 hover:text-gold-800 transition">View All Products &rarr;</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12">
+                    
+                    <!-- Product 1 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <div class="absolute top-4 right-4 bg-red-700 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10 shadow-sm">CGT/VAT FREE</div>
+                        <a href="https://www.ukbullion.com/2026-1oz-gold-britannia-coin-kc3-the-royal-mint.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-1oz-gold-britannia-coin-front-450x450.png" class="product-img object-contain w-full h-full" alt="2026 1oz Gold Britannia">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2026 1oz Gold Britannia Coin | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <div class="absolute top-4 right-4 bg-red-700 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10 shadow-sm text-center leading-tight">CGT/VAT<br>FREE</div>
+                        <a href="https://www.ukbullion.com/2026-the-royal-mint-full-sovereign-gold-coin.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2026-sovereign-gold-coin-reverse-450.jpg" class="product-img object-contain w-full h-full" alt="2026 Gold Full Sovereign">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2026 Gold Full Sovereign Coin | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <div class="absolute top-4 right-4 bg-red-700 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider z-10 shadow-sm text-center leading-tight">CGT<br>FREE</div>
+                        <a href="https://www.ukbullion.com/2026-1oz-silver-britannia-coin-the-royal-mint.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-1oz-silver-britannia-coin-front-450x450.png" class="product-img object-contain w-full h-full" alt="2026 1oz Silver Britannia">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2026 1oz Silver Britannia Coin | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> ex VAT</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/1g-britannia-gold-bar-the-royal-mint.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-1-gold-britannia-bar-front-450x450.png" class="product-img object-contain w-full h-full" alt="1g Britannia Gold Bar">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">1g Britannia Gold Bar (New Design) | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/2026-1-10oz-gold-britannia-coin.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-1-10oz-gold-britannia-coin-front-450x450.png" class="product-img object-contain w-full h-full" alt="2026 1/10oz Gold Britannia Coin">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2026 1/10oz Gold Britannia Coin | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/2026-1oz-darth-vader-silver-coin-star-wars-collection.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2026-1oz-silver-coin-star-wars-darth-vader-front-450x450.png" class="product-img object-contain w-full h-full" alt="2026 1oz Darth Vader Silver Coin">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2026 1oz Darth Vader Silver Coin | Star Wars Collection | New Zealand Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> ex VAT</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/0-5g-zodiac-taurus-gold-bar-pamp-suisse.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/z/o/zodiac-taurus-front-450x450.png" class="product-img object-contain w-full h-full" alt="0.5g Zodiac Taurus Gold Bar">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">0.5g Zodiac Taurus Gold Bar | PAMP Suisse</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/1-oz-britannia-gold-bar-the-royal-mint.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-1oz-gold-britannia-bar-front-450x450.png" class="product-img object-contain w-full h-full" alt="1oz Britannia Gold Bar">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">1oz Britannia Gold Bar (New Design) | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/100g-britannia-gold-bar-the-royal-mint-new-design.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/0/2025-100g-gold-britannia-bar-front-450x450.png" class="product-img object-contain w-full h-full" alt="100g Britannia Gold Bar">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">100g Britannia Gold Bar (New Design) | The Royal Mint</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/2-5g-lady-of-liberty-gold-bar-pamp-suisse.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/2/-/2-5g-gold-lady-of-liberty-bar-front-450x450.png" class="product-img object-contain w-full h-full" alt="2.5g Lady of Liberty Gold Bar">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">2.5g Lady of Liberty Gold Bar | PAMP Suisse</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 11 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/metalor-5-gram-gold-bar-24ct.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/5/g/5g-metalor-gold-bar-front-450x450_1.png" class="product-img object-contain w-full h-full" alt="5g Gold Bar | Metalor">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">5g Gold Bar | Metalor</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> VAT free</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Product 12 -->
+                    <div class="product-card group relative flex flex-col bg-white rounded-2xl border border-slate-100 p-6 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
+                        <a href="https://www.ukbullion.com/20-x1oz-silver-minted-rounds-in-a-tube-pamp-suisse.html" class="block aspect-square bg-slate-50/50 rounded-xl mb-6 p-8 flex items-center justify-center overflow-hidden">
+                            <img src="https://www.ukbullion.com/media/catalog/product/cache/1/image/265x/9df78eab33525d08d6e5fb8d27136e95/1/o/1oz-silver-coins-in-x20-box-front-450x450.png" class="product-img object-contain w-full h-full" alt="20 x 1oz Silver Minted Rounds">
+                        </a>
+                        <h3 class="font-medium text-slate-900 mb-2 leading-tight text-[15px] hover:text-gold-600 transition"><a href="#">20 x 1oz Silver Minted Rounds in a Tube | PAMP Suisse</a></h3>
+                        <p class="text-emerald-600 text-xs font-semibold uppercase tracking-wider mb-4"><i class="fa fa-check-circle mr-1"></i> In stock</p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 flex justify-between items-end">
+                            <div class="text-xs text-slate-500 uppercase tracking-wide">From <span class="text-lg font-bold text-slate-900 ml-1 block normal-case"><i class="fa fa-spinner fa-spin text-gold-500 text-sm"></i></span> ex VAT</div>
+                            <button class="text-slate-400 group-hover:text-gold-600 transition"><i class="fa fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Guide -->
+        <section class="py-24 bg-brand-light">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 text-slate-900">Gold Bullion Investment Guide</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <!-- Article 1 -->
+                    <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="text-2xl font-serif text-slate-900 mb-6 border-b border-gold-200 pb-4 inline-block"><a href="/learning-centre/deciding-what-to-buy-gold-or-silver" class="hover:text-gold-600 transition">Choosing Between Bars or Coins?</a></h3>
+                        <p class="text-slate-700 font-medium mb-6 text-lg">The main factor to consider is the premiums. Coins will generally attract higher manufacturing costs than bars depending on size.</p>
+                        <div class="text-slate-600 space-y-4 text-sm leading-relaxed mb-8">
+                            <p>The decision between Gold coins and bars often comes down to the individual investor and their personal preferences as well as the goals for the investment. There is typically more variation in weight available with Gold Bars with the smallest available being 1g and increasing in increments to almost any weight. This gives investors flexibility to split their money as they wish.</p>
+                            <p>Coins generally have a far lower range of values available as they are struck in more limited quantities. Several small Gold bar purchases will roughly equal a single Gold Coin depending upon the exact products purchased of course.</p>
+                            <p>Both Gold Coins and Gold Bars benefit from a special tax status which means that they are exempt from VAT which saves a potential 20% addition to the price paid. In addition to this certain coins, such as the Gold Sovereign in the UK are classed as legal tender and as such are exempt from capital gains tax. More information on the tax status of Gold is available <a href="/learning-centre/is-gold-bullion-exempt-from-capital-gains-tax" class="text-gold-600 hover:underline">here</a>.</p>
+                            <p>It is worth remembering that each product that you buy will have built in fashion charges from the manufacturer to cover the costs of production and any decorative packaging to display or protect the coin that is supplied along with new coins and bars.</p>
+                        </div>
+                        <a href="/learning-centre" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-gold-600 transition group">
+                            Find out more <i class="fa fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="text-2xl font-serif text-slate-900 mb-6 border-b border-gold-200 pb-4 inline-block"><a href="/secure-vaulted-storage" class="hover:text-gold-600 transition">Professional or Self Storage?</a></h3>
+                        <p class="text-slate-700 font-medium mb-6 text-lg">We offer clients the opportunity to receive their bullion products by free reliable insured delivery to the billing address of the card holder or direct into storage.</p>
+                        <div class="text-slate-600 space-y-4 text-sm leading-relaxed mb-8">
+                            <p>Many investors find that they prefer to look after their investments for themselves perhaps because they like to have their investment close to hand should they need to release some capital.</p>
+                            <p>Both options have their pros and cons. Self storage gives you easy access and the flexibility to very quickly release capital through selling of an amount of your holding.</p>
+                            <p>However for more substantial sums specialist infrastructure, such as safes and security systems, may be required at your place of residence which leads to extra costs in order to not invalidate home insurance policies. Insurance premiums are also likely to increase with the higher values of bullion stored at home.</p>
+                            <p>Professional storage on the other hand offers you almost risk free storage if chosen with a fully insured provider. As part of this service, we offer a secure storage scheme which uses real time prices to calculate the value of your holdings and enable you to easily sell your investment as required with minimal delay.</p>
+                        </div>
+                        <a href="/secure-vaulted-storage" class="inline-flex items-center text-sm font-bold uppercase tracking-widest text-slate-900 hover:text-gold-600 transition group">
+                            Find out more <i class="fa fa-arrow-right ml-2 group-hover:translate-x-1 transition"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <a href="/learning-centre/the-precious-metals-market-basics" class="inline-flex items-center text-sm font-semibold text-gold-600 hover:text-gold-800 uppercase tracking-widest transition border-b border-transparent hover:border-gold-600 pb-1">
+                        Read the Full Investment Guide <i class="fa fa-chevron-right ml-2 text-[10px]"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter / CTA Banner -->
+        <section class="bg-brand-dark py-20 px-6 border-t-4 border-gold-500">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-serif text-white mb-4">Stay Informed & Unlock Value</h2>
+                <p class="text-slate-300 mb-8 font-light text-lg">Sign Up For A <strong class="text-white font-semibold">FREE</strong> Discount Code On Your First Order, plus market updates and exclusive deals.</p>
+                <form class="flex flex-col sm:flex-row max-w-xl mx-auto gap-3">
+                    <input type="email" placeholder="Enter Email Address" required class="flex-grow px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:border-gold-500 focus:bg-white/20 transition">
+                    <button type="submit" class="px-8 py-4 bg-gold-600 hover:bg-gold-500 text-white font-bold rounded-full uppercase tracking-wider text-sm transition shadow-lg shadow-gold-900/50">Subscribe <i class="fa fa-angle-right ml-2"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Mints / Brands -->
+        <section class="py-16 bg-white border-b border-slate-100">
+            <div class="max-w-[1400px] mx-auto px-6">
+                <h2 class="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-10">Resellers of World Renowned Mints</h2>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition duration-700">
+                    <a href="/manufacturers/the-royal-mint.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/theroyalmint-logo-small.jpg" alt="The Royal Mint" class="h-16 w-auto mix-blend-multiply"></a>
+                    <a href="/manufacturers/metalor.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/manu_metalor.png" alt="Metalor" class="h-12 w-auto mix-blend-multiply"></a>
+                    <a href="/manufacturers/umicore.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/manu_umicore.png" alt="Umicore" class="h-14 w-auto mix-blend-multiply"></a>
+                    <a href="/manufacturers/pamp.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/manu_pamp.png" alt="PAMP" class="h-10 w-auto mix-blend-multiply"></a>
+                    <a href="/manufacturers/perth-mint.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/manu-perth-mint.png" alt="Perth Mint" class="h-16 w-auto mix-blend-multiply"></a>
+                    <a href="/manufacturers/valcambi.html"><img src="https://www.ukbullion.com/media/wysiwyg/manufacturer/manu_valcambi.png" alt="Valcambi" class="h-10 w-auto mix-blend-multiply"></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 pt-20 pb-10">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Information -->
+                <div>
+                    <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Information</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/about-us" class="hover:text-gold-500 transition">About Us</a></li>
+                        <li><a href="/contact-us" class="hover:text-gold-500 transition">Contact Us</a></li>
+                        <li><a href="https://www.trustpilot.co.uk/review/www.ukbullion.com" target="_blank" class="hover:text-gold-500 transition">Trustpilot Reviews</a></li>
+                        <li><a href="https://www.ukbullion.com/blog" target="_blank" class="hover:text-gold-500 transition">Blog</a></li>
+                        <li><a href="/privacy-policy" class="hover:text-gold-500 transition">Privacy Policy</a> / <a href="/disclaimer" class="hover:text-gold-500 transition">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Support</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/learning-centre/how-to-buy" class="hover:text-gold-500 transition">How to Buy</a></li>
+                        <li><a href="/faq" class="hover:text-gold-500 transition">FAQs</a></li>
+                        <li><a href="/complaints-form" class="hover:text-gold-500 transition">Complaints</a></li>
+                        <li><a href="/bullion-terms-and-conditions" class="hover:text-gold-500 transition">Terms & Conditions</a></li>
+                        <li><a href="/testimonials" class="hover:text-gold-500 transition">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Services</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="/selling" class="hover:text-gold-500 transition">Selling To Us</a></li>
+                        <li><a href="/scrap" class="hover:text-gold-500 transition">Scrap Precious Metals</a></li>
+                        <li><a href="/gold-price" class="hover:text-gold-500 transition">Spot Price Charts</a></li>
+                        <li><a href="/learning-centre" class="hover:text-gold-500 transition">Learning Centre</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Social -->
+                <div>
+                    <h5 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Stay Connected</h5>
+                    <div class="flex space-x-4 mb-6">
+                        <a href="https://www.facebook.com/pages/UK-Bullion/111597228908353" target="_blank" class="h-10 w-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:bg-[#3b5998] transition">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com/UKBullion" target="_blank" class="h-10 w-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:bg-[#1da1f2] transition">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com/ukbullion" target="_blank" class="h-10 w-10 bg-slate-800 rounded-full flex items-center justify-center text-white hover:bg-[#ff0000] transition">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3"><i class="fa fa-phone text-gold-500 text-lg"></i> <a href="tel:01902623256" class="hover:text-white transition">01902 623 256</a></li>
+                        <li class="flex items-center gap-3"><i class="fa fa-at text-gold-500 text-lg"></i> <a href="mailto:contact@ukbullion.com" class="hover:text-white transition">contact@ukbullion.com</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 pb-4 grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-sm">
+                <div>
+                    <p>UKBullion.com is part of Group International Ltd.</p>
+                    <p class="mt-2 text-xs text-slate-500 leading-relaxed max-w-sm">www.ukbullion.com is a trading name of Group International Ltd, registered in England and Wales number 04497345, Registered Office: Innovation House 410, Stafford Road, Wolverhampton, WV10 6AJ.</p>
+                </div>
+                
+                <div class="flex gap-6 justify-center md:justify-start">
+                    <a href="http://anchorcertanalytical.com/" target="_blank" rel="nofollow" class="bg-white p-2 rounded block"><img src="https://www.ukbullion.com/media/wysiwyg/assaylogo.jpg" alt="Assay Office Birmingham" class="h-10 mix-blend-multiply"></a>
+                    <a href="https://www.naj.co.uk/find-a-jeweller/detail/group-international-ltd/147050" target="_blank" rel="noopener" class="bg-white p-2 rounded block"><img src="https://www.ukbullion.com/media/wysiwyg/naj.png" alt="Member of the National Association of Jewellers" class="h-10 mix-blend-multiply"></a>
+                </div>
+
+                <div class="md:text-right">
+                    <p>&copy; 2026 UKBullion. All Rights Reserved.</p>
+                    <p class="mt-2 text-[10px] text-slate-600 max-w-sm ml-auto">The opinions of UKBullion.com, its employees, agents or directors should not be relied upon as any implied or explicit guarantee of return. We are not authorised or regulated by the Financial Conduct Authority to provide any investment advice.</p>
+                    <p class="mt-2 text-[10px] text-slate-600">* Please refer to our <a href="/free-delivery" class="underline">delivery page</a> for more information.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
