@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Cases, Covers, Screen Protectors & More! - Mobile Fun</title>
+    
+    <!-- Google Fonts for Premium Editorial Look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        premium: {
+                            50: '#f8f9fa',
+                            100: '#f1f3f5',
+                            900: '#1a1b1e',
+                            950: '#141517'
+                        }
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth, editorial interactions */
+        .mega-menu { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
+        .group:hover .mega-menu { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hover-scale img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .hover-scale:hover img { transform: scale(1.05); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="font-sans text-premium-900 bg-white antialiased selection:bg-black selection:text-white">
+
+    <!-- GLOBAL PROMO BANNER -->
+    <div class="bg-black text-white text-xs tracking-widest uppercase py-2 text-center relative z-50">
+        <a href="/sale" class="hover:text-gray-300 transition-colors">
+            Payday Deals - Shop Now
+        </a>
+    </div>
+
+    <!-- UTILITY TOP BAR -->
+    <div class="hidden md:flex justify-between items-center px-8 py-2 border-b border-gray-100 text-[11px] uppercase tracking-wider text-gray-500">
+        <div class="flex space-x-6">
+            <span class="flex items-center gap-2"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Fast Delivery Available</span>
+            <span class="flex items-center gap-2"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> 30-day money back guarantee</span>
+            <span class="flex items-center gap-2"><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg> 6 million+ orders shipped</span>
+        </div>
+        <div class="flex space-x-6">
+            <a href="/help" class="hover:text-black transition">Help</a>
+            <a href="/blog" class="hover:text-black transition">Blog</a>
+            <a href="/careers" class="hover:text-black transition">Careers</a>
+            <a href="#" class="hover:text-black transition">Give Feedback</a>
+            <a href="/order/view" class="hover:text-black transition">Track My Order</a>
+            <a href="/customer/account" class="hover:text-black transition">My Account</a>
+            <div class="flex items-center gap-1 cursor-pointer hover:text-black transition">
+                <span>GBP (£)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="sticky top-0 bg-white/95 backdrop-blur-md z-40 border-b border-gray-100">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-8 py-5 flex justify-between items-center">
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-black focus:outline-none" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Logo -->
+            <a href="/" class="flex-shrink-0">
+                <img src="https://www.mobilefun.co.uk/skin/frontend/mobilefun-responsive/default/images/template/mobilefun-logo.png" 
+                     srcset="https://www.mobilefun.co.uk/skin/frontend/mobilefun-responsive/default/images/template/mobilefun-logo@2x.png 2x" 
+                     alt="Mobile Fun" class="h-6 md:h-8 w-auto">
+            </a>
+
+            <!-- Desktop Primary Navigation -->
+            <nav class="hidden md:flex space-x-8 text-[13px] font-medium tracking-wide uppercase">
+                <div class="group py-2">
+                    <a href="/by-type/cases" class="hover:text-gray-500 transition-colors">Cases</a>
+                    <div class="mega-menu absolute left-0 w-full bg-white border-t border-gray-100 top-[100%] shadow-xl p-12 grid grid-cols-5 gap-8">
+                        <div>
+                            <h4 class="font-serif text-lg mb-4 capitalize">Samsung</h4>
+                            <ul class="space-y-3 text-sm text-gray-500 font-normal lowercase capitalize-first">
+                                <li><a href="#" class="hover:text-black">Galaxy S26 Ultra</a></li>
+                                <li><a href="#" class="hover:text-black">Galaxy S26</a></li>
+                                <li><a href="#" class="hover:text-black">Galaxy S25 Ultra</a></li>
+                                <li><a href="#" class="hover:text-black">Galaxy S24 Ultra</a></li>
+                                <li><a href="#" class="hover:text-black">Galaxy Z Fold 5</a></li>
+                                <li><a href="#" class="text-black font-medium mt-4 block">Shop All Samsung &rarr;</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-4 capitalize">iPhone</h4>
+                            <ul class="space-y-3 text-sm text-gray-500 font-normal lowercase capitalize-first">
+                                <li><a href="#" class="hover:text-black">iPhone 17 Pro Max</a></li>
+                                <li><a href="#" class="hover:text-black">iPhone 17 Air</a></li>
+                                <li><a href="#" class="hover:text-black">iPhone 16 Pro Max</a></li>
+                                <li><a href="#" class="hover:text-black">iPhone 15</a></li>
+                                <li><a href="#" class="hover:text-black">iPhone 14 Pro</a></li>
+                                <li><a href="#" class="text-black font-medium mt-4 block">Shop All iPhone &rarr;</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-4 capitalize">iPad</h4>
+                            <ul class="space-y-3 text-sm text-gray-500 font-normal lowercase capitalize-first">
+                                <li><a href="#" class="hover:text-black">iPad Pro 13" 2025</a></li>
+                                <li><a href="#" class="hover:text-black">iPad Air 6 11" 2024</a></li>
+                                <li><a href="#" class="hover:text-black">iPad 10.9 2022</a></li>
+                                <li><a href="#" class="text-black font-medium mt-4 block">Shop All iPad &rarr;</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-lg mb-4 capitalize">Google & Sony</h4>
+                            <ul class="space-y-3 text-sm text-gray-500 font-normal lowercase capitalize-first">
+                                <li><a href="#" class="hover:text-black">Pixel 10 Pro XL</a></li>
+                                <li><a href="#" class="hover:text-black">Pixel 9 Pro XL</a></li>
+                                <li><a href="#" class="hover:text-black">Pixel 8a</a></li>
+                                <li><a href="#" class="hover:text-black">Xperia 1 VI</a></li>
+                                <li><a href="#" class="hover:text-black">Xperia 10 V</a></li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-6 flex flex-col justify-center items-center text-center">
+                            <span class="block text-sm text-gray-500 mb-2">Can't find your device?</span>
+                            <a href="#" class="bg-black text-white px-6 py-2 text-xs uppercase tracking-widest hover:bg-gray-800 transition">Shop All Cases</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeating simplified dropdowns for editorial feel without overwhelming code -->
+                <div class="group py-2"><a href="/screen-protectors" class="hover:text-gray-500 transition-colors">Screen Protectors</a></div>
+                <div class="group py-2"><a href="/car-phone-holders" class="hover:text-gray-500 transition-colors">Car Holders</a></div>
+                <div class="group py-2"><a href="/chargers" class="hover:text-gray-500 transition-colors">Chargers & Cables</a></div>
+                <div class="group py-2"><a href="/wireless-chargers" class="hover:text-gray-500 transition-colors">Wireless</a></div>
+                <div class="group py-2"><a href="/smartwatch" class="hover:text-gray-500 transition-colors">Smartwatch</a></div>
+                <div class="group py-2"><a href="/lifestyle" class="hover:text-gray-500 transition-colors">Lifestyle</a></div>
+            </nav>
+
+            <!-- Search & Cart -->
+            <div class="flex items-center space-x-6">
+                <button class="flex items-center text-black focus:outline-none" aria-label="Search">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <span class="hidden xl:inline-block ml-2 text-xs uppercase tracking-wider text-gray-500">Search</span>
+                </button>
+                <button class="flex items-center text-black focus:outline-none group" aria-label="Cart">
+                    <div class="relative">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                        <span class="absolute -top-1 -right-2 bg-black text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                    </div>
+                    <span class="hidden xl:inline-block ml-3 text-xs uppercase tracking-wider text-gray-500 group-hover:text-black transition">£0.00</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN EDITORIAL HERO -->
+    <section class="relative w-full bg-premium-50">
+        <a href="/samsung/galaxy-s24-series" class="block w-full h-[60vh] md:h-[80vh] relative hover-scale overflow-hidden">
+            <picture>
+                <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/s24_ultra_mobile_banner.jpg">
+                <source media="(max-width: 1024px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/s24_ultra_tablet_banner.jpg">
+                <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/s24_ultra_desktop_banner.jpg" alt="Samsung Galaxy S24 Series" class="w-full h-full object-cover object-center">
+            </picture>
+        </a>
+    </section>
+
+    <!-- DEVICE FINDER (ELEVATED SEARCH BAR) -->
+    <section class="max-w-4xl mx-auto -mt-8 relative z-10 px-4">
+        <div class="bg-white p-6 md:p-10 shadow-[0_20px_40px_rgba(0,0,0,0.08)]">
+            <h2 class="text-center font-serif text-2xl md:text-3xl text-black mb-6">Find accessories for your device</h2>
+            <div class="relative">
+                <input type="text" placeholder="e.g. iPhone 17, Pixel 9 Pro, Galaxy S25, Apple Watch" class="w-full border-b-2 border-gray-200 py-4 pl-0 pr-12 text-lg focus:outline-none focus:border-black transition-colors bg-transparent placeholder-gray-400">
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 text-black hover:text-gray-500 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 mt-6 text-xs uppercase tracking-widest text-gray-500">
+                <a href="#" class="hover:text-black transition-colors text-center">Can't see your device?</a>
+                <a href="#" class="hover:text-black transition-colors text-center">Need help identifying?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITORIAL LOOKBOOK (SECONDARY HEROES) -->
+    <section class="max-w-[1600px] mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <a href="/google/pixel-8-pro" class="group block overflow-hidden relative aspect-[4/5] hover-scale bg-premium-100">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Pixel8_Pro_Mobile800.jpg">
+                    <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Pixel8_Pro_Desktop1120.jpg" alt="Google Pixel 8 Pro" class="w-full h-full object-cover">
+                </picture>
+            </a>
+            <a href="/google/pixel-8" class="group block overflow-hidden relative aspect-[4/5] hover-scale bg-premium-100 mt-0 md:mt-12">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Pixel8_Mobile800.jpg">
+                    <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Pixel8_Desktop1120.jpg" alt="Google Pixel 8" class="w-full h-full object-cover">
+                </picture>
+            </a>
+            <a href="/samsung/galaxy-s23-fe" class="group block overflow-hidden relative aspect-[4/5] hover-scale bg-premium-100 mt-0 md:mt-24">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/SG_S23_FE_Mobile800.jpg">
+                    <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/SG_S23_FE_Desktop1120.jpg" alt="Samsung Galaxy S23 FE" class="w-full h-full object-cover">
+                </picture>
+            </a>
+        </div>
+    </section>
+
+    <!-- CURATED COLLECTIONS (DUAL PROMO) -->
+    <section class="max-w-[1600px] mx-auto px-4 md:px-8 pb-16 md:pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="/car-phone-holders" class="block relative overflow-hidden group hover-scale aspect-[16/9] md:aspect-auto">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/Homepage_Blocks/CAR_ACCESSORIES_MOBILE.jpg">
+                    <img src="https://images.mobilefun.co.uk/graphics/banners/Homepage_Blocks/CAR_ACCESSORIES.jpg" alt="Car Phone Holders" class="w-full h-full object-cover">
+                </picture>
+            </a>
+            <a href="/wireless-chargers" class="block relative overflow-hidden group hover-scale aspect-[16/9] md:aspect-auto">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/Homepage_Blocks/WIRELESS_CHARGING_MOBILE.jpg">
+                    <img src="https://images.mobilefun.co.uk/graphics/banners/Homepage_Blocks/WIRELESS_CHARGERS.jpg" alt="Wireless Chargers" class="w-full h-full object-cover">
+                </picture>
+            </a>
+        </div>
+    </section>
+
+    <!-- CURATED DEVICE ACCESSORIES GRID -->
+    <section class="bg-premium-50 py-20 md:py-32">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <h3 class="font-serif text-3xl md:text-5xl text-black">Curated for your device</h3>
+                <a href="/mobile-accessories" class="hidden md:inline-block text-xs uppercase tracking-widest border-b border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors">View All Devices</a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-8 gap-x-6 gap-y-12">
+                <!-- Items populated from source table -->
+                <a href="/samsung/galaxy-s24-ultra" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/s24_ultra.jpg" alt="Galaxy S24 Ultra" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy S24 Ultra</span>
+                </a>
+                <a href="/samsung/galaxy-s24-plus" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/s24.jpg" alt="Galaxy S24 Plus" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy S24 Plus</span>
+                </a>
+                <a href="/samsung/galaxy-s24" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/s24_plus.jpg" alt="Galaxy S24" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy S24</span>
+                </a>
+                <a href="/samsung/galaxy-s23-fe" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/samsung-galaxy-s23-fe.jpg" alt="Galaxy S23 FE" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy S23 FE</span>
+                </a>
+                
+                <a href="/apple/iphone-15" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/iPhone15.v3.jpg" alt="iPhone 15" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">iPhone 15</span>
+                </a>
+                <a href="/apple/iphone-15-plus" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/iPhone15_Plus.v3.jpg" alt="iPhone 15 Plus" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">iPhone 15 Plus</span>
+                </a>
+                <a href="/apple/iphone-15-pro" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/iPhone15_Pro.v2.jpg" alt="iPhone 15 Pro" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">iPhone 15 Pro</span>
+                </a>
+                <a href="/apple/iphone-15-pro-max" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/iPhone15.ProMax.v3.jpg" alt="iPhone 15 Pro Max" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">iPhone 15 Pro Max</span>
+                </a>
+
+                <a href="/samsung/galaxy-z-flip-5" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/samsung-galaxy-z-flip5.jpg" alt="Galaxy Z Flip5" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy Z Flip5</span>
+                </a>
+                <a href="/apple/iphone-14" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/iPhone_14low.jpg" alt="iPhone 14" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">iPhone 14</span>
+                </a>
+                <a href="/google/pixel-8" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/Pixel8.jpg" alt="Google Pixel 8" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Google Pixel 8</span>
+                </a>
+                <a href="/google/pixel-8-pro" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/category_icons/Pixel8_Pro.jpg" alt="Google Pixel 8 Pro" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Google Pixel 8 Pro</span>
+                </a>
+                <a href="/nothing/phone-2" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/nothingphone2.jpg" alt="Nothing Phone 2" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Nothing Phone 2</span>
+                </a>
+                <a href="/smartwatch/apple-watch" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/applewatchlanding/Apple_Watch_Series_7%20(1)low.jpg" alt="Apple Watch" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Apple Watch</span>
+                </a>
+                <a href="/smartwatch/samsung-galaxy-watch" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/samsunggalaxywatch/Samsung_Galaxy_Watch_4low.jpg" alt="Samsung Galaxy Watch" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Galaxy Watch</span>
+                </a>
+                <a href="/google/pixel-watch" class="group text-center">
+                    <div class="bg-white aspect-square flex items-center justify-center p-6 mb-4 shadow-sm group-hover:shadow-md transition-shadow">
+                        <img src="https://images.mobilefun.co.uk/graphics/homepage/Google_Pixel_Watchlow.jpg" alt="Pixel Watch 2" class="mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <span class="text-sm font-medium tracking-wide">Pixel Watch 2</span>
+                </a>
+            </div>
+            
+            <div class="mt-12 text-center md:hidden">
+                 <a href="/mobile-accessories" class="inline-block text-xs uppercase tracking-widest border-b border-black pb-1">View All Devices</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FULL WIDTH PROMO -->
+    <section class="w-full hover-scale overflow-hidden">
+        <a href="/by-brand/olixar-basics" class="block w-full">
+            <picture>
+                <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Olixar_Basics_Mobile.jpg">
+                <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Olixar_Basics_Tablet.jpg" alt="Olixar Basics" class="w-full h-auto object-cover">
+            </picture>
+        </a>
+    </section>
+
+    <!-- SHOP BY ESSENTIALS (TOP CATEGORIES) -->
+    <section class="max-w-[1600px] mx-auto px-4 md:px-8 py-20 md:py-32">
+        <h3 class="font-serif text-3xl md:text-5xl text-black text-center mb-16">The Essentials</h3>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 md:gap-8">
+            <a href="/by-type/cases" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Cases.jpg" alt="Cases" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Cases</span>
+            </a>
+            <a href="/by-type/screen-protectors" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Screen_Protector.jpg" alt="Screen Protectors" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Protectors</span>
+            </a>
+            <a href="/by-type/car-holders" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Car_Phone_Holders.jpg" alt="Car Holders" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Car Mounts</span>
+            </a>
+            <a href="/by-type/chargers/mains-chargers" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Mains_Charger.jpg" alt="Mains Chargers" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Chargers</span>
+            </a>
+            <a href="/wireless-chargers" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Wireless_Chargers.jpg" alt="Wireless Chargers" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Wireless</span>
+            </a>
+            <a href="/by-type/audio/headphones" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Headphones.jpg" alt="Headphones" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Audio</span>
+            </a>
+            <a href="/by-type/charging-and-adapters/charging-cables" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Cables.V2.jpg" alt="Cables" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Cables</span>
+            </a>
+            <a href="/by-type/latest-tech" class="group text-center">
+                <div class="rounded-full bg-premium-100 aspect-square flex items-center justify-center p-4 mb-4 mx-auto w-32 h-32 overflow-hidden transition-colors group-hover:bg-gray-200">
+                    <img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/V2/Trendy_Tech.jpg" alt="Trending Tech" class="mix-blend-multiply object-contain w-full h-full group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <span class="text-xs uppercase tracking-widest text-gray-500 group-hover:text-black transition">Trending</span>
+            </a>
+        </div>
+        
+        <!-- Extruded categories -->
+        <div class="flex flex-wrap justify-center gap-6 mt-12">
+            <a href="/by-type/smart-home" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">Smart Home</a>
+            <a href="/by-type/cleaning" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">Cleaning</a>
+            <a href="/by-type/adapters" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">Adapters</a>
+            <a href="/by-type/vr-headsets" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">VR Headsets</a>
+            <a href="/by-type/speakers" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">Speakers</a>
+            <a href="/by-type/RFID" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">RFID</a>
+            <a href="/by-type/your-deals" class="text-sm border border-gray-200 px-6 py-2 hover:bg-black hover:text-white transition">Your Deals</a>
+        </div>
+    </section>
+
+    <!-- SHOP BY BRAND (EDITORIAL SPREAD) -->
+    <section class="bg-premium-950 text-white py-20 md:py-32">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h3 class="font-serif text-3xl md:text-5xl mb-6">Top Brands</h3>
+                <p class="text-gray-400 font-light leading-relaxed">We offer a large range of premium brands to ensure you have the ultimate selection. Choose from official accessories from industry leaders such as Samsung, Nomad, Apple, Whitestone, Ringke, Google, Spigen, and many more.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 mb-12">
+                <a href="/by-brand/olixar" class="block overflow-hidden group hover-scale">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/olixar_mobile.jpg">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/Device-selector-19/olixar_mf_banner_2022low.jpg" alt="Olixar" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                    </picture>
+                </a>
+                <a href="/by-brand/lovecases" class="block overflow-hidden group hover-scale">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/lovecase_mobile.jpg">
+                        <img src="https://images.mobilefun.co.uk/graphics/banners/homepage_banners/Mobile_Fun_Banner_Loww.jpg" alt="Lovecases" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity">
+                    </picture>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <a href="/by-brand/nomad" class="block overflow-hidden group hover-scale">
+                    <img src="https://images.mobilefun.co.uk/graphics/HomepageBanners/nomad.jpg" alt="Nomad" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                </a>
+                <a href="/by-brand/whitestone" class="block overflow-hidden group hover-scale">
+                    <img src="https://images.mobilefun.co.uk/graphics/HomepageBanners/whitestone_dome.jpg" alt="Whitestone" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                </a>
+                <a href="/by-brand" class="block overflow-hidden group hover-scale">
+                    <img src="https://images.mobilefun.co.uk/graphics/HomepageBanners/all_brands.jpg" alt="All Brands" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                </a>
+            </div>
+
+            <!-- Tiny Manufacturer Grid -->
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                 <a href="/samsung"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/SamsungLogo2.jpg" alt="Samsung" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/apple"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/AppleLogo2.jpg" alt="Apple" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/google"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/GoogleLogo2.jpg" alt="Google" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/sony"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/SonyLogo2.jpg" alt="Sony" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/oneplus"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/oneplus_logo.jpg" alt="OnePlus" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/xiaomi"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/xiaomi_logo.jpg" alt="Xiaomi" class="h-16 w-auto mix-blend-screen invert"></a>
+                 <a href="/nothing"><img src="https://images.mobilefun.co.uk/graphics/homepage_update_2021/nothing_logo.jpg" alt="Nothing" class="h-16 w-auto mix-blend-screen invert"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STORY -->
+    <section class="max-w-4xl mx-auto px-4 py-20 md:py-32 text-center">
+        <h3 class="font-serif text-3xl mb-8">About Mobile Fun</h3>
+        <p class="text-lg md:text-xl text-gray-500 font-light leading-relaxed">
+            Mobile Fun is the largest online mobile accessory retailer - offering the latest tablet and mobile phone accessories. We put our success down to responding to what our customers want and our extensive range of the latest mobile accessories, teamed with world-class customer service. Trusted by over 4 million customers, who have provided over 180,000 product reviews.
+        </p>
+    </section>
+
+    <!-- NEWSLETTER SIGNUP -->
+    <section class="bg-premium-100 py-16 md:py-20 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="font-serif text-2xl md:text-3xl mb-4">Get 10% Off</h2>
+            <p class="text-gray-600 mb-8 font-light">Sign up to our newsletter for access to our exclusive deals and 10% off your first order.</p>
+            <form class="flex flex-col sm:flex-row max-w-lg mx-auto gap-4">
+                <input type="email" placeholder="Enter your email address" class="flex-1 bg-white border border-gray-300 px-6 py-4 focus:outline-none focus:border-black transition-colors rounded-none">
+                <button type="button" class="bg-black text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-gray-800 transition-colors whitespace-nowrap">Sign Up</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white pt-20 pb-10 border-t border-gray-200">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Links Column 1 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Popular Accessories</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="/car-phone-holders" class="hover:text-black transition">Car Phone Holders</a></li>
+                        <li><a href="/chargers/qi-wireless-chargers" class="hover:text-black transition">Wireless Chargers</a></li>
+                        <li><a href="/by-type/cases" class="hover:text-black transition">Cases</a></li>
+                        <li><a href="/by-type/chargers" class="hover:text-black transition">Chargers</a></li>
+                        <li><a href="/smartwatch" class="hover:text-black transition">Smartwatch</a></li>
+                        <li><a href="/lifestyle/health-and-fitness" class="hover:text-black transition">Health & Fitness</a></li>
+                        <li><a href="/apple/iphone/cases" class="hover:text-black transition">iPhone Cases</a></li>
+                        <li><a href="/screen-protectors" class="hover:text-black transition">Screen Protectors</a></li>
+                        <li><a href="/by-type" class="text-black font-medium mt-2 block">View All Accessories</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Popular Brands</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="/by-brand/olixar" class="hover:text-black transition">Olixar</a></li>
+                        <li><a href="/by-brand/official-samsung-accessories" class="hover:text-black transition">Samsung</a></li>
+                        <li><a href="/by-brand/whitestone" class="hover:text-black transition">Whitestone</a></li>
+                        <li><a href="/by-brand/spigen" class="hover:text-black transition">Spigen</a></li>
+                        <li><a href="/by-brand/apple" class="hover:text-black transition">Apple</a></li>
+                        <li><a href="/by-brand/nomad" class="hover:text-black transition">Nomad</a></li>
+                        <li><a href="/by-brand/lovecases" class="hover:text-black transition">LoveCases</a></li>
+                        <li><a href="/by-brand/otterbox" class="hover:text-black transition">Otterbox</a></li>
+                        <li><a href="/by-brand" class="text-black font-medium mt-2 block">View All Brands</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 3 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Popular Devices</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="/samsung/galaxy-s24-ultra/cases" class="hover:text-black transition">Galaxy S24 Ultra Cases</a></li>
+                        <li><a href="/apple/iphone-15-pro-max/cases" class="hover:text-black transition">iPhone 15 Pro Max Cases</a></li>
+                        <li><a href="/samsung/galaxy-z-fold-5/cases" class="hover:text-black transition">Galaxy Z Fold5 Cases</a></li>
+                        <li><a href="/google/pixel-8-pro/cases" class="hover:text-black transition">Google Pixel 8 Pro Cases</a></li>
+                        <li><a href="/samsung/galaxy-a14/cases" class="hover:text-black transition">Galaxy A14 Cases</a></li>
+                        <li><a href="/mobile-accessories" class="text-black font-medium mt-2 block">View All Devices</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 4 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Customer Service</h4>
+                    <ul class="space-y-4 text-sm text-gray-500">
+                        <li><a href="/help" class="hover:text-black transition">Help Center</a></li>
+                        <li><a href="/delivery-information" class="hover:text-black transition">Delivery Information</a></li>
+                        <li><a href="/returns" class="hover:text-black transition">Returns Policy</a></li>
+                        <li><a href="/terms-and-conditions" class="hover:text-black transition">Terms & Conditions</a></li>
+                        <li><a href="/privacy-policy" class="hover:text-black transition">Privacy & Security</a></li>
+                        <li><a href="/recycling" class="hover:text-black transition">Recycling</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Payment -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Payment Options</h4>
+                    <img src="https://images.mobilefun.co.uk/graphics/badges/card-logos-169.png" alt="Accepted Payment Methods" class="h-8 mb-8 opacity-70 grayscale">
+                    
+                    <h4 class="font-serif text-lg mb-6">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-black transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar & Awards -->
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+                <p>&copy; 2026 Love & Magic Ltd. All rights reserved.</p>
+                <img src="https://images.mobilefun.co.uk/graphics/Awards-Footer-2021_Cropped.jpg" alt="Mobile Fun Awards" class="h-8 mt-4 md:mt-0 opacity-60 grayscale mix-blend-multiply">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
