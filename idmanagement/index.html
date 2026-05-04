@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Systems | Premium Access Control & Printing</title>
+    <meta name="description" content="ID Management Systems provide ID system, Custom Card Printing and Access Control Systems." />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f7f8f9',
+                            100: '#eef1f3',
+                            900: '#1a1d20',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Smooth scrolling and hiding scrollbars for horizontal lists */
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .grayscale-hover { filter: grayscale(100%); transition: filter 0.3s ease; opacity: 0.6; }
+        .grayscale-hover:hover { filter: grayscale(0%); opacity: 1; }
+    </style>
+</head>
+<body class="font-sans text-brand-900 bg-white antialiased selection:bg-black selection:text-white">
+
+    <!-- Utility Bar -->
+    <div class="bg-black text-white text-xs tracking-widest uppercase py-2 text-center">
+        <span class="hidden sm:inline">Free Delivery On orders over £100 • </span>Call us now: <a href="tel:08004081471" class="hover:text-gray-300">0800 408 1471</a>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/">
+                        <img class="h-8 w-auto" src="https://www.idmanagement.com/media/template/logo.png" alt="ID Management Systems">
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Card Printers</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Consumables</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Plastic Cards</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Accessories</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Software & Systems</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Access Products</a>
+                    <a href="#" class="text-sm font-medium text-gray-900 hover:text-gray-500 transition-colors">Services</a>
+                </nav>
+
+                <!-- Icons -->
+                <div class="flex items-center space-x-5">
+                    <button class="text-gray-900 hover:text-gray-500"><i class="ph ph-magnifying-glass text-xl"></i></button>
+                    <a href="#" class="text-gray-900 hover:text-gray-500"><i class="ph ph-user text-xl"></i></a>
+                    <a href="#" class="text-gray-900 hover:text-gray-500"><i class="ph ph-shopping-bag text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-brand-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="w-full">
+                <!-- Using the original hero image directly as requested, presented cleanly -->
+                <img src="https://www.idmanagement.com/media/elevate/idm-web-banner-cardsonline.png" alt="Smart Solutions, Strong Security" class="w-full h-auto object-cover md:h-[70vh] md:object-contain bg-brand-50">
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome & Story Section -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto">
+            <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">Est. 1994</p>
+            <h1 class="text-4xl md:text-5xl font-serif text-brand-900 mb-8 leading-tight">Welcome to ID Management Systems</h1>
+            <p class="text-lg text-gray-600 leading-relaxed font-light">
+                ID Management Systems is the UK’s no. 1 supplier of ID cards and accessories. Since 1994 we’ve been at the top of the ID Card industry supplying some of the country's biggest names with access and smart cards, card holders, printed lanyards, card printers, and software.
+            </p>
+        </div>
+    </section>
+
+    <!-- Product Collections (Refined Grid) -->
+    <section class="pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-3xl font-serif text-brand-900">Explore Collections</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12">
+            <!-- Item 1 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/card-systems3.png" alt="Card Systems" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Card Systems</h3>
+            </a>
+            <!-- Item 2 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/printers.png" alt="Card Printers" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Card Printers</h3>
+            </a>
+            <!-- Item 3 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/software.png" alt="Card Software" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Card Software</h3>
+            </a>
+            <!-- Item 4 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/ribbon.png" alt="Consumables" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Consumables</h3>
+            </a>
+            <!-- Item 5 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/lanyards.png" alt="Lanyards" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Lanyards</h3>
+            </a>
+            <!-- Item 6 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/Accessories.png" alt="Accessories" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Accessories</h3>
+            </a>
+            <!-- Item 7 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/Cards.png" alt="Cards" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Cards</h3>
+            </a>
+            <!-- Item 8 -->
+            <a href="#" class="group block text-center">
+                <div class="relative w-full aspect-square mb-6 overflow-hidden bg-brand-50 flex items-center justify-center p-8">
+                    <img src="https://www.idmanagement.com/media/elevate/cat-images/bureau.png" alt="Card Bureau" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-sm uppercase tracking-widest text-brand-900">Card Bureau</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Catalogue Feature (Editorial Split) -->
+    <section class="border-y border-gray-100 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center py-16 md:py-0">
+                <div class="w-full md:w-1/2 md:pr-16 text-center md:text-left mb-12 md:mb-0">
+                    <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">Exclusive Release</p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-900 mb-6">Our NEW Catalogue</h2>
+                    <p class="text-lg text-gray-600 mb-8 font-light leading-relaxed max-w-lg mx-auto md:mx-0">
+                        Fresh off the press is our shiny new catalogue featuring the next generation of card printers and the latest software.
+                    </p>
+                    <a href="#" class="inline-block border border-brand-900 text-brand-900 px-8 py-4 uppercase tracking-widest text-sm hover:bg-brand-900 hover:text-white transition-colors duration-300">
+                        Order for free
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center bg-brand-50 py-16">
+                    <img src="https://www.idmanagement.com/media/elevate/catalogue-with-sticker.png" alt="New Catalogue" class="max-w-md w-full drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Brands -->
+    <section class="py-20 bg-brand-50 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-serif text-brand-900 mb-4">Top brands trust us</h2>
+            <p class="text-gray-600 font-light max-w-2xl mx-auto mb-16">
+                Since 1994, we've built lasting relationships with over 3,500 customers creating a partnership that can be relied upon.
+            </p>
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/cardiff-uni.png" alt="Cardiff University" class="h-12 w-auto grayscale-hover">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/gov.png" alt="GOV.UK" class="h-12 w-auto grayscale-hover">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/royal-mint.png" alt="The Royal Mint" class="h-12 w-auto grayscale-hover">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/rugby-world-cup.png" alt="Rugby World Cup" class="h-12 w-auto grayscale-hover">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/panasonic.png" alt="Panasonic" class="h-8 w-auto grayscale-hover">
+                <img src="https://www.idmanagement.com/media/elevate/trust-us/rolls-royce.png" alt="Rolls Royce" class="h-10 w-auto grayscale-hover">
+            </div>
+        </div>
+    </section>
+
+    <!-- My Cards Online (Full Width Feature) -->
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5 relative">
+                    <img src="https://www.idmanagement.com/media/elevate/cards-bureau.png" alt="My Cards Online App" class="w-full relative z-10">
+                    <div class="absolute -inset-4 bg-brand-50 rounded-full blur-3xl -z-10 opacity-50"></div>
+                </div>
+                <div class="lg:col-span-7 lg:pl-12">
+                    <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">Bureau Service</p>
+                    <h2 class="text-4xl md:text-5xl font-serif text-brand-900 mb-2">My Cards Online</h2>
+                    <h3 class="text-xl text-brand-900 mb-8 italic">Putting you in control of your cards</h3>
+                    <p class="text-lg text-gray-600 font-light leading-relaxed mb-8">
+                        My Cards online is a card bureau service that lets you not only print your cards but also manage your cardholders data. Based on the cloud you can access the software from anywhere allowing you to keep track of print jobs, manage who has active cards and send out requests for data. Using a unique login your cardholders can take their own photos and confirm their data, reducing mistakes and allowing you to monitor the progress of your cards.
+                    </p>
+                    <a href="#" class="inline-block border border-brand-900 text-brand-900 px-8 py-4 uppercase tracking-widest text-sm hover:bg-brand-900 hover:text-white transition-colors duration-300">
+                        Find Out More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services (Transformed from Tabs to Structured Flow) -->
+    <section class="py-24 bg-brand-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-serif mb-4">Our Services</h2>
+                <p class="text-gray-400 font-light max-w-2xl mx-auto">Comprehensive support and flexible options tailored for your business.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+                
+                <!-- Step 1 -->
+                <div class="border-t border-gray-700 pt-8">
+                    <span class="text-brand-500 text-sm font-bold tracking-widest mb-4 block text-gray-400">01</span>
+                    <h3 class="text-2xl font-serif mb-4">Printer Repair</h3>
+                    <p class="text-gray-300 font-light leading-relaxed text-sm">
+                        ID Management Systems offer the best support service in the country. Your card printer may need to be serviced or repaired at our accredited repair facility based in the UK. We offer a fast and professional card repair service to ensure you have your card printer back and working within 48 hours making us the fastest in the industry.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="border-t border-gray-700 pt-8">
+                    <span class="text-brand-500 text-sm font-bold tracking-widest mb-4 block text-gray-400">02</span>
+                    <h3 class="text-2xl font-serif mb-4">Printer Hire</h3>
+                    <p class="text-gray-300 font-light leading-relaxed text-sm">
+                        Don't want to buy? Hire. We offer a range of printers available for hire, whether you need printers for a specific event or are looking to hire over a longer period of time we have a range of solutions to meet your needs. Full technical support is included in the price of the hire and the only additional cost come from any consumables used.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="border-t border-gray-700 pt-8">
+                    <span class="text-brand-500 text-sm font-bold tracking-widest mb-4 block text-gray-400">03</span>
+                    <h3 class="text-2xl font-serif mb-4">Trade In Program</h3>
+                    <p class="text-gray-300 font-light leading-relaxed text-sm">
+                        Time to upgrade your old card printer? The ID Management Trade-In program lets you trade in any brand of card printer for cashback or a discount off any new card printer in our range. Regardless of whether the printer is working or not you can save some money on your new purchase and we’ll properly dispose of the printer for you.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Which Printer Is Right For You (Transformed into Feature Matrix) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif text-brand-900 mb-4">Which printer is right for you?</h2>
+                <div class="w-24 h-px bg-gray-300 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                
+                <!-- Category 1 -->
+                <div class="group flex flex-col h-full bg-brand-50 p-8 hover:bg-gray-100 transition-colors">
+                    <div class="h-32 flex items-center justify-center mb-8">
+                        <img src="https://www.idmanagement.com/media/elevate/which-printers/user-friendly.png" alt="User Friendly Printer" class="h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-serif text-brand-900 mb-4 border-b border-gray-200 pb-4">User Friendly</h3>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-8 flex-grow">
+                        The perfect printer for small to medium sized organisations, printers in this category are ideal for a short print runs with low numbers of cards. Many of the printers in this category are single sided and are great for pairing with pre-printed cards to help you achieve a professional look with a minimal budget.
+                    </p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-semibold text-brand-900 inline-flex items-center group-hover:text-gray-600 transition-colors">
+                        Explore Range <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 2 -->
+                <div class="group flex flex-col h-full bg-brand-50 p-8 hover:bg-gray-100 transition-colors">
+                    <div class="h-32 flex items-center justify-center mb-8">
+                        <img src="https://www.idmanagement.com/media/elevate/which-printers/reliable.png" alt="Reliable Printer" class="h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-serif text-brand-900 mb-4 border-b border-gray-200 pb-4">Reliable</h3>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-8 flex-grow">
+                        The middleweight of the printing world, this category features a great collection of everyday use printers. If you're wanting to consistently print several cards a day this is the category for you. Some printers in this category also have encoding options and make the perfect desktop companion.
+                    </p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-semibold text-brand-900 inline-flex items-center group-hover:text-gray-600 transition-colors">
+                        Explore Range <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 3 -->
+                <div class="group flex flex-col h-full bg-brand-50 p-8 hover:bg-gray-100 transition-colors">
+                    <div class="h-32 flex items-center justify-center mb-8">
+                        <img src="https://www.idmanagement.com/media/elevate/which-printers/secure.png" alt="Secure Printer" class="h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-serif text-brand-900 mb-4 border-b border-gray-200 pb-4">Secure</h3>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-8 flex-grow">
+                        If security is a priority for your organisation this is the category for you, across this range you'll see a mix of visual and encoded security options, solutions for access control and fine detail printing. This category is the work-horse group of printers and will consistently print thousands of cards a year.
+                    </p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-semibold text-brand-900 inline-flex items-center group-hover:text-gray-600 transition-colors">
+                        Explore Range <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Category 4 -->
+                <div class="group flex flex-col h-full bg-brand-50 p-8 hover:bg-gray-100 transition-colors">
+                    <div class="h-32 flex items-center justify-center mb-8">
+                        <img src="https://www.idmanagement.com/media/elevate/which-printers/top-of-the-range.png" alt="Top of the Range Printer" class="h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-serif text-brand-900 mb-4 border-b border-gray-200 pb-4">Top of the range</h3>
+                    <p class="text-sm text-gray-600 font-light leading-relaxed mb-8 flex-grow">
+                        The crème de la crème of desktop card printing, this category is chock full of the very best printers from each brand. Boasting a consistently high-quality finish from the first card to the last. Combined with encoding options, visual security features and a range of additional extras.
+                    </p>
+                    <a href="#" class="text-xs uppercase tracking-widest font-semibold text-brand-900 inline-flex items-center group-hover:text-gray-600 transition-colors">
+                        Explore Range <i class="ph ph-arrow-right ml-2"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Support -->
+    <section class="bg-brand-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="w-full lg:w-1/2 p-12 lg:p-24 order-2 lg:order-1">
+                    <p class="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">World Class</p>
+                    <h2 class="text-4xl font-serif text-brand-900 mb-6">Technical Support</h2>
+                    <h3 class="text-xl text-brand-900 mb-6 italic">The most knowledgeable support team in the UK or your money back!*</h3>
+                    <p class="text-gray-600 font-light leading-relaxed mb-6">
+                        When you buy a plastic card solution from ID Management Systems, peace of mind comes as standard. We are more than happy to advise you on which of our 3 levels of support will best suit your company.
+                    </p>
+                    <p class="text-gray-600 font-light leading-relaxed mb-10">
+                        We pride ourselves on our technical support, we offer it 24 hours a day, 7 days a week! As a registered service centre for card printers and software, we have a technical team that is amongst the most experienced and knowledgeable card support personnel in the world.
+                    </p>
+                    <a href="#" class="inline-block border border-brand-900 text-brand-900 px-8 py-4 uppercase tracking-widest text-sm hover:bg-brand-900 hover:text-white transition-colors duration-300">
+                        Find Out More
+                    </a>
+                </div>
+                <div class="w-full lg:w-1/2 order-1 lg:order-2 bg-white h-full min-h-[400px] flex items-center justify-center p-12">
+                    <img src="https://www.idmanagement.com/media/elevate/tech-support.png" alt="Technical Support" class="max-w-sm w-full object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Trust Banner -->
+    <section class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-800">
+                <div class="px-4">
+                    <p class="text-3xl font-serif mb-2 text-white">Free</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Delivery</p>
+                </div>
+                <div class="px-4">
+                    <p class="text-3xl font-serif mb-2 text-white">24/7</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Support</p>
+                </div>
+                <div class="px-4">
+                    <p class="text-3xl font-serif mb-2 text-white">16.4m+</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Cards Sold</p>
+                </div>
+                <div class="px-4">
+                    <p class="text-3xl font-serif mb-2 text-white">25</p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Years Exp.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Branding -->
+                <div class="col-span-1 md:col-span-1">
+                    <img src="https://www.idmanagement.com/media/logo-white.svg" alt="ID Management Systems" class="h-10 w-auto mb-8 opacity-90">
+                    <p class="text-sm text-gray-400 mb-2">UK's NO#1 ID SUPPLIER</p>
+                    <p class="text-sm text-gray-400 mb-6 font-light">1994 - 2026 ID Management Systems.<br>All Rights Reserved.</p>
+                    <p class="text-xs text-gray-500 font-light">VAT Number: GB 655-7887-73</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-span-1">
+                    <h4 class="text-sm uppercase tracking-widest mb-6 border-b border-gray-700 pb-4 inline-block">Contact</h4>
+                    <ul class="space-y-4 text-sm font-light text-gray-300">
+                        <li>0800 408 1471</li>
+                        <li>Int: +442920786419</li>
+                        <li><a href="mailto:sales@idmanagement.com" class="hover:text-white transition-colors">sales@idmanagement.com</a></li>
+                        <li><a href="mailto:technical@idmanagement.com" class="hover:text-white transition-colors">technical@idmanagement.com</a></li>
+                        <li><a href="mailto:customerservice@idmanagement.com" class="hover:text-white transition-colors">customerservice@idmanagement.com</a></li>
+                        <li><a href="mailto:accounts@idmanagement.com" class="hover:text-white transition-colors">accounts@idmanagement.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information Links -->
+                <div class="col-span-1">
+                    <h4 class="text-sm uppercase tracking-widest mb-6 border-b border-gray-700 pb-4 inline-block">Information</h4>
+                    <ul class="space-y-4 text-sm font-light text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">About ID Management</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Delivery Information</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Returns & Exchanges</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Job Opportunities</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sponsorship</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Payments -->
+                <div class="col-span-1">
+                    <h4 class="text-sm uppercase tracking-widest mb-6 border-b border-gray-700 pb-4 inline-block">Connect</h4>
+                    <div class="flex space-x-4 mb-10">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="ph ph-facebook-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="ph ph-twitter-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="ph ph-linkedin-logo text-2xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="ph ph-youtube-logo text-2xl"></i></a>
+                    </div>
+                    
+                    <h4 class="text-sm uppercase tracking-widest mb-6 border-b border-gray-700 pb-4 inline-block">Accepted Payments</h4>
+                    <div class="flex space-x-3 text-gray-400">
+                        <i class="ph ph-credit-card text-3xl"></i>
+                        <i class="ph ph-currency-gbp text-3xl"></i>
+                        <!-- Keeping the intent of original payment logos -->
+                        <span class="text-xs uppercase tracking-widest mt-1">Visa / Maestro / PayPal</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex justify-between items-center text-xs text-gray-500 font-light">
+                <p>This website uses cookies to ensure you get the best experience on our website. <a href="#" class="underline hover:text-gray-300">Learn more</a></p>
+                <div class="flex items-center space-x-2">
+                    <i class="ph ph-lock-key"></i>
+                    <span>Secure Checkout</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
