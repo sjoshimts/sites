@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <title>Cirrottola Profumerie: vendita online di profumi, cosmetici e make-up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cirrottola Profumerie - profumeria online, vendita profumi online, ingrosso profumeria online, cosmetici online" />
+    
+    <!-- Fonts: Using a premium combination of Jost (headings) and Inter (body) for a high-end beauty aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Alpine.js for lightweight, Hyvä-style interactions (Mobile Menu, Sliders, Dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Phosphor Icons for modern, clean iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Jost', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f9f9f9',
+                            100: '#f2f2f2',
+                            900: '#111111',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Hyvä-like clean UI */
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Mega Menu Hover Intent (CSS only approach) */
+        .group:hover .mega-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .mega-menu { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); transform: translateY(10px); }
+
+        /* Ensuring Clerk containers have min-height to prevent layout shifts */
+        .clerk-container-fallback { min-height: 350px; display: flex; align-items: center; justify-content: center; }
+        
+        /* Mega Menu link hover animation */
+        .mega-link { position: relative; display: inline-block; transition: color 0.2s ease; }
+        .mega-link::after {
+            content: ''; position: absolute; width: 0; height: 1px; bottom: 0; left: 0;
+            background-color: currentColor; transition: width 0.3s ease;
+        }
+        .mega-link:hover::after { width: 100%; }
+    </style>
+
+    <!-- Original Clerk.io Script (Preserved for functionality) -->
+    <script type="text/javascript">
+        (function(w,d){
+            var e=d.createElement('script');e.type='text/javascript';e.async=true;
+            e.src=(d.location.protocol=='https:'?'https':'http')+'://cdn.clerk.io/clerk.js';
+            var s=d.getElementsByTagName('script')[0];s.parentNode.insertBefore(e,s);
+            w.__clerk_q=w.__clerk_q||[];w.Clerk=w.Clerk||function(){w.__clerk_q.push(arguments)};
+        })(window,document);
+        Clerk('config', {
+            key: '8J8cNdjlnjLAFjvwcJayUn3C5xuPLz9X',
+            collect_email: true,
+            language: 'italian'
+        });
+    </script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans" x-data="{ mobileMenuOpen: false, searchOpen: false }">
+
+    <!-- ========================================== -->
+    <!-- TOP BAR (Promo & Contacts)                 -->
+    <!-- ========================================== -->
+    <div class="bg-black text-white text-xs py-2 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <!-- Left: Social & Email -->
+            <div class="flex items-center gap-4 text-gray-300">
+                <div class="flex gap-3">
+                    <a href="https://www.facebook.com/profumerie.cirrottola" target="_blank" class="hover:text-white transition"><i class="ph ph-facebook-logo text-lg"></i></a>
+                    <a href="http://www.youtube.com/user/CirrottolaProfumerie" target="_blank" class="hover:text-white transition hidden sm:block"><i class="ph ph-youtube-logo text-lg"></i></a>
+                    <a href="https://www.instagram.com/profumerie_cirrottola/" target="_blank" class="hover:text-white transition hidden sm:block"><i class="ph ph-instagram-logo text-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/gruppo-profumerie-cirrottola-a1512117a" target="_blank" class="hover:text-white transition hidden sm:block"><i class="ph ph-linkedin-logo text-lg"></i></a>
+                </div>
+                <div class="hidden md:block border-l border-gray-700 pl-4">
+                    Per assistenza inviaci un'email a <a href="mailto:servizioclienti@cirrottola.it" class="text-white font-medium hover:underline">servizioclienti@cirrottola.it</a>
+                </div>
+            </div>
+
+            <!-- Right: Promos -->
+            <div class="text-center sm:text-right flex items-center gap-2 tracking-wide">
+                <span class="font-semibold text-gray-200">SPEDIZIONE GRATUITA DA 59€</span>
+                <span class="text-gray-600 hidden sm:inline">|</span>
+                <a href="https://www.cirrottola.it/novita-e-offerte/offerte-speciali.html" class="font-bold text-white hover:text-gray-300 transition underline decoration-gray-500 underline-offset-4">SCONTI FINO AL -40% SUI TUOI PREFERITI!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MAIN HEADER                                -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden p-2 -ml-2 text-gray-600 hover:text-black">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center lg:justify-start w-full lg:w-auto absolute lg:static left-0 pointer-events-none lg:pointer-events-auto">
+                    <a href="https://www.cirrottola.it/" class="pointer-events-auto">
+                        <img src="https://www.cirrottola.it/skin/frontend/ultimo/default/images/logo_cirrottola_4.png" alt="Cirrottola Profumerie" class="h-10 sm:h-12 w-auto object-contain" />
+                    </a>
+                </div>
+
+                <!-- Desktop Search -->
+                <div class="hidden lg:flex flex-1 max-w-2xl mx-8 relative">
+                    <form action="https://www.cirrottola.it/catalogsearch/result/" method="get" class="w-full relative group">
+                        <input type="text" name="q" placeholder="Cerca profumi, marchi, cosmetici..." class="w-full bg-gray-50 border border-gray-200 text-sm rounded-full py-2.5 pl-5 pr-12 focus:outline-none focus:ring-1 focus:ring-black focus:bg-white transition-all group-hover:border-gray-300">
+                        <button type="submit" class="absolute right-1 top-1 bottom-1 px-3 text-gray-400 hover:text-black transition flex items-center justify-center rounded-full">
+                            <i class="ph ph-magnifying-glass text-xl"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Account & Cart Actions -->
+                <div class="flex items-center gap-3 sm:gap-5">
+                    <button @click="searchOpen = !searchOpen" class="lg:hidden p-2 text-gray-600 hover:text-black">
+                        <i class="ph ph-magnifying-glass text-2xl"></i>
+                    </button>
+                    
+                    <div class="hidden sm:flex items-center gap-4 text-sm font-medium text-gray-700">
+                        <a href="https://www.cirrottola.it/customer/account/" class="hover:text-black transition flex items-center gap-1">
+                            <i class="ph ph-user text-xl"></i> <span class="hidden xl:block">Il mio account</span>
+                        </a>
+                        <span class="text-gray-300">|</span>
+                        <a href="https://www.cirrottola.it/customer/account/login/" class="hover:text-black transition">Registrati / Accedi</a>
+                    </div>
+
+                    <!-- Cart -->
+                    <a href="#header-cart" class="relative p-2 text-gray-600 hover:text-black flex items-center gap-1 group">
+                        <i class="ph ph-shopping-bag text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span class="absolute top-1 right-0 bg-black text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center border border-white">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar Toggle -->
+            <div x-show="searchOpen" x-collapse class="lg:hidden pb-4">
+                <form action="https://www.cirrottola.it/catalogsearch/result/" method="get" class="relative">
+                    <input type="text" name="q" placeholder="Cerca..." class="w-full bg-gray-100 border-none text-sm rounded-md py-3 pl-4 pr-12 focus:outline-none focus:ring-2 focus:ring-black">
+                    <button type="submit" class="absolute right-0 top-0 bottom-0 px-4 text-gray-500">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- MAIN NAVIGATION (Desktop Mega Menus)       -->
+        <!-- ========================================== -->
+        <nav class="hidden lg:block border-t border-gray-100 bg-white relative">
+            <ul class="max-w-7xl mx-auto flex justify-center space-x-8 text-[13px] font-semibold tracking-wide uppercase text-gray-800">
+                
+                <!-- Marchi -->
+                <li class="py-4 hover:text-black transition"><a href="https://www.cirrottola.it/brand.html">Marchi</a></li>
+
+                <!-- Profumi (Redesigned Mega Menu) -->
+                <li class="group py-4 border-b-2 border-transparent hover:border-black transition">
+                    <a href="https://www.cirrottola.it/profumi.html" class="flex items-center gap-1">Profumi <i class="ph ph-caret-down text-[10px]"></i></a>
+                    
+                    <div class="mega-menu absolute left-0 top-full w-full bg-white border-t border-gray-100 shadow-2xl opacity-0 invisible z-50 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-8 gap-12">
+                            
+                            <!-- Links Grid -->
+                            <div class="w-full md:w-2/3 grid grid-cols-4 gap-8 text-sm normal-case tracking-normal font-normal">
+                                <div>
+                                    <a href="https://www.cirrottola.it/profumi/profumi-donna.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Profumi Donna</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/profumi/profumi-donna/eau-de-parfum.html" class="mega-link hover:text-black">Eau De Parfum</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/profumi-donna/donna-estratti.html" class="mega-link hover:text-black">Donna Estratti</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/profumi-donna/eau-de-toilette-e-eau-de-cologne.html" class="mega-link hover:text-black">Eau De Toilette & Cologne</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/profumi/profumi-uomo.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Profumi Uomo</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/profumi/profumi-uomo/eau-de-parfum.html" class="mega-link hover:text-black">Eau De Parfum</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/profumi-uomo/eau-de-toilette-e-eau-de-cologne.html" class="mega-link hover:text-black">Eau De Toilette & Cologne</a></li>
+                                    </ul>
+                                    <a href="https://www.cirrottola.it/profumi/profumi-unisex.html" class="font-heading font-semibold text-lg mt-8 mb-3 block text-black hover:text-gray-600 transition">Profumi Unisex</a>
+                                    <a href="https://www.cirrottola.it/profumi/profumi-bambini.html" class="font-heading font-semibold text-lg mt-4 mb-3 block text-black hover:text-gray-600 transition">Profumi Bambini</a>
+                                </div>
+                                <div>
+                                    <div class="font-heading font-semibold text-lg mb-4 block text-black">Categorie</div>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/profumi/trattamento.html" class="mega-link hover:text-black">Trattamento</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/bagno-schiuma.html" class="mega-link hover:text-black">Bagno Schiuma</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/deodoranti.html" class="mega-link hover:text-black">Deodoranti</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/igiene-della-persona.html" class="mega-link hover:text-black">Igiene Della Persona</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <div class="font-heading font-semibold text-lg mb-4 block text-black">Altro</div>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/profumi/ethos.html" class="mega-link hover:text-black">Ethos</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/acque-aromatiche.html" class="mega-link hover:text-black">Acque Aromatiche</a></li>
+                                        <li><a href="https://www.cirrottola.it/profumi/ambiente.html" class="mega-link hover:text-black">Ambiente (Casa)</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Editorial Banner Area -->
+                            <div class="w-full md:w-1/3">
+                                <a href="https://www.cirrottola.it/brands/rabanne.html" class="block relative group/promo overflow-hidden rounded-xl h-[320px] shadow-md">
+                                    <img src="https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/rabanne-milion-gold-her-home.jpg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover/promo:scale-105" alt="Rabanne Promo">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                                    <div class="absolute bottom-0 left-0 p-8 text-white w-full">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-gray-300 mb-2 block">Novità Assoluta</span>
+                                        <h4 class="font-heading text-2xl font-medium mb-1">Rabanne</h4>
+                                        <p class="text-sm text-gray-200 mb-4 opacity-0 transform translate-y-4 transition-all duration-500 ease-out group-hover/promo:opacity-100 group-hover/promo:translate-y-0">Scopri la nuova essenza Million Gold.</p>
+                                        <span class="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-white border-b border-white/40 pb-0.5 group-hover/promo:border-white transition-colors">
+                                            Esplora <i class="ph ph-arrow-right ml-2"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Make-Up (Redesigned Mega Menu) -->
+                <li class="group py-4 border-b-2 border-transparent hover:border-black transition">
+                    <a href="https://www.cirrottola.it/make-up.html" class="flex items-center gap-1">Make-Up <i class="ph ph-caret-down text-[10px]"></i></a>
+                    
+                    <div class="mega-menu absolute left-0 top-full w-full bg-white border-t border-gray-100 shadow-2xl opacity-0 invisible z-50 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-8 gap-12">
+                            
+                            <!-- Links Grid -->
+                            <div class="w-full md:w-2/3 grid grid-cols-4 gap-8 text-sm normal-case tracking-normal font-normal">
+                                <div>
+                                    <a href="https://www.cirrottola.it/make-up/viso.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Viso</a>
+                                    <ul class="space-y-2.5 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/fondotinta.html" class="mega-link hover:text-black">Fondotinta</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/correttore.html" class="mega-link hover:text-black">Correttore</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/cipria.html" class="mega-link hover:text-black">Cipria</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/fard.html" class="mega-link hover:text-black">Fard</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/terre-abbronzanti.html" class="mega-link hover:text-black">Terre Abbronzanti</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/illuminante.html" class="mega-link hover:text-black">Illuminante</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/base-e-primer.html" class="mega-link hover:text-black">Base e Primer</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/viso/creme-colorate.html" class="mega-link hover:text-black">Creme Colorate</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/make-up/occhi.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Occhi</a>
+                                    <ul class="space-y-2.5 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/mascara.html" class="mega-link hover:text-black">Mascara</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/ombretto.html" class="mega-link hover:text-black">Ombretto</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/matita.html" class="mega-link hover:text-black">Matita</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/eyeliner.html" class="mega-link hover:text-black">Eyeliner</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/sopracciglia.html" class="mega-link hover:text-black">Sopracciglia</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/occhi/correttore.html" class="mega-link hover:text-black">Correttore</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/make-up/labbra.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Labbra</a>
+                                    <ul class="space-y-2.5 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/make-up/labbra/rossetto.html" class="mega-link hover:text-black">Rossetto</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/labbra/gloss.html" class="mega-link hover:text-black">Gloss</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/labbra/matita.html" class="mega-link hover:text-black">Matita</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/labbra/smalto.html" class="mega-link hover:text-black">Smalto</a></li>
+                                    </ul>
+                                    <a href="https://www.cirrottola.it/make-up/trousse.html" class="font-heading font-semibold text-lg mt-8 mb-3 block text-black hover:text-gray-600 transition">Trousse</a>
+                                    <a href="https://www.cirrottola.it/make-up/protezione.html" class="font-heading font-semibold text-lg mt-4 mb-3 block text-black hover:text-gray-600 transition">Protezione</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/make-up/unghie.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Unghie</a>
+                                    <ul class="space-y-2.5 text-gray-500 mb-8">
+                                        <li><a href="https://www.cirrottola.it/make-up/unghie/smalto.html" class="mega-link hover:text-black">Smalto</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/unghie/semipermanente.html" class="mega-link hover:text-black">Semipermanente</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/unghie/ricostruzione.html" class="mega-link hover:text-black">Ricostruzione</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/unghie/trattamento.html" class="mega-link hover:text-black">Trattamento</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/unghie/solvente.html" class="mega-link hover:text-black">Solvente</a></li>
+                                    </ul>
+                                    
+                                    <a href="https://www.cirrottola.it/make-up/accessori.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Accessori</a>
+                                    <ul class="space-y-2.5 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/make-up/accessori/viso.html" class="mega-link hover:text-black">Viso</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/accessori/occhi.html" class="mega-link hover:text-black">Occhi</a></li>
+                                        <li><a href="https://www.cirrottola.it/make-up/accessori/unghie.html" class="mega-link hover:text-black">Unghie</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Editorial Banner Area -->
+                            <div class="w-full md:w-1/3">
+                                <a href="https://www.cirrottola.it/double-serum-foundation.html" class="block relative group/promo overflow-hidden rounded-xl h-[420px] shadow-md">
+                                    <img src="https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/clarins-new-double-serum-foundation-home.jpg" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-1000 ease-out group-hover/promo:scale-105" alt="Clarins Double Serum Foundation Promo">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                                    <div class="absolute bottom-0 left-0 p-8 text-white w-full">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-gray-300 mb-2 block">Ispirazione Make-Up</span>
+                                        <h4 class="font-heading text-2xl font-medium mb-1">Clarins Double Serum</h4>
+                                        <p class="text-sm text-gray-200 mb-4 opacity-0 transform translate-y-4 transition-all duration-500 ease-out group-hover/promo:opacity-100 group-hover/promo:translate-y-0">Perfezione e trattamento in un solo gesto.</p>
+                                        <span class="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-white border-b border-white/40 pb-0.5 group-hover/promo:border-white transition-colors">
+                                            Scopri di più <i class="ph ph-arrow-right ml-2"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Capelli (Redesigned Mega Menu) -->
+                <li class="group py-4 border-b-2 border-transparent hover:border-black transition">
+                    <a href="https://www.cirrottola.it/capelli.html" class="flex items-center gap-1">Capelli <i class="ph ph-caret-down text-[10px]"></i></a>
+                    
+                    <div class="mega-menu absolute left-0 top-full w-full bg-white border-t border-gray-100 shadow-2xl opacity-0 invisible z-50 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-8 gap-12">
+                            
+                            <!-- Links Grid -->
+                            <div class="w-full md:w-2/3 grid grid-cols-4 gap-8 text-sm normal-case font-normal tracking-normal">
+                                 <div>
+                                    <a href="https://www.cirrottola.it/capelli/trattamento.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Trattamento</a>
+                                    <ul class="space-y-3 text-gray-500 mb-8">
+                                        <li><a href="https://www.cirrottola.it/capelli/shampoo.html" class="mega-link hover:text-black">Shampoo</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/trattamento/maschere.html" class="mega-link hover:text-black">Maschere</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/trattamento/balsamo.html" class="mega-link hover:text-black">Balsamo</a></li>
+                                    </ul>
+
+                                    <a href="https://www.cirrottola.it/capelli/permanente-stirature.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Permanente</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/capelli/permanente-stirature/permanenti.html" class="mega-link hover:text-black">Permanenti</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/permanente-stirature/stirature.html" class="mega-link hover:text-black">Stirature</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/permanente-stirature/fissaggio.html" class="mega-link hover:text-black">Fissaggio</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/capelli/styling.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Styling</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/capelli/styling/gel.html" class="mega-link hover:text-black">Gel</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/styling/lacche.html" class="mega-link hover:text-black">Lacche</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/styling/mousse.html" class="mega-link hover:text-black">Mousse</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/styling/cere.html" class="mega-link hover:text-black">Cere</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/capelli/colorazione.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Colorazione</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/capelli/colorazione/tinture.html" class="mega-link hover:text-black">Tinture</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/colorazione/decoloranti.html" class="mega-link hover:text-black">Decoloranti</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/colorazione/ossidanti.html" class="mega-link hover:text-black">Ossidanti</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/colorazione/riflessanti.html" class="mega-link hover:text-black">Riflessanti</a></li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <a href="https://www.cirrottola.it/capelli/accessori.html" class="font-heading font-semibold text-lg mb-4 block text-black hover:text-gray-600 transition">Accessori</a>
+                                    <ul class="space-y-3 text-gray-500">
+                                        <li><a href="https://www.cirrottola.it/capelli/accessori/piastre-ferri.html" class="mega-link hover:text-black">Piastre & Ferri</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/accessori/asciugacapelli.html" class="mega-link hover:text-black">Asciugacapelli</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/accessori/spazzole.html" class="mega-link hover:text-black">Spazzole</a></li>
+                                        <li><a href="https://www.cirrottola.it/capelli/accessori/forbici-rasoi.html" class="mega-link hover:text-black">Forbici & Rasoi</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Editorial Banner Area -->
+                            <div class="w-full md:w-1/3 flex flex-col gap-4">
+                                <!-- Using a sleek, modern text-based promotional block for variation, as we don't have a specific hair banner image -->
+                                <a href="https://www.cirrottola.it/capelli/trattamento.html" class="block flex-1 relative group/promo overflow-hidden rounded-xl bg-gray-900 p-8 shadow-md flex flex-col justify-end">
+                                    <!-- Subtle pattern or color background -->
+                                    <div class="absolute inset-0 bg-gradient-to-br from-gray-800 to-black opacity-90 transition-opacity duration-500 group-hover/promo:opacity-100"></div>
+                                    <div class="relative z-10 text-white">
+                                        <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-3 block">Cura del Capello</span>
+                                        <h4 class="font-heading text-3xl font-light mb-3 leading-tight">Rivoluziona<br>la tua <span class="font-medium italic">routine</span>.</h4>
+                                        <p class="text-sm text-gray-300 mb-6 max-w-[80%]">Scopri la nostra selezione di trattamenti professionali per capelli sani, forti e luminosi.</p>
+                                        <span class="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-white border-b border-white/40 pb-0.5 group-hover/promo:border-white transition-colors">
+                                            Esplora Trattamenti <i class="ph ph-arrow-right ml-2"></i>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Other Top Categories -->
+                <li class="py-4 hover:text-black transition"><a href="https://www.cirrottola.it/corpo-bagno.html">Corpo & Bagno</a></li>
+                <li class="py-4 hover:text-black transition"><a href="https://www.cirrottola.it/viso.html">Viso</a></li>
+                <li class="py-4 hover:text-black transition"><a href="https://www.cirrottola.it/uomo.html">Uomo</a></li>
+                <li class="py-4 hover:text-black transition"><a href="https://www.cirrottola.it/solari.html">Solari</a></li>
+
+                <!-- Novità e Offerte -->
+                <li class="group relative py-4 border-b-2 border-transparent hover:border-black transition text-red-600 hover:text-red-800">
+                    <a href="https://www.cirrottola.it/novita-e-offerte.html" class="flex items-center gap-1">Novità e Offerte <span class="bg-red-600 text-white text-[9px] px-1.5 py-0.5 rounded-sm ml-1">NEW</span></a>
+                    <div class="mega-menu absolute right-0 top-full w-64 bg-white border border-gray-100 shadow-xl opacity-0 invisible z-50 pointer-events-none group-hover:pointer-events-auto py-3 rounded-b-xl">
+                        <ul class="text-sm normal-case tracking-normal font-normal text-gray-700">
+                            <li><a href="https://www.cirrottola.it/novita-e-offerte/offerte-speciali.html" class="block px-6 py-2.5 hover:bg-gray-50 hover:text-black transition">Offerte Speciali</a></li>
+                            <li><a href="https://www.cirrottola.it/novita-e-offerte/novita.html" class="block px-6 py-2.5 hover:bg-gray-50 hover:text-black transition">Novità</a></li>
+                            <li><a href="https://www.cirrottola.it/novita-e-offerte/best-seller.html" class="block px-6 py-2.5 hover:bg-gray-50 hover:text-black transition">Best Seller</a></li>
+                            <li><a href="https://www.cirrottola.it/novita-e-offerte/omaggi-speciali.html" class="block px-6 py-2.5 hover:bg-gray-50 hover:text-black flex justify-between items-center transition">Omaggi Speciali <span class="text-[10px] font-bold bg-yellow-400 text-black px-1.5 py-0.5 rounded uppercase">Hot</span></a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Overlay (Alpine) -->
+        <div x-show="mobileMenuOpen" class="lg:hidden fixed inset-0 z-[100] bg-black bg-opacity-50 transition-opacity" style="display:none;" @click="mobileMenuOpen = false"></div>
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="-translate-x-full"
+             x-transition:enter-end="translate-x-0"
+             x-transition:leave="transition ease-in duration-300"
+             x-transition:leave-start="translate-x-0"
+             x-transition:leave-end="-translate-x-full"
+             class="lg:hidden fixed inset-y-0 left-0 z-[101] w-4/5 max-w-sm bg-white shadow-xl overflow-y-auto" style="display:none;">
+             <div class="p-4 flex justify-between items-center border-b border-gray-100">
+                 <span class="font-heading font-semibold text-lg">Menu</span>
+                 <button @click="mobileMenuOpen = false" class="text-gray-500 hover:text-black"><i class="ph ph-x text-2xl"></i></button>
+             </div>
+             <ul class="p-4 space-y-4 font-medium text-gray-800">
+                 <li><a href="https://www.cirrottola.it/brand.html" class="block">Marchi</a></li>
+                 <li><a href="https://www.cirrottola.it/profumi.html" class="block">Profumi</a></li>
+                 <li><a href="https://www.cirrottola.it/make-up.html" class="block">Make-Up</a></li>
+                 <li><a href="https://www.cirrottola.it/capelli.html" class="block">Capelli</a></li>
+                 <li><a href="https://www.cirrottola.it/corpo-bagno.html" class="block">Corpo & Bagno</a></li>
+                 <li><a href="https://www.cirrottola.it/viso.html" class="block">Viso</a></li>
+                 <li><a href="https://www.cirrottola.it/uomo.html" class="block">Uomo</a></li>
+                 <li><a href="https://www.cirrottola.it/solari.html" class="block">Solari</a></li>
+                 <li><a href="https://www.cirrottola.it/novita-e-offerte.html" class="block text-red-600">Novità e Offerte</a></li>
+             </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- ========================================== -->
+        <!-- HERO SLIDER (Vanilla/Alpine component)     -->
+        <!-- ========================================== -->
+        <section class="relative w-full max-w-[1600px] mx-auto overflow-hidden bg-brand-50" 
+                 x-data="{ 
+                     activeSlide: 0, 
+                     slides: [
+                         { url: 'https://www.cirrottola.it/festa-della-mamma', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/festa-mamma-2026_home.png' },
+                         { url: 'https://www.cirrottola.it/catalogsearch/result/?q=Tom+Ford+Soleil+Blanc+Eau+de+Toilette', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/tomford-soleil-blanc-04-2026-home.jpg' },
+                         { url: 'https://www.cirrottola.it/double-serum-foundation.html', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/clarins-new-double-serum-foundation-home.jpg' },
+                         { url: 'https://www.cirrottola.it/brands/sensai.html', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/sensai-2026-home.jpg' },
+                         { url: 'https://www.cirrottola.it/brands/clinique.html', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/clinique-even-better-gwp-home.jpg' },
+                         { url: 'https://www.cirrottola.it/catalogsearch/result/?q=clarins+extra+firming+energy', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/clarins-extra-firming-energy-home.png' },
+                         { url: 'https://www.cirrottola.it/brands/tom-ford_tom-ford-black-orchid-.html', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/Black_Orchid_Reserve_1903x595_home.jpg' },
+                         { url: 'https://www.cirrottola.it/brands/rabanne.html', img: 'https://www.cirrottola.it/media/wysiwyg/infortis/slideshow/rabanne-milion-gold-her-home.jpg' }
+                     ],
+                     next() { this.activeSlide = this.activeSlide === this.slides.length - 1 ? 0 : this.activeSlide + 1; },
+                     prev() { this.activeSlide = this.activeSlide === 0 ? this.slides.length - 1 : this.activeSlide - 1; },
+                     init() { setInterval(() => { this.next(); }, 5000); }
+                 }">
+            
+            <div class="relative w-full aspect-[16/7] md:aspect-[21/9] lg:aspect-[1903/595]">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <a :href="slide.url" 
+                       class="absolute inset-0 transition-opacity duration-700 ease-in-out"
+                       :class="activeSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'">
+                        <img :src="slide.img" class="w-full h-full object-cover" alt="Promozione Cirrottola">
+                    </a>
+                </template>
+            </div>
+
+            <!-- Slider Controls -->
+            <button @click="prev()" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/50 hover:bg-white text-black p-2 sm:p-3 rounded-full backdrop-blur transition shadow-sm">
+                <i class="ph ph-caret-left text-xl"></i>
+            </button>
+            <button @click="next()" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/50 hover:bg-white text-black p-2 sm:p-3 rounded-full backdrop-blur transition shadow-sm">
+                <i class="ph ph-caret-right text-xl"></i>
+            </button>
+
+            <!-- Dots -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button @click="activeSlide = index" 
+                            class="w-2.5 h-2.5 rounded-full transition-all duration-300"
+                            :class="activeSlide === index ? 'bg-black scale-110' : 'bg-white/60 hover:bg-white/90'"></button>
+                </template>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BRANDS CAROUSEL                            -->
+        <!-- ========================================== -->
+        <section class="py-12 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Marchi principali</h4>
+                
+                <!-- Simple CSS Scroll Snap for Brands -->
+                <div class="flex overflow-x-auto snap-x hide-scrollbar items-center justify-start sm:justify-center gap-8 sm:gap-12 pb-4">
+                    <a href="https://www.cirrottola.it/brands/boss.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/boss.png" alt="Boss" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/biotherm.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/biotherm.png" alt="Biotherm" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/clarins.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/clarins.png" alt="Clarins" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/clinique.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/clinique.png" alt="Clinique" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/collistar.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/collistar.png" alt="Collistar" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/diego-dalla-palma.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/diego-dalla-palma.png" alt="Diego Dalla Palma" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/estee-lauder.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/estee-lauder.png" alt="Estee Lauder" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/giorgio-armani.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/giorgio-armani.png" alt="Giorgio Armani" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/lancome.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/lancome.png" alt="Lancome" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/tom-ford.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/tom-ford.png" alt="Tom Ford" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/valentino.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/valentino.png" alt="Valentino" class="h-8 md:h-12 w-auto object-contain"></a>
+                    <a href="https://www.cirrottola.it/brands/yves-saint-laurent.html" class="snap-center shrink-0 opacity-60 hover:opacity-100 transition duration-300"><img src="https://www.cirrottola.it/media/wysiwyg/infortis/brands/yves-saint-laurent.png" alt="Yves Saint Laurent" class="h-8 md:h-12 w-auto object-contain"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- NOVITÀ SECTIONS (Clerk.io Integration)     -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-semibold text-gray-900">Novità</h2>
+                    <div class="w-16 h-0.5 bg-black mx-auto mt-4"></div>
+                </div>
+
+                <!-- Clerk Span: Make-Up -->
+                <div class="mb-16 clerk-container-fallback bg-gray-50/50 rounded-lg p-4">
+                    <span class="clerk w-full" data-template="@slider-novita-makeup"></span>
+                </div>
+
+                <!-- Clerk Span: Profumi Donna -->
+                <div class="mb-16 clerk-container-fallback bg-gray-50/50 rounded-lg p-4">
+                    <span class="clerk w-full" data-template="@slider-novita-profumi-donna"></span>
+                </div>
+
+                <!-- Clerk Span: Profumi Uomo -->
+                <div class="mb-12 clerk-container-fallback bg-gray-50/50 rounded-lg p-4">
+                    <span class="clerk w-full" data-template="@novita-profumi-uomo"></span>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://www.cirrottola.it/novita-e-offerte/novita.html" class="inline-flex items-center justify-center px-8 py-3 border border-black text-sm font-medium text-black hover:bg-black hover:text-white transition duration-300 uppercase tracking-widest">
+                        Vedi tutte le Novità
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FEATURES SECTION                           -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-brand-50 border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Feature 1 -->
+                    <div class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 group">
+                        <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-truck text-3xl text-gray-700"></i>
+                        </div>
+                        <h5 class="font-heading font-semibold text-lg text-gray-900 mb-1">SPEDIZIONE GRATUITA</h5>
+                        <h6 class="text-sm text-gray-500">PER ORDINI DA 59€</h6>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 group">
+                        <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-arrow-counter-clockwise text-3xl text-gray-700"></i>
+                        </div>
+                        <h5 class="font-heading font-semibold text-lg text-gray-900 mb-1">RESO FACILE E VELOCE</h5>
+                        <h6 class="text-sm text-gray-500">NON ESITARE A CONTATTARCI</h6>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <a href="https://it.trustpilot.com/review/cirrottola.it" target="_blank" class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 group cursor-pointer">
+                        <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-star text-3xl text-gray-700"></i>
+                        </div>
+                        <h5 class="font-heading font-semibold text-lg text-gray-900 mb-1">AFFIDABILITÀ TOP</h5>
+                        <h6 class="text-sm text-gray-500">LEGGI LE RECENSIONI</h6>
+                    </a>
+
+                    <!-- Feature 4 -->
+                    <a href="https://www.cirrottola.it/novita-e-offerte/offerte-speciali.html" class="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 group cursor-pointer">
+                        <div class="w-16 h-16 rounded-full bg-gray-50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <i class="ph ph-tag text-3xl text-gray-700"></i>
+                        </div>
+                        <h5 class="font-heading font-semibold text-lg text-gray-900 mb-1">OFFERTE SPECIALI</h5>
+                        <h6 class="text-sm text-gray-500">CLICCA QUI</h6>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- BEST SELLERS (Clerk.io Integration)        -->
+        <!-- ========================================== -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-12">
+                    <h2 class="font-heading text-3xl md:text-4xl font-semibold text-gray-900">Best Sellers</h2>
+                    <div class="w-16 h-0.5 bg-black mx-auto mt-4"></div>
+                </div>
+
+                <!-- Clerk Span: Best Sellers Donna -->
+                <div class="mb-8 clerk-container-fallback">
+                    <span class="clerk w-full" data-template="@slider-best-seller-profumi-donnna-2"></span>
+                </div>
+
+                <div class="w-full h-px bg-gray-100 my-8"></div>
+
+                <!-- Clerk Span: Best Sellers Uomo -->
+                <div class="mb-12 clerk-container-fallback">
+                    <span class="clerk w-full" data-template="@slider-best-sellers-profumi-uomo-2"></span>
+                </div>
+
+                <div class="text-center mt-8">
+                    <a href="https://www.cirrottola.it/novita-e-offerte/best-seller.html" class="inline-flex items-center justify-center px-8 py-3 border border-black bg-black text-sm font-medium text-white hover:bg-gray-800 transition duration-300 uppercase tracking-widest">
+                        Vedi tutti i Best Sellers
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="bg-gray-900 text-gray-300 border-t border-gray-200 pt-16">
+        
+        <!-- Footer Top Links -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 border-b border-gray-800 pb-8">
+                <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                    <li><a href="https://www.cirrottola.it/catalog/seo_sitemap/category/" class="hover:text-white transition">Site map</a></li>
+                    <li><a href="https://www.cirrottola.it/catalogsearch/term/popular/" class="hover:text-white transition">Termini di ricerca</a></li>
+                    <li><a href="https://www.cirrottola.it/catalogsearch/advanced/" class="hover:text-white transition">Ricerca avanzata</a></li>
+                    <li><a href="https://www.cirrottola.it/sales/guest/form/" class="hover:text-white transition">Ordini e Resi</a></li>
+                </ul>
+                <ul class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+                    <li><a href="https://www.instagram.com/profumerie_cirrottola/" target="_blank" class="hover:text-white transition">Instagram News</a></li>
+                    <li><a href="https://www.cirrottola.it/video-tutorials/" class="hover:text-white transition">Video Tutorials</a></li>
+                    <li><a href="https://www.cirrottola.it/chi-siamo/" class="hover:text-white transition">Chi siamo</a></li>
+                    <li><a href="https://www.cirrottola.it/punti-vendita/" class="hover:text-white transition">Punti Vendita</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Main Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <!-- Col 1: About -->
+                <div>
+                    <img src="https://www.cirrottola.it/skin/frontend/ultimo/default/images/logo_cirrottola_4.png" alt="Cirrottola" class="h-10 w-auto mb-6 brightness-0 invert opacity-80" />
+                    <p class="text-sm leading-relaxed text-gray-400">
+                        Profumerie Cirrottola svolge con successo da più di 30 anni la propria missione nel mondo della bellezza, offrendo prodotti di profumeria selettiva, di skin care e make up.
+                    </p>
+                </div>
+
+                <!-- Col 2: Useful Info -->
+                <div>
+                    <h6 class="font-heading font-semibold text-white text-lg mb-5 uppercase tracking-wide">Informazioni Utili</h6>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="https://www.cirrottola.it/programma-fedelta" class="hover:text-white transition">Programma Fedeltà</a></li>
+                        <li><a href="https://www.cirrottola.it/condizioni-di-vendita" class="hover:text-white transition">Condizioni di vendita</a></li>
+                        <li><a href="https://www.cirrottola.it/condizioni-di-vendita/#spedizione" class="hover:text-white transition">Tempi e spese di spedizione</a></li>
+                        <li><a href="https://www.cirrottola.it/condizioni-di-vendita/#pagamento" class="hover:text-white transition">Modalità di pagamento</a></li>
+                        <li><a href="https://www.cirrottola.it/condizioni-di-vendita/#recesso" class="hover:text-white transition">Resi e recessi</a></li>
+                        <li><a href="https://www.cirrottola.it/informativa-cookie" class="hover:text-white transition">Informativa privacy e cookies</a></li>
+                        <li><a href="https://www.cirrottola.it/domande-frequenti" class="hover:text-white transition">Domande frequenti</a></li>
+                        <li><a href="https://www.cirrottola.it/lavora-con-noi" class="hover:text-white transition">Lavora con noi</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Buy Online -->
+                <div>
+                    <h6 class="font-heading font-semibold text-white text-lg mb-5 uppercase tracking-wide">Acquista online</h6>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex gap-3 items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded bg-gray-800 text-white flex items-center justify-center font-bold text-xs mt-0.5">1</span>
+                            <p>Acquista online in pochi click e in tutta sicurezza</p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded bg-gray-800 text-white flex items-center justify-center font-bold text-xs mt-0.5">2</span>
+                            <p>Paga in 3 rate senza interessi (min 30€) con <b class="text-white italic">Paypal</b></p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded bg-gray-800 text-white flex items-center justify-center font-bold text-xs mt-0.5">3</span>
+                            <p>Spedizione gratuita in Italia per ordini da 59€</p>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="flex-shrink-0 w-6 h-6 rounded bg-gray-800 text-white flex items-center justify-center font-bold text-xs mt-0.5">4</span>
+                            <p>Reso facile e veloce, non esitare a contattarci</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Customer Service -->
+                <div>
+                    <h6 class="font-heading font-semibold text-white text-lg mb-5 uppercase tracking-wide">Servizio Clienti</h6>
+                    <ul class="space-y-5 text-sm text-gray-400">
+                        <li class="flex gap-3 items-center">
+                            <i class="ph ph-phone text-2xl text-gray-500"></i>
+                            <div>
+                                <p class="text-white">Chiamaci +39 0809955402</p>
+                                <p class="text-xs">per ogni esigenza</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <i class="ph ph-clock text-2xl text-gray-500"></i>
+                            <div>
+                                <p class="text-white">Dal Lunedì al Venerdi</p>
+                                <p class="text-xs">9:00 - 13:00 e 16:00 - 19:00</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <i class="ph ph-envelope-simple text-2xl text-gray-500"></i>
+                            <div>
+                                <a href="mailto:servizioclienti@cirrottola.it" class="text-white hover:underline">servizioclienti@cirrottola.it</a>
+                                <p class="text-xs">Inviaci un email</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-3 items-center">
+                            <i class="ph ph-whatsapp-logo text-2xl text-green-500"></i>
+                            <div>
+                                <a href="https://wa.me/390809955402" target="_blank" class="text-white hover:underline">Avvia chat WhatsApp</a>
+                                <p class="text-xs">+39 0809955402</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Badges & Social -->
+            <div class="mt-16 flex flex-col items-center gap-8">
+                <a href="https://www.consorzionetcomm.it/soci/profumerie-cirrottola/" target="_blank" class="opacity-80 hover:opacity-100 transition">
+                    <img src="https://www.cirrottola.it/sigillo_netcomm.png" alt="Netcomm" class="h-16 w-auto">
+                </a>
+                
+                <div class="flex gap-6 text-2xl">
+                    <a href="https://www.facebook.com/profumerie.cirrottola" target="_blank" class="text-gray-500 hover:text-white transition"><i class="ph ph-facebook-logo"></i></a>
+                    <a href="https://www.youtube.com/channel/UChEwiwtFAfZigl4t_PZpE6w" target="_blank" class="text-gray-500 hover:text-white transition"><i class="ph ph-youtube-logo"></i></a>
+                    <a href="https://www.instagram.com/profumerie_cirrottola/" target="_blank" class="text-gray-500 hover:text-white transition"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="https://www.linkedin.com/in/gruppo-profumerie-cirrottola-a1512117a" target="_blank" class="text-gray-500 hover:text-white transition"><i class="ph ph-linkedin-logo"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="bg-black py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <div class="text-center md:text-left">
+                    F.lli Cirrottola Srl - Società unipersonale soggetta all’attività di direzione e coordinamento di Cirrottola Holding - P. Iva 03970560722 - Nr REA: BA285711 - created by <a href="http://www.omnilink.it" target="_blank" class="hover:text-white underline">omnilink.it</a>
+                </div>
+                <div>
+                    <img src="https://www.cirrottola.it/media/wysiwyg/infortis/ultimo/custom/payment.gif" alt="Metodi di pagamento" class="h-6 w-auto opacity-70">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Trustpilot Widget Integration (From original source) -->
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+</body>
+</html>
