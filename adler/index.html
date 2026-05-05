@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adler toneri - Redesign</title>
+    <meta name="description" content="Mensis AV d.o.o. je tvrtka osnovana 2009.god., a pod svojim okriljem objedinjuje brendove OMOT.HR I MOJ-TONER.COM.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e293b', // Slate 800
+                        secondary: '#ef4444', // Red 500
+                        accent: '#eab308', // Yellow 500
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Smooth scrolling and basic resets */
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', system-ui, sans-serif; background-color: #f8fafc; }
+        
+        /* Hide scrollbar for category menu on mobile but allow scroll */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Mobile menu transition */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col min-h-screen">
+
+    <!-- TOP BAR -->
+    <div class="bg-slate-900 text-slate-300 text-xs sm:text-sm py-2">
+        <div class="container mx-auto px-4 lg:px-8 flex justify-between items-center">
+            <div class="hidden sm:block">
+                <span>Dobrodošli na Adler.com.hr</span>
+            </div>
+            <ul class="flex items-center space-x-4 sm:space-x-6 w-full sm:w-auto justify-center sm:justify-end">
+                <li>
+                    <a href="https://www.adler.com.hr/customer/account/login/referer/aHR0cHM6Ly93d3cuYWRsZXIuY29tLmhyLz9fX19TSUQ9VQ,,/" class="hover:text-white transition flex items-center gap-1.5">
+                        <i data-lucide="log-in" class="w-4 h-4"></i> Prijava
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.adler.com.hr/customer/account/" class="hover:text-white transition flex items-center gap-1.5">
+                        <i data-lucide="user" class="w-4 h-4"></i> Moj profil
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.adler.com.hr/checkout/cart/" class="hover:text-white transition flex items-center gap-1.5">
+                        <i data-lucide="shopping-cart" class="w-4 h-4"></i> Moja košarica
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.adler.com.hr/onepage/" class="hover:text-white transition flex items-center gap-1.5 font-medium text-white">
+                        <i data-lucide="credit-card" class="w-4 h-4 text-secondary"></i> Nastavi na blagajnu
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="bg-white sticky top-0 z-40 shadow-sm border-b border-slate-200">
+        <div class="container mx-auto px-4 lg:px-8 py-4 lg:py-5 flex flex-wrap lg:flex-nowrap items-center justify-between gap-4">
+            
+            <!-- Mobile Menu Toggle & Logo -->
+            <div class="flex items-center justify-between w-full lg:w-auto gap-4">
+                <button id="menu-toggle" class="lg:hidden text-slate-600 hover:text-primary">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+                <a href="https://www.adler.com.hr/" title="Adler.com.hr" class="flex-shrink-0">
+                    <img src="https://www.adler.com.hr/media/eternal/venedor/websites/2/adler_logo_novi.jpg" alt="Adler.com.hr" class="h-12 sm:h-14 lg:h-16 object-contain" />
+                </a>
+                <div class="lg:hidden flex items-center">
+                    <a href="https://www.adler.com.hr/checkout/cart/" class="relative p-2 text-slate-600 hover:text-primary">
+                        <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+                        <span class="absolute top-0 right-0 bg-secondary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="w-full lg:flex-1 lg:max-w-2xl lg:mx-8 order-3 lg:order-none">
+                <form id="search_mini_form" action="https://www.adler.com.hr/tonersearch/results/" method="get" class="flex flex-col sm:flex-row w-full border border-slate-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary transition-all shadow-sm">
+                    <select name="category" id="category_search_field" class="bg-slate-50 border-b sm:border-b-0 sm:border-r border-slate-300 px-3 py-3 sm:py-2 text-sm text-slate-600 focus:outline-none cursor-pointer">
+                        <option value="">-- Sve kategorije --</option>
+                        <option value="416">Zamjenski toneri</option>
+                        <option value="417">Obnovljeni original toneri</option>
+                        <option value="418">Original toneri</option>
+                    </select>
+                    <input id="search" type="text" name="q" placeholder="Pretraži..." class="flex-grow px-4 py-3 sm:py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none" maxlength="128" />
+                    <button type="submit" class="bg-primary hover:bg-slate-800 text-white px-6 py-3 sm:py-2 flex items-center justify-center transition-colors font-medium">
+                        <i data-lucide="search" class="w-4 h-4 mr-2"></i> Traži
+                    </button>
+                </form>
+            </div>
+
+            <!-- Cart Details (Desktop) -->
+            <div class="hidden lg:flex items-center order-2 lg:order-none">
+                <div class="flex items-center gap-3 bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-lg hover:border-slate-300 cursor-pointer transition">
+                    <div class="bg-white p-2 rounded-full shadow-sm text-primary">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xs text-slate-500 font-medium">Moja košarica</span>
+                        <span class="text-sm font-bold text-slate-800">0 proizvod(i) - 0,00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:block bg-white border-t border-slate-100 shadow-sm">
+            <div class="container mx-auto px-8">
+                <ul class="flex items-center space-x-8">
+                    <li>
+                        <a href="https://www.adler.com.hr/zamjenski-toneri/" class="block py-4 text-sm font-semibold text-slate-700 hover:text-primary hover:border-b-2 hover:border-primary border-b-2 border-transparent transition-colors uppercase tracking-wide">
+                            Zamjenski toneri
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.adler.com.hr/obnovljeni-original-toneri/" class="block py-4 text-sm font-semibold text-slate-700 hover:text-primary hover:border-b-2 hover:border-primary border-b-2 border-transparent transition-colors uppercase tracking-wide">
+                            Obnovljeni original toneri
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.adler.com.hr/original-toneri/" class="block py-4 text-sm font-semibold text-slate-700 hover:text-primary hover:border-b-2 hover:border-primary border-b-2 border-transparent transition-colors uppercase tracking-wide">
+                            Original toneri
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white z-50 shadow-2xl flex flex-col h-full lg:hidden">
+        <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+            <span class="font-bold text-lg text-primary uppercase tracking-wider">Izbornik</span>
+            <button id="close-menu" class="p-2 text-slate-500 hover:text-secondary rounded-full hover:bg-slate-200 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <ul class="flex-grow overflow-y-auto py-4">
+            <li><a href="https://www.adler.com.hr/zamjenski-toneri/" class="block px-6 py-4 text-slate-700 font-medium border-b border-slate-100 hover:bg-slate-50">Zamjenski toneri</a></li>
+            <li><a href="https://www.adler.com.hr/obnovljeni-original-toneri/" class="block px-6 py-4 text-slate-700 font-medium border-b border-slate-100 hover:bg-slate-50">Obnovljeni original toneri</a></li>
+            <li><a href="https://www.adler.com.hr/original-toneri/" class="block px-6 py-4 text-slate-700 font-medium border-b border-slate-100 hover:bg-slate-50">Original toneri</a></li>
+        </ul>
+    </div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/50 z-40 hidden lg:hidden backdrop-blur-sm transition-opacity"></div>
+
+    <main class="flex-grow">
+        <!-- Hero Search Widget Section -->
+        <section class="relative bg-primary py-16 lg:py-24 overflow-hidden">
+            <!-- Decorative background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+                <div class="absolute top-1/2 right-10 w-64 h-64 rounded-full bg-secondary blur-3xl"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 lg:px-8 relative z-10">
+                <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="p-6 md:p-10 border-b border-slate-100 text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 mb-2">Pronađite pravi toner za Vaš printer</h2>
+                        <p class="text-slate-500 text-sm md:text-base">Odaberite brand i unesite model Vašeg printera kako bismo Vam prikazali odgovarajuće tonere i tinte.</p>
+                    </div>
+                    
+                    <div class="p-6 md:p-10 bg-slate-50">
+                        <form id="printer-finder" action="https://www.adler.com.hr/tonersearch/index/" method="get" class="flex flex-col gap-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <!-- Brand Dropdown -->
+                                <div class="relative">
+                                    <label for="brand_id" class="block text-xs font-semibold text-slate-600 uppercase mb-2">1. Brand printera</label>
+                                    <div class="relative">
+                                        <select name="brand_id" id="brand_id" class="w-full appearance-none bg-white border border-slate-300 text-slate-700 py-3.5 px-4 pr-10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm">
+                                            <option value="0" selected="selected">Odaberite brand...</option>
+                                            <option value="27">Brother</option>
+                                            <option value="29">Canon</option>
+                                            <option value="49">Dell</option>
+                                            <option value="28">Epson</option>
+                                            <option value="31">HP</option>
+                                            <option value="55">Konica</option>
+                                            <option value="30">Konica minolta</option>
+                                            <option value="33">Kyocera</option>
+                                            <option value="35">Lexmark</option>
+                                            <option value="51">Lomond</option>
+                                            <option value="40">Nashuatec</option>
+                                            <option value="34">Oki</option>
+                                            <option value="36">Panasonic</option>
+                                            <option value="38">Ricoh</option>
+                                            <option value="48">Ricoh/nashuatec</option>
+                                            <option value="32">Samsung</option>
+                                            <option value="53">Toshiba</option>
+                                            <option value="37">Xerox</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-slate-500">
+                                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Model Input -->
+                                <div>
+                                    <label for="printer_model" class="block text-xs font-semibold text-slate-600 uppercase mb-2">2. Model printera</label>
+                                    <input type="text" id="printer_model" name="printer_model" placeholder="Unesite i odaberite model printera" class="w-full bg-white border border-slate-300 text-slate-700 py-3.5 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm" />
+                                    <input type="hidden" name="printer_model_id"/>
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="mt-2 flex justify-center md:justify-end">
+                                <button type="submit" class="w-full md:w-auto bg-primary hover:bg-slate-800 text-white font-bold py-3.5 px-10 rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                                    <i data-lucide="search" class="w-5 h-5"></i> Traži proizvode
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="container mx-auto px-4 lg:px-8">
+                
+                <div class="flex items-center justify-between mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-800 relative inline-block">
+                        Izdvojeno iz ponude
+                        <span class="absolute -bottom-3 left-0 w-1/3 h-1.5 bg-primary rounded-full"></span>
+                    </h2>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+                    
+                    <!-- Product 1 -->
+                    <a href="https://www.adler.com.hr/papir-golden-star-a4-kopirni-80g/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/v/b/vb_paper.jpg" alt="Papir Red Bull Victoria balance A4 kopirni 80g" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">Papir Red Bull Victoria balance A4 kopirni 80g</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 2 -->
+                    <a href="https://www.adler.com.hr/gold-cb540a-ce320a-cf210a-zamjenski-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/9/2/9255257g_53.jpg" alt="ADLER GOLD HP CB540A / CE320A / CF210X / CRG716 / CRG731 Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">ADLER GOLD HP CB540A / CE320A / CF210X / CRG716 / CRG731 Black zamjenski toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 3 -->
+                    <a href="https://www.adler.com.hr/hp-gold-ce310a-cf350a-crg729-bk-zamj-zamjenski-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/9/2/9255257g_9.jpg" alt="ADLER GOLD HP CE310A / CF350A / CRG-729 Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">ADLER GOLD HP CE310A / CF350A / CRG-729 Black zamjenski toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 4 -->
+                    <a href="https://www.adler.com.hr/hp-q2612a-fx10-zamj-white-box-zamjenski-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/e/u/eu_toner_3_1.jpg" alt="Zamjenski toner OPTIMUM HP Q2612A / FX-10 / FX-9 / CRG-703 Black" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">Zamjenski toner OPTIMUM HP Q2612A / FX-10 / FX-9 / CRG-703 Black</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 5 (Hover Image Support) -->
+                    <a href="https://www.adler.com.hr/automatska-sortirka-kovanica/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/1/_/1_1.jpg" alt="Automatska sortirka kovanica" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/2/_/2_1.jpg" alt="Automatska sortirka kovanica" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">Automatska sortirka kovanica</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 6 (Hover Image Support) -->
+                    <a href="https://www.adler.com.hr/hp-cf217a-17a-crg047-bk-1-6k-j-sa-chipom-zamjenski-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/a/d/adler_zamjenski_toner_7.jpg" alt="ADLER HP CF217A / CRG-047 sa čipom Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/g/a/garancija_1_godinu_7.jpg" alt="ADLER HP CF217A / CRG-047 sa čipom Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">ADLER HP CF217A / CRG-047 sa čipom Black zamjenski toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 7 (Hover Image Support) -->
+                    <a href="https://www.adler.com.hr/hp-ce285a-cb435-cb436-bk-zamj/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/a/d/adler_zamjenski_toner.jpg" alt="ADLER HP CE285A / CB435A / CB436A / CRG-725 Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-100 group-hover:opacity-0" />
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/g/a/garancija_1_godinu.jpg" alt="ADLER HP CE285A / CB435A / CB436A / CRG-725 Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 transition-opacity duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">ADLER HP CE285A / CB435A / CB436A / CRG-725 Black zamjenski toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 8 -->
+                    <a href="https://www.adler.com.hr/xerox-3020-3025-zamjenski-toner-adler/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/a/d/adler_mono.png" alt="ADLER Xerox 3020 / 3025 (106R02773) Black zamjenski toner" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">ADLER Xerox 3020 / 3025 (106R02773) Black zamjenski toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 9 -->
+                    <a href="https://www.adler.com.hr/hp-w1350a-135a-black-original-toner-original-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/w/1/w1350a.jpg" alt="HP W1350A / 135A Black original toner" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">HP W1350A / 135A Black original toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 10 -->
+                    <a href="https://www.adler.com.hr/hp-w1420a-142a-black-original-toner-original-toner/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/_/t/_toner-hp-w1420a-142a-crna-original.jpeg" alt="HP W1420A / 142A Black original toner" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">HP W1420A / 142A Black original toner</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 11 -->
+                    <a href="https://www.adler.com.hr/epson-ecotank-t00s14-black-103-original-tinta/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/e/p/epson_ecotank_t00s14.jpg" alt="Epson EcoTank 103 (C13T00S14A) Black original tinta" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">Epson EcoTank 103 (C13T00S14A) Black original tinta</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                    <!-- Product 12 -->
+                    <a href="https://www.adler.com.hr/canon-pg545xl-bk-original-tinta/" class="group flex flex-col bg-white rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full">
+                        <div class="relative w-full pt-[100%] bg-white flex items-center justify-center border-b border-slate-50 p-6 overflow-hidden">
+                            <img src="https://www.adler.com.hr/media/catalog/product/cache/5/small_image/228x228/9df78eab33525d08d6e5fb8d27136e95/1/2/122102.jpg" alt="Canon PG-545XL Black (8286B001) original tinta" class="absolute inset-0 w-full h-full object-contain p-6 group-hover:scale-105 transition-transform duration-500" />
+                        </div>
+                        <div class="p-5 flex flex-col flex-grow">
+                            <h3 class="text-sm font-semibold text-slate-800 leading-snug group-hover:text-primary transition-colors line-clamp-3 mb-4">Canon PG-545XL Black (8286B001) original tinta</h3>
+                            <span class="mt-auto w-full inline-block text-center bg-slate-50 text-slate-700 py-2.5 rounded border border-slate-200 font-medium text-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">Pogledaj proizvod</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-slate-300 mt-auto">
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8">
+                
+                <!-- Column 1: Ured i skladište -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-secondary"></i> Ured i skladište
+                    </h3>
+                    <ul class="space-y-3 text-sm leading-relaxed">
+                        <li><strong>Adler GmbH d.o.o.</strong></li>
+                        <li>Radnička cesta 27</li>
+                        <li>10000 Zagreb</li>
+                        <li class="pt-2">
+                            <a href="http://www.moj-toner.com" title="Naša web trgovina specijalizirana za tinte i tonere" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 underline decoration-slate-600 underline-offset-4">
+                                <i data-lucide="external-link" class="w-3 h-3"></i> moj toner maloprodaja
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Sitemap (Making all visible for better UX) -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="link" class="w-5 h-5 text-secondary"></i> Sitemap & Informacije
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 text-sm">
+                        <ul class="space-y-3">
+                            <li><a href="https://www.adler.com.hr/catalogsearch/advanced/" class="hover:text-white hover:underline transition-colors">Napredna pretraga</a></li>
+                            <li><a href="https://www.adler.com.hr/catalog/seo_sitemap/category/" class="hover:text-white hover:underline transition-colors">Sitemap kategorija</a></li>
+                            <li><a href="https://www.adler.com.hr/catalog/seo_sitemap/product/" class="hover:text-white hover:underline transition-colors">Sitemap proizvoda</a></li>
+                        </ul>
+                        <ul class="space-y-3">
+                            <li><a href="https://www.adler.com.hr/uvjeti-dostave" class="hover:text-white hover:underline transition-colors">Uvjeti dostave</a></li>
+                            <li><a href="https://www.adler.com.hr/uvjeti-poslovanja" class="hover:text-white hover:underline transition-colors">Uvjeti poslovanja</a></li>
+                            <li><a href="https://www.adler.com.hr/izjava-o-privatnosti" class="hover:text-white hover:underline transition-colors">Izjava o privatnosti</a></li>
+                            <li><a href="https://www.adler.com.hr/narudzbe-i-povrati" class="hover:text-white hover:underline transition-colors">Narudžbe i povrati</a></li>
+                            <li><a href="https://www.adler.com.hr/nacin-placanja" class="hover:text-white hover:underline transition-colors">Načini plaćanja</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Kontakt -->
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-6 flex items-center gap-2">
+                        <i data-lucide="phone-call" class="w-5 h-5 text-secondary"></i> Kontakt
+                    </h3>
+                    <ul class="space-y-4 text-sm">
+                        <li>
+                            <a href="mailto:veleprodaja@adler.hr" target="_blank" class="flex items-center gap-3 hover:text-white transition-colors group p-3 bg-slate-800/50 rounded-lg">
+                                <div class="bg-slate-800 p-2 rounded text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 mb-0.5">E-mail adresa</p>
+                                    <p class="font-medium">veleprodaja@adler.hr</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="tel:+38513704515" class="flex items-center gap-3 hover:text-white transition-colors group p-3 bg-slate-800/50 rounded-lg">
+                                <div class="bg-slate-800 p-2 rounded text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+                                    <i data-lucide="phone" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-400 mb-0.5">Telefonski broj</p>
+                                    <p class="font-medium font-mono text-base tracking-wide">01 3704 515</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-slate-800 bg-slate-900/50">
+            <div class="container mx-auto px-4 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-slate-500">
+                <div class="flex items-center gap-4">
+                    <a href="mailto:veleprodaja@mensis.hr" class="text-slate-400 hover:text-white transition-colors" title="Pošaljite E-mail">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </a>
+                </div>
+                <div>
+                    &copy; <span id="current-year"></span> ADLER GmbH d.o.o. Sva prava pridržana.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            if(mobileMenu.classList.contains('open')) {
+                mobileOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                mobileOverlay.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', toggleMenu);
+        mobileOverlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
