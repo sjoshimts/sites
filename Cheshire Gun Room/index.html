@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shotguns, Rifles, Airguns & Accessories | Gunsmiths | Cheshire Gun Room</title>
+    <meta name="description" content="Shop new & used shotguns, rifles, air rifles, and air pistols. Find shooting accessories like scopes, pellets, and more, plus expert gunsmithing services!">
+    <link rel="icon" href="https://www.cheshiregunroom.com/media/favicon/default/favicon.png" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        cgr: {
+                            blue: '#1c3d7a',
+                            dark: '#0f244a',
+                            accent: '#eab308', // Yellow for sale/alerts
+                            red: '#dc2626',
+                            gray: '#f3f4f6',
+                            text: '#374151'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Custom scrollbar for horizontal lists */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-gray-50 text-cgr-text antialiased font-sans flex flex-col min-h-screen" x-data="{ mobileMenuOpen: false, searchOpen: false }">
+
+    <!-- TOP BAR -->
+    <div class="bg-cgr-dark text-white text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
+            <div class="flex space-x-6 items-center">
+                <a href="tel:01614808222" class="hover:text-cgr-accent transition flex items-center gap-2">
+                    <i class="ph ph-phone text-lg"></i>
+                    <span class="hidden sm:inline">Stockport: </span><strong>0161 480 8222</strong>
+                </a>
+                <a href="tel:01204496008" class="hover:text-cgr-accent transition flex items-center gap-2">
+                    <i class="ph ph-phone text-lg"></i>
+                    <span class="hidden sm:inline">Bolton: </span><strong>01204 496 008</strong>
+                </a>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <a href="https://www.cheshiregunroom.com/exports/" class="hover:text-cgr-accent transition hidden md:block">Exports Customers Click Here</a>
+                <div class="h-4 w-px bg-gray-600 hidden md:block"></div>
+                <a href="https://www.cheshiregunroom.com/customer/account/" class="hover:text-cgr-accent transition">My Account</a>
+                <a href="https://www.cheshiregunroom.com/customer/account/login/" class="hover:text-cgr-accent transition">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER (Sticky) -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm transition-all" x-data="{ isScrolled: false }" @scroll.window="isScrolled = (window.pageYOffset > 40)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300" :class="isScrolled ? 'py-3' : 'py-5'">
+            <div class="flex items-center justify-between gap-4 sm:gap-8">
+                
+                <!-- Mobile Menu Button -->
+                <button @click="mobileMenuOpen = true" class="lg:hidden text-gray-700 hover:text-cgr-blue p-2 -ml-2">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="https://www.cheshiregunroom.com/" class="flex-shrink-0 flex items-center">
+                    <img src="https://www.cheshiregunroom.com/skin/frontend/ultimo/cgrtheme/images/cgrheadernew_sticky.png" alt="Cheshire Gun Room" class="h-10 sm:h-14 lg:h-16 w-auto transition-all duration-300" :class="isScrolled ? 'h-10' : ''">
+                </a>
+
+                <!-- Search Bar -->
+                <div class="hidden md:flex flex-1 max-w-2xl">
+                    <div class="relative w-full group">
+                        <input type="text" placeholder="Search entire store here..." class="w-full bg-gray-100 text-gray-900 border border-transparent focus:bg-white focus:border-cgr-blue focus:ring-2 focus:ring-cgr-blue/20 rounded-full py-3 pl-6 pr-12 transition-all outline-none">
+                        <button class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-cgr-blue text-white rounded-full hover:bg-cgr-dark transition">
+                            <i class="ph ph-magnifying-glass text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Icons (Search Mobile, Cart) -->
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <button @click="searchOpen = !searchOpen" class="md:hidden p-2 text-gray-700 hover:text-cgr-blue">
+                        <i class="ph ph-magnifying-glass text-2xl"></i>
+                    </button>
+                    <a href="#" class="relative p-2 text-gray-700 hover:text-cgr-blue group flex items-center gap-2">
+                        <div class="relative">
+                            <i class="ph ph-shopping-cart text-3xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-cgr-red text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">0</span>
+                        </div>
+                        <div class="hidden xl:block text-left text-sm">
+                            <p class="font-bold text-gray-900 group-hover:text-cgr-blue transition">My Cart</p>
+                            <p class="text-gray-500 text-xs">£0.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar Toggle -->
+            <div x-show="searchOpen" x-collapse class="md:hidden mt-4 pb-2" x-cloak>
+                <div class="relative w-full">
+                    <input type="text" placeholder="Search entire store here..." class="w-full bg-gray-100 border border-gray-200 rounded-full py-2.5 pl-5 pr-12 focus:border-cgr-blue outline-none">
+                    <button class="absolute right-1 top-1/2 -translate-y-1/2 p-2 text-cgr-blue rounded-full">
+                        <i class="ph ph-magnifying-glass text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESKTOP MEGA MENU -->
+        <nav class="hidden lg:block border-t border-gray-100 bg-white">
+            <ul class="max-w-7xl mx-auto flex justify-center text-sm font-semibold text-gray-800">
+                <!-- Package Deals -->
+                <li class="group">
+                    <a href="https://www.cheshiregunroom.com/package-deals" class="flex items-center gap-1 py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent group-hover:border-cgr-blue uppercase tracking-wide text-[13px]">
+                        Package Deals <i class="ph-bold ph-caret-down text-gray-400 group-hover:text-cgr-blue transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute left-0 w-full bg-white shadow-xl border-b border-gray-200 top-[100%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="max-w-7xl mx-auto px-8 py-8 grid grid-cols-4 gap-8">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Accessory Packs & Cleaning Kits</h4>
+                                <ul class="space-y-2 text-gray-600 font-normal">
+                                    <li><a href="https://www.cheshiregunroom.com/airgun-accessory-packs" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Air Gun Accessory Packs</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/airgun-cleaning-kits" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Airgun Cleaning Kits</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/shotgun-accessory-packs" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Shotgun Accessory Packs</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/shotgun-cleaning-kits" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Shotgun Cleaning Kits</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Gun Kits</h4>
+                                <ul class="space-y-2 text-gray-600 font-normal">
+                                    <li><a href="https://www.cheshiregunroom.com/gun-of-the-month-deal" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Gun Of The Month</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/air-gun-kits" class="hover:text-cgr-blue hover:translate-x-1 inline-block transition-transform">Air Gun Kits</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-span-2 bg-gray-50 rounded-lg p-6 flex flex-col justify-center items-center text-center">
+                                <h4 class="text-xl font-bold text-cgr-blue mb-2">Finance Available</h4>
+                                <p class="text-sm text-gray-600 mb-4">from £250 to £15,000</p>
+                                <a href="https://www.cheshiregunroom.com/finance" class="bg-cgr-blue text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-cgr-dark transition">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Gun Room -->
+                <li class="group">
+                    <a href="https://www.cheshiregunroom.com/gun-room" class="flex items-center gap-1 py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent group-hover:border-cgr-blue uppercase tracking-wide text-[13px]">
+                        Gun Room <i class="ph-bold ph-caret-down text-gray-400 group-hover:text-cgr-blue transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <div class="absolute left-0 w-full bg-white shadow-xl border-b border-gray-200 top-[100%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="max-w-7xl mx-auto px-8 py-8 grid grid-cols-6 gap-6">
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/shotguns">Shotguns</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/over-and-unders" class="hover:text-cgr-blue">Over and Unders</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/side-by-sides" class="hover:text-cgr-blue">Side by Sides</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/semi-auto-shotguns" class="hover:text-cgr-blue">Semi-Auto</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pump-actions" class="hover:text-cgr-blue">Pump Actions</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-owned-shotguns" class="hover:text-cgr-blue font-semibold text-cgr-red">Used Shotguns</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/rifles">Rifles</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/rim-fire" class="hover:text-cgr-blue">Rimfire</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/centre-fire" class="hover:text-cgr-blue">Centre Fire</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/underlever" class="hover:text-cgr-blue">Underlever</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/sound-moderators" class="hover:text-cgr-blue">Sound Moderators</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-owned-rifles" class="hover:text-cgr-blue font-semibold text-cgr-red">Pre-Owned Rifles</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/air-rifles">Air Rifles</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/spring-air-rifles" class="hover:text-cgr-blue">Spring</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/co2-air-rifles" class="hover:text-cgr-blue">CO2</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-charged-air-rifles" class="hover:text-cgr-blue">Pre-Charged (PCP)</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/fac-high-power-air-rifles" class="hover:text-cgr-blue">FAC / Hi-Power</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-owned-air-rifles" class="hover:text-cgr-blue font-semibold text-cgr-red">Pre-Owned</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/air-pistols">Air Pistols</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/spring-air-pistols" class="hover:text-cgr-blue">Spring</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/co2-air-pistols" class="hover:text-cgr-blue">CO2</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-charged-air-pistols" class="hover:text-cgr-blue">Pre-Charged</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pneumatic-air-pistols" class="hover:text-cgr-blue">Pneumatic</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/pre-owned-air-pistols" class="hover:text-cgr-blue font-semibold text-cgr-red">Pre-Owned</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/pistols">Pistols</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/long-barrel-pistols" class="hover:text-cgr-blue">Long Barrel Pistols</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/practical-pistol" class="hover:text-cgr-blue">Practical Pistols</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/used-pistols" class="hover:text-cgr-blue font-semibold text-cgr-red">Used Pistols</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs"><a href="https://www.cheshiregunroom.com/miscellaneous-guns">Misc Guns</a></h4>
+                                <ul class="space-y-2 text-gray-600 font-normal text-sm">
+                                    <li><a href="https://www.cheshiregunroom.com/project-guns" class="hover:text-cgr-blue">Project Guns</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/blank-firing-guns" class="hover:text-cgr-blue">Blank Firing Guns</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/de-activated-guns" class="hover:text-cgr-blue">De-activated Guns</a></li>
+                                    <li><a href="https://www.cheshiregunroom.com/obsolete-antique-guns" class="hover:text-cgr-blue">Antique Guns</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Optics -->
+                <li class="group">
+                    <a href="https://www.cheshiregunroom.com/optics" class="flex items-center gap-1 py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent group-hover:border-cgr-blue uppercase tracking-wide text-[13px]">
+                        Optics <i class="ph-bold ph-caret-down text-gray-400 group-hover:text-cgr-blue transition-transform group-hover:rotate-180"></i>
+                    </a>
+                    <!-- Simplifed generic dropdown for code brevity, follows similar pattern -->
+                    <div class="absolute left-0 w-full bg-white shadow-xl border-b border-gray-200 top-[100%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="max-w-7xl mx-auto px-8 py-8 grid grid-cols-5 gap-6">
+                            <div><h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Scopes</h4><ul class="space-y-2 text-gray-600 text-sm"><li><a href="#" class="hover:text-cgr-blue">25mm (1") Tube</a></li><li><a href="#" class="hover:text-cgr-blue">30mm Tube</a></li><li><a href="#" class="hover:text-cgr-blue">Illuminated</a></li></ul></div>
+                            <div><h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Spotting</h4><ul class="space-y-2 text-gray-600 text-sm"><li><a href="#" class="hover:text-cgr-blue">Spotting Scopes</a></li><li><a href="#" class="hover:text-cgr-blue">Binoculars</a></li><li><a href="#" class="hover:text-cgr-blue">Range Finders</a></li><li><a href="#" class="hover:text-cgr-blue">Game & Trail Cameras</a></li></ul></div>
+                            <div><h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Night Optics</h4><ul class="space-y-2 text-gray-600 text-sm"><li><a href="#" class="hover:text-cgr-blue">Night Vision Scopes</a></li><li><a href="#" class="hover:text-cgr-blue">Thermal Riflescopes</a></li><li><a href="#" class="hover:text-cgr-blue">Handheld Night Vision</a></li><li><a href="#" class="hover:text-cgr-blue">Thermal Imagers</a></li></ul></div>
+                            <div><h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Red Dots & Lasers</h4><ul class="space-y-2 text-gray-600 text-sm"><li><a href="#" class="hover:text-cgr-blue">Red Dots</a></li><li><a href="#" class="hover:text-cgr-blue">Lasers</a></li></ul></div>
+                            <div><h4 class="font-bold text-gray-900 mb-4 border-b pb-2 uppercase tracking-wide text-xs">Accessories</h4><ul class="space-y-2 text-gray-600 text-sm"><li><a href="#" class="hover:text-cgr-blue">Mounts</a></li><li><a href="#" class="hover:text-cgr-blue">Lens Covers & Cleaning</a></li><li><a href="#" class="hover:text-cgr-blue">Tripods</a></li></ul></div>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Other Top Level Links -->
+                <li><a href="https://www.cheshiregunroom.com/security" class="block py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent hover:border-cgr-blue uppercase tracking-wide text-[13px]">Security</a></li>
+                <li><a href="https://www.cheshiregunroom.com/clothing-and-footwear" class="block py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent hover:border-cgr-blue uppercase tracking-wide text-[13px]">Clothing</a></li>
+                <li><a href="https://www.cheshiregunroom.com/reloading" class="block py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent hover:border-cgr-blue uppercase tracking-wide text-[13px]">Reloading</a></li>
+                <li><a href="https://www.cheshiregunroom.com/gun-care" class="block py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent hover:border-cgr-blue uppercase tracking-wide text-[13px]">Gun Care</a></li>
+                <li><a href="https://www.cheshiregunroom.com/accessories" class="block py-4 px-5 hover:text-cgr-blue hover:bg-gray-50 transition border-b-2 border-transparent hover:border-cgr-blue uppercase tracking-wide text-[13px]">Accessories</a></li>
+                <li><a href="https://www.cheshiregunroom.com/sale" class="block py-4 px-5 text-cgr-red hover:bg-red-50 transition border-b-2 border-transparent hover:border-cgr-red uppercase tracking-wide text-[13px] font-bold">Gun Sale</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MOBILE OFF-CANVAS MENU -->
+    <div x-show="mobileMenuOpen" class="fixed inset-0 z-[100]" x-cloak>
+        <div x-show="mobileMenuOpen" x-transition.opacity class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm" @click="mobileMenuOpen = false"></div>
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="absolute inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-2xl overflow-y-auto flex flex-col">
+            
+            <div class="flex items-center justify-between p-4 border-b border-gray-100 bg-gray-50">
+                <span class="font-bold text-cgr-blue text-lg">Menu</span>
+                <button @click="mobileMenuOpen = false" class="p-2 text-gray-500 hover:text-gray-900 bg-white rounded-full shadow-sm">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
+            
+            <ul class="flex-1 overflow-y-auto divide-y divide-gray-100 text-sm font-semibold text-gray-800" x-data="{ openMenu: null }">
+                <li><a href="https://www.cheshiregunroom.com/package-deals" class="block p-4 hover:bg-gray-50">Package Deals</a></li>
+                <li><a href="https://www.cheshiregunroom.com/gun-room" class="block p-4 hover:bg-gray-50">Gun Room</a></li>
+                <li><a href="https://www.cheshiregunroom.com/optics" class="block p-4 hover:bg-gray-50">Optics</a></li>
+                <li><a href="https://www.cheshiregunroom.com/security" class="block p-4 hover:bg-gray-50">Security</a></li>
+                <li><a href="https://www.cheshiregunroom.com/clothing-and-footwear" class="block p-4 hover:bg-gray-50">Clothing & Footwear</a></li>
+                <li><a href="https://www.cheshiregunroom.com/reloading" class="block p-4 hover:bg-gray-50">Reloading</a></li>
+                <li><a href="https://www.cheshiregunroom.com/gun-care" class="block p-4 hover:bg-gray-50">Gun Care</a></li>
+                <li><a href="https://www.cheshiregunroom.com/accessories" class="block p-4 hover:bg-gray-50">Accessories</a></li>
+                <li><a href="https://www.cheshiregunroom.com/sale" class="block p-4 text-cgr-red bg-red-50/50">Gun Sale</a></li>
+            </ul>
+
+            <div class="p-6 bg-gray-50 text-sm border-t border-gray-200">
+                <a href="https://www.cheshiregunroom.com/customer/account/login/" class="flex items-center gap-2 font-bold text-cgr-blue mb-4">
+                    <i class="ph ph-user"></i> Log In / Register
+                </a>
+                <div class="space-y-2 text-gray-600">
+                    <p><i class="ph ph-phone mr-1"></i> Stockport: 0161 480 8222</p>
+                    <p><i class="ph ph-phone mr-1"></i> Bolton: 01204 496 008</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+        <!-- HERO SECTION (Slider & Info Banners) -->
+        <section class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            
+            <!-- Main Slider (Alpine.js) -->
+            <div class="lg:col-span-3 rounded-2xl overflow-hidden shadow-sm relative bg-gray-200 aspect-[21/9] sm:aspect-[3/1] lg:aspect-[2.4/1]" x-data="{ currentSlide: 0, slides: [
+                'https://www.cheshiregunroom.com/media/wysiwyg/HikMicro-alpex-pro_copy.jpg',
+                'https://www.cheshiregunroom.com/media/wysiwyg/Buffalo_Carry_Pro_II_Shotgun_Bag_Sale_copy_1.jpg',
+                'https://www.cheshiregunroom.com/media/wysiwyg/Pellet_sample_pack_final.jpg'
+            ]}" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % slides.length }, 5000)">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <div x-show="currentSlide === index" x-transition.opacity.duration.700ms class="absolute inset-0 w-full h-full">
+                        <img :src="slide" alt="Promo Banner" class="w-full h-full object-cover">
+                    </div>
+                </template>
+                
+                <!-- Dots -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <template x-for="(_, index) in slides" :key="index">
+                        <button @click="currentSlide = index" :class="{'bg-cgr-blue w-6': currentSlide === index, 'bg-white/60 w-2': currentSlide !== index}" class="h-2 rounded-full transition-all duration-300"></button>
+                    </template>
+                </div>
+            </div>
+
+            <!-- Side Promos (replaces scattered icon banners into a neat stack for large screens, grid for mobile) -->
+            <div class="lg:col-span-1 grid grid-cols-2 lg:grid-cols-1 gap-4">
+                <a href="https://www.cheshiregunroom.com/free-shipping" class="group relative rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-4 hover:border-cgr-blue transition-colors">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/free-shipping.png" alt="Free Shipping" class="object-contain h-full max-h-20 group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://www.cheshiregunroom.com/price-match" class="group relative rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-4 hover:border-cgr-blue transition-colors">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/price-match-promise_1.png" alt="Price Match" class="object-contain h-full max-h-20 group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://www.cheshiregunroom.com/finance" class="group relative rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-4 hover:border-cgr-blue transition-colors">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/finance-available_2.png" alt="Finance Available" class="object-contain h-full max-h-20 group-hover:scale-105 transition-transform duration-300">
+                </a>
+                <a href="https://www.gunplan.co.uk/?ref=CGR" class="group relative rounded-xl overflow-hidden shadow-sm border border-gray-100 bg-white flex items-center justify-center p-4 hover:border-cgr-blue transition-colors">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgr_category_banners/GUN_INSURANCE.png" alt="Gun Insurance" class="object-contain h-full max-h-20 group-hover:scale-105 transition-transform duration-300">
+                </a>
+            </div>
+        </section>
+
+        <!-- SERVICES GRID -->
+        <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a href="https://www.cheshiregunroom.com/exports/" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden aspect-[4/3]">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/Exports.jpg" alt="Export Guns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-cgr-blue transition-colors">Export Guns</h3>
+                </div>
+            </a>
+            <a href="https://www.cheshiregunroom.com/sell-us-your-gun/" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden aspect-[4/3]">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/Sell-Us-Your-Gun.jpg" alt="Sell us Your Gun" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-cgr-blue transition-colors">Sell us Your Gun</h3>
+                </div>
+            </a>
+            <a href="https://www.cheshiregunroom.com/gun-smiths-workshop/" class="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div class="relative overflow-hidden aspect-[4/3]">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgrbanners/Gunsmiths.jpg" alt="Gunsmith's Workshop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-bold text-lg text-gray-900 group-hover:text-cgr-blue transition-colors">Gunsmith's Workshop</h3>
+                </div>
+            </a>
+        </section>
+
+        <!-- PRODUCT ROW: Airgun Starter Kits -->
+        <section class="space-y-6">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                <h2 class="text-2xl font-bold text-gray-900">Airgun Starter Kits & Pellet Packs</h2>
+                <a href="https://www.cheshiregunroom.com/air-gun-kits" class="text-cgr-blue font-medium hover:underline text-sm flex items-center gap-1">View All <i class="ph ph-arrow-right"></i></a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+                <!-- Product 1 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg hover:border-cgr-blue/30 transition-all duration-300 flex flex-col">
+                    <a href="https://www.cheshiregunroom.com/pellet-sample-pack-22" class="relative block mb-4 aspect-square overflow-hidden rounded-lg bg-white">
+                        <img src="https://www.cheshiregunroom.com/media/catalog/product/cache/1/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/2/2/22-pellet-sample-pack-cheshire-gun-room-update-2026.jpg" alt="Pellet Sample Pack .22" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-grow hover:text-cgr-blue transition-colors">
+                        <a href="https://www.cheshiregunroom.com/pellet-sample-pack-22">Pellet Sample Pack .22</a>
+                    </h3>
+                    <div class="mb-4">
+                        <span class="text-lg font-bold text-gray-900">£19.95</span>
+                    </div>
+                    <a href="https://www.cheshiregunroom.com/pellet-sample-pack-22" class="block w-full text-center bg-gray-100 hover:bg-cgr-blue hover:text-white text-gray-900 font-semibold py-2.5 rounded-lg transition-colors text-sm">View Details</a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg hover:border-cgr-blue/30 transition-all duration-300 flex flex-col">
+                    <a href="https://www.cheshiregunroom.com/pellet-sample-pack-177" class="relative block mb-4 aspect-square overflow-hidden rounded-lg bg-white">
+                        <img src="https://www.cheshiregunroom.com/media/catalog/product/cache/1/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/1/7/177-pellet-sample-pack-cheshire-gun-room-update-2026_2.jpg" alt="Pellet Sample Pack .177" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-grow hover:text-cgr-blue transition-colors">
+                        <a href="https://www.cheshiregunroom.com/pellet-sample-pack-177">Pellet Sample Pack .177</a>
+                    </h3>
+                    <div class="mb-4">
+                        <span class="text-lg font-bold text-gray-900">£19.95</span>
+                    </div>
+                    <a href="https://www.cheshiregunroom.com/pellet-sample-pack-177" class="block w-full text-center bg-gray-100 hover:bg-cgr-blue hover:text-white text-gray-900 font-semibold py-2.5 rounded-lg transition-colors text-sm">View Details</a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg hover:border-cgr-blue/30 transition-all duration-300 flex flex-col relative">
+                    <span class="absolute top-4 right-4 z-10 bg-cgr-accent text-cgr-dark text-xs font-bold px-2 py-1 rounded shadow-sm">16% OFF</span>
+                    <a href="https://www.cheshiregunroom.com/sig-sauer-p229-4-5mm-co2-blowback-air-pistol-kit" class="relative block mb-4 aspect-square overflow-hidden rounded-lg bg-white">
+                        <img src="https://www.cheshiregunroom.com/media/catalog/product/cache/1/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/p/2/p229_bundle_kit.jpg" alt="Sig Sauer" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-grow hover:text-cgr-blue transition-colors">
+                        <a href="https://www.cheshiregunroom.com/sig-sauer-p229-4-5mm-co2-blowback-air-pistol-kit">Sig Sauer P229 4.5mm CO2 Blowback Air Pistol Kit</a>
+                    </h3>
+                    <div class="mb-4 flex flex-col">
+                        <span class="text-xs text-gray-500 line-through">£249.99</span>
+                        <span class="text-lg font-bold text-cgr-red">£209.90</span>
+                    </div>
+                    <a href="https://www.cheshiregunroom.com/sig-sauer-p229-4-5mm-co2-blowback-air-pistol-kit" class="block w-full text-center bg-cgr-blue text-white font-semibold py-2.5 rounded-lg hover:bg-cgr-dark transition-colors text-sm shadow-sm">View Details</a>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg hover:border-cgr-blue/30 transition-all duration-300 flex flex-col relative">
+                    <span class="absolute top-4 right-4 z-10 bg-cgr-accent text-cgr-dark text-xs font-bold px-2 py-1 rounded shadow-sm">14% OFF</span>
+                    <a href="https://www.cheshiregunroom.com/umarex-glock-17-dual-ammo-co2-pistol-bb-pellet-kit" class="relative block mb-4 aspect-square overflow-hidden rounded-lg bg-white">
+                        <img src="https://www.cheshiregunroom.com/media/catalog/product/cache/1/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/g/l/glock-17-dual-ammo-1_sale.jpg" alt="Glock 17" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-grow hover:text-cgr-blue transition-colors">
+                        <a href="https://www.cheshiregunroom.com/umarex-glock-17-dual-ammo-co2-pistol-bb-pellet-kit">Umarex Glock 17 Dual Ammo CO2 Pistol BB & Pellet Kit</a>
+                    </h3>
+                    <div class="mb-4 flex flex-col">
+                        <span class="text-xs text-gray-500 line-through">£279.85</span>
+                        <span class="text-lg font-bold text-cgr-red">£239.85</span>
+                    </div>
+                    <a href="https://www.cheshiregunroom.com/umarex-glock-17-dual-ammo-co2-pistol-bb-pellet-kit" class="block w-full text-center bg-cgr-blue text-white font-semibold py-2.5 rounded-lg hover:bg-cgr-dark transition-colors text-sm shadow-sm">View Details</a>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 p-4 shadow-sm hover:shadow-lg hover:border-cgr-blue/30 transition-all duration-300 flex flex-col relative">
+                    <span class="absolute top-4 right-4 z-10 bg-cgr-accent text-cgr-dark text-xs font-bold px-2 py-1 rounded shadow-sm">11% OFF</span>
+                    <a href="https://www.cheshiregunroom.com/umarex-beretta-mod-84-fs-kit" class="relative block mb-4 aspect-square overflow-hidden rounded-lg bg-white">
+                        <img src="https://www.cheshiregunroom.com/media/catalog/product/cache/1/small_image/295x295/9df78eab33525d08d6e5fb8d27136e95/b/e/beretta-mod-84-fs_copy.jpg" alt="Beretta" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                    </a>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-grow hover:text-cgr-blue transition-colors">
+                        <a href="https://www.cheshiregunroom.com/umarex-beretta-mod-84-fs-kit">Umarex Beretta Mod. 84 FS Kit</a>
+                    </h3>
+                    <div class="mb-4 flex flex-col">
+                        <span class="text-xs text-gray-500 line-through">£184.90</span>
+                        <span class="text-lg font-bold text-cgr-red">£164.90</span>
+                    </div>
+                    <a href="https://www.cheshiregunroom.com/umarex-beretta-mod-84-fs-kit" class="block w-full text-center bg-cgr-blue text-white font-semibold py-2.5 rounded-lg hover:bg-cgr-dark transition-colors text-sm shadow-sm">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRANDS ROW -->
+        <section class="space-y-6 pt-4">
+            <div class="flex items-center justify-between border-b border-gray-200 pb-3">
+                <h2 class="text-2xl font-bold text-gray-900">Popular Brands</h2>
+            </div>
+            <div class="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm">
+                <!-- Using flex row with horizontal scroll for modern touch-friendly interaction -->
+                <div class="flex overflow-x-auto hide-scroll gap-8 items-center snap-x snap-mandatory">
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/air-arms.png" alt="Air Arms" class="w-full h-auto object-contain"></a>
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/beretta.png" alt="Beretta" class="w-full h-auto object-contain"></a>
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/browning.png" alt="Browning" class="w-full h-auto object-contain"></a>
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/croots.png" alt="Croots" class="w-full h-auto object-contain"></a>
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/crosman.png" alt="Crosman" class="w-full h-auto object-contain"></a>
+                    <a href="#" class="snap-center shrink-0 w-32 md:w-40 opacity-70 hover:opacity-100 transition-opacity"><img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/brands/hawke.png" alt="Hawke" class="w-full h-auto object-contain"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTTOM CATEGORY BANNERS -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-8">
+            <a href="https://www.cheshiregunroom.com/gun-room.html" class="group block relative overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+                <div class="aspect-square w-full bg-gray-200">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgr-category-block-banners/New-Used.jpg" alt="New & Used Guns" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-white font-bold text-xl tracking-wide uppercase">New & Used Guns</h3>
+                </div>
+            </a>
+            
+            <a href="https://www.cheshiregunroom.com/pellets-and-bbs.html" class="group block relative overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+                <div class="aspect-square w-full bg-gray-200">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgr-category-block-banners/BB-Pellets.jpg" alt="BBs & Pellets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-white font-bold text-xl tracking-wide uppercase">BBs & Pellets</h3>
+                </div>
+            </a>
+
+            <a href="https://www.cheshiregunroom.com/reloading.html" class="group block relative overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+                <div class="aspect-square w-full bg-gray-200">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgr-category-block-banners/Reloading.jpg" alt="Reloading" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-white font-bold text-xl tracking-wide uppercase">Reloading</h3>
+                </div>
+            </a>
+
+            <a href="https://www.cheshiregunroom.com/clothing-and-footwear.html" class="group block relative overflow-hidden rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300">
+                <div class="aspect-square w-full bg-gray-200">
+                    <img src="https://www.cheshiregunroom.com/media/wysiwyg/infortis/ultimo/cgr-category-block-banners/Clothing-1.jpg" alt="Clothing & Footwear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-6">
+                    <h3 class="text-white font-bold text-xl tracking-wide uppercase">Clothing & Footwear</h3>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-100 border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-5">About Us</h4>
+                    <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                        <p>Welcome to Cheshire Gun Room, a leading shooting sports retailer located in Stockport and Bolton, North West of England.</p>
+                        <p>Our areas of expertise and products cover Gunsmithing, Shotguns, Rifles, Air Guns and Optics.</p>
+                        <a href="https://www.cheshiregunroom.com/about-us" class="inline-block text-cgr-blue font-medium hover:underline mt-2">Read more about us →</a>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                            <p class="font-serif italic text-lg text-gray-400 font-medium">A Love For Shooting Sports Since 1984</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Useful Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-5">Useful Links</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li><a href="https://www.cheshiregunroom.com/terms-conditions/" class="hover:text-cgr-blue transition">Terms & Conditions</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/privacy-policy-cookie-restriction-mode/" class="hover:text-cgr-blue transition">Privacy Policy</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/terms-conditions/" class="hover:text-cgr-blue transition">Delivery and Returns</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/sell-us-your-gun/" class="hover:text-cgr-blue transition">Sell us your gun</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/finance/" class="hover:text-cgr-blue transition">Finance Options</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/exports/" class="hover:text-cgr-blue transition">Exports</a></li>
+                        <li><a href="https://www.gunplan.co.uk/?ref=CGR" class="hover:text-cgr-blue transition">Shooting Insurance</a></li>
+                        <li><a href="https://www.cheshiregunroom.com/gun-smiths-workshop/" class="hover:text-cgr-blue transition">Gun Smith's Workshop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Important Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-5">Important Links</h4>
+                    <ul class="space-y-4 text-sm font-medium text-gray-800">
+                        <li>
+                            <a href="https://www.cheshiregunroom.com/branch-locations/" class="flex items-center gap-3 hover:text-cgr-blue transition group">
+                                <div class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center group-hover:border-cgr-blue transition"><i class="ph ph-map-pin text-xl text-gray-500 group-hover:text-cgr-blue"></i></div>
+                                <span>Find Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cheshiregunroom.com/contacts/" class="flex items-center gap-3 hover:text-cgr-blue transition group">
+                                <div class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center group-hover:border-cgr-blue transition"><i class="ph ph-envelope-simple text-xl text-gray-500 group-hover:text-cgr-blue"></i></div>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cheshiregunroom.com/exports/" class="flex items-center gap-3 hover:text-cgr-blue transition group">
+                                <div class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center group-hover:border-cgr-blue transition"><i class="ph ph-airplane-tilt text-xl text-gray-500 group-hover:text-cgr-blue"></i></div>
+                                <span>Exports</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.cheshiregunroom.com/blog/" class="flex items-center gap-3 hover:text-cgr-blue transition group">
+                                <div class="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center group-hover:border-cgr-blue transition"><i class="ph ph-article text-xl text-gray-500 group-hover:text-cgr-blue"></i></div>
+                                <span>Our Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="text-sm font-bold text-gray-900 uppercase tracking-wider mb-5">Contact Us</h4>
+                    <div class="space-y-6 text-sm text-gray-600">
+                        <div>
+                            <strong class="text-gray-900 block mb-1">STOCKPORT</strong>
+                            <a href="tel:01614808222" class="hover:text-cgr-blue block mb-1 text-lg">0161 480 8222</a>
+                            <p class="text-xs">Mon-Fri: 10am - 5:30pm<br>Sat: 9am - 5:30pm</p>
+                        </div>
+                        <div>
+                            <strong class="text-gray-900 block mb-1">BOLTON</strong>
+                            <a href="tel:01204496008" class="hover:text-cgr-blue block mb-1 text-lg">01204 496 008</a>
+                            <p class="text-xs">Mon-Fri: 10am - 5:30pm<br>Sat: 9am - 5:30pm</p>
+                        </div>
+                        <div class="space-y-1">
+                            <a href="mailto:info@cheshiregunroom.com" class="block hover:text-cgr-blue">info@cheshiregunroom.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="bg-gray-200/60 border-t border-gray-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Social -->
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/CheshireGunRoomLtd" class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 hover:bg-cgr-blue hover:text-white transition"><i class="ph-fill ph-facebook-logo text-lg"></i></a>
+                    <a href="https://www.instagram.com/cheshire.gunroom" class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 hover:bg-pink-600 hover:text-white transition"><i class="ph-fill ph-instagram-logo text-lg"></i></a>
+                    <a href="https://www.youtube.com/user/CheshireGunRoomTV" class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition"><i class="ph-fill ph-youtube-logo text-lg"></i></a>
+                    <a href="http://twitter.com/cheshiregunroom" class="w-9 h-9 rounded-full bg-gray-300 flex items-center justify-center text-gray-700 hover:bg-black hover:text-white transition"><i class="ph-fill ph-twitter-logo text-lg"></i></a>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="flex-1 w-full md:max-w-md">
+                    <form class="flex w-full items-center">
+                        <label for="newsletter" class="sr-only">Subscribe to our Newsletter</label>
+                        <input type="email" id="newsletter" placeholder="Subscribe to our Newsletter" class="w-full bg-white border border-gray-300 rounded-l-full py-2.5 px-4 focus:outline-none focus:border-cgr-blue focus:ring-1 focus:ring-cgr-blue text-sm">
+                        <button type="button" class="bg-gray-800 hover:bg-cgr-dark text-white px-6 py-2.5 rounded-r-full font-medium transition text-sm whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="text-center py-4 text-xs text-gray-500 max-w-7xl mx-auto px-4 border-t border-gray-200/50">
+                <p>&copy; 2026 Cheshire Gun Room Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
