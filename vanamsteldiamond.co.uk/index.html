@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Diamonds & Engagement Rings – GIA | Amsterdam</title>
+    
+    <!-- Google Fonts: Open Sans & Unna for an elegant pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Unna:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Open Sans"', 'sans-serif'],
+                        serif: ['"Unna"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            light: '#F9F8F6', // Warm premium background
+                            dark: '#1A1A1A',  // Rich black
+                            accent: '#8C8273', // Muted gold/stone
+                            gray: '#EBEBEB'
+                        }
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling and hidden scrollbars for horizontal lists */
+        html { scroll-behavior: smooth; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Premium image hover transition */
+        .img-hover-zoom { transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .group:hover .img-hover-zoom { transform: scale(1.05); }
+        
+        /* Diamond shape svg stroke override for a cleaner look */
+        .diamond-shape-svg svg { width: 100%; height: 100%; fill: #1A1A1A; opacity: 0.8; transition: all 0.3s ease; }
+        .group:hover .diamond-shape-svg svg { opacity: 1; transform: translateY(-2px); }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased selection:bg-brand-dark selection:text-white">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-brand-dark text-white text-[10px] sm:text-xs tracking-[0.2em] uppercase py-2.5 px-6 flex flex-col sm:flex-row justify-between items-center z-50 relative">
+        <div class="flex items-center gap-6">
+            <span class="opacity-80">Treasures of our Earth</span>
+            <a href="/partners" class="hidden md:inline hover:opacity-100 opacity-80 transition-opacity border-b border-white/30 pb-0.5">See visiting addresses</a>
+        </div>
+        <div class="flex items-center gap-6 mt-2 sm:mt-0 opacity-90">
+            <a href="tel:+31202447512" class="flex items-center gap-2 hover:opacity-100 transition-opacity">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 122.88 122.27"><path d="M33.84,50.25c4.13,7.45,8.89,14.6,15.07,21.12c6.2,6.56,13.91,12.53,23.89,17.63c0.74,0.36,1.44,0.36,2.07,0.11 c0.95-0.36,1.92-1.15,2.87-2.1c0.74-0.74,1.66-1.92,2.62-3.21c3.84-5.05,8.59-11.32,15.3-8.18c0.15,0.07,0.26,0.15,0.41,0.21 l22.38,12.87c0.07,0.04,0.15,0.11,0.21,0.15c2.95,2.03,4.17,5.16,4.2,8.71c0,3.61-1.33,7.67-3.28,11.1 c-2.58,4.53-6.38,7.53-10.76,9.51c-4.17,1.92-8.81,2.95-13.27,3.61c-7,1.03-13.56,0.37-20.27-1.69 c-6.56-2.03-13.17-5.38-20.39-9.84l-0.53-0.34c-3.31-2.07-6.89-4.28-10.4-6.89C31.12,93.32,18.03,79.31,9.5,63.89 C2.35,50.95-1.55,36.98,0.58,23.67c1.18-7.3,4.31-13.94,9.77-18.32c4.76-3.84,11.17-5.94,19.47-5.2c0.95,0.07,1.8,0.62,2.25,1.44 l14.35,24.26c2.1,2.72,2.36,5.42,1.21,8.12c-0.95,2.21-2.87,4.25-5.49,6.15c-0.77,0.66-1.69,1.33-2.66,2.03 c-3.21,2.33-6.86,5.02-5.61,8.18L33.84,50.25z"/></svg>
+                +31 (0)202 447 512
+            </a>
+            <a href="https://www.facebook.com/vanamsteldiamond" target="_blank" class="flex items-center gap-2 hover:opacity-100 transition-opacity">
+                <span>Facebook 177K</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12 flex items-center justify-between h-20 lg:h-24">
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden p-2 -ml-2" aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+
+            <!-- Left Nav -->
+            <nav class="hidden lg:flex items-center gap-8 text-[11px] font-semibold tracking-[0.15em] uppercase text-brand-dark/80">
+                <a href="/diamonds" class="hover:text-brand-dark transition-colors">Diamonds</a>
+                <a href="/jewellery" class="hover:text-brand-dark transition-colors">Jewels</a>
+                <a href="/wedding" class="hover:text-brand-dark transition-colors">Wedding</a>
+                <a href="/rings" class="hover:text-brand-dark transition-colors">Engagement</a>
+            </nav>
+
+            <!-- Logo -->
+            <a href="/" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                <img src="https://www.vanamsteldiamond.eu/skin/frontend/default/vad_white/images/vanamsteldiamond-logo.svg" alt="Van Amstel Diamond" class="h-10 lg:h-12 w-auto" />
+            </a>
+
+            <!-- Right Nav & Icons -->
+            <div class="flex items-center gap-6 lg:gap-8">
+                <nav class="hidden xl:flex items-center gap-8 text-[11px] font-semibold tracking-[0.15em] uppercase text-brand-dark/80">
+                    <a href="/earrings" class="hover:text-brand-dark transition-colors">Earrings</a>
+                    <a href="/colliers" class="hover:text-brand-dark transition-colors">Colliers</a>
+                    <a href="/VanAmstelDiamond-diamantaire" class="hover:text-brand-dark transition-colors">About Us</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <a href="/customer/account" aria-label="Account" class="hover:opacity-60 transition-opacity">
+                        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="25.5 19.5 49 61.01"><path d="M74.5,68.6A24.4,24.4,0,0,0,60.1,46.3a15.2,15.2,0,0,0,5.2-11.5,15.3,15.3,0,0,0-30.6,0,15.2,15.2,0,0,0,5.2,11.5A24.4,24.4,0,0,0,25.5,68.6c0,2.9,1.5,6.9,8.7,9.5A46.1,46.1,0,0,0,50,80.5C68.1,80.5,74.5,74.1,74.5,68.6ZM50,25.5a9.3,9.3,0,1,1-9.3,9.3A9.3,9.3,0,0,1,50,25.5Zm0,49c-10.9,0-18.5-3.1-18.5-5.9a18.5,18.5,0,0,1,37,0C68.5,71.4,60.9,74.5,50,74.5Z" fill="currentColor"></path></svg>
+                    </a>
+                    <a href="/checkout/cart" aria-label="Cart" class="hover:opacity-60 transition-opacity relative">
+                        <svg class="w-5 h-5" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="3 2 18 20"><path d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- IMMERSIVE SPLIT HERO -->
+    <section class="flex flex-col-reverse lg:flex-row min-h-[85vh] bg-white">
+        <!-- Text Content -->
+        <div class="w-full lg:w-5/12 flex flex-col justify-center px-8 lg:px-20 py-20 lg:py-0 relative z-10">
+            <span class="text-brand-accent uppercase tracking-[0.25em] text-xs font-semibold mb-6 block">Treasures of our Earth</span>
+            <h1 class="font-serif text-5xl lg:text-6xl xl:text-7xl leading-[1.1] mb-8 text-brand-dark">
+                Natural diamonds,<br/>
+                <span class="italic font-light">designed in Amsterdam.</span>
+            </h1>
+            <p class="text-lg lg:text-xl font-light text-brand-dark/70 mb-4">
+                For those who value permanence.
+            </p>
+            <p class="text-sm text-brand-dark/60 mb-12 max-w-sm leading-relaxed">
+                Custom-made jewelry using only natural, GIA-certified diamonds. Ethical sourcing meets centuries of Dutch craftsmanship.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-5">
+                <a href="/diamonds" class="bg-brand-dark text-white text-xs tracking-widest uppercase py-4 px-10 text-center hover:bg-black transition-colors duration-300">Explore Collection</a>
+                <a href="/education" class="border border-brand-dark/20 text-brand-dark text-xs tracking-widest uppercase py-4 px-10 text-center hover:border-brand-dark transition-colors duration-300">Learn Why</a>
+            </div>
+        </div>
+        
+        <!-- Image Area -->
+        <div class="w-full lg:w-7/12 h-[50vh] lg:h-auto relative overflow-hidden bg-brand-light">
+            <img src="https://www.vanamsteldiamond.eu/media/home/unique.webp" alt="Amsterdam Craftsmanship" class="absolute inset-0 w-full h-full object-cover object-center" />
+        </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <div class="border-y border-brand-gray bg-white py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+            <span class="text-xs uppercase tracking-widest font-semibold text-brand-dark">Certified By</span>
+            <div class="flex items-center gap-12">
+                <img src="https://www.vanamsteldiamond.eu/media/home/gia.webp" alt="GIA" class="h-8 w-auto object-contain" />
+                <img src="https://www.vanamsteldiamond.eu/media/home/hrd.webp" alt="HRD Antwerp" class="h-8 w-auto object-contain" />
+                <img src="https://www.vanamsteldiamond.eu/media/home/igi.webp" alt="IGI" class="h-8 w-auto object-contain" />
+            </div>
+            <div class="hidden md:block w-px h-8 bg-brand-dark/20"></div>
+            <span class="text-sm font-serif italic text-brand-dark">Rated 4.9/5 by verified clients</span>
+        </div>
+    </div>
+
+    <!-- THE VAN AMSTEL WAY (Editorial Masonry) -->
+    <section class="py-24 lg:py-40 max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20">
+            <div class="max-w-xl">
+                <h2 class="font-serif text-4xl lg:text-5xl mb-4">The Van Amstel Way</h2>
+                <p class="text-brand-accent tracking-[0.2em] uppercase text-xs font-semibold">Our insistence on true mastery.</p>
+            </div>
+            <a href="/education" class="hidden md:inline-block border-b border-brand-dark pb-1 text-sm tracking-widest uppercase hover:text-brand-accent hover:border-brand-accent transition-colors">Read Our Story</a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
+            <!-- Card 1 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden bg-brand-gray mb-8">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/craftmanship.webp" alt="Designed in Amsterdam" class="w-full aspect-[4/3] object-cover img-hover-zoom" />
+                </div>
+                <h3 class="font-serif text-3xl mb-3 group-hover:text-brand-accent transition-colors">Designed in Amsterdam</h3>
+                <p class="text-brand-dark/60 font-light leading-relaxed max-w-sm">Finished by master goldsmiths in our local ateliers, blending tradition with modern aesthetics.</p>
+            </div>
+
+            <!-- Card 2 (Offset) -->
+            <div class="group cursor-pointer md:mt-32">
+                <div class="overflow-hidden bg-brand-gray mb-8">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/natural-diamonds.webp" alt="Natural Diamonds Only" class="w-full aspect-[3/4] object-cover img-hover-zoom" />
+                </div>
+                <h3 class="font-serif text-3xl mb-3 group-hover:text-brand-accent transition-colors">Natural Diamonds Only</h3>
+                <p class="text-brand-dark/60 font-light leading-relaxed max-w-sm">We work exclusively with natural, ethically sourced diamonds—never lab-grown. Rarity matters.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group cursor-pointer">
+                <div class="overflow-hidden bg-brand-gray mb-8">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/stone-setting.webp" alt="From Stone to Setting" class="w-full aspect-[3/4] object-cover img-hover-zoom" />
+                </div>
+                <h3 class="font-serif text-3xl mb-3 group-hover:text-brand-accent transition-colors">From Stone to Setting</h3>
+                <p class="text-brand-dark/60 font-light leading-relaxed max-w-sm">Each jewel is meticulously built around the diamond's unique characteristics, not the other way around.</p>
+            </div>
+
+            <!-- Card 4 (Offset) -->
+            <div class="group cursor-pointer md:-mt-32">
+                <div class="overflow-hidden bg-brand-gray mb-8">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/small-scale.webp" alt="Small Scale by Choice" class="w-full aspect-[4/3] object-cover img-hover-zoom" />
+                </div>
+                <h3 class="font-serif text-3xl mb-3 group-hover:text-brand-accent transition-colors">Small Scale by Choice</h3>
+                <p class="text-brand-dark/60 font-light leading-relaxed max-w-sm">We produce fewer pieces to maintain uncompromising quality and individualized attention to detail.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPLORE OUR WORK (Asymmetrical Grid) -->
+    <section class="py-24 bg-white border-y border-brand-gray">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl lg:text-5xl mb-4">Curated Collections</h2>
+                <p class="text-brand-accent tracking-[0.2em] uppercase text-xs font-semibold">Explore Our Work</p>
+            </div>
+
+            <!-- CSS Grid Masonry -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[250px] md:auto-rows-[300px]">
+                
+                <!-- Presets (Large) -->
+                <a href="/jewellery" class="md:col-span-8 row-span-2 group relative overflow-hidden bg-brand-light block">
+                    <img src="https://www.vanamsteldiamond.eu/media/build-your-own_ready.webp" alt="Ready Jewels" class="absolute inset-0 w-full h-full object-cover object-center img-hover-zoom mix-blend-multiply" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 text-white">
+                        <span class="text-[10px] tracking-widest uppercase mb-2 block opacity-80">Diamond Rings</span>
+                        <h3 class="font-serif text-3xl md:text-5xl">Presets Collection</h3>
+                    </div>
+                </a>
+
+                <!-- Wedding Rings -->
+                <a href="/wedding" class="md:col-span-4 row-span-1 group relative overflow-hidden bg-brand-light block">
+                    <img src="https://www.vanamsteldiamond.eu/media/build-your-own_ready-wedding.jpg" alt="Wedding Rings" class="absolute inset-0 w-full h-full object-cover img-hover-zoom mix-blend-multiply" />
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-white">
+                        <h3 class="font-serif text-2xl md:text-3xl">Wedding Rings</h3>
+                    </div>
+                </a>
+
+                <!-- Unique -->
+                <a href="/unique" class="md:col-span-4 row-span-1 group relative overflow-hidden bg-brand-light block">
+                    <img src="https://www.vanamsteldiamond.eu/media/build-your-own_ready-unique_jewels.webp" alt="Unique Jewels" class="absolute inset-0 w-full h-full object-cover img-hover-zoom mix-blend-multiply" />
+                    <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div class="absolute bottom-0 left-0 p-8 text-brand-dark">
+                        <h3 class="font-serif text-2xl md:text-3xl">Unique Creations</h3>
+                    </div>
+                </a>
+
+                <!-- Gemstones -->
+                <a href="/gems" class="md:col-span-4 row-span-1 group relative overflow-hidden bg-white flex items-center justify-center p-8 border border-brand-gray hover:border-brand-accent transition-colors">
+                    <img src="https://www.vanamsteldiamond.eu/media/vad-gems.png" alt="Loose Gems" class="w-full h-full object-contain img-hover-zoom" />
+                    <div class="absolute bottom-0 left-0 w-full p-6 text-center bg-gradient-to-t from-white via-white/80 to-transparent">
+                        <h3 class="font-serif text-xl">Loose Gemstones</h3>
+                    </div>
+                </a>
+
+                <!-- Italian Design -->
+                <a href="/jewellery" class="md:col-span-4 row-span-1 group relative overflow-hidden bg-brand-light block">
+                    <img src="https://www.vanamsteldiamond.eu/media/build-your-own_ready-italian.webp" alt="Italian Design" class="absolute inset-0 w-full h-full object-cover img-hover-zoom mix-blend-multiply" />
+                    <div class="absolute bottom-0 left-0 p-8 text-brand-dark">
+                        <h3 class="font-serif text-2xl">Italian Design</h3>
+                    </div>
+                </a>
+
+                <!-- Essential -->
+                <a href="/jewellery" class="md:col-span-4 row-span-1 group relative overflow-hidden bg-[#F4F4F4] block flex items-center justify-center p-12">
+                    <img src="https://www.vanamsteldiamond.eu/media/build-your-own_ready-essential.webp" alt="Essential" class="w-full h-full object-contain img-hover-zoom mix-blend-multiply drop-shadow-xl" />
+                    <div class="absolute bottom-0 left-0 p-8 text-brand-dark">
+                        <h3 class="font-serif text-2xl">Essential Collection</h3>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD YOUR OWN (Premium Feature Banner) -->
+    <section class="bg-brand-dark text-white py-24 lg:py-32 border-b-4 border-brand-accent">
+        <div class="max-w-[1400px] mx-auto px-6 text-center">
+            <span class="text-brand-accent tracking-[0.25em] uppercase text-xs font-semibold mb-4 block">Award-Winning Service</span>
+            <h2 class="font-serif text-4xl lg:text-5xl mb-16">Build Your Own</h2>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-12 lg:gap-24">
+                <div class="flex flex-col items-center group">
+                    <div class="w-40 h-40 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-brand-accent transition-colors duration-500">
+                        <img src="https://www.vanamsteldiamond.eu/media/build-your-own_build1.png" alt="Step 1" class="w-24 object-contain filter invert opacity-80 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <span class="text-xs tracking-widest uppercase text-white/60 mb-2">Step 01</span>
+                    <h3 class="font-serif text-xl">Choose your mount</h3>
+                </div>
+                
+                <div class="hidden md:block w-16 h-[1px] bg-white/20"></div>
+                
+                <div class="flex flex-col items-center group">
+                    <div class="w-40 h-40 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-brand-accent transition-colors duration-500">
+                        <img src="https://www.vanamsteldiamond.eu/media/build-your-own_build2.png" alt="Step 2" class="w-24 object-contain filter invert opacity-80 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <span class="text-xs tracking-widest uppercase text-white/60 mb-2">Step 02</span>
+                    <h3 class="font-serif text-xl">Choose your diamond</h3>
+                </div>
+                
+                <div class="hidden md:block w-16 h-[1px] bg-white/20"></div>
+
+                <div class="flex flex-col items-center group">
+                    <div class="w-40 h-40 rounded-full bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:border-brand-accent transition-colors duration-500">
+                        <img src="https://www.vanamsteldiamond.eu/media/build-your-own_build3.png" alt="Step 3" class="w-24 object-contain filter invert opacity-80 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <span class="text-xs tracking-widest uppercase text-white/60 mb-2">Step 03</span>
+                    <h3 class="font-serif text-xl">Check your result</h3>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <a href="/diamonds" class="inline-block bg-white text-brand-dark text-xs tracking-widest uppercase py-4 px-10 hover:bg-brand-accent hover:text-white transition-colors duration-300">Start Designing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH DIAMONDS (Interactive minimal UI) -->
+    <section class="py-24 bg-brand-light">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <h2 class="font-serif text-3xl lg:text-4xl mb-16 text-brand-dark">Search by Shape</h2>
+            
+            <!-- Shapes -->
+            <div class="flex flex-wrap justify-center gap-6 md:gap-12 lg:gap-16 mb-24">
+                <!-- Round -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 90"><path d="M62.6,3.6C57,1.2,51.1,0,45,0C26.9,0,10.7,10.8,3.6,27.4c-9.7,22.8,1,49.3,23.8,59C33,88.8,38.9,90,45,90c18.1,0,34.3-10.8,41.4-27.4C96.1,39.8,85.4,13.3,62.6,3.6z M67.1,65.4L67,53.3l8.3-8.4l9.1,16.3L67.1,65.4z M28.5,84.3L24.9,66l11.6,0.1l8.4,8.3l-16,10C28.8,84.4,28.7,84.4,28.5,84.3z M67,35.2l-0.1-11.8l17.6,6.8l-9.2,13.4L67,35.2z M66.3,65.6l-11.2-0.1l11.2-11.4L66.3,65.6z M54,65.5l-17.1-0.2L24.6,53.1l-0.4-17.7l12.8-12.3l16.8,0l12.5,12.5l0.1,17.5L54,65.5z M53.2,66.3L45.6,74l-7.9-7.9L53.2,66.3z M24.6,54.3l11.1,11l-10.8-0.1L24.6,54.3z M23.8,52.3l-8.4-8.4l8-7.7L23.8,52.3z M23.9,23.1l11.9,0L24.2,34.3L23.9,23.1z M53,22.3l-15.3,0l7.8-7.6L53,22.3z M54.8,23l11.3,0l0.1,11.4L54.8,23z M67,36.3l7.9,8l-7.9,8L67,36.3z M66.7,22L62.9,6.4c4.7,2.2,8.8,5.1,12.2,8.5L66.7,22z M65.9,22.3l-11.8,0l-8-8l15.2-8.7c0.1,0.1,0.3,0.1,0.4,0.2c0.1,0.1,0.2,0.1,0.4,0.2L65.9,22.3z M45.9,13.6l0.5-11.2c4.8,0.2,9.5,1.2,14,2.9L45.9,13.6z M36.5,22.4l-12.5,0l6.3-17.2l14.6,9.1L36.5,22.4z M23.4,21.9l-7.6-8.1c4-3.7,8.6-6.6,13.6-8.6L23.4,21.9z M23.4,35l-8.5,8.2L6.4,28.7l16.7-5.5L23.4,35z M23.8,53.5l0.3,11.2L23.7,65L6.1,60.1l8.8-15.5L23.8,53.5z M54.3,66.3l11.9,0.1L61.9,84l-15.6-9.6L54.3,66.3z M67,66.7l8.2,8.3c-3.6,3.6-7.7,6.5-12.3,8.6L67,66.7zM85.1,30.7c1.5,4.3,2.4,8.8,2.5,13.5l-11.4-0.3L85.1,30.7z M84.6,29.2l-17.4-6.7l8.5-7.1C79.6,19.5,82.6,24.2,84.6,29.2z M45.6,2.3l-0.5,11.2L31,4.7c4.4-1.5,9.2-2.4,14-2.4C45.2,2.3,45.4,2.3,45.6,2.3z M15.2,14.4l7.7,8.2L5.8,28.1C8,22.9,11.3,18.2,15.2,14.4zM5.5,28.8l8.7,14.7L2.4,43.3C2.5,38.5,3.5,33.6,5.5,28.8z M2.3,44.1l11.8,0.2L5.2,60.2C3.2,55.1,2.2,49.6,2.3,44.1z M5.3,60.6l17.8,4.9L13.8,74C10.2,70.1,7.3,65.5,5.3,60.6z M14.3,74.6l9.7-8.8l0,0l0,0.2l0.1,0l3.6,18C22.6,81.7,18.1,78.5,14.3,74.6zM29.9,84.8l15.3-9.6l0.6,12.3l0.8,0L46,75.2l15,9.2c-5,2-10.4,3.1-16,3.1C39.8,87.6,34.7,86.7,29.9,84.8z M75.8,74.5l-8.1-8.2l16.4-4C82,66.8,79.2,71,75.8,74.5z M84.8,60.3l-8.7-15.6l11.6,0.3C87.7,50,86.8,55.2,84.8,60.3z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Round</span>
+                </a>
+                <!-- Princess -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 90"><path d="M0,0v90h89V0H0z M3.7,86.3v-0.7L9,73.9l6.2,0.7l0.1,6.6l-0.1,0L4.4,86.3H3.7zM72.7,15.9l-22.6-2.7l22.2-1.6L72.7,15.9zM43.9,12.4l-15.6-1.8l33.5,0.5L43.9,12.4z M16,10.4l0.5,0l21.1,2.5l-22.1,1.6L16,10.4z M14.3,14.6L9,15L3.9,4.3l10.9,5.8L14.3,14.6z M14.2,15.9l-2.4,21L9.2,16.2L14.2,15.9z M11.2,41.9L9.2,60L9.1,24.9L11.2,41.9z M16.4,74.7l26.9,1.8L16.6,81L16.4,74.7z M9.2,72.7l0-2.8l0.1,0L11.9,47l3.3,26.4L9.2,72.7z M47.4,77l18.8,3.5l-42.8,0.6L47.4,77z M51,76.4l20.8-1.1l-0.6,4.9L51,76.4z M47.2,75.4L47.2,75.4l-30.8-2l-3.9-31.6l3-26.2l28.5-2.1l29,3.4l2.7,26.3l-3.6,30.7L47.2,75.4z M74.1,17.2l4.5,0.5L76.2,38L74.1,17.2zM76.1,49l2.4,23.2l0,1.6l-5.4,0.3L76.1,49z M76.8,43.6l1.8-15.4l-0.1,32.6L76.8,43.6z M78.9,16.6L74,16l-0.5-5l11.4-6.7L78.9,16.6zM72.7,10.1l-57.1-1L5.4,3.7h78L72.7,10.1z M7.8,15.3L8,73.1l-4.3,9.5V6.8L7.8,15.3z M15.6,82.4l0.4-0.1l0,0.1l56.2-0.8l0.4,0.1l9.8,4.6H7.2L15.6,82.4z M72.4,80.2l0.6-4.9l5.8-0.3l0,0l0.5,0l-0.4,0.3l6.4,10v1.1h-0.1L72.4,80.2z M80,74.6l-0.3-2.5l0.2-54.3l0-0.3l5.4-11.2v76.6L80,74.6z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Princess</span>
+                </a>
+                <!-- Cushion -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.1 80.9"><path d="M79,18.2L72.7,8L62.6,2.1L41.2,0l-0.1,0L18,2.1L8.2,8L1.9,18.5L0,39.5l0,0.1l2.1,23.1l7,10.9l10,5.1l0.2,0.1l20.9,2.1l0.1,0L62.6,79l0.3,0l10.6-6.6l5.5-10l2.1-21.6L79,18.2z M71.5,70.5l-1.1,0.7l-10-1.6l-0.9-10.5l10.7,0.8l1.6,10.2L71.5,70.5z M10.9,71.7l-0.2-0.4L11.3,60l11-1.2l-0.7,10.8L11.4,72L10.9,71.7z M2.6,39.6l0.1-1.3l8.4-16.6l8.4,18.7l-8.4,18.9L2.9,42.6L2.6,39.6zM70.3,59.2l-8.5-19l8.4-18.6l8.1,17.5l0.2,1.7l-0.1,0.8L70.3,59.2z M61.6,39L59,22.1l10.5-0.5L61.6,39z M61.1,40.2l-2.3,18.2l-0.1,0l0,0.1l-17.5,2l-0.1,0l-0.1,0L23,58.1l0-0.1l-0.1,0l-2.6-17.5l0,0l0,0l2.8-18.1l18-2.2l0.1,0l0.1,0l17,2l0,0.1l0.1,0L61.1,40.2L61.1,40.2L61.1,40.2z M58.3,21.4l-16-1.9L59.4,11L58.3,21.4z M22.8,21.7L22,11.1l17.9,8.5L22.8,21.7z M19.8,39.3l-7.9-17.6l10.6,0.7L19.8,39.3z M19.8,41.7l2.5,16.5L12,59.2L19.8,41.7z M23,58.8L40,61l-17.7,8.3L23,58.8z M58.8,59.1l0.8,10L42.4,61L58.8,59.1z M61.7,41.4l7.9,17.8l-10.1-0.7L61.7,41.4z M70.8,21.2l1.1-9.7l4.6,7.5l1.7,18.1L70.8,21.2z M70.9,9.9l0.4,0.7l-1.1,10.4L59,21.5l1.1-10.8l10.1-1.2L70.9,9.9z M60.1,9.9L60.1,9.9l-0.1,0L45,3l16.7,1.6l7.4,4.3L60.1,9.9z M59.2,10.3l-18.1,9.1l-18.9-9l16.4-7.6l2.5-0.2l1.8,0.2L59.2,10.3z M36.6,3l-15,6.9l-9.9-1.1l7.1-4.3L36.6,3z M21.3,10.6l0.8,11.1l-10.9-0.7L9.7,10.5l0.4-0.6l0.7-0.4L21.3,10.6z M9.1,11.4l1.5,9.8L2.9,36.5l1.5-17.2L9.1,11.4z M10.6,59.7L10,70.3l-5.4-8.4L3,44.4L10.6,59.7zM21.5,70.3L21.5,70.3L21.5,70.3l15.1,7.6L20,76.3l-7.6-3.9L21.5,70.3z M22.4,70l18.8-8.8l18.3,8.7L43,78.1l-2.7,0.2l-1.7-0.2L22.4,70z M44.8,77.9l15.2-7.6l9.4,1.5l-7.4,4.7L44.8,77.9z M70.8,59.7l7.4-16l-1.7,17.9l-4.2,7.5L70.8,59.7z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Cushion</span>
+                </a>
+                <!-- Oval -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.3 88.5"><path d="M32.6,0C14.6,0,0,19.9,0,44.3c0,24.4,14.6,44.3,32.6,44.3s32.6-19.9,32.6-44.3C65.3,19.9,50.6,0,32.6,0z M53.8,73.1l-12.4-1.8l3.1-10.8l7.5-4.5l2.4,16.3C54.1,72.6,53.9,72.9,53.8,73.1z M49.3,44l3.1-10.5l9.9,9.7c0,0.3,0,0.6,0,0.9l-9.7,10.2L49.3,44z M21.8,61.4l9.8,5.7l-6.8,4.1L21.8,61.4z M32.6,67.6l7.4,4.3l-6.8,13.5l-8-13.3L32.6,67.6z M40.4,71l-6.8-3.9l9.6-5.8L40.4,71z M32.6,66.5L21.4,60l-4.9-15.6l4.7-16.2l10.9-6.5l11.2,6.3l5,15.9l-4.6,15.9L32.6,66.5z M12.5,54.7l-9.4-9.4l9-11.3l3.3,10.5L12.5,54.7z M13,33.1l6.9-4.1L16,42.7L13,33.1z M16,46.2l4.1,13.1l-6.8-3.9L16,46.2z M42.8,26.7l-9.7-5.5l6.7-4L42.8,26.7z M32.1,20.6l-7.4-4.2l7.5-13l7.3,12.8L32.1,20.6z M24.3,17.4l6.8,3.8l-9.5,5.7L24.3,17.4z M44.5,28.8l7,4l-2.8,9.5L44.5,28.8z M48.8,45.7l2.9,9.3l-6.8,4.1L48.8,45.7z M52.9,32.6l7-4.4c1.3,4.2,2.1,8.8,2.3,13.6L52.9,32.6z M52.8,31.5l2.3-14c1.8,2.9,3.3,6.2,4.5,9.7L52.8,31.5z M54.3,16.2l-2.6,15.5l-7.7-4.3l-3.3-10.5L54,15.7C54.1,15.9,54.2,16,54.3,16.2z M40,15.3L33,3c3.9,0.1,7.6,1.2,11,3.2L40,15.3z M24.2,15.3l-2.4-9.4c3-1.6,6.1-2.6,9.5-2.8L24.2,15.3z M20.3,27.6l-7.5,4.4l-0.4-17.1L23.4,17L20.3,27.6z M11.8,31.9l-6.3-4.4C7,23,9,18.9,11.5,15.4L11.8,31.9z M11.6,33L3,43.9c0-5.4,0.8-10.6,2.2-15.3L11.6,33z M11.9,55.5l-6.8,4.1c-1.2-4-1.9-8.4-2.1-12.9L11.9,55.5z M12.2,56.5l-1.3,15.7c-2.3-3.4-4.1-7.3-5.4-11.7L12.2,56.5z M11.8,73.5l1.4-17.1l7.4,4.2l3.3,10.6l-0.1,0.2L11.8,73.5C11.8,73.6,11.8,73.6,11.8,73.5z M24.5,72.8l7.6,12.7c-3.6-0.1-7.1-1.1-10.3-2.8L24.5,72.8z M40.6,73l3.5,9.4c-3,1.8-6.3,2.9-9.7,3.1L40.6,73z M53,56.2l6.9,4.3c-1.2,3.9-2.8,7.4-4.7,10.6L53,56.2z M53.1,55.1l9.1-9.6c-0.1,4.9-0.8,9.6-2.1,14L53.1,55.1z M53.3,14.7l-12.4,1.1l4-9.1C48,8.7,50.9,11.4,53.3,14.7z M20.8,6.4l2.5,9.6l-10.7-2.1C15,10.8,17.8,8.3,20.8,6.4z M12.5,74.5l11-1.9L21,82.2C17.9,80.3,15,77.7,12.5,74.5z M44.9,81.8l-3.5-9.5l11.7,1.7C50.7,77.2,48,79.8,44.9,81.8z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Oval</span>
+                </a>
+                <!-- Pear -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.8 92.7"><path d="M65.9,16.1c-6.3-9.2-19.2-15.9-30.8-16c-0.3,0-0.9-0.1-1.8-0.1c-4,0-12.2,1.2-23.1,9.4C9.8,9.7,0,17.9,0,27.6c0,10,2.7,19.5,4.3,24.3c0.3,1,8,25.1,28.9,40.1l0.9,0.6l0.9-0.6c18.2-12.5,25.7-31.6,28.6-38.7c0.3-0.9,0.6-1.6,0.8-2.1C66.4,46.4,72.2,25.4,65.9,16.1z M65.8,29.2l-7.9-10.7l4.6-2c0.3,0.4,0.7,0.9,1,1.3C65.3,20.5,65.9,24.7,65.8,29.2z M56.6,61.3l-12,9l3.3-16l0-0.1l8.3-8.3L56.6,61.3z M26.1,71.7l8.2-4.1l0.1,0.1l0.1-0.1l8.7,4.1L34,88.7L26.1,71.7z M3.2,32.4l7.7-11.9l5.6,11.9l0.2,0.9l-0.2,0.5l-4.7,10.6L3.2,32.4C3.2,32.4,3.2,32.4,3.2,32.4z M43.5,70.7l-8.3-3.9l11.4-11.4L43.5,70.7z M25.8,70.7l-3.4-13.9l11.1,10.1L25.8,70.7z M17.2,31.7l-5.4-11.5l9.5-0.3L17.2,31.7z M20.8,53.8l-8.3-8.4L17,35.1L20.8,53.8z M34.4,66.3L22.1,55.1l-4.4-21.7l4.9-13.8l11.6-4.3l0,0l0.1,0l12.2,2.4l5.3,14l-4.7,22L34.4,66.3z M25.6,11.2l7.4,3.5L23,18.4L25.6,11.2z M45.9,16.6l-10-2l7.3-3.2L45.9,16.6z M52.4,33.5l3.8,11l-7.8,7.8L52.4,33.5z M52.2,30.2l-4.7-12.3l8.8,0.8L52.2,30.2z M47.1,16.8l-3-5.7l10.8-1.6c0,0,0,0,0.1,0l1.5,8.1L47.1,16.8z M44.1,10.1l2-5c2.6,0.9,5.2,2.1,7.5,3.6L44.1,10.1z M43.2,9.8l-6-6.6c2.7,0.2,5.4,0.8,8,1.6L43.2,9.8z M42.5,10.5l-8.3,3.7l-8-3.8l8-7.4c0.3,0,0.5,0.1,0.5,0.1l0.3,0c0.2,0,0.5,0,0.7,0L42.5,10.5z M25.2,9.9L25,9.8l0,0.1l-7.7-1.7C24.5,3.9,30,3.1,32.7,3L25.2,9.9z M16,9l8.6,1.9l-2.8,7.9L21.5,19l-9.9,0.3l2.1-8.7C14.5,10,15.3,9.5,16,9z M21.2,55.6l3.6,14.9l-11.9-6.6c0,0,0-0.1-0.1-0.1l-0.4-17L21.2,55.6z M24.7,71.6l-3.9,4.3c-2.8-3.5-5.1-7.1-6.9-10.4L24.7,71.6z M55.8,63.2c-2,3.9-4.7,8.2-8,12.6l-3.1-4.2L55.8,63.2z M52.8,31.7l4.5-12.3l8,10.8l-8.4,13.4L52.8,31.7z M61.8,15.6l-4.3,1.9l-1.3-7.2C58.3,12,60.2,13.7,61.8,15.6z M12.1,11.7c0.1-0.1,0.3-0.2,0.4-0.3l-1.8,7.6l-0.1,0.2l-0.2,0l0.1,0.2L3.1,30.8C3,29.7,3,28.7,3,27.6C3,19.3,12.1,11.8,12.1,11.7z M3.4,34.4l8,11.2l0.3,16.1C8.6,55.5,7.2,51.1,7.1,51C6,47.5,4.2,41.4,3.4,34.4z M21.4,76.6l4-4.3l7.2,15.5C28.2,84.4,24.5,80.5,21.4,76.6z M35.7,87.7L44,72.4l3.1,4.2C44,80.4,40.2,84.3,35.7,87.7z M60.7,52.2c-0.7,1.8-1.7,4.3-3.1,7.3l-0.3-14.1l5.2,2.2c-0.3,1-0.6,1.8-0.9,2.5C61.3,50.6,61,51.3,60.7,52.2z M62.8,46.6l-5.3-2.2l8.2-13.1C65.3,36.9,64,42.7,62.8,46.6z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Pear</span>
+                </a>
+                <a href="/diamonds" class="hidden md:flex group flex-col items-center">
+                    <div class="w-12 h-12 mb-4 diamond-shape-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.5 90"><path d="M55,0H13.4L0,12.8v63.6L12.5,90h43.3l12.7-12.3V12.4L55,0z M61.5,73.7l0.1-0.1V17.4l-0.5-0.5l4.2-2v60.7L61.5,73.7z M16.1,84h35.2l0.5-0.6l1.5,3.3H14.5l1.2-3.1L16.1,84z M50.4,81.8H17.1l-0.5-0.5l1.2-3l0,0h31.5l0.1-0.1l1.4,3.1L50.4,81.8z M3.3,75.2V15.8l3.1,1.5L6,17.7v54.7l0.9,1L3.3,75.2L3.3,75.2z M8.2,71.5V18.6l0.4-0.4l3,1.4V71l-2.7,1.4L8.2,71.5z M50.7,6.8H16.8l0,0l-1.5-3.5h37.8l-1.7,4.2L50.7,6.8z M17.7,8.9h32.1l0.8,0.8l-1.2,3H19.3L17.7,8.9L17.7,8.9z M55.7,18.3l-5.4-5l1.1-2.8l6.8,6.6L55.7,18.3z M47.4,72.3H19.6l-2.4-3.5l0.1-47.2l3.4-3.8h27.2l3.1,3.3V69L47.4,72.3z M47.7,16.9H21.1l-1.3-3.1h29.2L47.7,16.9z M20,17.2l-3.3,3.7l-3.6-1.7l5.5-5.3L20,17.2z M16.2,21.8l-0.1,46.9l-3.4,1.8V20.1L16.2,21.8z M16.5,69.7l2.2,3.3l-1.3,3.3L13,71.5L16.5,69.7z M19.7,73.4h27.6l1.7,3.8H18.3l-0.1-0.1L19.7,73.4z M48.2,73l3.4-3l3.6,1.8l-5.4,4.7L48.2,73z M52,69V21.3l3.4-1.6v51L52,69z M51.5,20.3l-2.8-3l1.2-3l4.9,4.5L51.5,20.3z M18.1,12.7L12,18.6l-2.6-1.2l7.5-7.7L18.1,12.7z M12,72l5,5.4l-1.1,2.9l-6.2-7.1L12,72z M50.3,77.5l5.8-5.2l2.4,1.2l-6.9,7L50.3,77.5z M56.3,71.1V19.2l2.8-1.3l0.3,0.3v54.4l0,0.1L56.3,71.1z M65.3,13.8L65.3,13.8l-5,2.3l-8-7.8l1.9-4.6L65.3,13.8z M14.3,3.7l1.7,4l-8.7,8.8l-4-1.9v-0.3L14.3,3.7z M4.1,76l3.5-1.8l7.3,8.4l-1.4,3.6L4.1,76z M54.5,86.7l-1.9-4l8-8.1l4.2,2.1L54.5,86.7z" /></svg>
+                    </div>
+                    <span class="text-[10px] tracking-widest uppercase text-brand-dark/50 group-hover:text-brand-dark transition-colors">Emerald</span>
+                </a>
+            </div>
+
+            <!-- Colors -->
+            <h3 class="font-serif text-2xl lg:text-3xl mb-12 text-brand-dark">Fancy Colors</h3>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                <!-- Generate color swatches with tailwind arbitrary values -->
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#F8BBD0]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Pink</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#FFF59D]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Yellow</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#90CAF9]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Blue</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#424242]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Black</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#8D6E63]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Brown</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#A5D6A7]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Green</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#EF9A9A]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Red</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#CE93D8]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Purple</span>
+                </a>
+                <a href="/diamonds" class="group flex flex-col items-center">
+                    <span class="w-8 h-8 rounded-full shadow-sm mb-3 group-hover:scale-110 transition bg-[#FFCC80]"></span>
+                    <span class="text-[10px] tracking-wider uppercase text-brand-dark/50 group-hover:text-brand-dark">Orange</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS (Timeline Section) -->
+    <section class="py-24 border-t border-brand-gray bg-white">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="font-serif text-4xl lg:text-5xl mb-4">How it Works</h2>
+                <p class="text-brand-accent tracking-[0.2em] uppercase text-xs font-semibold">From vision to reality</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Connecting Line -->
+                <div class="hidden md:block absolute top-[120px] left-[10%] right-[10%] h-[1px] bg-brand-gray z-0"></div>
+
+                <div class="flex flex-col relative z-10 bg-white pt-4">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/selection.webp" alt="Selection" class="w-full aspect-[4/3] object-cover mb-6" />
+                    <span class="text-3xl font-serif text-brand-accent mb-2">01</span>
+                    <h3 class="font-serif text-xl mb-2">Selection</h3>
+                    <p class="text-sm font-light text-brand-dark/60 leading-relaxed pr-4">Choose your diamond, or entrust us to source one for you from our global network.</p>
+                </div>
+
+                <div class="flex flex-col relative z-10 bg-white pt-4 md:mt-12">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/creation.webp" alt="Creation" class="w-full aspect-[4/3] object-cover mb-6" />
+                    <span class="text-3xl font-serif text-brand-accent mb-2">02</span>
+                    <h3 class="font-serif text-xl mb-2">Creation</h3>
+                    <p class="text-sm font-light text-brand-dark/60 leading-relaxed pr-4">Designed in-house and expertly finished by master goldsmiths in Amsterdam.</p>
+                </div>
+
+                <div class="flex flex-col relative z-10 bg-white pt-4">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/case.webp" alt="Approval" class="w-full aspect-[4/3] object-cover mb-6" />
+                    <span class="text-3xl font-serif text-brand-accent mb-2">03</span>
+                    <h3 class="font-serif text-xl mb-2">Approval</h3>
+                    <p class="text-sm font-light text-brand-dark/60 leading-relaxed pr-4">A detailed video is shared with you for strict approval prior to final delivery.</p>
+                </div>
+
+                <div class="flex flex-col relative z-10 bg-white pt-4 md:mt-12">
+                    <img src="https://www.vanamsteldiamond.eu/media/home/selection2.webp" alt="Delivery or Pickup" class="w-full aspect-[4/3] object-cover mb-6" />
+                    <span class="text-3xl font-serif text-brand-accent mb-2">04</span>
+                    <h3 class="font-serif text-xl mb-2">Delivery</h3>
+                    <p class="text-sm font-light text-brand-dark/60 leading-relaxed pr-4">Fully insured delivery, or personal pickup by appointment at our showrooms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMMERSIVE CTA: UNIQUE JEWEL -->
+    <section class="relative h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        <img src="https://www.vanamsteldiamond.eu/media/home/partners.webp" class="absolute inset-0 w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-brand-dark/40"></div>
+        <div class="relative z-10 text-center text-white px-6">
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl mb-6">Looking for a truly unique jewel?</h2>
+            <p class="text-lg md:text-xl font-light mb-10 max-w-xl mx-auto">A free 3D drawing with a quote. Speak directly with our master craftsmen.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/unique" class="bg-white text-brand-dark text-xs tracking-widest uppercase py-4 px-10 hover:bg-brand-accent hover:text-white transition-colors duration-300">Start Project</a>
+                <a href="/partners" class="border border-white/30 text-white text-xs tracking-widest uppercase py-4 px-10 hover:border-white transition-colors duration-300">View Our Diamonds</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDITORIAL SEO CONTENT -->
+    <section class="py-24 bg-brand-light">
+        <div class="max-w-[1000px] mx-auto px-6 text-brand-dark/80 font-light leading-relaxed text-sm md:text-base">
+            <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-10 text-center max-w-3xl mx-auto leading-tight">Van Amstel Diamond: Where Amsterdam Craftsmanship Meets Natural Brilliance and Rarity</h2>
+            
+            <div class="md:column-count-2 md:gap-12 text-justify">
+                <p class="mb-6"><span class="float-left text-6xl font-serif text-brand-accent pr-3 pb-2 leading-none">V</span>an Amstel Diamond is more than just a jewelry brand – it’s an experience that connects you with the magic and rarity of natural diamonds, ethically sourced and meticulously cut to unleash their inner brilliance. Our story begins in Amsterdam, where generations of skilled artisans have honed their craft, combining centuries of tradition with modern design to create exquisite, timeless heirlooms.</p>
+                <p class="mb-6">In our ateliers, this heritage meets modern design, resulting in exquisite pieces that tell a story and serve as the perfect expression of your unique style. We offer exceptional value, personalized service, and a journey to find the perfect diamond that is as unforgettable as the piece itself.</p>
+                <p class="mb-6">As the leading supplier of high-quality certified diamonds in Europe, we bring you:</p>
+                <ul class="list-disc pl-5 mb-6 space-y-2 text-brand-dark">
+                    <li>The best possible prices for genuine diamonds.</li>
+                    <li>Customer-oriented, highly personalized service.</li>
+                    <li>Exclusive handcrafted rings, earrings, pendants, and jewelry by the masters in our ateliers.</li>
+                    <li>The best possible price for a diamond you have seen elsewhere.</li>
+                </ul>
+                <p class="mb-6">Our diamonds are sourced responsibly, natural diamonds support the livelihoods of 10 million people worldwide. Up to 80% of the rough diamond value can remain with local communities thanks to local purchasing, employment benefits, social programs, investment in infrastructure, as well as the taxes, royalties, and dividends paid from the industry to respective governments¹.</p>
+                <p class="mb-6">Natural diamonds are a testament to the incredible processes of our Earth, taking billions of years to form under specific conditions of high pressure and temperature¹. This makes each diamond a rare and unique <a href="/education" class="border-b border-brand-accent text-brand-dark">masterpiece of nature</a>.</p>
+                <p class="mb-6">Discover the Van Amstel difference and explore our collections today. Experience the magic and rarity of natural diamonds and learn more about the diamond industry and its various commitments¹.</p>
+                <small class="block mt-8 text-xs text-brand-dark/50 italic">1) <a href="https://www.naturaldiamonds.com/council" target="_blank" class="underline">https://www.naturaldiamonds.com/council</a></small>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE REVIEWS SECTION (Editorial Horizontal Scroll) -->
+    <section class="py-24 bg-white border-t border-brand-gray overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-6 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="font-serif text-3xl md:text-4xl mb-4">Client Experiences</h2>
+                <div class="flex items-center gap-3">
+                    <img src="https://www.vanamsteldiamond.eu/media/vad-google-stars.jpeg" alt="Google Reviews" class="h-6 object-contain" />
+                    <span class="text-sm tracking-widest uppercase font-semibold text-brand-accent">264 Reviews</span>
+                </div>
+            </div>
+            <a href="https://www.google.com/search" target="_blank" class="hidden md:inline-block border-b border-brand-dark pb-1 text-xs tracking-widest uppercase">Read All Reviews</a>
+        </div>
+
+        <!-- Horizontal scroll container -->
+        <div class="flex overflow-x-auto hide-scrollbar pl-6 md:pl-[calc((100vw-1400px)/2+1.5rem)] gap-6 pb-8 snap-x">
+            
+            <div class="min-w-[320px] md:min-w-[450px] bg-brand-light p-10 snap-start shrink-0 border border-brand-gray/50 hover:border-brand-accent transition-colors duration-500">
+                <div class="flex text-brand-accent text-lg mb-6">★★★★★</div>
+                <p class="font-light text-sm text-brand-dark/70 leading-relaxed mb-8 line-clamp-6">"I had an excellent experience with Van Amstel Diamond. Everything worked out perfectly from start to finish. Tim is a true professional — patient, attentive to every detail, and great at communication. He kept me updated at every step of the process... I couldn't be happier!"</p>
+                <div class="flex justify-between items-center text-xs uppercase tracking-widest text-brand-dark font-semibold">
+                    <span>Nadane Andrei</span>
+                    <span class="text-brand-dark/40 font-normal">6 months ago</span>
+                </div>
+            </div>
+
+            <div class="min-w-[320px] md:min-w-[450px] bg-brand-light p-10 snap-start shrink-0 border border-brand-gray/50 hover:border-brand-accent transition-colors duration-500">
+                <div class="flex text-brand-accent text-lg mb-6">★★★★★</div>
+                <p class="font-light text-sm text-brand-dark/70 leading-relaxed mb-8 line-clamp-6">"I would like to share my excellent experience with this jewelry store. From the very beginning, the communication was clear, professional, and very helpful. I would also like to mention the goldsmith, whose craftsmanship was truly impressive... I would definitely recommend them."</p>
+                <div class="flex justify-between items-center text-xs uppercase tracking-widest text-brand-dark font-semibold">
+                    <span>sokratis arapis</span>
+                    <span class="text-brand-dark/40 font-normal">a month ago</span>
+                </div>
+            </div>
+
+            <div class="min-w-[320px] md:min-w-[450px] bg-brand-light p-10 snap-start shrink-0 border border-brand-gray/50 hover:border-brand-accent transition-colors duration-500">
+                <div class="flex text-brand-accent text-lg mb-6">★★★★★</div>
+                <p class="font-light text-sm text-brand-dark/70 leading-relaxed mb-8 line-clamp-6">"My Wife and I designed our engagement & wedding rings with Van Amstel Diamond. We were able to visit Frank in his atelier... Once we got the rings we were super impressed with the craftsmanship and quality of the end result, they were stunning!!"</p>
+                <div class="flex justify-between items-center text-xs uppercase tracking-widest text-brand-dark font-semibold">
+                    <span>Paul Wood</span>
+                    <span class="text-brand-dark/40 font-normal">4 months ago</span>
+                </div>
+            </div>
+
+            <div class="min-w-[320px] md:min-w-[450px] bg-brand-light p-10 snap-start shrink-0 border border-brand-gray/50 hover:border-brand-accent transition-colors duration-500">
+                <div class="flex text-brand-accent text-lg mb-6">★★★★★</div>
+                <p class="font-light text-sm text-brand-dark/70 leading-relaxed mb-8 line-clamp-6">"We have had a great experience with Van Amstel Diamond culminating in a wonderful ring made to custom specs. The end product is of the highest quality at a very competitive price."</p>
+                <div class="flex justify-between items-center text-xs uppercase tracking-widest text-brand-dark font-semibold">
+                    <span>Jochem Sebastiaan</span>
+                    <span class="text-brand-dark/40 font-normal">3 months ago</span>
+                </div>
+            </div>
+
+             <div class="min-w-[320px] md:min-w-[450px] pr-6 md:pr-[calc((100vw-1400px)/2+1.5rem)] snap-start shrink-0"></div> <!-- Spacer -->
+        </div>
+    </section>
+
+    <!-- PREMIUM FOOTER -->
+    <footer class="bg-brand-dark text-white pt-24 pb-12">
+        <div class="max-w-[1400px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 mb-20">
+            
+            <!-- Col 1: Customer Service -->
+            <div>
+                <h4 class="font-serif text-2xl mb-8">Customer Service</h4>
+                <div class="text-brand-gray/70 font-light space-y-4 text-sm">
+                    <p>Have a question? Send an email to <a href="/contacts" class="text-white hover:text-brand-accent transition-colors">support@vanamsteldiamond.eu</a>.</p>
+                    <p>We strive to reply to you within 24 hours.</p>
+                    <p class="pt-4">For advice, call <br/><a href="tel:+31202447512" class="text-lg font-normal text-white mt-1 inline-block hover:text-brand-accent transition-colors">+31 (0)202 447 512</a></p>
+                    <p>If not available, leave a message and we will call you back asap.</p>
+                </div>
+                <!-- Value props -->
+                <div class="mt-8 pt-8 border-t border-white/10 text-xs tracking-widest uppercase space-y-3 font-semibold text-brand-gray/90">
+                    <p class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span> Free shipping *</p>
+                    <p class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span> Money back guarantee</p>
+                    <p class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span> Viewing at partners *</p>
+                </div>
+            </div>
+
+            <!-- Col 2: About & Links -->
+            <div class="grid grid-cols-2 gap-8 lg:col-span-2">
+                <div>
+                    <h4 class="font-serif text-2xl mb-8">About Us</h4>
+                    <ul class="text-brand-gray/70 font-light space-y-3 text-sm">
+                        <li><a href="/VanAmstelDiamond-diamantaire" class="hover:text-white transition-colors">About Van Amstel</a></li>
+                        <li><a href="/education" class="hover:text-white transition-colors">Education</a></li>
+                        <li><a href="/partners" class="hover:text-white transition-colors">Partners</a></li>
+                        <li><a href="/contacts" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-2xl mb-8">International</h4>
+                    <ul class="text-brand-gray/70 font-light space-y-3 text-sm">
+                        <li><a href="https://www.vanamsteldiamant.nl" class="hover:text-white transition-colors">Nederland</a></li>
+                        <li><a href="https://www.vanamsteldiamant.be" class="hover:text-white transition-colors">België</a></li>
+                        <li><a href="https://www.vanamsteldiamond.co.uk" class="hover:text-white transition-colors">United Kingdom</a></li>
+                        <li><a href="https://www.vanamsteldiamant.de" class="hover:text-white transition-colors">Deutschland</a></li>
+                        <li><a href="https://www.vanamsteldiamant.ch" class="hover:text-white transition-colors">Schweiz</a></li>
+                        <li><a href="https://www.vanamsteldiamant.at" class="hover:text-white transition-colors">Österreich</a></li>
+                        <li><a href="https://www.vanamsteldiamond.eu" class="hover:text-white transition-colors">Europe / World</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Col 3: Newsletter & Locations -->
+            <div>
+                <h4 class="font-serif text-2xl mb-8">Newsletter</h4>
+                <p class="text-brand-gray/70 font-light text-sm mb-6">Always be the first to receive our exclusive offers.</p>
+                <form class="flex border-b border-white/20 pb-2 mb-10">
+                    <input type="email" placeholder="Your email address" class="bg-transparent w-full text-sm outline-none placeholder:text-white/30 text-white" />
+                    <button type="button" class="text-xs tracking-widest uppercase hover:text-brand-accent transition-colors font-semibold">Subscribe</button>
+                </form>
+
+                <h4 class="font-serif text-2xl mb-6">Showrooms</h4>
+                <div class="relative rounded overflow-hidden h-32 opacity-80 hover:opacity-100 transition-opacity mb-4">
+                    <img src="https://www.vanamsteldiamond.eu/media/map-eu.png" alt="Map" class="w-full h-full object-cover" />
+                </div>
+                <div class="flex gap-4 text-xs font-light text-brand-gray/70">
+                    <a href="/partners" class="hover:text-white">Amsterdam</a>
+                    <span>|</span>
+                    <a href="https://www.vanamsteldiamant.ch/partners" class="hover:text-white">Zürich</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="max-w-[1400px] mx-auto px-6 border-t border-white/10 pt-10 flex flex-col md:flex-row items-center justify-between gap-8 text-xs font-light text-brand-gray/50 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <img src="https://www.vanamsteldiamond.eu/skin/frontend/default/vad_white/images/vanamsteldiamond-logo-emblem.svg" class="h-10 opacity-50" alt="Emblem" />
+                <p>Copyright © 2008 - 2026. All rights reserved</p>
+                <p class="max-w-2xl">Van Amstel Diamond BV. Herengracht 280, 1016 BX Amsterdam, Netherlands. Chamber of Commerce: 62680315. Kindly note: visits are by appointment only. Please contact us in advance to book an appointment.</p>
+                <div class="flex gap-4 mt-2">
+                    <a href="/privacy" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="/conditions-vanamsteldiamond" class="hover:text-white transition-colors">Terms and Conditions</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end gap-6">
+                <!-- Payment Methods (Placeholder block for visual structure) -->
+                <div class="flex gap-2 opacity-50">
+                    <div class="w-8 h-5 bg-white rounded-sm"></div>
+                    <div class="w-8 h-5 bg-white rounded-sm"></div>
+                    <div class="w-8 h-5 bg-white rounded-sm"></div>
+                    <div class="w-8 h-5 bg-white rounded-sm"></div>
+                    <div class="w-8 h-5 bg-white rounded-sm"></div>
+                </div>
+                <div class="text-right">
+                    <small class="block">* Does not apply to all of our products.</small>
+                    <small class="block mt-1">We use cookies to give you the best possible service.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
