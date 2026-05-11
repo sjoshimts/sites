@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Delivery | Order Flowers Online UK | Appleyard London</title>
+    
+    <!-- Google Fonts: Playfair Display for elegant headings, Montserrat for clean, modern body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a1a1a',
+                            light: '#f9f9f8',
+                            muted: '#8c8c8c',
+                            border: '#e5e5e5'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons for premium, minimal iconography -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        /* Smooth scrolling and basic resets */
+        html { scroll-behavior: smooth; }
+        body { background-color: #f9f9f8; color: #1a1a1a; }
+        
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f9f9f8; }
+        ::-webkit-scrollbar-thumb { background: #d1d1d1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+
+        /* Mega menu smooth fade */
+        .mega-menu {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+        }
+        .nav-item:hover .mega-menu {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Accordion transition */
+        .accordion-content {
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-dark selection:text-white overflow-x-hidden">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-white text-[10px] sm:text-xs uppercase tracking-[0.2em] py-2.5 px-4 w-full">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-center items-center sm:space-x-12 space-y-2 sm:space-y-0 text-center">
+            <a href="/next-day-flowers" class="hover:text-gray-300 transition-colors">Next Day Delivery - Order by 5.45pm</a>
+            <span class="hidden sm:inline opacity-30">|</span>
+            <a href="https://www.appleyardflowers.com/help" class="hover:text-gray-300 transition-colors">The Happiness Guarantee</a>
+            <span class="hidden sm:inline opacity-30">|</span>
+            <a href="/appleyard-privilege" class="hover:text-gray-300 transition-colors">Free Delivery for a Year!</a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="bg-white sticky top-0 z-50 border-b border-brand-border/60 transition-all duration-300" id="main-header">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <!-- Top Utility Bar -->
+            <div class="flex justify-between items-center py-6">
+                <!-- Search -->
+                <div class="flex-1 flex items-center">
+                    <button class="flex items-center space-x-2 text-brand-dark hover:text-gray-500 transition-colors group">
+                        <i class="ph ph-magnifying-glass text-xl group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs uppercase tracking-widest hidden md:block">Search</span>
+                    </button>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex-1 flex justify-center">
+                    <a href="/" class="block">
+                        <img src="https://appleyardflowers.com/skin/frontend/default/appleyard/images/appleyard_hlogo.svg" alt="Appleyard London" class="h-6 md:h-8 w-auto">
+                    </a>
+                </div>
+
+                <!-- Account & Bag -->
+                <div class="flex-1 flex justify-end items-center space-x-6 md:space-x-8">
+                    <a href="/customer/account/login/" class="flex items-center space-x-2 text-brand-dark hover:text-gray-500 transition-colors group">
+                        <i class="ph ph-user text-xl group-hover:scale-110 transition-transform"></i>
+                        <span class="text-xs uppercase tracking-widest hidden md:block">My Account</span>
+                    </a>
+                    <a href="/checkout/cart/" class="flex items-center space-x-2 text-brand-dark hover:text-gray-500 transition-colors group">
+                        <div class="relative">
+                            <i class="ph ph-shopping-bag text-xl group-hover:scale-110 transition-transform"></i>
+                            <span class="absolute -top-1.5 -right-2 bg-brand-dark text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                        </div>
+                        <span class="text-xs uppercase tracking-widest hidden md:block">My Bag</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <nav class="hidden lg:flex justify-center pb-6">
+                <ul class="flex space-x-12">
+                    <!-- Flowers Dropdown -->
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors">
+                        <a href="/flowers" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Flowers</a>
+                        <!-- Mega Menu -->
+                        <div class="mega-menu absolute left-0 top-full w-full bg-white border-t border-brand-border shadow-2xl py-12 px-16 z-50 flex justify-center space-x-20">
+                            <div>
+                                <h4 class="font-serif text-lg mb-6 italic text-gray-800">By Collection</h4>
+                                <ul class="space-y-4 text-sm font-light text-gray-600">
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">All Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Couture Collection</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Summer Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Best Sellers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Letterbox Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">The Iconic Edit</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg mb-6 italic text-gray-800">By Occasion</h4>
+                                <ul class="space-y-4 text-sm font-light text-gray-600">
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Birthday Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Anniversary Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">New Baby Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Romance Flowers</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Sympathy Flowers</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-lg mb-6 italic text-gray-800">By Variety</h4>
+                                <ul class="space-y-4 text-sm font-light text-gray-600">
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Roses</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Peonies</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Hydrangeas</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Orchids</a></li>
+                                    <li><a href="#" class="hover:text-black hover:translate-x-1 inline-block transition-transform">Lilies</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors"><a href="/birthday" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Birthday</a></li>
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors"><a href="/plants" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Plants</a></li>
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors"><a href="/flower-subscription" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Subscription</a></li>
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors"><a href="/hampers" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Hampers & Gifts</a></li>
+                    <li class="nav-item pb-4 border-b-2 border-transparent hover:border-brand-dark transition-colors"><a href="/wedding-flowers-top" class="text-xs uppercase tracking-[0.15em] font-medium text-brand-dark">Weddings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Immersive Hero Section -->
+    <section class="relative h-[85vh] w-full min-h-[600px] overflow-hidden bg-brand-dark">
+        <!-- Hero Image with subtle zoom effect -->
+        <div class="absolute inset-0 w-full h-full transform scale-105 animate-[kenburns_20s_ease-out_forwards]">
+            <img src="https://www.appleyardflowers.com/media/wysiwyg/2026/coral-peony-2026.webp" alt="Coral Peony" class="w-full h-full object-cover object-center" />
+        </div>
+        <!-- Elegant dark gradient overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
+        <div class="absolute inset-0 bg-black/20"></div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
+            <span class="tracking-[0.4em] text-xs md:text-sm uppercase mb-6 font-medium text-white/90">Introducing</span>
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-8 font-normal leading-tight tracking-wide drop-shadow-lg">The Peony Edit</h1>
+            <p class="max-w-xl text-sm md:text-base font-light mb-12 leading-relaxed text-white/90 drop-shadow-md">
+                The year's most loved flower has arrived!<br class="hidden md:block">
+                Available with next-day nationwide delivery.<br class="hidden md:block">
+                Same-day delivery also available in London.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6">
+                <a href="/flowers/peonies" class="bg-white text-brand-dark px-10 py-4 uppercase tracking-[0.2em] text-[11px] font-medium hover:bg-brand-dark hover:text-white transition duration-500 border border-white">
+                    Shop The Peony Edit
+                </a>
+                <a href="/flowers/all-flowers" class="bg-transparent text-white px-10 py-4 uppercase tracking-[0.2em] text-[11px] font-medium hover:bg-white hover:text-brand-dark transition duration-500 border border-white">
+                    Browse All Flowers
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Finder - Floating over the hero -->
+    <div class="relative z-20 max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 -mt-24 mb-12">
+        <div class="bg-white shadow-2xl p-8 lg:p-12 flex flex-col lg:flex-row gap-8 items-end justify-between border border-brand-border/50">
+            <div class="w-full lg:flex-1">
+                <div class="mb-6 text-center lg:text-left">
+                    <h2 class="font-serif text-2xl lg:text-3xl text-brand-dark mb-2">Find the Perfect Gift</h2>
+                    <p class="text-sm font-light text-brand-muted">Take the stress out of searching with our curated gift finder.</p>
+                </div>
+                
+                <form class="flex flex-col sm:flex-row gap-6 w-full">
+                    <!-- Post Code -->
+                    <div class="relative flex-1 group">
+                        <i class="ph ph-map-pin absolute left-0 bottom-3 text-brand-muted group-hover:text-brand-dark transition-colors text-lg"></i>
+                        <input type="text" placeholder="Post Code" class="w-full border-b border-brand-border py-3 pl-8 text-sm focus:outline-none focus:border-brand-dark transition-colors bg-transparent uppercase placeholder:normal-case placeholder:text-brand-muted" />
+                    </div>
+                    
+                    <!-- Occasion -->
+                    <div class="relative flex-1 group">
+                        <i class="ph ph-gift absolute left-0 bottom-3 text-brand-muted group-hover:text-brand-dark transition-colors text-lg"></i>
+                        <select class="w-full border-b border-brand-border py-3 pl-8 text-sm focus:outline-none focus:border-brand-dark transition-colors bg-transparent appearance-none cursor-pointer text-brand-muted">
+                            <option value="" disabled selected>Occasion</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="romance">Romance</option>
+                            <option value="sympathy">Sympathy</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-0 bottom-3.5 text-brand-muted text-xs pointer-events-none"></i>
+                    </div>
+
+                    <!-- Delivery Date -->
+                    <div class="relative flex-1 group">
+                        <i class="ph ph-calendar-blank absolute left-0 bottom-3 text-brand-muted group-hover:text-brand-dark transition-colors text-lg"></i>
+                        <select class="w-full border-b border-brand-border py-3 pl-8 text-sm focus:outline-none focus:border-brand-dark transition-colors bg-transparent appearance-none cursor-pointer text-brand-muted">
+                            <option value="" disabled selected>Delivery Date</option>
+                            <option value="next">Next Day Delivery</option>
+                            <option value="named">Nominated Day</option>
+                        </select>
+                        <i class="ph ph-caret-down absolute right-0 bottom-3.5 text-brand-muted text-xs pointer-events-none"></i>
+                    </div>
+                </form>
+            </div>
+            
+            <button class="w-full lg:w-auto bg-brand-dark text-white px-12 py-4 uppercase tracking-[0.2em] text-[11px] font-medium hover:bg-black transition duration-300 whitespace-nowrap">
+                Search
+            </button>
+        </div>
+    </div>
+
+    <!-- Trust / Reviews Strip -->
+    <div class="bg-brand-dark py-6 text-center text-white flex justify-center items-center space-x-6 px-4">
+        <img src="https://assets.reviews.io/img/all-global-assets/logo/reviewsio-logo--white.svg" alt="Reviews.io" class="h-6 opacity-90">
+        <div class="text-sm font-light tracking-wide flex items-center">
+            <span class="mr-2">Excellent</span>
+            <span class="text-[#f59e0b] tracking-wider text-base">★★★★★</span>
+            <span class="ml-3 opacity-80 border-l border-white/20 pl-3 hidden sm:inline">4.7 based on over 22,000 reviews</span>
+        </div>
+    </div>
+
+    <!-- Editorial Collections (Asymmetric Premium Grid) -->
+    <section class="py-24 px-6 lg:px-12 max-w-[1600px] mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl text-brand-dark mb-4">Curated Collections</h2>
+            <div class="w-16 h-[1px] bg-brand-dark mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10">
+            <!-- Large Feature Block 1 -->
+            <a href="/flowers/summer-flowers" class="md:col-span-7 relative h-[600px] lg:h-[700px] group overflow-hidden bg-brand-light block">
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/summer26-home.webp" alt="The Summer Edit" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 lg:p-14 w-full text-white">
+                    <h3 class="font-serif text-4xl lg:text-5xl mb-4 leading-tight">The Summer<br>Edit</h3>
+                    <p class="font-light max-w-sm mb-6 text-sm lg:text-base text-white/90">Vibrant summer blooms bringing sun-drenched scents and bold, tropical colors into your home.</p>
+                    <span class="inline-block border-b border-white pb-1 text-xs uppercase tracking-widest font-medium group-hover:pl-4 transition-all duration-300">Explore Collection</span>
+                </div>
+            </a>
+
+            <!-- Medium Feature Block 2 -->
+            <a href="/plants/all-plants" class="md:col-span-5 relative h-[600px] lg:h-[700px] group overflow-hidden bg-brand-light block">
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/2023/new-plants-lower-block-min.webp" alt="The Plant Collection" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-10 lg:p-14 w-full text-white">
+                    <h3 class="font-serif text-3xl lg:text-4xl mb-4">The Plant<br>Collection</h3>
+                    <p class="font-light max-w-xs mb-6 text-sm text-white/90">Choose an elegant plant to brighten up your home or send as a lasting gift.</p>
+                    <span class="inline-block border-b border-white pb-1 text-xs uppercase tracking-widest font-medium group-hover:pl-4 transition-all duration-300">Shop Plants</span>
+                </div>
+            </a>
+
+            <!-- 3 Column Grid for smaller collections -->
+            <a href="/occasions/birthday-flowers" class="md:col-span-4 relative h-[450px] lg:h-[550px] group overflow-hidden block mt-4">
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/2020/AP/birthday-flowers-new-year-block-min.jpg" alt="The Birthday Collection" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white w-[85%] p-6 text-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="font-serif text-xl text-brand-dark mb-2">The Birthday Collection</h3>
+                    <p class="text-xs text-brand-muted font-light mb-4">Say Happy Birthday with luxury.</p>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-dark border-b border-brand-dark pb-0.5">Discover More</span>
+                </div>
+            </a>
+
+            <a href="/flower-subscription" class="md:col-span-4 relative h-[450px] lg:h-[550px] group overflow-hidden block mt-4">
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/2024/seasonal-sub-home-25.webp" alt="The Seasonal Subscription" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105" />
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white w-[85%] p-6 text-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="font-serif text-xl text-brand-dark mb-2">The Seasonal Subscription</h3>
+                    <p class="text-xs text-brand-muted font-light mb-4">A gift that keeps on giving.</p>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-dark border-b border-brand-dark pb-0.5">View Plans</span>
+                </div>
+            </a>
+
+            <a href="/flowers/all-gift-sets" class="md:col-span-4 relative h-[450px] lg:h-[550px] group overflow-hidden block mt-4">
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/2026/26gsnw.webp" alt="Curated Gift Sets" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105 object-center" />
+                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white w-[85%] p-6 text-center shadow-lg transition-transform duration-500 group-hover:-translate-y-2">
+                    <h3 class="font-serif text-xl text-brand-dark mb-2">Curated Gift Sets</h3>
+                    <p class="text-xs text-brand-muted font-light mb-4">Thoughtful sets to pamper.</p>
+                    <span class="text-[10px] uppercase tracking-[0.2em] font-semibold text-brand-dark border-b border-brand-dark pb-0.5">Explore Gifts</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Top Bouquets (Premium Product Grid) -->
+    <section class="py-24 bg-white px-6 lg:px-12 border-t border-brand-border/40">
+        <div class="max-w-[1400px] mx-auto">
+            
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div>
+                    <h2 class="font-serif text-4xl text-brand-dark mb-4">Our Top Bouquets</h2>
+                    <p class="text-brand-muted font-light">Explore our bestselling luxury arrangements.</p>
+                </div>
+                <a href="/flowers/all-flowers" class="hidden md:inline-block border-b border-brand-dark text-xs uppercase tracking-widest font-semibold pb-1 hover:text-brand-muted hover:border-brand-muted transition-colors">Shop All Bestsellers</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
+                
+                <!-- Product Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/g/l/glaze_bijou_inbloomfront_new-1improved.webp" alt="Glaze" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">Glaze</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">From <span class="text-brand-dark ml-1 font-semibold">£36.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/s/i/simply-pink-vase-bijoy.webp" alt="Simply Pink Rose & Lily" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">Simply Pink Rose & Lily</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">From <span class="text-brand-dark ml-1 font-semibold">£34.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 (Sale) -->
+                <div class="group cursor-pointer relative">
+                    <div class="absolute top-4 right-4 z-10 bg-brand-dark text-white text-[10px] uppercase tracking-widest px-3 py-1">Sale</div>
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/1/0/100-sweetheart-white-chair_1.webp" alt="100 White Roses" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">100 White Roses</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">
+                            From <span class="line-through mx-1">£94.99</span> <span class="text-red-700 font-semibold">£69.99</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/k/s/ks08_bijou_chair_1.webp" alt="Candy Clouds" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">Candy Clouds</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">From <span class="text-brand-dark ml-1 font-semibold">£74.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/s/u/summer-paradise-s-chair-blue.webp" alt="Summer Paradise" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">Summer Paradise</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">From <span class="text-brand-dark ml-1 font-semibold">£74.99</span></p>
+                    </div>
+                </div>
+
+                <!-- Product Card 6 (Sale) -->
+                <div class="group cursor-pointer relative">
+                    <div class="absolute top-4 right-4 z-10 bg-brand-dark text-white text-[10px] uppercase tracking-widest px-3 py-1">Sale</div>
+                    <div class="relative overflow-hidden mb-6 bg-brand-light aspect-[4/5]">
+                        <img src="https://appleyardflowers.com/media/catalog/product/cache/5/small_image/306x/9df78eab33525d08d6e5fb8d27136e95/5/0/50_red_and_free_card.webp" alt="50 Luxury Red Roses" class="w-full h-full object-cover object-center mix-blend-multiply transition duration-700 group-hover:scale-105" />
+                        <div class="absolute inset-0 bg-black/5 opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-8">
+                            <button class="bg-white text-brand-dark px-8 py-3 uppercase tracking-widest text-[10px] font-semibold hover:bg-brand-dark hover:text-white transition duration-300 shadow-md transform translate-y-4 group-hover:translate-y-0">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="font-serif text-2xl mb-1 text-brand-dark group-hover:text-gray-600 transition-colors">50 Luxury Red Roses</h3>
+                        <p class="text-[11px] text-brand-muted tracking-[0.15em] uppercase font-medium">
+                            From <span class="line-through mx-1">£79.99</span> <span class="text-red-700 font-semibold">£64.99</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-16 text-center md:hidden">
+                <a href="/flowers/all-flowers" class="inline-block border-b border-brand-dark text-xs uppercase tracking-widest font-semibold pb-1">Shop All Bestsellers</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us / Accordion Section -->
+    <section class="py-24 bg-brand-light px-6 lg:px-12 border-t border-brand-border/40">
+        <div class="max-w-[800px] mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl text-center text-brand-dark mb-12">Flower Delivery UK</h2>
+            
+            <div class="space-y-4">
+                <!-- Accordion 1 -->
+                <div class="accordion-item bg-white border border-brand-border/60">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <h3 class="font-serif text-xl text-brand-dark">What do Appleyard London do?</h3>
+                        <i class="ph ph-plus text-xl text-brand-muted accordion-icon transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8">
+                        <p class="pb-6 font-light text-brand-muted text-sm leading-relaxed">As a boutique London florist, Appleyard specialises in having professionally arranged flowers delivered, taking extra special care when sending beautiful, fresh flowers online. We design hand tied luxury bouquets with a modern British flair, created with exclusive seasonal blooms. We pride ourselves on our florists' expertise, craftsmanship, and attention to detail, allowing us to offer the very best in boutique floral design.<br><br>Each bouquet of beautiful flowers is hand tied by our expert florists, and lovingly gift wrapped in our signature Appleyard packaging to maximise the impact of your thoughtful floral gift. We include a free personalised message with every bouquet of flowers to make your gift extra special.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion 2 -->
+                <div class="accordion-item bg-white border border-brand-border/60">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <h3 class="font-serif text-xl text-brand-dark">What is the Appleyard London Promise?</h3>
+                        <i class="ph ph-plus text-xl text-brand-muted accordion-icon transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8">
+                        <p class="pb-6 font-light text-brand-muted text-sm leading-relaxed">We stand by our 100% Happiness Guarantee, which is our promise that you and your recipient will be delighted with your gift every step of the way.<br><br>We hand-condition each stem, ensuring that all of our flowers delivered are presented to the highest standard. We select only the finest and freshest flowers from trusted British suppliers for our arrangements, meaning we can ensure our seasonal flowers stay fresh for a minimum of 5 days after delivery. All of our luxury flowers are covered by the Appleyard Promise, which includes superior flower quality and our freshness guarantee.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion 3 -->
+                <div class="accordion-item bg-white border border-brand-border/60">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <h3 class="font-serif text-xl text-brand-dark">What types of flowers do you offer?</h3>
+                        <i class="ph ph-plus text-xl text-brand-muted accordion-icon transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8">
+                        <p class="pb-6 font-light text-brand-muted text-sm leading-relaxed">We have carefully curated our collection of flowers to offer something unique for each season, calendar event, and special occasion. We hope you take as much pride and pleasure in sending and receiving our unique flower designs as we do in putting the arrangements together.<br><br>Whether you’re buying online flowers & arrangements to celebrate a birthday, new baby, or a romantic occasion, you'll find the perfect flower arrangement at Appleyard. Order flowers for delivery tomorrow to say thank you, congratulations, get well soon, or to cheer up someone special during a trying time with our gorgeous hand tied bouquets.<br><br>Alternatively, we make it easy to surprise your loved ones with our range of letterbox flowers that can be delivered straight through their letterbox, meaning there's no need to worry about them being at home for the flower delivery.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion 4 -->
+                <div class="accordion-item bg-white border border-brand-border/60">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <h3 class="font-serif text-xl text-brand-dark">Where can I have flowers delivered?</h3>
+                        <i class="ph ph-plus text-xl text-brand-muted accordion-icon transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8">
+                        <p class="pb-6 font-light text-brand-muted text-sm leading-relaxed">Send hand delivered fresh flower bouquets, perfect for any occasion and available anywhere in the UK. Our next day flower delivery service is available throughout the UK including all major cities such as London, Manchester, Bristol, Liverpool and more. Need flowers delivered today? Use our same day flower delivery service, available in selected London postcodes and have flowers delivered the very same day.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion 5 -->
+                <div class="accordion-item bg-white border border-brand-border/60">
+                    <button class="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none" onclick="toggleAccordion(this)">
+                        <h3 class="font-serif text-xl text-brand-dark">What are your flower delivery options?</h3>
+                        <i class="ph ph-plus text-xl text-brand-muted accordion-icon transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-8">
+                        <p class="pb-6 font-light text-brand-muted text-sm leading-relaxed">We offer a range of next day delivery services throughout the UK, including Standard Tracked Delivery by 9pm, Priority Tracked Delivery by 5pm, and Guaranteed Delivery by 2pm. We also offer same day delivery to selected London postcodes when you order by 11am. We know how important it is to have peace of mind when you order flowers online, which is why we guarantee your gift will be delivered on time for any special occasion.<br><br>Send flowers by post online with next day delivery and enjoy luxury flowers anywhere in the UK with Appleyard London.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-24 bg-brand-dark text-white text-center px-6">
+        <div class="max-w-[700px] mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl mb-4">Join Our Community</h2>
+            <p class="font-light text-sm text-white/80 mb-8">Get 15% off your first order when you join our newsletter. Receive special offers, exciting products and news from Appleyard London.</p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <input type="email" placeholder="Enter Email Address" class="w-full sm:w-[400px] bg-transparent border-b border-white/50 py-3 px-4 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors text-sm text-center sm:text-left" required>
+                <button type="submit" class="w-full sm:w-auto bg-white text-brand-dark px-10 py-3.5 uppercase tracking-[0.2em] text-[11px] font-semibold hover:bg-gray-200 transition duration-300">
+                    Sign Up
+                </button>
+            </form>
+            <p class="text-[10px] text-white/40 mt-6 tracking-wide">You can view our privacy policy and unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#eaeaeb] pt-20 pb-10 border-t border-brand-border">
+        <div class="max-w-[1400px] mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                
+                <!-- Col 1: Brand & Social -->
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+                    <img src="https://www.appleyardflowers.com/media/wysiwyg/2018/AP/happiness-guarantee-new-min.png" alt="100% Happiness Guarantee" class="w-24 h-24 mb-6 opacity-80 mix-blend-multiply">
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-brand-dark hover:text-gray-500 transition-colors"><i class="ph-fill ph-facebook-logo text-3xl"></i></a>
+                        <a href="#" class="text-brand-dark hover:text-gray-500 transition-colors"><i class="ph-fill ph-twitter-logo text-3xl"></i></a>
+                        <a href="#" class="text-brand-dark hover:text-gray-500 transition-colors"><i class="ph-fill ph-instagram-logo text-3xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: About Us -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-serif text-lg text-brand-dark mb-6">About Us</h4>
+                    <ul class="space-y-3 font-light text-sm text-gray-600">
+                        <li><a href="/our-story" class="hover:text-brand-dark transition-colors">Our Story</a></li>
+                        <li><a href="/flowerdiaries" class="hover:text-brand-dark transition-colors">The Flower Diaries</a></li>
+                        <li><a href="/share" class="hover:text-brand-dark transition-colors">Refer-A-Friend</a></li>
+                        <li><a href="/catalog/seo_sitemap/category/" class="hover:text-brand-dark transition-colors">Sitemap</a></li>
+                        <li><a href="/terms-and-conditions" class="hover:text-brand-dark transition-colors">Terms & Conditions</a></li>
+                        <li><a href="/privacy" class="hover:text-brand-dark transition-colors">Privacy & Cookies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Need Help -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-serif text-lg text-brand-dark mb-6">Need Help?</h4>
+                    <ul class="space-y-3 font-light text-sm text-gray-600">
+                        <li><a href="/help" class="hover:text-brand-dark transition-colors">Help & FAQ's</a></li>
+                        <li><a href="/help" class="hover:text-brand-dark transition-colors">Contact Us</a></li>
+                        <li><a href="/delivery-and-order-tracking" class="hover:text-brand-dark transition-colors">Delivery Info</a></li>
+                        <li><a href="/track-my-order" class="hover:text-brand-dark transition-colors">Track My Order</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Our Flowers -->
+                <div class="text-center lg:text-left">
+                    <h4 class="font-serif text-lg text-brand-dark mb-6">Our Flowers</h4>
+                    <ul class="space-y-3 font-light text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-brand-dark transition-colors">100% Happiness Guarantee</a></li>
+                        <li><a href="/flower-care" class="hover:text-brand-dark transition-colors">Flower Care Essentials</a></li>
+                        <li><a href="/corporate-gifts-flowers" class="hover:text-brand-dark transition-colors">Corporate Flowers & Gifts</a></li>
+                        <li><a href="/your-reviews" class="hover:text-brand-dark transition-colors">Your Reviews</a></li>
+                        <li><a href="/keyworker-discount" class="hover:text-brand-dark transition-colors">Keyworker Discount</a></li>
+                        <li><a href="/student-discount" class="hover:text-brand-dark transition-colors">Student Discount</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-brand-border/50 text-xs text-brand-muted font-light gap-4 text-center md:text-left">
+                <p>Copyright &copy; Appleyard London 2026. All rights reserved.<br>This website is operated by Ecomnova. - Company reg. no. 08293632</p>
+                <img src="https://www.appleyardflowers.com/media/wysiwyg/2018/AP/paymentmethods-footer.png" alt="Payment Methods" class="h-6 opacity-60 mix-blend-multiply">
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Header shrink effect on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'py-1');
+            } else {
+                header.classList.remove('shadow-md', 'py-1');
+            }
+        });
+
+        // Simple Accordion Logic
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            
+            // Close all other accordions
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(i => {
+                if (i !== item) i.classList.remove('active');
+            });
+            
+            // Toggle current
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
