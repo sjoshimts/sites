@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Corporate Gifts & Sustainable Business Gifts - Upciclo Premium</title>
+    
+    <!-- Google Fonts: Inter for UI, Playfair Display for Editorial Headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons for a cleaner, modern look compared to FontAwesome -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#1a362a', // Deep forest green
+                            light: '#faf9f6', // Warm cream background
+                            accent: '#cda87c', // Earthy warm accent
+                            muted: '#f0efe9', // Secondary background
+                        }
+                    },
+                    aspectRatio: {
+                        '4/5': '4 / 5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for smooth hiding/showing and scrollbars */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+        @media (min-width: 1024px) { .masonry-grid { column-count: 3; } }
+        @media (min-width: 1280px) { .masonry-grid { column-count: 4; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Mega Menu Transition */
+        .mega-menu-content {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover .mega-menu-content {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Smooth reveal for product quick add */
+        .quick-add-btn {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .group-hover\:show-btn:hover .quick-add-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: 200%;
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-brand-light font-sans text-gray-800 antialiased selection:bg-brand-dark selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-brand-dark text-white text-xs font-medium py-2 px-4 relative z-50">
+        <div class="container mx-auto max-w-7xl flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4">
+                <button class="flex items-center gap-1 hover:text-brand-accent transition-colors">
+                    <span>INR - Indian Rupee</span>
+                    <i class="ph ph-caret-down"></i>
+                </button>
+            </div>
+            <div class="flex items-center gap-2 tracking-wide uppercase tracking-widest text-[10px]">
+                <i class="ph ph-airplane-tilt text-lg"></i>
+                <span>Great Rates for International Shipping</span>
+            </div>
+            <div class="hidden md:block">
+                <a href="http://discovery.ariba.com/profile/AN11169783575" target="_blank" class="hover:opacity-80 transition-opacity">
+                    <img src="https://service.ariba.com/an/p/Ariba/badge_145x30.jpg" alt="Ariba Badge" class="h-6">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="sticky top-0 z-40 bg-brand-light/90 backdrop-blur-md border-b border-gray-200 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-2xl text-brand-dark focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('-translate-x-full')">
+                    <i class="ph ph-list"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="flex-shrink-0 flex items-center justify-center lg:justify-start w-32 md:w-48">
+                    <img src="https://upciclo.com/media/logo/websites/1/logo.png" alt="Upciclo" class="h-10 md:h-12 w-auto object-contain">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8 h-full">
+                    
+                    <!-- Corporate Gifting Mega Menu -->
+                    <div class="nav-item h-full flex items-center">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">
+                            Corporate Gifting <i class="ph ph-caret-down text-xs"></i>
+                        </a>
+                        <div class="mega-menu-content absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100">
+                            <div class="container mx-auto max-w-7xl p-8 grid grid-cols-4 gap-8">
+                                <div class="col-span-1 border-r border-gray-100 pr-8">
+                                    <img src="https://upciclo.com/media/wysiwyg/hamper_images_for_the_site_13_.jpg" alt="Corporate" class="w-full h-48 object-cover rounded-md mb-4">
+                                    <h3 class="font-serif text-xl mb-2 text-brand-dark">Elevate Your Corporate Gifting</h3>
+                                    <p class="text-sm text-gray-500 mb-4">Sustainable, premium, and meaningful gifts for your partners and team.</p>
+                                    <a href="#" class="text-sm font-semibold uppercase tracking-wider text-brand-dark border-b border-brand-dark pb-1 hover:text-brand-accent hover:border-brand-accent transition-colors">Shop All Corporate</a>
+                                </div>
+                                <div class="col-span-1 flex flex-col gap-3">
+                                    <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">By Category</h4>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Welcome and Joining kit</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Events & Conference</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Promotional Gifts</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Work from Home</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Stationery</a>
+                                </div>
+                                <div class="col-span-1 flex flex-col gap-3 pt-8">
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Tech Gadgets</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Drinkware</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Bags and Collections</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Apparel</a>
+                                    <a href="#" class="text-sm hover:text-brand-accent transition-colors">Desktop Items</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Festive Gifting Dropdown -->
+                    <div class="nav-item h-full flex items-center relative">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">
+                            Festive Gifting <i class="ph ph-caret-down text-xs"></i>
+                        </a>
+                        <div class="mega-menu-content absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white shadow-xl rounded-b-md border border-gray-100 p-4">
+                            <div class="flex flex-col gap-3">
+                                <div class="group/sub relative">
+                                    <a href="#" class="text-sm font-medium hover:text-brand-accent transition-colors flex justify-between items-center">
+                                        Diwali <i class="ph ph-caret-right text-xs"></i>
+                                    </a>
+                                </div>
+                                <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500 hover:text-brand-accent">Hampers</a>
+                                <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500 hover:text-brand-accent">Candles & Diyas</a>
+                                <div class="h-px w-full bg-gray-100 my-1"></div>
+                                <a href="#" class="text-sm font-medium hover:text-brand-accent transition-colors">Christmas</a>
+                                <a href="#" class="text-sm font-medium hover:text-brand-accent transition-colors">New Year</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Simple Links -->
+                    <div class="nav-item h-full flex items-center relative">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">Gifts by Occasion <i class="ph ph-caret-down text-xs"></i></a>
+                        <div class="mega-menu-content absolute top-full left-0 w-48 bg-white shadow-xl rounded-b-md border border-gray-100 p-4 flex flex-col gap-3">
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Birthday</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Weddings</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">House Warming</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Women's Day</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center relative">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">Gifts by Price <i class="ph ph-caret-down text-xs"></i></a>
+                        <div class="mega-menu-content absolute top-full left-0 w-48 bg-white shadow-xl rounded-b-md border border-gray-100 p-4 flex flex-col gap-3">
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Under ₹100</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">₹100 - ₹500</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">₹500 - ₹2000</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">₹2000 - ₹5000</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center relative">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">Unique Collection <i class="ph ph-caret-down text-xs"></i></a>
+                        <div class="mega-menu-content absolute top-full left-0 w-56 bg-white shadow-xl rounded-b-md border border-gray-100 p-4 flex flex-col gap-3">
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Paper Mache Products</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Wellness & Personal Care</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item h-full flex items-center relative">
+                        <a href="#" class="text-sm font-medium tracking-wide hover:text-brand-accent transition-colors py-2 flex items-center gap-1">Others <i class="ph ph-caret-down text-xs"></i></a>
+                        <div class="mega-menu-content absolute top-full right-0 w-48 bg-white shadow-xl rounded-b-md border border-gray-100 p-4 flex flex-col gap-3">
+                            <a href="#" class="text-sm font-medium hover:text-brand-accent transition-colors">Food Packaging</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500">Paper Containers</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500">Paper Cups</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500">Paper Bowls</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors pl-4 text-gray-500">Paper Plates</a>
+                            <div class="h-px w-full bg-gray-100 my-1"></div>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Hamper Boxes</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Trays</a>
+                            <a href="#" class="text-sm hover:text-brand-accent transition-colors">Eco Baskets</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Icons Right -->
+                <div class="flex items-center gap-4 lg:gap-6 text-xl text-brand-dark">
+                    <button class="hover:text-brand-accent transition-colors" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+                    <a href="#" class="hidden md:block hover:text-brand-accent transition-colors" aria-label="Account"><i class="ph ph-user"></i></a>
+                    <a href="#" class="hidden md:block hover:text-brand-accent transition-colors" aria-label="Wishlist"><i class="ph ph-heart"></i></a>
+                    <button class="hover:text-brand-accent transition-colors relative" aria-label="Cart">
+                        <i class="ph ph-shopping-bag"></i>
+                        <span class="absolute -top-1 -right-2 bg-brand-accent text-white text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-brand-light transform -translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+        <div class="p-4 flex justify-between items-center border-b border-gray-200">
+            <img src="https://upciclo.com/media/logo/websites/1/logo.png" alt="Upciclo" class="h-8">
+            <button class="text-2xl" onclick="document.getElementById('mobile-menu').classList.add('-translate-x-full')"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="p-4 flex flex-col gap-4">
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Corporate Gifting</a>
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Festive Gifting</a>
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Gifts by Occasion</a>
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Gifts by Price</a>
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Unique Collection</a>
+            <a href="#" class="text-lg font-serif border-b border-gray-200 pb-2">Others</a>
+            
+            <div class="mt-8 flex justify-around text-2xl">
+                <a href="#"><i class="ph ph-user"></i></a>
+                <a href="#"><i class="ph ph-heart"></i></a>
+                <a href="#"><i class="ph ph-envelope"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section: Editorial & Impactful -->
+        <section class="relative w-full h-[70vh] md:h-[85vh] bg-gray-900 overflow-hidden">
+            <img src="https://upciclo.com/media/.renditions/wysiwyg/HomePage_banner_1_.png" alt="Sustainable Gifting" class="absolute inset-0 w-full h-full object-cover object-center opacity-80 mix-blend-overlay scale-105 transform origin-center animate-[pulse_20s_ease-in-out_infinite_alternate]">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            
+            <div class="relative h-full container mx-auto max-w-7xl px-4 lg:px-8 flex flex-col justify-center">
+                <div class="max-w-2xl text-white">
+                    <p class="text-sm md:text-base font-semibold tracking-[0.2em] uppercase mb-4 text-brand-accent">Elevate Your Brand</p>
+                    <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6">Sustainable <br><span class="italic text-brand-accent font-light">Corporate Gifting</span></h1>
+                    <p class="text-lg md:text-xl font-light text-gray-200 mb-10 max-w-lg leading-relaxed">Discover eco-friendly business gifts that leave a lasting impression on your clients and a lighter footprint on the earth. Global shipping available.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-white text-brand-dark px-8 py-4 text-sm font-semibold tracking-wide uppercase hover:bg-brand-accent hover:text-white transition-all text-center">Shop Corporate Gifts</a>
+                        <a href="#" class="border border-white text-white px-8 py-4 text-sm font-semibold tracking-wide uppercase hover:bg-white hover:text-brand-dark transition-all text-center">Explore Festive Collection</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By Marquee -->
+        <section class="py-12 border-b border-gray-200 bg-white overflow-hidden">
+            <div class="container mx-auto max-w-7xl px-4 lg:px-8 mb-6 text-center">
+                <p class="text-sm font-medium tracking-widest uppercase text-gray-400">Proudly Associated With</p>
+            </div>
+            <div class="relative w-full overflow-hidden flex">
+                <div class="animate-marquee flex items-center justify-around">
+                    <!-- Repeated logos to create smooth infinite loop -->
+                    <img src="https://upciclo.com/media/wysiwyg/KPMG_logo.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="KPMG">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/UBS_LOGO.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="UBS">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/DATABRICKS_LOGO.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Databricks">
+                    <img src="https://upciclo.com/media/wysiwyg/Thermax.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Thermax">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/1200px-Mercedes_logo_1.jpeg" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Mercedes">
+                    <img src="https://upciclo.com/media/wysiwyg/Tata-Elxsi-Logo.jpeg" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Tata Elxsi">
+                    <img src="https://upciclo.com/media/wysiwyg/Google.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Google">
+                    <!-- Duplicate for infinite effect -->
+                    <img src="https://upciclo.com/media/wysiwyg/KPMG_logo.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="KPMG">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/UBS_LOGO.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="UBS">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/DATABRICKS_LOGO.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Databricks">
+                    <img src="https://upciclo.com/media/wysiwyg/Thermax.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Thermax">
+                    <img src="https://upciclo.com/media/.renditions/wysiwyg/1200px-Mercedes_logo_1.jpeg" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Mercedes">
+                    <img src="https://upciclo.com/media/wysiwyg/Tata-Elxsi-Logo.jpeg" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Tata Elxsi">
+                    <img src="https://upciclo.com/media/wysiwyg/Google.png" class="h-8 md:h-12 w-auto mx-8 object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all" alt="Google">
+                </div>
+            </div>
+        </section>
+
+        <!-- Curated Categories (Masonry / Editorial Grid) -->
+        <section class="py-24 bg-brand-light">
+            <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-3">Curated Collections</h2>
+                        <p class="text-gray-500 max-w-md">Discover our thoughtfully assembled categories designed to make sustainable gifting effortless.</p>
+                    </div>
+                </div>
+
+                <!-- Masonry Layout using CSS Columns -->
+                <div class="masonry-grid">
+                    
+                    <!-- Item 1: Large Featured -->
+                    <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="aspect-[4/5] md:aspect-[3/4] w-full overflow-hidden">
+                            <img src="https://upciclo.com/media/wysiwyg/Group_135.png" alt="ECO Gift Guide" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
+                            <h3 class="font-serif text-2xl text-white mb-2">The ECO Gift Guide</h3>
+                            <p class="text-gray-200 text-sm font-light mb-4 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">Almost 24 billion USD is wasted in unwanted gifts in 1 year. Shop consciously.</p>
+                            <span class="inline-block border border-white text-white text-xs uppercase tracking-widest px-4 py-2 w-max backdrop-blur-sm hover:bg-white hover:text-brand-dark transition-colors">Explore</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 2 -->
+                    <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-square w-full overflow-hidden">
+                            <img src="https://upciclo.com/media/wysiwyg/Blocks_of_340_x_211_7_.png" alt="Pocket Friendly" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <h3 class="font-serif text-xl text-brand-dark mb-1">Pocket Friendly Shop</h3>
+                            <p class="text-gray-500 text-sm">Break the myth: sustainable items starting from Rs. 50.</p>
+                        </div>
+                    </a>
+
+                    <!-- Item 3 -->
+                    <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-[4/3] w-full overflow-hidden">
+                            <img src="https://upciclo.com/media/wysiwyg/Group_133.png" alt="100% Upcycled" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <h3 class="font-serif text-xl text-brand-dark mb-1">100% Upcycled Art</h3>
+                            <p class="text-gray-500 text-sm">Chic and beautiful artisanal products.</p>
+                        </div>
+                    </a>
+
+                     <!-- Item 4 -->
+                     <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-brand-dark shadow-sm hover:shadow-xl transition-shadow duration-500">
+                        <div class="aspect-[3/4] w-full overflow-hidden opacity-80 group-hover:opacity-100 transition-opacity">
+                            <img src="https://upciclo.com/media/wysiwyg/unsplash_6Bhuuhhrb-4.png" alt="Eco Festive" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105 mix-blend-luminosity">
+                        </div>
+                        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8 bg-brand-dark/40">
+                            <h3 class="font-serif text-3xl text-brand-accent mb-3">Eco Festive</h3>
+                            <p class="text-white text-sm font-light mb-6">Celebrate without the waste. Curated festive bundles.</p>
+                            <span class="text-white text-xs uppercase tracking-widest border-b border-brand-accent pb-1">Shop Collection</span>
+                        </div>
+                    </a>
+
+                    <!-- Item 5 -->
+                    <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-[3/2] w-full overflow-hidden">
+                            <img src="https://upciclo.com/media/wysiwyg/Blocks_of_340_x_211_5_.png" alt="Eco Cook & Serve" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <h3 class="font-serif text-xl text-brand-dark mb-1">Eco Cook & Serve</h3>
+                            <p class="text-gray-500 text-sm">Non-toxic, safe cooking essentials.</p>
+                        </div>
+                    </a>
+
+                    <!-- Item 6 -->
+                    <a href="#" class="masonry-item group block relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+                        <div class="aspect-square w-full overflow-hidden">
+                            <img src="https://upciclo.com/media/wysiwyg/Blocks_of_340_x_211.png" alt="Eco Friendly Childhood" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <div class="p-6 bg-white">
+                            <h3 class="font-serif text-xl text-brand-dark mb-1">Eco Friendly Childhood</h3>
+                            <p class="text-gray-500 text-sm">Safe, plastic-free alternatives for kids.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button class="text-sm font-semibold tracking-widest uppercase text-brand-dark border-b-2 border-brand-dark pb-1 hover:text-brand-accent hover:border-brand-accent transition-colors">View All 13 Categories</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Section (Scroll Snap Carousel) -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-dark mb-3">Fresh Arrivals</h2>
+                        <p class="text-gray-500">The latest additions to our sustainable catalog.</p>
+                    </div>
+                    <a href="#" class="hidden md:inline-flex text-sm font-semibold uppercase tracking-wider text-brand-dark border border-brand-dark px-6 py-3 hover:bg-brand-dark hover:text-white transition-colors">Shop All New</a>
+                </div>
+
+                <!-- Scroll Container -->
+                <div class="flex overflow-x-auto gap-6 pb-8 hide-scrollbar snap-x snap-mandatory -mx-4 px-4 lg:mx-0 lg:px-0">
+                    
+                    <!-- Product Card 1 -->
+                    <div class="group hover:show-btn relative flex flex-col min-w-[280px] w-[280px] md:w-[320px] flex-shrink-0 snap-start">
+                        <!-- Image Wrapper -->
+                        <a href="#" class="block aspect-[4/5] bg-[#f8f8f8] rounded-xl overflow-hidden relative mb-4">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/s/c/screenshot_2025-08-29_121608.png" alt="Black Terrazzo Coaster Set" class="w-full h-full object-cover mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                            
+                            <!-- Tags -->
+                            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                                <span class="bg-white/90 backdrop-blur text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm text-brand-dark">New</span>
+                            </div>
+
+                            <!-- Hover Actions -->
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-2 group-hover:translate-x-0">
+                                <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-brand-accent shadow-sm mb-2"><i class="ph ph-heart"></i></button>
+                                <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-brand-accent shadow-sm"><i class="ph ph-share-network"></i></button>
+                            </div>
+
+                            <!-- Quick Add (Bottom) -->
+                            <div class="absolute bottom-4 left-4 right-4 quick-add-btn">
+                                <button class="w-full bg-brand-dark text-white py-3 text-sm font-medium hover:bg-brand-accent transition-colors shadow-lg rounded-md flex items-center justify-center gap-2">
+                                    <i class="ph ph-shopping-bag"></i> Add to Cart
+                                </button>
+                            </div>
+                        </a>
+
+                        <!-- Content -->
+                        <div class="flex flex-col flex-grow">
+                            <!-- Minimal Icons -->
+                            <div class="flex gap-3 mb-2 text-gray-400 text-sm">
+                                <i class="ph ph-leaf hover:text-green-600 transition-colors" title="Cruelty Free"></i>
+                                <i class="ph ph-wind hover:text-blue-500 transition-colors" title="Less Carbon"></i>
+                                <i class="ph ph-drop hover:text-teal-500 transition-colors" title="Chemical Free"></i>
+                            </div>
+                            
+                            <a href="#" class="font-serif text-lg text-brand-dark leading-snug hover:text-brand-accent transition-colors line-clamp-2 mb-2">
+                                Eco-Friendly Black Terrazzo Coaster Set
+                            </a>
+                            <div class="mt-auto">
+                                <div class="flex items-center gap-3 mb-1">
+                                    <span class="text-brand-dark font-medium">₹850.00</span>
+                                </div>
+                                <p class="text-[11px] text-brand-accent font-medium uppercase tracking-wide">Earn 10 Reward Points</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="group hover:show-btn relative flex flex-col min-w-[280px] w-[280px] md:w-[320px] flex-shrink-0 snap-start">
+                        <a href="#" class="block aspect-[4/5] bg-[#f8f8f8] rounded-xl overflow-hidden relative mb-4">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/s/c/screenshot_2025-08-26_145233.png" alt="Gourmet Cookie Box" class="w-full h-full object-cover mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-2 group-hover:translate-x-0">
+                                <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-brand-accent shadow-sm mb-2"><i class="ph ph-heart"></i></button>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 quick-add-btn">
+                                <button class="w-full bg-brand-dark text-white py-3 text-sm font-medium hover:bg-brand-accent transition-colors shadow-lg rounded-md flex items-center justify-center gap-2"><i class="ph ph-shopping-bag"></i> Add to Cart</button>
+                            </div>
+                        </a>
+                        <div class="flex flex-col flex-grow">
+                            <div class="flex gap-3 mb-2 text-gray-400 text-sm">
+                                <i class="ph ph-leaf"></i> <i class="ph ph-wind"></i> <i class="ph ph-globe"></i>
+                            </div>
+                            <a href="#" class="font-serif text-lg text-brand-dark leading-snug hover:text-brand-accent transition-colors line-clamp-2 mb-2">
+                                Gourmet Cookie & Coffee Gift Box – Premium Hamper
+                            </a>
+                            <div class="mt-auto">
+                                <span class="text-brand-dark font-medium">₹1,250.00</span>
+                                <p class="text-[11px] text-brand-accent font-medium uppercase tracking-wide mt-1">Earn 15 Reward Points</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="group hover:show-btn relative flex flex-col min-w-[280px] w-[280px] md:w-[320px] flex-shrink-0 snap-start">
+                        <a href="#" class="block aspect-[4/5] bg-[#f8f8f8] rounded-xl overflow-hidden relative mb-4">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/i/m/img20250708100406.jpg" alt="Timeless Diwali Hamper" class="w-full h-full object-cover mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-3 left-3 flex flex-col gap-2">
+                                <span class="bg-red-500 text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded shadow-sm">Sale 45%</span>
+                            </div>
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-2 group-hover:translate-x-0">
+                                <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-brand-accent shadow-sm mb-2"><i class="ph ph-heart"></i></button>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 quick-add-btn">
+                                <button class="w-full bg-brand-dark text-white py-3 text-sm font-medium hover:bg-brand-accent transition-colors shadow-lg rounded-md flex items-center justify-center gap-2"><i class="ph ph-shopping-bag"></i> Add to Cart</button>
+                            </div>
+                        </a>
+                        <div class="flex flex-col flex-grow">
+                            <div class="flex gap-3 mb-2 text-gray-400 text-sm">
+                                <i class="ph ph-leaf"></i> <i class="ph ph-wind"></i>
+                            </div>
+                            <a href="#" class="font-serif text-lg text-brand-dark leading-snug hover:text-brand-accent transition-colors line-clamp-2 mb-2">
+                                Timeless Eco-friendly Diwali Hamper
+                            </a>
+                            <div class="mt-auto">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-red-600 font-medium">₹849.60</span>
+                                    <span class="text-gray-400 line-through text-sm">₹1,534.00</span>
+                                </div>
+                                <p class="text-[11px] text-brand-accent font-medium uppercase tracking-wide mt-1">Earn 10 Reward Points</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 4 -->
+                    <div class="group hover:show-btn relative flex flex-col min-w-[280px] w-[280px] md:w-[320px] flex-shrink-0 snap-start">
+                        <a href="#" class="block aspect-[4/5] bg-[#f8f8f8] rounded-xl overflow-hidden relative mb-4">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/s/c/screenshot_2025-07-09_131200.png" alt="Wireless Charger" class="w-full h-full object-cover mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                            <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-2 group-hover:translate-x-0">
+                                <button class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-brand-accent shadow-sm mb-2"><i class="ph ph-heart"></i></button>
+                            </div>
+                            <div class="absolute bottom-4 left-4 right-4 quick-add-btn">
+                                <button class="w-full bg-brand-dark text-white py-3 text-sm font-medium hover:bg-brand-accent transition-colors shadow-lg rounded-md flex items-center justify-center gap-2"><i class="ph ph-shopping-bag"></i> Add to Cart</button>
+                            </div>
+                        </a>
+                        <div class="flex flex-col flex-grow">
+                            <div class="flex gap-3 mb-2 text-gray-400 text-sm">
+                                <i class="ph ph-battery-charging"></i> <i class="ph ph-leaf"></i>
+                            </div>
+                            <a href="#" class="font-serif text-lg text-brand-dark leading-snug hover:text-brand-accent transition-colors line-clamp-2 mb-2">
+                                Flare – Eco-Friendly 3-in-1 Wireless Charger
+                            </a>
+                            <div class="mt-auto">
+                                <span class="text-brand-dark font-medium">₹2,499.00</span>
+                                <p class="text-[11px] text-brand-accent font-medium uppercase tracking-wide mt-1">Earn 25 Reward Points</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- View All Card -->
+                    <div class="flex flex-col min-w-[200px] w-[200px] flex-shrink-0 snap-start justify-center items-center h-full aspect-[4/5] border border-dashed border-gray-300 rounded-xl hover:border-brand-accent hover:bg-brand-light transition-colors cursor-pointer group">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:border-brand-accent group-hover:text-brand-accent transition-colors mb-3">
+                            <i class="ph ph-arrow-right text-xl"></i>
+                        </div>
+                        <span class="font-serif text-lg text-brand-dark group-hover:text-brand-accent transition-colors">View All New</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabbed Collections -->
+        <section class="py-24 bg-brand-light border-y border-gray-200">
+            <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+                
+                <!-- Tab Headers -->
+                <div class="flex flex-wrap justify-center gap-6 md:gap-12 border-b border-gray-300 mb-12">
+                    <button class="font-serif text-xl md:text-2xl pb-4 border-b-2 border-brand-dark text-brand-dark" id="tab-btn-1" onclick="switchTab(1)">Corporate Gifting</button>
+                    <button class="font-serif text-xl md:text-2xl pb-4 border-b-2 border-transparent text-gray-400 hover:text-brand-dark transition-colors" id="tab-btn-2" onclick="switchTab(2)">Festive Gifting</button>
+                    <button class="font-serif text-xl md:text-2xl pb-4 border-b-2 border-transparent text-gray-400 hover:text-brand-dark transition-colors" id="tab-btn-3" onclick="switchTab(3)">Gifts by Occasion</button>
+                </div>
+
+                <!-- Tab Content 1 (Visible) -->
+                <div id="tab-content-1" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Reusing Product Card style, simplified for space -->
+                    <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/1/6/1670224637168.jpeg" alt="Notebook" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">Vegan Leather Premium Notebook</a>
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-600 font-medium">₹275.52</span>
+                            <span class="text-gray-400 line-through text-sm">₹599.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/b/o/bottle_34_.jpg" alt="Bottle" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">Stainless Steel Thermal Bottle</a>
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-600 font-medium">₹1,528.10</span>
+                        </div>
+                    </div>
+
+                    <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/g/i/gift_set.png" alt="Joining Kit" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">4 in 1 Employee Joining Kit</a>
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-600 font-medium">₹671.42</span>
+                        </div>
+                    </div>
+
+                     <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/1/5/1587319845248.jpeg" alt="Arm Band" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">Unisex Sports Waterproof Arm Band</a>
+                        <div class="flex items-center gap-2">
+                            <span class="text-red-600 font-medium">₹120.36</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content 2 (Hidden) -->
+                <div id="tab-content-2" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                     <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/b/a/bamboo_basket_3_.jpg" alt="Basket" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">Bamboo Basket with Double Handle</a>
+                        <span class="text-brand-dark font-medium">₹84.00</span>
+                    </div>
+                    <!-- (More items would go here dynamically) -->
+                </div>
+
+                <!-- Tab Content 3 (Hidden) -->
+                <div id="tab-content-3" class="hidden grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+                    <div class="group relative flex flex-col">
+                        <div class="aspect-[4/5] bg-white rounded-xl overflow-hidden mb-4 p-4 shadow-sm border border-gray-100">
+                            <img src="https://upciclo.com/media/catalog/product/cache/c5b0e6136a6dd7f7d91d8b889ed40f35/h/a/happy.png" alt="Happy Couple" class="w-full h-full object-contain mix-blend-multiply transform transition-transform duration-700 group-hover:scale-105">
+                        </div>
+                        <a href="#" class="font-serif text-lg text-brand-dark hover:text-brand-accent transition-colors line-clamp-1 mb-1">The Happily Ever After Box</a>
+                        <span class="text-brand-dark font-medium">₹1,450.00</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button class="bg-transparent border border-brand-dark text-brand-dark px-10 py-4 text-sm font-semibold uppercase tracking-wider hover:bg-brand-dark hover:text-white transition-colors">View Full Category</button>
+                </div>
+
+                <script>
+                    function switchTab(tabId) {
+                        // Reset all buttons
+                        [1,2,3].forEach(id => {
+                            document.getElementById(`tab-btn-${id}`).classList.remove('border-brand-dark', 'text-brand-dark');
+                            document.getElementById(`tab-btn-${id}`).classList.add('border-transparent', 'text-gray-400');
+                            document.getElementById(`tab-content-${id}`).classList.add('hidden');
+                            document.getElementById(`tab-content-${id}`).classList.remove('grid');
+                        });
+                        // Activate selected
+                        document.getElementById(`tab-btn-${tabId}`).classList.add('border-brand-dark', 'text-brand-dark');
+                        document.getElementById(`tab-btn-${tabId}`).classList.remove('border-transparent', 'text-gray-400');
+                        document.getElementById(`tab-content-${tabId}`).classList.remove('hidden');
+                        document.getElementById(`tab-content-${tabId}`).classList.add('grid');
+                    }
+                </script>
+            </div>
+        </section>
+
+        <!-- Feature Banner -->
+        <section class="relative h-[60vh] md:h-[70vh] bg-gray-900">
+            <img src="https://upciclo.com/media/wysiwyg/IMG20250120165431_Large.jpeg" alt="Corporate Hampers" class="absolute inset-0 w-full h-full object-cover opacity-70">
+            <div class="absolute inset-0 flex items-center justify-center md:justify-end px-4 md:px-20">
+                <div class="bg-white/95 backdrop-blur-md p-10 md:p-16 max-w-lg text-center md:text-left shadow-2xl rounded-sm">
+                    <h2 class="font-serif text-3xl md:text-5xl text-brand-dark mb-4">Bespoke Hamper Curation</h2>
+                    <p class="text-gray-600 mb-8 font-light leading-relaxed">Let us design the perfect unboxing experience for your clients. Custom branding, sustainable packaging, and premium contents.</p>
+                    <a href="#" class="bg-brand-dark text-white px-8 py-4 text-sm font-semibold tracking-wide uppercase hover:bg-brand-accent transition-colors inline-block">Consult Our Team</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Props & Founder -->
+        <section class="py-24 bg-white">
+            <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+                
+                <!-- Values -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24 border-b border-gray-100 pb-20">
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-dark mb-4 shadow-inner">
+                            <i class="ph ph-plant text-3xl"></i>
+                        </div>
+                        <h4 class="font-serif text-lg mb-1 text-brand-dark">Eco-Friendly</h4>
+                        <p class="text-xs text-gray-500 max-w-[200px]">100% sustainable materials and packaging.</p>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-dark mb-4 shadow-inner">
+                            <i class="ph ph-hand-heart text-3xl"></i>
+                        </div>
+                        <h4 class="font-serif text-lg mb-1 text-brand-dark">Handcrafted</h4>
+                        <p class="text-xs text-gray-500 max-w-[200px]">Supporting local artisans across India.</p>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-dark mb-4 shadow-inner">
+                            <i class="ph ph-paw-print text-3xl"></i>
+                        </div>
+                        <h4 class="font-serif text-lg mb-1 text-brand-dark">Cruelty Free</h4>
+                        <p class="text-xs text-gray-500 max-w-[200px]">Ethically sourced, no animal testing.</p>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center text-brand-dark mb-4 shadow-inner">
+                            <i class="ph ph-shield-check text-3xl"></i>
+                        </div>
+                        <h4 class="font-serif text-lg mb-1 text-brand-dark">Quality Checked</h4>
+                        <p class="text-xs text-gray-500 max-w-[200px]">Rigorous standards for every product.</p>
+                    </div>
+                </div>
+
+                <!-- Founder Edit -->
+                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+                    <div class="w-full md:w-1/2">
+                        <div class="aspect-square w-full rounded-2xl overflow-hidden shadow-2xl relative">
+                            <!-- Placeholder image representing the founder section from screenshot -->
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Founder" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h4 class="text-sm font-semibold tracking-[0.2em] uppercase mb-4 text-brand-accent">Our Story</h4>
+                        <h2 class="font-serif text-3xl md:text-5xl text-brand-dark mb-6 leading-tight">Gifting with a Conscience.</h2>
+                        <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">"We believe that the best gifts shouldn't cost the earth. Upciclo was born from a desire to bridge the gap between premium corporate gifting and environmental responsibility. Every item is a conversation starter about sustainability."</p>
+                        <img src="https://upciclo.com/media/logo/websites/1/logo.png" class="h-8 grayscale opacity-50 mb-8" alt="Signature">
+                        <a href="#" class="text-sm font-semibold uppercase tracking-wider text-brand-dark border-b border-brand-dark pb-1 hover:text-brand-accent hover:border-brand-accent transition-colors">Read Full Story</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10">
+        <div class="container mx-auto max-w-7xl px-4 lg:px-8">
+            
+            <!-- Newsletter -->
+            <div class="flex flex-col md:flex-row items-center justify-between border-b border-white/10 pb-16 mb-16 gap-8">
+                <div class="max-w-xl text-center md:text-left">
+                    <h3 class="font-serif text-3xl mb-3">Join the Sustainable Movement</h3>
+                    <p class="text-gray-400 font-light">Subscribe to receive updates on new arrivals, corporate offers, and eco-gifting tips.</p>
+                </div>
+                <div class="w-full md:w-auto">
+                    <form class="flex w-full md:w-[400px]">
+                        <input type="email" placeholder="Your email address" class="bg-transparent border-b border-white/30 px-4 py-3 w-full focus:outline-none focus:border-brand-accent text-white placeholder-gray-500 transition-colors">
+                        <button type="submit" class="border-b border-white/30 px-6 font-semibold uppercase tracking-wider text-sm hover:text-brand-accent transition-colors">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Links Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Col 1 -->
+                <div>
+                    <img src="https://upciclo.com/media/logo/websites/1/logo.png" alt="Upciclo" class="h-10 mb-6 brightness-0 invert">
+                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">Headquartered in Bangalore, providing eco-friendly and stylish corporate & festive gifts worldwide.</p>
+                    <div class="flex gap-4 text-xl">
+                        <a href="#" class="text-gray-400 hover:text-brand-accent transition-colors"><i class="ph ph-facebook-logo"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-accent transition-colors"><i class="ph ph-instagram-logo"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-accent transition-colors"><i class="ph ph-twitter-logo"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6 tracking-wide">Shop Collection</h4>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Corporate Gifting</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Festive Hampers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gifts by Occasion</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Unique Collection</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Best Sellers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6 tracking-wide">Customer Care</h4>
+                    <ul class="flex flex-col gap-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">My Account</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Track Order</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Bulk Enquiries</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-serif text-lg mb-6 tracking-wide">Contact Us</h4>
+                    <ul class="flex flex-col gap-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-map-pin text-brand-accent text-lg mt-0.5"></i>
+                            <span>Divsha Enterprises Pvt Ltd.<br>Bangalore, India</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-envelope text-brand-accent text-lg"></i>
+                            <a href="mailto:info@upciclo.com" class="hover:text-white transition-colors">info@upciclo.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>&copy; 2026 Upciclo. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
